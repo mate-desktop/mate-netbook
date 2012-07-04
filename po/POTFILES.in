@@ -1,0 +1,4 @@
+mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in
+mate-window-picker-applet/applet.c
+mate-window-picker-applet/task-title.c
+mate-window-picker-applet/task-item.c

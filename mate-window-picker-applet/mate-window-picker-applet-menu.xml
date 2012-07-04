@@ -1,0 +1,2 @@
+<menuitem name="PreferencesItem" action="MenuPrefs" />
+<menuitem name="About Item" action="MenuAbout" />

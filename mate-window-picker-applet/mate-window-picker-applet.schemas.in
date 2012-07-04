@@ -1,0 +1,13 @@
+<mateconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/mate-window-picker-applet/prefs/show_all_windows</key>
+      <owner>mate-window-picker-applet</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Show windows from all workspaces.</short>
+      </locale>
+    </schema>
+  </schemalist>
+</mateconfschemafile>
