@@ -45,10 +45,12 @@ org.mate.panel.applet.MateWindowPickerFactory.service: $(service_in_files)
 	-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 	$< > $@
 
-schemasdir = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = mate-window-picker-applet.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-@INTLTOOL_SCHEMAS_RULE@
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.panel.applet.mate-window-picker-applet.gschema.xml
+@GSETTINGS_RULES@
+
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
@@ -57,9 +59,9 @@ EXTRA_DIST =                                            \
 	org.mate.panel.MateWindowPicker.panel-applet.in.in            \
 	$(service_in_files)                             \
 	$(ui_DATA)                                      \
-	$(schemas_in_files)
+	$(gsettings_SCHEMAS_in_in)
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(schemas_DATA)
+CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in) $(gsettings_SCHEMAS)
 
 clean:
 	rm -f $(desktop_DATA) $(desktop_DATA).in $(server_DATA) $(server_DATA).in

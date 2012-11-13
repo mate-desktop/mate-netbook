@@ -21,10 +21,6 @@
 
 #include <libmatewnck/libmatewnck.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
-
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
 
 #include "task-list.h"
 
@@ -35,7 +31,7 @@ G_DEFINE_TYPE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
   TaskTitlePrivate))
 
 #define LOGOUT "mate-session-save --kill --gui"
-#define SHOW_HOME_TITLE_KEY "/apps/window-picker-applet/show_home_title"
+#define SHOW_HOME_TITLE_KEY "show-home-title"
 
 struct _TaskTitlePrivate
 {
@@ -406,7 +402,6 @@ static void
 task_title_init (TaskTitle *title)
 {
   TaskTitlePrivate *priv;
-  MateConfClient *client;
   GdkScreen *gdkscreen;
   GtkIconTheme *theme;
   GtkSettings *settings;
@@ -419,11 +414,9 @@ task_title_init (TaskTitle *title)
   priv->screen = matewnck_screen_get_default ();
   priv->window = NULL;
 
-  client = mateconf_client_get_default ();
-  priv->show_home_title = mateconf_client_get_bool (client,
-                                                 SHOW_HOME_TITLE_KEY,
-                                                 NULL);
-  g_object_unref (client);
+  /* FIXME we can add an option for this in future */
+  /* now it's disabled with gsettings migration */
+  priv->show_home_title = FALSE;
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
 

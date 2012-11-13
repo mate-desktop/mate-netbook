@@ -1,0 +1,9 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.panel.applet.mate-window-picker-applet">
+    <key name="show-all-windows" type="b">
+      <default>true</default>
+      <_summary>Show windows from all workspaces.</_summary>
+      <_description>Show windows from all workspaces.</_description>
+    </key>
+  </schema>
+</schemalist>

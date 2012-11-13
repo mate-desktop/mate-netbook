@@ -30,20 +30,22 @@
 
 #include <libmatewnck/libmatewnck.h>
 
+#include <gio/gio.h>
 #include <mate-panel-applet.h>
-#include <mate-panel-applet-mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <mate-panel-applet-gsettings.h>
 
 #include "task-list.h"
 #include "task-title.h"
 
-#define SHOW_WIN_KEY "show_all_windows"
+#define APPLET_SCHEMA "org.mate.panel.applet.mate-window-picker-applet"
+#define SHOW_WIN_KEY "show-all-windows"
 
 typedef struct 
 {
   GtkWidget    *tasks;
   GtkWidget    *applet;
   GtkWidget    *title;
+  GSettings    *settings;
   
 } WinPickerApp;
 
@@ -76,9 +78,8 @@ static const gchar *close_window_authors [] = {
 };
 
 static void
-on_show_all_windows_changed (MateConfClient *client,
-                             guint        conn_id,
-                             MateConfEntry  *entry,
+on_show_all_windows_changed (GSettings   *settings,
+                             gchar       *key,
                              gpointer     data)
 {
   WinPickerApp *app;
@@ -86,8 +87,7 @@ on_show_all_windows_changed (MateConfClient *client,
 
   app = (WinPickerApp*)data;
 
-  show_windows = mate_panel_applet_mateconf_get_bool (MATE_PANEL_APPLET (app->applet),
-                                              SHOW_WIN_KEY, NULL);
+  show_windows = g_settings_get_boolean (settings, SHOW_WIN_KEY);
 
   g_object_set (app->tasks, "show_all_windows", show_windows, NULL);
 }
@@ -122,8 +122,6 @@ cw_applet_fill (MatePanelApplet *applet,
   MatewnckScreen *screen;
   WinPickerApp *app;
   GtkWidget *eb, *tasks, *title;
-  GError *error = NULL;
-  gchar *key;
   gchar *ui_path;
   GtkActionGroup *action_group;
   
@@ -140,21 +138,10 @@ cw_applet_fill (MatePanelApplet *applet,
   mainapp = app;
   screen = matewnck_screen_get_default ();
 
-  /* mateconf prefs */
-  mate_panel_applet_add_preferences (applet, 
-                                "/schemas/apps/mate-window-picker-applet/prefs",
-                                &error);
-  if (error)
-  {
-    g_warning ("%s", error->message);
-    g_error_free (error);
-  }
-
-  key = mate_panel_applet_mateconf_get_full_key (applet, SHOW_WIN_KEY);
-  mateconf_client_notify_add (mateconf_client_get_default (), key,
-                           on_show_all_windows_changed, app,
-                           NULL, NULL);
-  g_free (key);
+  /* gsettings prefs */
+  app->settings = mate_panel_applet_settings_new (applet, APPLET_SCHEMA);
+  g_signal_connect (app->settings, "changed::" SHOW_WIN_KEY,
+                    G_CALLBACK (on_show_all_windows_changed), app);
 
   app->applet = GTK_WIDGET (applet);
   force_no_focus_padding (GTK_WIDGET (applet));
@@ -172,7 +159,7 @@ cw_applet_fill (MatePanelApplet *applet,
 
   gtk_widget_show_all (GTK_WIDGET (applet));
 	
-  on_show_all_windows_changed (NULL, 0, NULL, app);
+  on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
 		
   /* Signals */
 	g_signal_connect (applet, "change-background",
@@ -287,8 +274,7 @@ on_checkbox_toggled (GtkToggleButton *check, gpointer null)
     
   is_active = gtk_toggle_button_get_active (check);
 
-  mate_panel_applet_mateconf_set_bool (MATE_PANEL_APPLET (mainapp->applet),
-                                              SHOW_WIN_KEY, is_active, NULL);
+  g_settings_set_boolean (mainapp->settings, SHOW_WIN_KEY, is_active);
 }
 
 static void
@@ -317,9 +303,7 @@ display_prefs_dialog (GtkAction       *action,
   check = gtk_check_button_new_with_label (_("Show windows from all workspaces"));
   gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, TRUE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check),
-                                mate_panel_applet_mateconf_get_bool (
-                                              MATE_PANEL_APPLET (mainapp->applet),
-                                              SHOW_WIN_KEY, NULL));
+                                g_settings_get_boolean (mainapp->settings, SHOW_WIN_KEY));
   g_signal_connect (check, "toggled",
                     G_CALLBACK (on_checkbox_toggled), NULL);
 
