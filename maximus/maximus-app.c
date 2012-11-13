@@ -23,9 +23,7 @@
 
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
-
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "maximus-app.h"
 #include "maximus-bind.h"
@@ -37,11 +35,11 @@ G_DEFINE_TYPE (MaximusApp, maximus_app, G_TYPE_OBJECT);
   MAXIMUS_TYPE_APP, \
   MaximusAppPrivate))
 
-/* Gconf keys */
-#define APP_PATH                   "/apps/maximus"
-#define APP_EXCLUDE_CLASS APP_PATH "/exclude_class"
-#define APP_UNDECORATE    APP_PATH "/undecorate"
-#define APP_NO_MAXIMIZE   APP_PATH "/no_maximize"
+/* GSettings schemas and keys */
+#define APP_SCHEMA        "org.mate.maximus"
+#define APP_EXCLUDE_CLASS "exclude-class"
+#define APP_UNDECORATE    "undecorate"
+#define APP_NO_MAXIMIZE   "no-maximize"
 
 /* A set of default exceptions */
 static gchar *default_exclude_classes[] = 
@@ -74,8 +72,9 @@ struct _MaximusAppPrivate
 {
   MaximusBind *bind;
   MatewnckScreen *screen;
+  GSettings *settings;
 
-  GSList *exclude_class_list;
+  gchar **exclude_class_list;
   gboolean undecorate;
   gboolean no_maximize;
 };
@@ -284,7 +283,6 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
   MatewnckWindowActions actions;
   gchar *res_name;
   gchar *class_name;
-  GSList *c;
   gint i;
 
   g_return_val_if_fail (MAXIMUS_IS_APP (app), TRUE);
@@ -333,10 +331,10 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
   }
 
   /* Check user list */
-  for (c = priv->exclude_class_list; c; c = c->next)
+  for (i = 0; priv->exclude_class_list[i] != NULL; i++)
   {
-    if ((class_name && c->data && strstr (class_name, c->data))
-        || (res_name && c->data && strstr (res_name, c->data) ))
+    if ((class_name && strstr (class_name, priv->exclude_class_list[i]))
+        || (res_name && strstr (res_name, priv->exclude_class_list[i]) ))
     {
       g_debug ("Excluding: %s\n", matewnck_window_get_name (window));
       return TRUE;
@@ -408,34 +406,22 @@ on_window_opened (MatewnckScreen  *screen,
                     G_CALLBACK (on_window_state_changed), app);
 }
 
+/* GSettings Callbacks */
 static void
-on_app_no_maximize_changed (MateConfClient *client,
-                            guint cid,
-                            MateConfEntry *entry,
+on_app_no_maximize_changed (GSettings *settings,
+                            gchar *key,
                             MaximusApp *app)
 {
   MaximusAppPrivate *priv;
-  MateConfValue* value;
 
   g_return_if_fail (MAXIMUS_IS_APP (app));
   priv = app->priv;
-
-  if (entry == NULL) 
-  {
-    priv->no_maximize = FALSE;
-  }
-  else
-  {
-    value = mateconf_entry_get_value(entry);
-    priv->no_maximize = value != NULL && mateconf_value_get_bool(value);
-  }
+  priv->no_maximize = g_settings_get_boolean (settings, key);
 }
 
-/* MateConf Callbacks */
 static void
-on_exclude_class_changed (MateConfClient        *client,
-                          guint               cid,
-                          MateConfEntry         *entry,
+on_exclude_class_changed (GSettings *settings,
+                          gchar *key,
                           MaximusApp         *app)
 {
   MaximusAppPrivate *priv;
@@ -444,12 +430,10 @@ on_exclude_class_changed (MateConfClient        *client,
   priv = app->priv;
 
   if (priv->exclude_class_list)
-    g_slist_free (priv->exclude_class_list);
+    g_strfreev (priv->exclude_class_list);
   
-  priv->exclude_class_list= mateconf_client_get_list (client, 
-                                                   APP_EXCLUDE_CLASS, 
-                                                   MATECONF_VALUE_STRING,
-                                                   NULL);
+  priv->exclude_class_list= g_settings_get_strv (settings, 
+                                                 APP_EXCLUDE_CLASS);
 }
 
 static gboolean
@@ -462,9 +446,8 @@ show_desktop (MatewnckScreen *screen)
 }
 
 static void
-on_app_undecorate_changed (MateConfClient        *client,
-                           guint               cid,
-                           MateConfEntry         *entry,
+on_app_undecorate_changed (GSettings          *settings,
+                           gchar              *key,
                            MaximusApp         *app)
 {
   MaximusAppPrivate *priv;
@@ -474,9 +457,7 @@ on_app_undecorate_changed (MateConfClient        *client,
   priv = app->priv;
   g_return_if_fail (MATEWNCK_IS_SCREEN (priv->screen));
 
-  priv->undecorate = mateconf_client_get_bool (client, 
-                                            APP_UNDECORATE, 
-                                            NULL);
+  priv->undecorate = g_settings_get_boolean (settings, APP_UNDECORATE);
   g_debug ("%s\n", priv->undecorate ? "Undecorating" : "Decorating");
   
   windows = matewnck_screen_get_windows (priv->screen);
@@ -523,7 +504,6 @@ static void
 maximus_app_init (MaximusApp *app)
 {
   MaximusAppPrivate *priv;
-  MateConfClient *client = mateconf_client_get_default ();
   MatewnckScreen *screen;
 	
   priv = app->priv = MAXIMUS_APP_GET_PRIVATE (app);
@@ -532,35 +512,25 @@ maximus_app_init (MaximusApp *app)
 
   was_decorated = g_quark_from_static_string ("was-decorated");
 
-  mateconf_client_add_dir (client, APP_PATH, MATECONF_CLIENT_PRELOAD_NONE, NULL);
+  priv->settings = g_settings_new (APP_SCHEMA);
 
-  priv->exclude_class_list= mateconf_client_get_list (client, 
-                                                   APP_EXCLUDE_CLASS, 
-                                                   MATECONF_VALUE_STRING,
-                                                   NULL);
-  mateconf_client_notify_add (client, APP_EXCLUDE_CLASS,
-                           (MateConfClientNotifyFunc)on_exclude_class_changed,
-                           app, NULL, NULL);
+  priv->exclude_class_list= g_settings_get_strv (priv->settings, APP_EXCLUDE_CLASS); 
+  g_signal_connect (priv->settings, "changed::" APP_EXCLUDE_CLASS,
+                    G_CALLBACK (on_exclude_class_changed), app);
 
-  priv->undecorate = mateconf_client_get_bool(client, 
-                                           APP_UNDECORATE, 
-                                           NULL);
-  mateconf_client_notify_add (client, APP_UNDECORATE,
-                           (MateConfClientNotifyFunc)on_app_undecorate_changed,
-                           app, NULL, NULL);
+  priv->undecorate = g_settings_get_boolean (priv->settings, APP_UNDECORATE);
+  g_signal_connect (priv->settings, "changed::" APP_UNDECORATE,
+                    G_CALLBACK (on_app_undecorate_changed), app);
 
  
   priv->screen = screen = matewnck_screen_get_default ();
   g_signal_connect (screen, "window-opened",
                     G_CALLBACK (on_window_opened), app);
 
-  priv->no_maximize = mateconf_client_get_bool(client,
-                                            APP_NO_MAXIMIZE,
-                                            NULL);
+  priv->no_maximize = g_settings_get_boolean (priv->settings, APP_NO_MAXIMIZE);
   g_print ("no maximize: %s\n", priv->no_maximize ? "true" : "false");
-  mateconf_client_notify_add (client, APP_NO_MAXIMIZE,
-                           (MateConfClientNotifyFunc)on_app_no_maximize_changed,
-                           app, NULL, NULL);
+  g_signal_connect (priv->settings, "changed::" APP_NO_MAXIMIZE,
+                    G_CALLBACK (on_app_no_maximize_changed), app);
 }
 
 MaximusApp *

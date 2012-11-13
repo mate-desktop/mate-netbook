@@ -25,8 +25,7 @@
 
 #include <gdk/gdkkeysyms.h>
 
-#include <mateconf/mateconf.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include <libmatewnck/libmatewnck.h>
 
@@ -53,9 +52,9 @@ G_DEFINE_TYPE (MaximusBind, maximus_bind, G_TYPE_OBJECT);
 #define KEY_RELEASE_TIMEOUT 300
 #define STATE_CHANGED_SLEEP 0.5
 
-/* Gconf keys */
-#define BIND_PATH          "/apps/maximus"
-#define BIND_EXCLUDE_CLASS BIND_PATH "/binding"
+/* GSettings schemas and keys */
+#define BIND_SCHEMA        "org.mate.maximus"
+#define BIND_EXCLUDE_CLASS "binding"
 
 #define SYSRULESDIR SYSCONFDIR"/maximus"
 
@@ -63,6 +62,7 @@ struct _MaximusBindPrivate
 {
   FakeKey *fk;
   MatewnckScreen *screen;
+  GSettings *settings;
 
   gchar *binding;
 
@@ -312,10 +312,9 @@ binding_is_valid (const gchar *binding)
 }
 
 static void
-on_binding_changed (MateConfClient        *client,
-                    guint               cid,
-                    MateConfEntry         *entry,
-                    MaximusBind         *bind)
+on_binding_changed (GSettings      *settings,
+                    gchar          *key,
+                    MaximusBind    *bind)
 {
   MaximusBindPrivate *priv;
   
@@ -327,9 +326,7 @@ on_binding_changed (MateConfClient        *client,
                              (TomboyBindkeyHandler)on_binding_changed);
   g_free (priv->binding);
 
-  priv->binding = mateconf_client_get_string (client, 
-                                           BIND_EXCLUDE_CLASS, 
-                                           NULL);
+  priv->binding = g_settings_get_string (settings, BIND_EXCLUDE_CLASS);
 
   if (binding_is_valid (priv->binding))
     tomboy_keybinder_bind (priv->binding, 
@@ -458,7 +455,6 @@ static void
 maximus_bind_init (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  MateConfClient *client = mateconf_client_get_default ();
   GdkDisplay *display = gdk_display_get_default ();
   MatewnckScreen *screen;
 	
@@ -467,17 +463,13 @@ maximus_bind_init (MaximusBind *bind)
   priv->fk = fakekey_init (GDK_DISPLAY_XDISPLAY (display));
   priv->screen = screen = matewnck_screen_get_default ();
   priv->rules = NULL;
+  priv->settings = g_settings_new (BIND_SCHEMA);
 
   tomboy_keybinder_init ();
 
-  mateconf_client_add_dir (client, BIND_PATH, MATECONF_CLIENT_PRELOAD_NONE, NULL);
-
-  priv->binding = mateconf_client_get_string (client, 
-                                           BIND_EXCLUDE_CLASS, 
-                                           NULL);
-  mateconf_client_notify_add (client, BIND_EXCLUDE_CLASS,
-                           (MateConfClientNotifyFunc)on_binding_changed,
-                           bind, NULL, NULL);
+  priv->binding = g_settings_get_string (priv->settings, BIND_EXCLUDE_CLASS);
+  g_signal_connect (priv->settings, "changed::" BIND_EXCLUDE_CLASS,
+                    G_CALLBACK (on_binding_changed), bind);
 
   if (binding_is_valid (priv->binding))
     tomboy_keybinder_bind (priv->binding,

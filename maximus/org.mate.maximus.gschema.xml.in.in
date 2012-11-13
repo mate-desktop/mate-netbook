@@ -1,0 +1,24 @@
+<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+  <schema id="org.mate.maximus" path="/org/mate/maximus/">
+    <key name="exclude-class" type="as">
+      <default>[ 'Totem' ]</default>
+      <_summary>A list of exclusion strings which apply to the window class.</_summary>
+      <_description>A list of exclusion strings which apply to the window class</_description>
+    </key>
+    <key name="binding" type="s">
+      <default>'disabled'</default>
+      <_summary>A binding</_summary>
+      <_description>A binding</_description>
+    </key>
+    <key name="undecorate" type="b">
+      <default>true</default>
+      <_summary>Undecorate windows when maximized</_summary>
+      <_description>Undecorate windows when maximized</_description>
+    </key>
+    <key name="no-maximize" type="b">
+      <default>false</default>
+      <_summary>Do not automatically maximize newly opened windows</_summary>
+      <_description>Do not automatically maximize newly opened windows. If undecorate is set, will still undecorate maximised windows.</_description>
+    </key>
+  </schema>
+</schemalist>

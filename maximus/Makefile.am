@@ -30,20 +30,12 @@ mate_maximus_SOURCES = \
 	xutils.c \
 	xutils.h 
 
-schemadir = $(sysconfdir)/mateconf/schemas
-schema_DATA = maximus.schemas
+@INTLTOOL_XML_NOMERGE_RULE@
+gsettings_SCHEMAS = org.mate.maximus.gschema.xml
+@GSETTINGS_RULES@
 
-if MATECONF_SCHEMAS_INSTALL
-install-data-local:
-	-MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-	$(MATECONFTOOL) --makefile-install-rule $(schema_DATA)
-endif
-
-if MATECONF_SCHEMAS_INSTALL
-uninstall-local:
-	-MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) \
-	$(MATECONFTOOL) --makefile-uninstall-rule $(schema_DATA)
-endif
+%.gschema.xml.in: %.gschema.xml.in.in Makefile
+	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 desktopdir=$(sysconfdir)/xdg/autostart
 dist_desktop_DATA=mate-maximus-autostart.desktop
