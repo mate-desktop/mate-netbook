@@ -34,9 +34,8 @@ AC_SUBST(GCC_FLAGS)
 
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
                   gtk+-2.0
-                  mateconf-2.0 
+                  gio-2.0 
                   libmatewnck
-                  libmateui-2.0
                   xtst
                   libfakekey
                   unique-1.0
@@ -45,17 +44,16 @@ AC_SUBST(MAXIMUS_DEPS_CFLAGS)
 AC_SUBST(MAXIMUS_DEPS_LIBS)
 
 PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS, 
-                  libmatepanelapplet-3.0
+                  libmatepanelapplet-4.0
                   gtk+-2.0
                   glib-2.0
-                  mateconf-2.0 
+                  gio-2.0 
                   libmatewnck
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
 
-AC_PATH_PROG(MATECONFTOOL, mateconftool-2)
-AM_MATECONF_SOURCE_2
+GLIB_GSETTINGS
 
 AC_OUTPUT([
 Makefile
