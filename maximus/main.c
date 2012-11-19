@@ -30,6 +30,12 @@
 
 #include "maximus-app.h"
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 static gboolean version    = FALSE;
 gboolean no_maximize = FALSE;
 
@@ -55,10 +61,15 @@ GOptionEntry entries[] =
 gint main (gint argc, gchar *argv[])
 {
   UniqueApp *unique;
-  MaximusApp *app;
+  MaximusApp UNUSED_VARIABLE *app;
   GOptionContext  *context;
 
+#if GLIB_CHECK_VERSION (2, 32, 0)
+  /* g_thread_init (NULL); */
+#else
   g_thread_init (NULL);
+#endif
+
   g_set_application_name ("Maximus");
   
   gtk_init (&argc, &argv);
