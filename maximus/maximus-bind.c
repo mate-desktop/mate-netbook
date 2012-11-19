@@ -58,6 +58,12 @@ G_DEFINE_TYPE (MaximusBind, maximus_bind, G_TYPE_OBJECT);
 
 #define SYSRULESDIR SYSCONFDIR"/maximus"
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 struct _MaximusBindPrivate
 {
   FakeKey *fk;
@@ -131,7 +137,7 @@ static gboolean
 real_fullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  GdkDisplay *display;
+  GdkDisplay UNUSED_VARIABLE *display;
   MatewnckWindow *active;
   const gchar *keystroke;
 
@@ -194,7 +200,7 @@ real_fullscreen (MaximusBind *bind)
 static void
 fullscreen (MaximusBind *bind, MatewnckWindow *window)
 {
-  MaximusBindPrivate *priv;
+  MaximusBindPrivate UNUSED_VARIABLE *priv;
   
   priv = bind->priv;
 
@@ -205,7 +211,7 @@ static gboolean
 real_unfullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  GdkDisplay *display;
+  GdkDisplay UNUSED_VARIABLE *display;
   MatewnckWindow *active;
   const gchar *keystroke;
 
@@ -267,7 +273,7 @@ real_unfullscreen (MaximusBind *bind)
 static void
 unfullscreen (MaximusBind *bind, MatewnckWindow *window)
 {
-  MaximusBindPrivate *priv;
+  MaximusBindPrivate UNUSED_VARIABLE *priv;
   
   priv = bind->priv;
 
@@ -390,7 +396,7 @@ create_rule (MaximusBind *bind, const gchar *filename)
 static void
 load_rules (MaximusBind *bind, const gchar *path)
 {
-  MaximusBindPrivate *priv;
+  MaximusBindPrivate UNUSED_VARIABLE *priv;
   GDir *dir;
   const gchar *name;
 

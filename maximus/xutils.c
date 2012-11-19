@@ -27,6 +27,12 @@
 #include <stdio.h>
 #include <libmatewnck/libmatewnck.h>
 
+#ifdef __GNUC__
+#define UNUSED_VARIABLE __attribute__ ((unused))
+#else
+#define UNUSED_VARIABLE
+#endif
+
 void
 _matewnck_error_trap_push (void)
 {
@@ -64,7 +70,7 @@ _matewnck_get_wmclass (Window xwindow,
                    char **res_name)
 {
   XClassHint ch;
-  char *retval;
+  char UNUSED_VARIABLE *retval;
   
   _matewnck_error_trap_push ();
 
