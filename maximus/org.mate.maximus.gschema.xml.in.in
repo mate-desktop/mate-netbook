@@ -11,12 +11,12 @@
       <_description>A binding</_description>
     </key>
     <key name="undecorate" type="b">
-      <default>true</default>
+      <default>false</default>
       <_summary>Undecorate windows when maximized</_summary>
       <_description>Undecorate windows when maximized</_description>
     </key>
     <key name="no-maximize" type="b">
-      <default>false</default>
+      <default>true</default>
       <_summary>Do not automatically maximize newly opened windows</_summary>
       <_description>Do not automatically maximize newly opened windows. If undecorate is set, will still undecorate maximised windows.</_description>
     </key>

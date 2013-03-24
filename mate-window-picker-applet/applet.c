@@ -40,6 +40,10 @@
 #define APPLET_SCHEMA "org.mate.panel.applet.mate-window-picker-applet"
 #define SHOW_WIN_KEY "show-all-windows"
 
+#define MAXIMUS_SCHEMA "org.mate.maximus"
+#define UNDECORATE_KEY "undecorate"
+#define NO_MAXIMIZE_KEY "no-maximize"
+
 typedef struct 
 {
   GtkWidget    *tasks;
@@ -50,6 +54,7 @@ typedef struct
 } WinPickerApp;
 
 static WinPickerApp *mainapp;
+static gpointer parent_class;
 
 static void cw_panel_background_changed (MatePanelApplet               *applet,
                                          MatePanelAppletBackgroundType  type,
@@ -114,6 +119,20 @@ force_no_focus_padding (GtkWidget *widget)
   gtk_widget_set_name (widget, "na-tray");
 }
 
+static void
+cw_applet_finalize (GObject *object)
+{
+  /* disable Maximus */
+  GSettings *maximus_settings;
+  maximus_settings = g_settings_new (MAXIMUS_SCHEMA);
+  g_settings_set_boolean (maximus_settings, UNDECORATE_KEY, FALSE);
+  g_settings_set_boolean (maximus_settings, NO_MAXIMIZE_KEY, TRUE);
+  g_object_unref (maximus_settings);
+
+  if (G_OBJECT_CLASS (parent_class)->finalize)
+    (* G_OBJECT_CLASS (parent_class)->finalize) (object);
+}
+
 static gboolean
 cw_applet_fill (MatePanelApplet *applet, 
                 const gchar *iid, 
@@ -124,6 +143,7 @@ cw_applet_fill (MatePanelApplet *applet,
   GtkWidget *eb, *tasks, *title;
   gchar *ui_path;
   GtkActionGroup *action_group;
+  GObjectClass *object_class;
   
   if (strcmp (iid, "MateWindowPicker") != 0)
 		return FALSE;
@@ -137,6 +157,18 @@ cw_applet_fill (MatePanelApplet *applet,
   app = g_slice_new0 (WinPickerApp);
   mainapp = app;
   screen = matewnck_screen_get_default ();
+
+  /* prepare to disable Maximus */
+  object_class = G_OBJECT_GET_CLASS (G_OBJECT(applet));
+  object_class->finalize = cw_applet_finalize;
+  parent_class = g_type_class_peek_parent (object_class);
+
+  /* enable Maximus */
+  GSettings *maximus_settings;
+  maximus_settings = g_settings_new (MAXIMUS_SCHEMA);
+  g_settings_set_boolean (maximus_settings, UNDECORATE_KEY, TRUE);
+  g_settings_set_boolean (maximus_settings, NO_MAXIMIZE_KEY, FALSE);
+  g_object_unref (maximus_settings);
 
   /* gsettings prefs */
   app->settings = mate_panel_applet_settings_new (applet, APPLET_SCHEMA);
