@@ -52,9 +52,6 @@ gsettings_SCHEMAS = org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
-convertdir = $(datadir)/MateConf/gsettings
-convert_DATA = mate-window-picker-applet.convert
-
 xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
 
