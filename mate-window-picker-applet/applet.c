@@ -71,7 +71,7 @@ static const GtkActionEntry window_picker_menu_actions [] = {
 	{ "MenuPrefs", GTK_STOCK_PREFERENCES, N_("_Preferences"),
       NULL, NULL,
       G_CALLBACK (display_prefs_dialog) },
-	{ "ShowDesktopAbout", GTK_STOCK_ABOUT, N_("_About"),
+	{ "MenuAbout", GTK_STOCK_ABOUT, N_("_About"),
       NULL, NULL,
       G_CALLBACK (display_about_dialog) }
 };
@@ -204,7 +204,7 @@ cw_applet_fill (MatePanelApplet *applet,
                                   window_picker_menu_actions,
                                   G_N_ELEMENTS (window_picker_menu_actions),
                                   app);
-    ui_path = g_build_filename (MATEWINDOWPICKER_MENU_UI_DIR, "mate-window-picker-menu.xml", NULL);
+    ui_path = g_build_filename (MATEWINDOWPICKER_MENU_UI_DIR, "mate-window-picker-applet-menu.xml", NULL);
     mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (app->applet),
                                        ui_path, action_group);
     g_free (ui_path);
