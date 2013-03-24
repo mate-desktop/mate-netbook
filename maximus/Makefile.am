@@ -37,7 +37,10 @@ gsettings_SCHEMAS = org.mate.maximus.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = mate-maximus.convert
+
 desktopdir=$(sysconfdir)/xdg/autostart
 dist_desktop_DATA=mate-maximus-autostart.desktop
 
-EXTRA_DIST =  $(schema_DATA)
+EXTRA_DIST =  $(schema_DATA) $(convert_DATA)

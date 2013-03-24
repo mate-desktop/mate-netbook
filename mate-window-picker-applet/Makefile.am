@@ -52,6 +52,9 @@ gsettings_SCHEMAS = org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
 	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
+convertdir = $(datadir)/MateConf/gsettings
+convert_DATA = mate-window-picker-applet.convert
+
 xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
 
@@ -59,6 +62,7 @@ EXTRA_DIST =                                            \
 	org.mate.panel.MateWindowPicker.panel-applet.in.in            \
 	$(service_in_files)                             \
 	$(ui_DATA)                                      \
+	$(convert_DATA)					\
 	$(gsettings_SCHEMAS_in_in)
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in) $(gsettings_SCHEMAS)
