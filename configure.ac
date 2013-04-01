@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(mate-netbook, 1.5.1, [])
+AC_INIT(mate-netbook, 1.6.0, [])
 AM_INIT_AUTOMAKE()
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(maximus/main.c)
