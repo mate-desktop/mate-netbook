@@ -3,42 +3,42 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009.
-# Xuacu Saturio <xuacusk8@gmail.com>, 2013.
+#   <keltoiboy@gmail.com>, 2012.
+# Michael Findlay <keltoiboy@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
 "POT-Creation-Date: 2012-07-26 11:51+0200\n"
-"PO-Revision-Date: 2013-01-21 23:39+0000\n"
-"Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
-"Language-Team: Asturian (http://www.transifex.com/projects/p/MATE/language/ast/)\n"
+"PO-Revision-Date: 2012-09-26 07:50+0000\n"
+"Last-Translator: k3lt01 <keltoiboy@gmail.com>\n"
+"Language-Team: English (Australia) (http://www.transifex.com/projects/p/MATE/language/en_AU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ast\n"
+"Language: en_AU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../mate-window-picker-applet/applet.c:64
 msgid "_Preferences"
-msgstr "_Preferencies"
+msgstr "_Preferences"
 
 #: ../mate-window-picker-applet/applet.c:67
 msgid "_About"
-msgstr "Tocante _a"
+msgstr "_About"
 
 #: ../mate-window-picker-applet/applet.c:266
 #: ../mate-window-picker-applet/applet.c:267
 msgid "Window Picker"
-msgstr "Esbillador de ventanes"
+msgstr "Window Picker"
 
 #: ../mate-window-picker-applet/applet.c:301
 msgid "Preferences"
-msgstr "Preferencies"
+msgstr "Preferences"
 
 #: ../mate-window-picker-applet/applet.c:317
 msgid "Show windows from all workspaces"
-msgstr "Amosar les ventanes de tolos espacios de trabayu"
+msgstr "Show windows from all workspaces"
 
 #: ../mate-window-picker-applet/task-title.c:251
 #: ../mate-window-picker-applet/task-title.c:258
@@ -53,20 +53,20 @@ msgstr "Home"
 #: ../mate-window-picker-applet/task-title.c:305
 #: ../mate-window-picker-applet/task-title.c:497
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Acabar la sesión, camudar d'usuariu, bloquear la pantalla o apagar l'equipu"
+msgstr "Log off, switch user, lock screen or power down the computer"
 
 #: ../mate-window-picker-applet/task-title.c:277
 msgid "Close window"
-msgstr "Pesllar ventana"
+msgstr "Close window"
 
 #: ../mate-window-picker-applet/task-title.c:460
 msgid "Close"
-msgstr "Zarrar"
+msgstr "Close"
 
 #: ../mate-window-picker-applet/task-title.c:461
 msgid "Close current window."
-msgstr "Zarrar la ventana actual"
+msgstr "Close current window."
 
 #: ../mate-window-picker-applet/task-item.c:650
 msgid "Window Task Button"
-msgstr "Botón de xera de ventanes"
+msgstr "Window Task Button"
