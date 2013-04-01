@@ -19,7 +19,6 @@ GETTEXT_PACKAGE=mate-netbook
 AC_SUBST(GETTEXT_PACKAGE)
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define to the Gettext package name])
-ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
 
 IT_PROG_INTLTOOL([0.34])
 
