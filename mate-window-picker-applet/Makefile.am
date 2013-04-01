@@ -12,7 +12,8 @@ AM_CFLAGS=\
 	-DMATEWINDOWPICKER_MENU_UI_DIR=\""$(xmluidir)"\"
 
 mate_window_picker_applet_LDADD = \
-	$(MATEWINDOWPICKER_DEPS_LIBS)
+	$(MATEWINDOWPICKER_DEPS_LIBS) \
+	-lm
 
 mate_window_picker_applet_SOURCES = \
 	applet.c \
