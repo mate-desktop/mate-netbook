@@ -8,5 +8,4 @@ Terminal=false
 Type=Application
 Categories=
 OnlyShowIn=MATE;
-X-MATE-Autostart-Phase=Desktop
 X-MATE-Autostart-Notify=false
