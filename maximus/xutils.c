@@ -25,7 +25,8 @@
 #include "xutils.h"
 #include <string.h>
 #include <stdio.h>
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 #ifdef __GNUC__
 #define UNUSED_VARIABLE __attribute__ ((unused))
@@ -34,13 +35,13 @@
 #endif
 
 void
-_matewnck_error_trap_push (void)
+_wnck_error_trap_push (void)
 {
   gdk_error_trap_push ();
 }
 
 int
-_matewnck_error_trap_pop (void)
+_wnck_error_trap_pop (void)
 {
   XSync (gdk_display, False);
   return gdk_error_trap_pop ();
@@ -65,14 +66,14 @@ latin1_to_utf8 (const char *latin1)
 }
 
 void
-_matewnck_get_wmclass (Window xwindow,
+_wnck_get_wmclass (Window xwindow,
                    char **res_class,
                    char **res_name)
 {
   XClassHint ch;
   char UNUSED_VARIABLE *retval;
   
-  _matewnck_error_trap_push ();
+  _wnck_error_trap_push ();
 
   ch.res_name = NULL;
   ch.res_class = NULL;
@@ -80,7 +81,7 @@ _matewnck_get_wmclass (Window xwindow,
   XGetClassHint (gdk_display, xwindow,
                  &ch);
 
-  _matewnck_error_trap_pop ();
+  _wnck_error_trap_pop ();
   
   retval = NULL;
 

@@ -22,7 +22,8 @@
 
 #include <glib-object.h>
 #include <gtk/gtk.h>
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 #define MAXIMUS_TYPE_APP (maximus_app_get_type ())
 

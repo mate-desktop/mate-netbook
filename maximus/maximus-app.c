@@ -71,7 +71,7 @@ static gchar *default_exclude_classes[] =
 struct _MaximusAppPrivate
 {
   MaximusBind *bind;
-  MatewnckScreen *screen;
+  WnckScreen *screen;
   GSettings *settings;
 
   gchar **exclude_class_list;
@@ -95,7 +95,7 @@ typedef struct {
 #define _XA_MOTIF_WM_HINTS		"_MOTIF_WM_HINTS"
 
 static gboolean
-matewnck_window_is_decorated (MatewnckWindow *window)
+wnck_window_is_decorated (WnckWindow *window)
 {
   GdkDisplay *display = gdk_display_get_default();
   Atom hints_atom = None;
@@ -107,13 +107,13 @@ matewnck_window_is_decorated (MatewnckWindow *window)
   gulong bytes_after;
   gboolean retval;
 
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
   
   hints_atom = gdk_x11_get_xatom_by_name_for_display (display, 
                                                       _XA_MOTIF_WM_HINTS);
 
   XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), 
-                      matewnck_window_get_xid (window),
+                      wnck_window_get_xid (window),
 		                  hints_atom, 0, sizeof (MotifWmHints)/sizeof (long),
 		                  False, AnyPropertyType, &type, &format, &nitems,
 		                  &bytes_after, &data);
@@ -131,7 +131,7 @@ matewnck_window_is_decorated (MatewnckWindow *window)
 }
 
 static void
-gdk_window_set_mwm_hints (MatewnckWindow *window,
+gdk_window_set_mwm_hints (WnckWindow *window,
                           MotifWmHints *new_hints)
 {
   GdkDisplay *display = gdk_display_get_default();
@@ -143,14 +143,14 @@ gdk_window_set_mwm_hints (MatewnckWindow *window,
   gulong nitems;
   gulong bytes_after;
 
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   g_return_if_fail (GDK_IS_DISPLAY (display));
   
   hints_atom = gdk_x11_get_xatom_by_name_for_display (display, 
                                                       _XA_MOTIF_WM_HINTS);
 
   XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), 
-                      matewnck_window_get_xid (window),
+                      wnck_window_get_xid (window),
 		                  hints_atom, 0, sizeof (MotifWmHints)/sizeof (long),
 		                  False, AnyPropertyType, &type, &format, &nitems,
 		                  &bytes_after, &data);
@@ -173,25 +173,25 @@ gdk_window_set_mwm_hints (MatewnckWindow *window,
     }
   }
   
-  _matewnck_error_trap_push ();
+  _wnck_error_trap_push ();
   XChangeProperty (GDK_DISPLAY_XDISPLAY (display), 
-                   matewnck_window_get_xid (window),
+                   wnck_window_get_xid (window),
                    hints_atom, hints_atom, 32, PropModeReplace,
                    (guchar *)hints, sizeof (MotifWmHints)/sizeof (long));
   gdk_flush ();
-  _matewnck_error_trap_pop ();
+  _wnck_error_trap_pop ();
   
   if (data)
     XFree (data);
 }
 
 static void
-_window_set_decorations (MatewnckWindow      *window,
+_window_set_decorations (WnckWindow      *window,
 			                   GdkWMDecoration decorations)
 {
   MotifWmHints *hints;
   
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   
   /* initialize to zero to avoid writing uninitialized data to socket */
   hints = g_slice_new0 (MotifWmHints);
@@ -206,17 +206,17 @@ _window_set_decorations (MatewnckWindow      *window,
 /* </TAKEN FROM GDK> */
 
 gboolean
-window_is_too_large_for_screen (MatewnckWindow *window)
+window_is_too_large_for_screen (WnckWindow *window)
 {
   static GdkScreen *screen = NULL;
   gint x=0, y=0, w=0, h=0;
 
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
   if (screen == NULL)
     screen = gdk_screen_get_default ();
     
-  matewnck_window_get_geometry (window, &x, &y, &w, &h);
+  wnck_window_get_geometry (window, &x, &y, &w, &h);
   
   /* some wiggle room */
   return (screen && 
@@ -225,14 +225,14 @@ window_is_too_large_for_screen (MatewnckWindow *window)
 }
 
 static gboolean
-on_window_maximised_changed (MatewnckWindow *window)
+on_window_maximised_changed (WnckWindow *window)
 {
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
   if (window_is_too_large_for_screen (window))
     {
       _window_set_decorations (window, 1);
-      matewnck_window_unmaximize (window);
+      wnck_window_unmaximize (window);
     }
   else
     {
@@ -242,29 +242,29 @@ on_window_maximised_changed (MatewnckWindow *window)
 }
 
 static gboolean
-enable_window_decorations (MatewnckWindow *window)
+enable_window_decorations (WnckWindow *window)
 {
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
   _window_set_decorations (window, 1);
   return FALSE;
 }
 
 static void
-on_window_state_changed (MatewnckWindow      *window,
-                         MatewnckWindowState  change_mask,
-                         MatewnckWindowState  new_state,
+on_window_state_changed (WnckWindow      *window,
+                         WnckWindowState  change_mask,
+                         WnckWindowState  new_state,
                          MaximusApp     *app)
 {
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
 
   if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (window), "exclude"))==1)
     return;
   
-  if (change_mask & MATEWNCK_WINDOW_STATE_MAXIMIZED_HORIZONTALLY
-      || change_mask & MATEWNCK_WINDOW_STATE_MAXIMIZED_VERTICALLY)
+  if (change_mask & WNCK_WINDOW_STATE_MAXIMIZED_HORIZONTALLY
+      || change_mask & WNCK_WINDOW_STATE_MAXIMIZED_VERTICALLY)
   {
-    if (matewnck_window_is_maximized (window) && app->priv->undecorate)
+    if (wnck_window_is_maximized (window) && app->priv->undecorate)
     {
       g_idle_add ((GSourceFunc)on_window_maximised_changed, window);
     }
@@ -276,44 +276,44 @@ on_window_state_changed (MatewnckWindow      *window,
 }
 
 static gboolean
-is_excluded (MaximusApp *app, MatewnckWindow *window)
+is_excluded (MaximusApp *app, WnckWindow *window)
 {
   MaximusAppPrivate *priv;
-  MatewnckWindowType type;
-  MatewnckWindowActions actions;
+  WnckWindowType type;
+  WnckWindowActions actions;
   gchar *res_name;
   gchar *class_name;
   gint i;
 
   g_return_val_if_fail (MAXIMUS_IS_APP (app), TRUE);
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), TRUE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), TRUE);
   priv = app->priv;
 
-  type = matewnck_window_get_window_type (window);
-  if (type != MATEWNCK_WINDOW_NORMAL)
+  type = wnck_window_get_window_type (window);
+  if (type != WNCK_WINDOW_NORMAL)
     return TRUE;
 
   if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (window), "exclude"))==1)
     return TRUE;
 
   /* Ignore if the window is already fullscreen */
-  if (matewnck_window_is_fullscreen (window))
+  if (wnck_window_is_fullscreen (window))
   {
-    g_debug ("Excluding (is fullscreen): %s\n",matewnck_window_get_name (window));
+    g_debug ("Excluding (is fullscreen): %s\n",wnck_window_get_name (window));
     return TRUE;
   }
   
   /* Make sure the window supports maximising */
-  actions = matewnck_window_get_actions (window);
-  if (actions & MATEWNCK_WINDOW_ACTION_RESIZE
-      && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
-      && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
-      && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE)
+  actions = wnck_window_get_actions (window);
+  if (actions & WNCK_WINDOW_ACTION_RESIZE
+      && actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
+      && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
+      && actions & WNCK_WINDOW_ACTION_MAXIMIZE)
     ; /* Is good to maximise */
   else
     return TRUE;
 
-  _matewnck_get_wmclass (matewnck_window_get_xid (window), &res_name, &class_name);
+  _wnck_get_wmclass (wnck_window_get_xid (window), &res_name, &class_name);
 
   g_debug ("Window opened: res_name=%s -- class_name=%s", res_name, class_name);
  
@@ -325,7 +325,7 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
         || (res_name && default_exclude_classes[i] && strstr (res_name, 
                                             default_exclude_classes[i])))
     {
-      g_debug ("Excluding: %s\n", matewnck_window_get_name (window));
+      g_debug ("Excluding: %s\n", wnck_window_get_name (window));
       return TRUE;
     } 
   }
@@ -336,7 +336,7 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
     if ((class_name && strstr (class_name, priv->exclude_class_list[i]))
         || (res_name && strstr (res_name, priv->exclude_class_list[i]) ))
     {
-      g_debug ("Excluding: %s\n", matewnck_window_get_name (window));
+      g_debug ("Excluding: %s\n", wnck_window_get_name (window));
       return TRUE;
     }
   }
@@ -349,25 +349,25 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
 extern gboolean no_maximize;
 
 static void
-on_window_opened (MatewnckScreen  *screen,
-                  MatewnckWindow  *window,
+on_window_opened (WnckScreen  *screen,
+                  WnckWindow  *window,
                   MaximusApp *app)
 { 
   MaximusAppPrivate *priv;
-  MatewnckWindowType type;
+  WnckWindowType type;
   gint exclude = 0;
   
   g_return_if_fail (MAXIMUS_IS_APP (app));
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   priv = app->priv;
 
-  type = matewnck_window_get_window_type (window);
-  if (type != MATEWNCK_WINDOW_NORMAL)
+  type = wnck_window_get_window_type (window);
+  if (type != WNCK_WINDOW_NORMAL)
     return;
 
   /* Ignore undecorated windows */
-  exclude = matewnck_window_is_decorated (window) ? 0 : 1;
-  if (matewnck_window_is_maximized (window))
+  exclude = wnck_window_is_decorated (window) ? 0 : 1;
+  if (wnck_window_is_maximized (window))
     exclude = 0;
   g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (exclude));
 
@@ -380,7 +380,7 @@ on_window_opened (MatewnckScreen  *screen,
 
   if (no_maximize || priv->no_maximize)
   {
-    if (matewnck_window_is_maximized(window))
+    if (wnck_window_is_maximized(window))
     {
       _window_set_decorations (window, 0);
       gdk_flush ();
@@ -400,7 +400,7 @@ on_window_opened (MatewnckScreen  *screen,
     }
   }
 
-  matewnck_window_maximize (window);
+  wnck_window_maximize (window);
 
   g_signal_connect (window, "state-changed",
                     G_CALLBACK (on_window_state_changed), app);
@@ -437,11 +437,11 @@ on_exclude_class_changed (GSettings *settings,
 }
 
 static gboolean
-show_desktop (MatewnckScreen *screen)
+show_desktop (WnckScreen *screen)
 {
-  g_return_val_if_fail (MATEWNCK_IS_SCREEN (screen), FALSE);
+  g_return_val_if_fail (WNCK_IS_SCREEN (screen), FALSE);
   
-  matewnck_screen_toggle_showing_desktop (screen, TRUE);
+  wnck_screen_toggle_showing_desktop (screen, TRUE);
   return FALSE;
 }
 
@@ -455,22 +455,22 @@ on_app_undecorate_changed (GSettings          *settings,
     
   g_return_if_fail (MAXIMUS_IS_APP (app));
   priv = app->priv;
-  g_return_if_fail (MATEWNCK_IS_SCREEN (priv->screen));
+  g_return_if_fail (WNCK_IS_SCREEN (priv->screen));
 
   priv->undecorate = g_settings_get_boolean (settings, APP_UNDECORATE);
   g_debug ("%s\n", priv->undecorate ? "Undecorating" : "Decorating");
   
-  windows = matewnck_screen_get_windows (priv->screen);
+  windows = wnck_screen_get_windows (priv->screen);
   for (w = windows; w; w = w->next)
   {
-    MatewnckWindow *window = w->data;
+    WnckWindow *window = w->data;
 
-    if (!MATEWNCK_IS_WINDOW (window))
+    if (!WNCK_IS_WINDOW (window))
       continue;
 
     if (no_maximize || priv->no_maximize)
     {
-      if (!matewnck_window_is_maximized(window))
+      if (!wnck_window_is_maximized(window))
         continue;
     }
 
@@ -478,8 +478,8 @@ on_app_undecorate_changed (GSettings          *settings,
     {
       gdk_error_trap_push ();
       _window_set_decorations (window, priv->undecorate ? 0 : 1);
-      matewnck_window_unmaximize (window);
-      matewnck_window_maximize (window);
+      wnck_window_unmaximize (window);
+      wnck_window_maximize (window);
       gdk_flush ();
       gdk_error_trap_pop ();
 
@@ -504,7 +504,7 @@ static void
 maximus_app_init (MaximusApp *app)
 {
   MaximusAppPrivate *priv;
-  MatewnckScreen *screen;
+  WnckScreen *screen;
 	
   priv = app->priv = MAXIMUS_APP_GET_PRIVATE (app);
 
@@ -523,7 +523,7 @@ maximus_app_init (MaximusApp *app)
                     G_CALLBACK (on_app_undecorate_changed), app);
 
  
-  priv->screen = screen = matewnck_screen_get_default ();
+  priv->screen = screen = wnck_screen_get_default ();
   g_signal_connect (screen, "window-opened",
                     G_CALLBACK (on_window_opened), app);
 

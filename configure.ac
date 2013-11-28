@@ -34,7 +34,7 @@ AC_SUBST(GCC_FLAGS)
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
                   gtk+-2.0
                   gio-2.0 
-                  libmatewnck
+                  libwnck-1.0
                   xtst
                   libfakekey
                   unique-1.0
@@ -47,7 +47,7 @@ PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS,
                   gtk+-2.0
                   glib-2.0
                   gio-2.0 
-                  libmatewnck
+                  libwnck-1.0
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)

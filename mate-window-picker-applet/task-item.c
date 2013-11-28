@@ -35,8 +35,8 @@ G_DEFINE_TYPE (TaskItem, task_item, GTK_TYPE_EVENT_BOX);
 
 struct _TaskItemPrivate
 {
-  MatewnckWindow   *window;
-  MatewnckScreen   *screen;
+  WnckWindow   *window;
+  WnckScreen   *screen;
   GdkPixbuf    *pixbuf;
   GdkRectangle area;
   
@@ -66,13 +66,13 @@ update_hints (TaskItem *item)
 {
   GtkWidget *parent;
   GtkWidget *widget;
-  MatewnckWindow *window;
+  WnckWindow *window;
   gint x, y, x1, y1;
 
   widget = GTK_WIDGET (item);
   window = item->priv->window;
   /* Skip problems */
-  if (!MATEWNCK_IS_WINDOW (window)) return;
+  if (!WNCK_IS_WINDOW (window)) return;
   if (!GTK_IS_WIDGET (widget)) return;
 
   /* Skip invisible windows */
@@ -99,7 +99,7 @@ update_hints (TaskItem *item)
   }
     
   /* Set the minimize hint for the window */
-  matewnck_window_set_icon_geometry (window, x, y,
+  wnck_window_set_icon_geometry (window, x, y,
                                  widget->allocation.width,
                                  widget->allocation.height);
 }
@@ -109,9 +109,9 @@ on_task_item_button_released (GtkWidget      *widget,
                               GdkEventButton *event,
                               TaskItem       *item)
 {
-  MatewnckWindow *window;
-  MatewnckScreen *screen;
-  MatewnckWorkspace *workspace;
+  WnckWindow *window;
+  WnckScreen *screen;
+  WnckWorkspace *workspace;
   TaskItemPrivate *priv;
   
   g_return_val_if_fail (TASK_IS_ITEM (item), TRUE);
@@ -119,25 +119,25 @@ on_task_item_button_released (GtkWidget      *widget,
   priv = item->priv;
   window = priv->window;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), TRUE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), TRUE);
   
   screen = priv->screen;
-  workspace = matewnck_window_get_workspace (window);
+  workspace = wnck_window_get_workspace (window);
   
   if (event->button == 1)
   {
   
-    if (MATEWNCK_IS_WORKSPACE (workspace) && workspace != matewnck_screen_get_active_workspace (screen))
+    if (WNCK_IS_WORKSPACE (workspace) && workspace != wnck_screen_get_active_workspace (screen))
     {
-      matewnck_workspace_activate (workspace, GDK_CURRENT_TIME);
+      wnck_workspace_activate (workspace, GDK_CURRENT_TIME);
     }
-    if (matewnck_window_is_active (window))
+    if (wnck_window_is_active (window))
     {
-      matewnck_window_minimize (window);
+      wnck_window_minimize (window);
     }
     else
     {
-      matewnck_window_activate (window, GDK_CURRENT_TIME);
+      wnck_window_activate (window, GDK_CURRENT_TIME);
     }
   }
   return TRUE;
@@ -146,15 +146,15 @@ on_task_item_button_released (GtkWidget      *widget,
 static void
 task_item_set_visibility (TaskItem *item)
 {
-  MatewnckScreen *screen;
-  MatewnckWindow *window;
-  MatewnckWorkspace *workspace;
+  WnckScreen *screen;
+  WnckWindow *window;
+  WnckWorkspace *workspace;
 
   g_return_if_fail (TASK_IS_ITEM (item));
   
   TaskItemPrivate *priv = item->priv;
   
-  if (!MATEWNCK_IS_WINDOW (priv->window))
+  if (!WNCK_IS_WINDOW (priv->window))
   {
     gtk_widget_hide (GTK_WIDGET (item));
     return;
@@ -163,20 +163,20 @@ task_item_set_visibility (TaskItem *item)
   window = priv->window;
   
   screen = priv->screen;
-  workspace = matewnck_screen_get_active_workspace (screen);
+  workspace = wnck_screen_get_active_workspace (screen);
   
   gboolean show_all = task_list_get_show_all_windows (TASK_LIST (task_list_get_default ()));
   gboolean show_window = FALSE;
   
-  if (!matewnck_window_is_skip_tasklist (window))
+  if (!wnck_window_is_skip_tasklist (window))
   {
-    if (matewnck_workspace_is_virtual (workspace))
+    if (wnck_workspace_is_virtual (workspace))
     {
-      show_window = matewnck_window_is_in_viewport (window, workspace);
+      show_window = wnck_window_is_in_viewport (window, workspace);
     }
     else
     {
-      show_window = matewnck_window_is_on_workspace (window, workspace);
+      show_window = wnck_window_is_on_workspace (window, workspace);
     }
     show_window = show_window || show_all;
   }
@@ -202,16 +202,16 @@ task_item_size_request (GtkWidget      *widget,
 
 static GdkPixbuf *
 task_item_sized_pixbuf_for_window (TaskItem   *item,
-                                   MatewnckWindow *window,
+                                   WnckWindow *window,
                                    gint size)
 {
   GdkPixbuf *pbuf = NULL;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), NULL);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), NULL);
   
-  if (matewnck_window_has_icon_name (window))
+  if (wnck_window_has_icon_name (window))
   {
-    const gchar *icon_name = matewnck_window_get_icon_name (window);
+    const gchar *icon_name = wnck_window_get_icon_name (window);
     GtkIconTheme *icon_theme = gtk_icon_theme_get_default ();
     
     if (gtk_icon_theme_has_icon (icon_theme, icon_name))
@@ -228,7 +228,7 @@ task_item_sized_pixbuf_for_window (TaskItem   *item,
   
   if (!pbuf)
   {
-    pbuf = gdk_pixbuf_copy (matewnck_window_get_icon (item->priv->window));
+    pbuf = gdk_pixbuf_copy (wnck_window_get_icon (item->priv->window));
   }
   
   gint width = gdk_pixbuf_get_width (pbuf);
@@ -264,7 +264,7 @@ task_item_expose_event (GtkWidget      *widget,
   item = TASK_ITEM (widget);
   priv = item->priv;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (priv->window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (priv->window), FALSE);
   
   area = priv->area;
   cr = gdk_cairo_create (event->window);
@@ -273,8 +273,8 @@ task_item_expose_event (GtkWidget      *widget,
   desat = NULL;
   
   gint size = MIN (area.height, area.width);
-  gboolean active = matewnck_window_is_active (priv->window);
-  gboolean attention = matewnck_window_or_transient_needs_attention (priv->window);
+  gboolean active = wnck_window_is_active (priv->window);
+  gboolean attention = wnck_window_or_transient_needs_attention (priv->window);
   
   if (GDK_IS_PIXBUF (pbuf) && 
       gdk_pixbuf_get_width (pbuf) != size &&
@@ -385,14 +385,14 @@ on_button_pressed (GtkWidget      *button,
                    GdkEventButton *event,
                    TaskItem       *item)
 {
-  MatewnckWindow *window;
+  WnckWindow *window;
   g_return_val_if_fail (TASK_IS_ITEM (item), FALSE);
   window = item->priv->window;
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
   if (event->button == 3)
   {
-    GtkWidget *menu = matewnck_action_menu_new (window);
+    GtkWidget *menu = wnck_action_menu_new (window);
     gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
                     event->button, event->time);
     return TRUE;
@@ -408,11 +408,11 @@ on_query_tooltip (GtkWidget *widget,
                   GtkTooltip *tooltip,
                   TaskItem *item)
 {
-  MatewnckWindow *window = item->priv->window;
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  WnckWindow *window = item->priv->window;
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
-  gtk_tooltip_set_text (tooltip, matewnck_window_get_name(window));
-  gtk_tooltip_set_icon (tooltip, matewnck_window_get_icon (window));
+  gtk_tooltip_set_text (tooltip, wnck_window_get_name(window));
+  gtk_tooltip_set_icon (tooltip, wnck_window_get_icon (window));
 
   return TRUE;
 }
@@ -450,7 +450,7 @@ on_blink (TaskItem *item)
 
   gtk_widget_queue_draw (GTK_WIDGET (item));
 
-  if (matewnck_window_or_transient_needs_attention (item->priv->window))
+  if (wnck_window_or_transient_needs_attention (item->priv->window))
   {
     return TRUE;
   }
@@ -462,17 +462,17 @@ on_blink (TaskItem *item)
 }
 
 static void
-on_window_state_changed (MatewnckWindow      *window,
-                         MatewnckWindowState  changed_mask,
-                         MatewnckWindowState  new_state,
+on_window_state_changed (WnckWindow      *window,
+                         WnckWindowState  changed_mask,
+                         WnckWindowState  new_state,
                          TaskItem        *item)
 {
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   g_return_if_fail (TASK_IS_ITEM (item));
   
   TaskItemPrivate *priv = item->priv;
   
-  if (new_state & MATEWNCK_WINDOW_STATE_URGENT && !priv->timer)
+  if (new_state & WNCK_WINDOW_STATE_URGENT && !priv->timer)
   {
     priv->timer = g_timeout_add (30, (GSourceFunc)on_blink, item);
     g_get_current_time (&priv->urgent_time);
@@ -482,14 +482,14 @@ on_window_state_changed (MatewnckWindow      *window,
 }
 
 static void
-on_window_workspace_changed (MatewnckWindow *window, TaskItem *item)
+on_window_workspace_changed (WnckWindow *window, TaskItem *item)
 {
   g_return_if_fail (TASK_IS_ITEM (item));
 
   task_item_set_visibility (item);
 }
 
-static void on_window_icon_changed (MatewnckWindow *window, TaskItem *item)
+static void on_window_icon_changed (WnckWindow *window, TaskItem *item)
 {
   TaskItemPrivate *priv;
   
@@ -507,11 +507,11 @@ static void on_window_icon_changed (MatewnckWindow *window, TaskItem *item)
 }
 
 static void
-on_screen_active_window_changed (MatewnckScreen    *screen,
-                                 MatewnckWindow    *old_window,
+on_screen_active_window_changed (WnckScreen    *screen,
+                                 WnckWindow    *old_window,
                                  TaskItem      *item)
 {
-  MatewnckWindow *window;
+  WnckWindow *window;
   TaskItemPrivate *priv;
 
   g_return_if_fail (TASK_IS_ITEM (item));
@@ -519,10 +519,10 @@ on_screen_active_window_changed (MatewnckScreen    *screen,
   priv = item->priv;
   window = priv->window;
   
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   
-  if ((MATEWNCK_IS_WINDOW (old_window) && window == old_window) ||
-       window == matewnck_screen_get_active_window (screen))
+  if ((WNCK_IS_WINDOW (old_window) && window == old_window) ||
+       window == wnck_screen_get_active_window (screen))
   {
     /* queue a draw to reflect that we are [no longer] the active window */
     gtk_widget_queue_draw (GTK_WIDGET (item));
@@ -530,8 +530,8 @@ on_screen_active_window_changed (MatewnckScreen    *screen,
 }
 
 static void
-on_screen_active_workspace_changed (MatewnckScreen    *screen,
-                                    MatewnckWorkspace *old_workspace,
+on_screen_active_workspace_changed (WnckScreen    *screen,
+                                    WnckWorkspace *old_workspace,
                                     TaskItem      *item)
 {
   g_return_if_fail (TASK_IS_ITEM (item));
@@ -540,7 +540,7 @@ on_screen_active_workspace_changed (MatewnckScreen    *screen,
 }
 
 static void
-on_screen_active_viewport_changed (MatewnckScreen    *screen,
+on_screen_active_viewport_changed (WnckScreen    *screen,
                                    TaskItem      *item)
 {
   g_return_if_fail (TASK_IS_ITEM (item));
@@ -549,15 +549,15 @@ on_screen_active_viewport_changed (MatewnckScreen    *screen,
 }
 
 static void
-on_screen_window_closed (MatewnckScreen  *screen,
-                         MatewnckWindow  *window,
+on_screen_window_closed (WnckScreen  *screen,
+                         WnckWindow  *window,
                          TaskItem    *item)
 {
   TaskItemPrivate *priv;
  
   g_return_if_fail (TASK_IS_ITEM (item));
   priv = item->priv;
-  g_return_if_fail (MATEWNCK_IS_WINDOW (priv->window));
+  g_return_if_fail (WNCK_IS_WINDOW (priv->window));
 
   if (priv->window == window)
   {
@@ -583,17 +583,17 @@ activate_window (GtkWidget *widget)
 
   priv = TASK_ITEM (widget)->priv;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (priv->window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (priv->window), FALSE);
 
   active = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (widget), "drag-true"));
 
   if (active)
   { 
-    MatewnckWindow *window;
+    WnckWindow *window;
 
     window = priv->window;
-    if (MATEWNCK_IS_WINDOW (window))
-      matewnck_window_activate (window, time (NULL));
+    if (WNCK_IS_WINDOW (window))
+      wnck_window_activate (window, time (NULL));
   }
   
   g_object_set_data (G_OBJECT (widget), "drag-true", GINT_TO_POINTER (0));
@@ -636,7 +636,7 @@ task_item_setup_atk (TaskItem *item)
   TaskItemPrivate *priv;
   GtkWidget *widget;
   AtkObject *atk;
-  MatewnckWindow *window;
+  WnckWindow *window;
   
   g_return_if_fail (TASK_IS_ITEM (item));
   
@@ -644,11 +644,11 @@ task_item_setup_atk (TaskItem *item)
   priv = item->priv;
   window = priv->window;
   
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
   
   atk = gtk_widget_get_accessible (widget);
   atk_object_set_name (atk, _("Window Task Button"));
-  atk_object_set_description (atk, matewnck_window_get_name (window));
+  atk_object_set_description (atk, wnck_window_get_name (window));
   atk_object_set_role (atk, ATK_ROLE_PUSH_BUTTON);
 }
 
@@ -703,14 +703,14 @@ task_item_init (TaskItem *item)
 }
 
 GtkWidget *
-task_item_new (MatewnckWindow *window)
+task_item_new (WnckWindow *window)
 {
   GtkWidget *item = NULL;
   TaskItem *task;
   TaskItemPrivate *priv;
-  MatewnckScreen *screen;
+  WnckScreen *screen;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), item);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), item);
 
   item = g_object_new (TASK_TYPE_ITEM, 
                        "has-tooltip", TRUE,
@@ -725,7 +725,7 @@ task_item_new (MatewnckWindow *window)
   priv = task->priv;  
   priv->window = window;
   
-  screen = matewnck_window_get_screen (window);
+  screen = wnck_window_get_screen (window);
   priv->screen = screen;
   
   gtk_drag_dest_set (item,

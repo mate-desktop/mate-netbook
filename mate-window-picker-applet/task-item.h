@@ -23,7 +23,8 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 #define TASK_TYPE_ITEM (task_item_get_type ())
 
@@ -62,7 +63,7 @@ struct _TaskItemClass
 
 GType task_item_get_type (void) G_GNUC_CONST;
 
-GtkWidget * task_item_new (MatewnckWindow *window);
+GtkWidget * task_item_new (WnckWindow *window);
 
 GtkWidget * task_item_get_default (void);
 
