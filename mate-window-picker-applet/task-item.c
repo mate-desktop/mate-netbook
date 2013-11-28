@@ -154,7 +154,7 @@ task_item_set_visibility (TaskItem *item)
   
   TaskItemPrivate *priv = item->priv;
   
-  if (!MATEWNCK_IS_WINDOW (priv->window)) 
+  if (!MATEWNCK_IS_WINDOW (priv->window))
   {
     gtk_widget_hide (GTK_WIDGET (item));
     return;
@@ -168,7 +168,7 @@ task_item_set_visibility (TaskItem *item)
   gboolean show_all = task_list_get_show_all_windows (TASK_LIST (task_list_get_default ()));
   gboolean show_window = FALSE;
   
-  if (!matewnck_window_is_skip_tasklist (window)) 
+  if (!matewnck_window_is_skip_tasklist (window))
   {
     if (matewnck_workspace_is_virtual (workspace))
     {
@@ -462,7 +462,7 @@ on_blink (TaskItem *item)
 }
 
 static void
-on_window_state_changed (MatewnckWindow      *window, 
+on_window_state_changed (MatewnckWindow      *window,
                          MatewnckWindowState  changed_mask,
                          MatewnckWindowState  new_state,
                          TaskItem        *item)
@@ -521,7 +521,7 @@ on_screen_active_window_changed (MatewnckScreen    *screen,
   
   g_return_if_fail (MATEWNCK_IS_WINDOW (window));
   
-  if ((MATEWNCK_IS_WINDOW (old_window) && window == old_window) || 
+  if ((MATEWNCK_IS_WINDOW (old_window) && window == old_window) ||
        window == matewnck_screen_get_active_window (screen))
   {
     /* queue a draw to reflect that we are [no longer] the active window */
@@ -583,7 +583,7 @@ activate_window (GtkWidget *widget)
 
   priv = TASK_ITEM (widget)->priv;
   
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (priv->window), FALSE);  
+  g_return_val_if_fail (MATEWNCK_IS_WINDOW (priv->window), FALSE);
 
   active = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (widget), "drag-true"));
 
