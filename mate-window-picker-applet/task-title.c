@@ -173,7 +173,7 @@ on_icon_changed (MatewnckWindow *window, TaskTitle *title)
 }
 
 static void
-on_state_changed (MatewnckWindow *window, 
+on_state_changed (MatewnckWindow *window,
                   MatewnckWindowState changed_mask,
                   MatewnckWindowState new_state,
                   TaskTitle *title)
@@ -212,7 +212,7 @@ disconnect_window (TaskTitle *title)
 }
 
 static void
-on_active_window_changed (MatewnckScreen *screen, 
+on_active_window_changed (MatewnckScreen *screen,
                           MatewnckWindow *old_window,
                           TaskTitle   *title)
 {
@@ -227,7 +227,7 @@ on_active_window_changed (MatewnckScreen *screen,
   if (act_window)
     type = matewnck_window_get_window_type (act_window);
 
-  if (MATEWNCK_IS_WINDOW (act_window) 
+  if (MATEWNCK_IS_WINDOW (act_window)
       && matewnck_window_is_skip_tasklist (act_window)
       && type != MATEWNCK_WINDOW_DESKTOP)
     return;
@@ -239,7 +239,7 @@ on_active_window_changed (MatewnckScreen *screen,
  
   disconnect_window (title);
 
-  if (!MATEWNCK_IS_WINDOW (act_window) 
+  if (!MATEWNCK_IS_WINDOW (act_window)
         || matewnck_window_get_window_type (act_window) == MATEWNCK_WINDOW_DESKTOP)
   { 
     if (priv->show_home_title)
@@ -269,7 +269,7 @@ on_active_window_changed (MatewnckScreen *screen,
                               GTK_STOCK_CLOSE, GTK_ICON_SIZE_MENU);
 
     gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                                 matewnck_window_get_name (act_window));      
+                                 matewnck_window_get_name (act_window));
     gtk_widget_set_tooltip_text (priv->button, _("Close window"));
 
     g_signal_connect (act_window, "name-changed",
@@ -283,7 +283,7 @@ on_active_window_changed (MatewnckScreen *screen,
   }
 
   if (MATEWNCK_IS_WINDOW (act_window)
-      && !matewnck_window_is_maximized (act_window) 
+      && !matewnck_window_is_maximized (act_window)
       && (priv->show_home_title ? type != MATEWNCK_WINDOW_DESKTOP : 1))
   {
     gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
