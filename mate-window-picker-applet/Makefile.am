@@ -61,7 +61,8 @@ EXTRA_DIST =                                            \
 	$(service_in_files)                             \
 	$(ui_DATA)                                      \
 	$(convert_DATA)					\
-	$(gsettings_SCHEMAS_in_in)
+	$(gsettings_SCHEMAS_in_in)                      \
+	$(xmlui_DATA)
 
 CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in) $(gsettings_SCHEMAS)
 
