@@ -57,7 +57,7 @@ xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
 
 EXTRA_DIST =                                            \
-	org.mate.panel.MateWindowPicker.panel-applet.in.in            \
+	org.mate.panel.MateWindowPicker.mate-panel-applet.in.in \
 	$(service_in_files)                             \
 	$(ui_DATA)                                      \
 	$(convert_DATA)					\
