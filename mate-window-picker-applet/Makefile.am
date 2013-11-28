@@ -48,6 +48,8 @@ org.mate.panel.applet.MateWindowPickerFactory.service: $(service_in_files)
 
 @INTLTOOL_XML_NOMERGE_RULE@
 gsettings_SCHEMAS = org.mate.panel.applet.mate-window-picker-applet.gschema.xml
+
+gsettings_SCHEMAS_in_in = $(gsettings_SCHEMAS:.xml=.xml.in.in)
 @GSETTINGS_RULES@
 
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
