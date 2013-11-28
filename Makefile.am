@@ -1,5 +1,7 @@
 SUBDIRS = po maximus mate-window-picker-applet
 
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+
 EXTRA_DIST = intltool-merge.in intltool-extract.in intltool-update.in
 DISTCLEANFILES = intltool-merge intltool-update intltool-extract
 
