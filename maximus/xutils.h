@@ -21,8 +21,8 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#ifndef MATEWNCK_XUTILS_H
-#define MATEWNCK_XUTILS_H
+#ifndef WNCK_XUTILS_H
+#define WNCK_XUTILS_H
 
 #include <glib.h>
 #include <X11/Xlib.h>
@@ -33,17 +33,17 @@
 G_BEGIN_DECLS
 
 void
-_matewnck_error_trap_push (void);
+_wnck_error_trap_push (void);
 
 int
-_matewnck_error_trap_pop (void);
+_wnck_error_trap_pop (void);
 
 void
-_matewnck_get_wmclass (Window xwindow,
+_wnck_get_wmclass (Window xwindow,
                    char **res_class,
                    char **res_name);
 
 
 G_END_DECLS
 
-#endif /* MATEWNCK_XUTILS_H */
+#endif /* WNCK_XUTILS_H */

@@ -1,8 +1,9 @@
 AC_PREREQ(2.53)
 AC_INIT(mate-netbook, 1.6.0, [])
-AM_INIT_AUTOMAKE()
+AM_INIT_AUTOMAKE(tar-ustar no-dist-gzip dist-xz)
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(maximus/main.c)
+AC_CONFIG_MACRO_DIR([m4])
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -34,7 +35,7 @@ AC_SUBST(GCC_FLAGS)
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
                   gtk+-2.0
                   gio-2.0 
-                  libmatewnck
+                  libwnck-1.0
                   xtst
                   libfakekey
                   unique-1.0
@@ -47,7 +48,7 @@ PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS,
                   gtk+-2.0
                   glib-2.0
                   gio-2.0 
-                  libmatewnck
+                  libwnck-1.0
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)

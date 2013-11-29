@@ -19,7 +19,8 @@
 
 #include "task-title.h"
 
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 #include <mate-panel-applet.h>
 
 #include "task-list.h"
@@ -35,8 +36,8 @@ G_DEFINE_TYPE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
 
 struct _TaskTitlePrivate
 {
-  MatewnckScreen *screen;
-  MatewnckWindow *window;
+  WnckScreen *screen;
+  WnckWindow *window;
   GtkWidget *align;
   GtkWidget *box;
   GtkWidget *label;
@@ -56,7 +57,7 @@ on_close_clicked (GtkButton *button,
                   TaskTitle *title)
 {
   TaskTitlePrivate *priv;
-  MatewnckWindow *window;
+  WnckWindow *window;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = title->priv;
@@ -64,10 +65,10 @@ on_close_clicked (GtkButton *button,
   if (event->button != 1 || !priv->mouse_in_close_button)
     return FALSE;
 
-  window = matewnck_screen_get_active_window (priv->screen);
+  window = wnck_screen_get_active_window (priv->screen);
 
-  if (!MATEWNCK_IS_WINDOW (window)
-        || matewnck_window_get_window_type (window) == MATEWNCK_WINDOW_DESKTOP)
+  if (!WNCK_IS_WINDOW (window)
+        || wnck_window_get_window_type (window) == WNCK_WINDOW_DESKTOP)
   {
     gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
                                       LOGOUT, NULL);
@@ -76,7 +77,7 @@ on_close_clicked (GtkButton *button,
   {
     if (priv->window == window)
       disconnect_window (title);
-    matewnck_window_close (window, GDK_CURRENT_TIME);
+    wnck_window_close (window, GDK_CURRENT_TIME);
   }
   gtk_widget_queue_draw (GTK_WIDGET (title));
 
@@ -138,32 +139,32 @@ on_button_expose (GtkWidget *widget,
 }
 
 static void
-on_name_changed (MatewnckWindow *window, TaskTitle *title)
+on_name_changed (WnckWindow *window, TaskTitle *title)
 {
   TaskTitlePrivate *priv;
 
   g_return_if_fail (TASK_IS_TITLE (title));
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
 
   priv = title->priv;
   if (priv->window != window)
     return;
 
   gtk_label_set_text (GTK_LABEL (title->priv->label),
-                      matewnck_window_get_name (window));
+                      wnck_window_get_name (window));
   gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                               matewnck_window_get_name (window));
+                               wnck_window_get_name (window));
   gtk_widget_queue_draw (GTK_WIDGET (title));
 }
 
 
 static void
-on_icon_changed (MatewnckWindow *window, TaskTitle *title)
+on_icon_changed (WnckWindow *window, TaskTitle *title)
 {
   TaskTitlePrivate *priv;
 
   g_return_if_fail (TASK_IS_TITLE (title));
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
 
   priv = title->priv;
   if (priv->window != window)
@@ -173,21 +174,21 @@ on_icon_changed (MatewnckWindow *window, TaskTitle *title)
 }
 
 static void
-on_state_changed (MatewnckWindow *window, 
-                  MatewnckWindowState changed_mask,
-                  MatewnckWindowState new_state,
+on_state_changed (WnckWindow *window,
+                  WnckWindowState changed_mask,
+                  WnckWindowState new_state,
                   TaskTitle *title)
 {
   TaskTitlePrivate *priv;
 
   g_return_if_fail (TASK_IS_TITLE (title));
-  g_return_if_fail (MATEWNCK_IS_WINDOW (window));
+  g_return_if_fail (WNCK_IS_WINDOW (window));
 
   priv = title->priv;
   if (priv->window != window)
     return;
 
-  if (matewnck_window_is_maximized (window))
+  if (wnck_window_is_maximized (window))
   {
     gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
     gtk_widget_show (priv->box);
@@ -212,35 +213,35 @@ disconnect_window (TaskTitle *title)
 }
 
 static void
-on_active_window_changed (MatewnckScreen *screen, 
-                          MatewnckWindow *old_window,
+on_active_window_changed (WnckScreen *screen,
+                          WnckWindow *old_window,
                           TaskTitle   *title)
 {
   TaskTitlePrivate *priv;
-  MatewnckWindow *act_window;
-  MatewnckWindowType type = MATEWNCK_WINDOW_NORMAL;
+  WnckWindow *act_window;
+  WnckWindowType type = WNCK_WINDOW_NORMAL;
   
   g_return_if_fail (TASK_IS_TITLE (title));
   priv = title->priv;
 
-  act_window = matewnck_screen_get_active_window (screen);
+  act_window = wnck_screen_get_active_window (screen);
   if (act_window)
-    type = matewnck_window_get_window_type (act_window);
+    type = wnck_window_get_window_type (act_window);
 
-  if (MATEWNCK_IS_WINDOW (act_window) 
-      && matewnck_window_is_skip_tasklist (act_window)
-      && type != MATEWNCK_WINDOW_DESKTOP)
+  if (WNCK_IS_WINDOW (act_window)
+      && wnck_window_is_skip_tasklist (act_window)
+      && type != WNCK_WINDOW_DESKTOP)
     return;
 
-  if (type == MATEWNCK_WINDOW_DOCK
-      || type == MATEWNCK_WINDOW_SPLASHSCREEN
-      || type == MATEWNCK_WINDOW_MENU)
+  if (type == WNCK_WINDOW_DOCK
+      || type == WNCK_WINDOW_SPLASHSCREEN
+      || type == WNCK_WINDOW_MENU)
     return;
  
   disconnect_window (title);
 
-  if (!MATEWNCK_IS_WINDOW (act_window) 
-        || matewnck_window_get_window_type (act_window) == MATEWNCK_WINDOW_DESKTOP)
+  if (!WNCK_IS_WINDOW (act_window)
+        || wnck_window_get_window_type (act_window) == WNCK_WINDOW_DESKTOP)
   { 
     if (priv->show_home_title)
     {
@@ -264,12 +265,12 @@ on_active_window_changed (MatewnckScreen *screen,
   else
   {
     gtk_label_set_text (GTK_LABEL (priv->label), 
-                        matewnck_window_get_name (act_window));
+                        wnck_window_get_name (act_window));
     gtk_image_set_from_stock (GTK_IMAGE (priv->button_image), 
                               GTK_STOCK_CLOSE, GTK_ICON_SIZE_MENU);
 
     gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                                 matewnck_window_get_name (act_window));      
+                                 wnck_window_get_name (act_window));
     gtk_widget_set_tooltip_text (priv->button, _("Close window"));
 
     g_signal_connect (act_window, "name-changed",
@@ -282,14 +283,14 @@ on_active_window_changed (MatewnckScreen *screen,
     priv->window = act_window;
   }
 
-  if (MATEWNCK_IS_WINDOW (act_window)
-      && !matewnck_window_is_maximized (act_window) 
-      && (priv->show_home_title ? type != MATEWNCK_WINDOW_DESKTOP : 1))
+  if (WNCK_IS_WINDOW (act_window)
+      && !wnck_window_is_maximized (act_window)
+      && (priv->show_home_title ? type != WNCK_WINDOW_DESKTOP : 1))
   {
     gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
     gtk_widget_hide (priv->box);
   }
-  else if (!MATEWNCK_IS_WINDOW (act_window))
+  else if (!WNCK_IS_WINDOW (act_window))
   {
     if (task_list_get_desktop_visible (TASK_LIST (task_list_get_default ()))
         && priv->show_home_title)
@@ -322,21 +323,21 @@ static gboolean
 on_button_release (GtkWidget *title, GdkEventButton *event)
 {
   TaskTitlePrivate *priv;
-  MatewnckWindow *window;
+  WnckWindow *window;
   GtkWidget *menu;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = TASK_TITLE_GET_PRIVATE (title);
 
-  window = matewnck_screen_get_active_window (priv->screen);
+  window = wnck_screen_get_active_window (priv->screen);
 
-  g_return_val_if_fail (MATEWNCK_IS_WINDOW (window), FALSE);
+  g_return_val_if_fail (WNCK_IS_WINDOW (window), FALSE);
 
   if (event->button == 3)
   {
-    if (matewnck_window_get_window_type (window) != MATEWNCK_WINDOW_DESKTOP)
+    if (wnck_window_get_window_type (window) != WNCK_WINDOW_DESKTOP)
     {
-      menu = matewnck_action_menu_new (window);
+      menu = wnck_action_menu_new (window);
       gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL, 
                       event->button, event->time);
       return TRUE;
@@ -344,9 +345,9 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
   }
   else if (event->button == 1)
   {
-    if (event->type == GDK_2BUTTON_PRESS && matewnck_window_is_maximized (window))
+    if (event->type == GDK_2BUTTON_PRESS && wnck_window_is_maximized (window))
     {
-      matewnck_window_unmaximize (window);
+      wnck_window_unmaximize (window);
     }
   }
   
@@ -411,7 +412,7 @@ task_title_init (TaskTitle *title)
     	
   priv = title->priv = TASK_TITLE_GET_PRIVATE (title);
 
-  priv->screen = matewnck_screen_get_default ();
+  priv->screen = wnck_screen_get_default ();
   priv->window = NULL;
 
   /* FIXME we can add an option for this in future */

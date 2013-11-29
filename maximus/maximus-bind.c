@@ -27,7 +27,8 @@
 
 #include <gio/gio.h>
 
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 #include <X11/Xlib.h>
 #include <X11/Xresource.h>
@@ -67,7 +68,7 @@ G_DEFINE_TYPE (MaximusBind, maximus_bind, G_TYPE_OBJECT);
 struct _MaximusBindPrivate
 {
   FakeKey *fk;
-  MatewnckScreen *screen;
+  WnckScreen *screen;
   GSettings *settings;
 
   gchar *binding;
@@ -83,16 +84,16 @@ typedef struct
 } MaximusRule;
 
 static const gchar *
-get_fullscreen_keystroke (GList *rules, MatewnckWindow *window)
+get_fullscreen_keystroke (GList *rules, WnckWindow *window)
 {
-  MatewnckClassGroup *group;
+  WnckClassGroup *group;
   const gchar *class_name;
   GList *r;
 
-  group = matewnck_window_get_class_group (window);
-  class_name = matewnck_class_group_get_name (group);
+  group = wnck_window_get_class_group (window);
+  class_name = wnck_class_group_get_name (group);
 
-  g_debug ("Searching rules for %s:\n", matewnck_window_get_name (window));
+  g_debug ("Searching rules for %s:\n", wnck_window_get_name (window));
   
   for (r = rules; r; r = r->next)
   {
@@ -112,14 +113,14 @@ get_fullscreen_keystroke (GList *rules, MatewnckWindow *window)
 }
 
 static const gchar *
-get_unfullscreen_keystroke (GList *rules, MatewnckWindow *window)
+get_unfullscreen_keystroke (GList *rules, WnckWindow *window)
 {
-  MatewnckClassGroup *group;
+  WnckClassGroup *group;
   const gchar *class_name;
   GList *r;
 
-  group = matewnck_window_get_class_group (window);
-  class_name = matewnck_class_group_get_name (group);
+  group = wnck_window_get_class_group (window);
+  class_name = wnck_class_group_get_name (group);
 
   for (r = rules; r; r = r->next)
   {
@@ -138,16 +139,16 @@ real_fullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
   GdkDisplay UNUSED_VARIABLE *display;
-  MatewnckWindow *active;
+  WnckWindow *active;
   const gchar *keystroke;
 
   priv = bind->priv;
 
   display = gdk_display_get_default ();
-  active = matewnck_screen_get_active_window (priv->screen);
+  active = wnck_screen_get_active_window (priv->screen);
 
-  if (!MATEWNCK_IS_WINDOW (active) 
-        || matewnck_window_get_window_type (active) != MATEWNCK_WINDOW_NORMAL)
+  if (!WNCK_IS_WINDOW (active)
+        || wnck_window_get_window_type (active) != WNCK_WINDOW_NORMAL)
     return FALSE;
 
   keystroke = get_fullscreen_keystroke (priv->rules, active);
@@ -179,7 +180,7 @@ real_fullscreen (MaximusBind *bind)
      }
   }
 
-  if (!matewnck_window_is_fullscreen (active))
+  if (!wnck_window_is_fullscreen (active))
   {
     g_debug ("Sending fullscreen F11 event");
     fakekey_press_keysym (priv->fk, XK_F11, 0);
@@ -188,17 +189,17 @@ real_fullscreen (MaximusBind *bind)
 
   sleep (STATE_CHANGED_SLEEP);
 
-  if (!matewnck_window_is_fullscreen (active))
+  if (!wnck_window_is_fullscreen (active))
   {
-    g_debug ("Forcing fullscreen matewnck event");
-    matewnck_window_set_fullscreen (active, TRUE);
+    g_debug ("Forcing fullscreen wnck event");
+    wnck_window_set_fullscreen (active, TRUE);
   }
 
   return FALSE;
 }
 
 static void
-fullscreen (MaximusBind *bind, MatewnckWindow *window)
+fullscreen (MaximusBind *bind, WnckWindow *window)
 {
   MaximusBindPrivate UNUSED_VARIABLE *priv;
   
@@ -212,16 +213,16 @@ real_unfullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
   GdkDisplay UNUSED_VARIABLE *display;
-  MatewnckWindow *active;
+  WnckWindow *active;
   const gchar *keystroke;
 
   priv = bind->priv;
 
   display = gdk_display_get_default ();
-  active = matewnck_screen_get_active_window (priv->screen);
+  active = wnck_screen_get_active_window (priv->screen);
 
-  if (!MATEWNCK_IS_WINDOW (active) 
-        || matewnck_window_get_window_type (active) != MATEWNCK_WINDOW_NORMAL)
+  if (!WNCK_IS_WINDOW (active)
+        || wnck_window_get_window_type (active) != WNCK_WINDOW_NORMAL)
     return FALSE;  
 
   keystroke = get_unfullscreen_keystroke (priv->rules, active);
@@ -252,7 +253,7 @@ real_unfullscreen (MaximusBind *bind)
       return FALSE;
      }
   }  
-  if (matewnck_window_is_fullscreen (active))
+  if (wnck_window_is_fullscreen (active))
   {
     g_debug ("Sending un-fullscreen F11 event");
     fakekey_press_keysym (priv->fk, XK_F11, 0);
@@ -261,17 +262,17 @@ real_unfullscreen (MaximusBind *bind)
 
   sleep (STATE_CHANGED_SLEEP);
 
-  if (matewnck_window_is_fullscreen (active))
+  if (wnck_window_is_fullscreen (active))
   {
-    g_debug ("Forcing un-fullscreen matewnck event");
-    matewnck_window_set_fullscreen (active, FALSE);
+    g_debug ("Forcing un-fullscreen wnck event");
+    wnck_window_set_fullscreen (active, FALSE);
   }
   
   return FALSE;
 }
 
 static void
-unfullscreen (MaximusBind *bind, MatewnckWindow *window)
+unfullscreen (MaximusBind *bind, WnckWindow *window)
 {
   MaximusBindPrivate UNUSED_VARIABLE *priv;
   
@@ -285,17 +286,17 @@ static void
 on_binding_activated (gchar *keystring, MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  MatewnckWindow *active;
+  WnckWindow *active;
   
   g_return_if_fail (MAXIMUS_IS_BIND (bind));
   priv = bind->priv;
 
-  active = matewnck_screen_get_active_window (priv->screen);
+  active = wnck_screen_get_active_window (priv->screen);
 
-  if (matewnck_window_get_window_type (active) != MATEWNCK_WINDOW_NORMAL)
+  if (wnck_window_get_window_type (active) != WNCK_WINDOW_NORMAL)
     return;
 
-  if (matewnck_window_is_fullscreen (active))
+  if (wnck_window_is_fullscreen (active))
   {
     unfullscreen (bind, active);
   }
@@ -462,12 +463,12 @@ maximus_bind_init (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
   GdkDisplay *display = gdk_display_get_default ();
-  MatewnckScreen *screen;
+  WnckScreen *screen;
 	
   priv = bind->priv = MAXIMUS_BIND_GET_PRIVATE (bind);
 
   priv->fk = fakekey_init (GDK_DISPLAY_XDISPLAY (display));
-  priv->screen = screen = matewnck_screen_get_default ();
+  priv->screen = screen = wnck_screen_get_default ();
   priv->rules = NULL;
   priv->settings = g_settings_new (BIND_SCHEMA);
 

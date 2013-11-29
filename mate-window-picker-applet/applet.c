@@ -28,7 +28,8 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
@@ -138,7 +139,7 @@ cw_applet_fill (MatePanelApplet *applet,
                 const gchar *iid, 
                 gpointer     data)
 {
-  MatewnckScreen *screen;
+  WnckScreen *screen;
   WinPickerApp *app;
   GtkWidget *eb, *tasks, *title;
   gchar *ui_path;
@@ -152,11 +153,11 @@ cw_applet_fill (MatePanelApplet *applet,
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
-  matewnck_set_client_type (MATEWNCK_CLIENT_TYPE_PAGER);
+  wnck_set_client_type (WNCK_CLIENT_TYPE_PAGER);
   
   app = g_slice_new0 (WinPickerApp);
   mainapp = app;
-  screen = matewnck_screen_get_default ();
+  screen = wnck_screen_get_default ();
 
   /* prepare to disable Maximus */
   object_class = G_OBJECT_GET_CLASS (G_OBJECT(applet));

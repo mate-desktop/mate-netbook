@@ -32,6 +32,8 @@ mate_maximus_SOURCES = \
 
 @INTLTOOL_XML_NOMERGE_RULE@
 gsettings_SCHEMAS = org.mate.maximus.gschema.xml
+
+gsettings_SCHEMAS_in_in = $(gsettings_SCHEMAS:.xml=.xml.in.in)
 @GSETTINGS_RULES@
 
 %.gschema.xml.in: %.gschema.xml.in.in Makefile
@@ -43,4 +45,8 @@ convert_DATA = mate-maximus.convert
 desktopdir=$(sysconfdir)/xdg/autostart
 dist_desktop_DATA=mate-maximus-autostart.desktop
 
-EXTRA_DIST =  $(schema_DATA) $(convert_DATA)
+CLEANFILES = $(gsettings_SCHEMAS) \
+	$(gsettings_SCHEMAS_in)
+
+
+EXTRA_DIST =  $(gsettings_SCHEMAS_in_in) $(convert_DATA)

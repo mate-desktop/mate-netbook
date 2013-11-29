@@ -20,7 +20,8 @@
 #include "task-list.h"
 #include "task-item.h"
 
-#include <libmatewnck/libmatewnck.h>
+#define WNCK_I_KNOW_THIS_IS_UNSTABLE
+#include <libwnck/libwnck.h>
 
 G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_HBOX);
 
@@ -30,7 +31,7 @@ G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_HBOX);
 
 struct _TaskListPrivate
 {
-  MatewnckScreen *screen;
+  WnckScreen *screen;
   GHashTable *win_table;
   guint timer;
   guint counter;
@@ -65,22 +66,22 @@ on_task_item_closed (TaskItem *item,
 }
 
 static void
-on_window_opened (MatewnckScreen *screen, 
-                  MatewnckWindow *window,
+on_window_opened (WnckScreen *screen,
+                  WnckWindow *window,
                   TaskList   *list)
 {
   TaskListPrivate *priv;
-  MatewnckWindowType type;
+  WnckWindowType type;
 
   g_return_if_fail (TASK_IS_LIST (list));
   priv = list->priv;
 
-  type = matewnck_window_get_window_type (window);
+  type = wnck_window_get_window_type (window);
 
-  if (type == MATEWNCK_WINDOW_DESKTOP
-      || type == MATEWNCK_WINDOW_DOCK
-      || type == MATEWNCK_WINDOW_SPLASHSCREEN
-      || type == MATEWNCK_WINDOW_MENU)
+  if (type == WNCK_WINDOW_DESKTOP
+      || type == WNCK_WINDOW_DOCK
+      || type == WNCK_WINDOW_SPLASHSCREEN
+      || type == WNCK_WINDOW_MENU)
     return;
     
   GtkWidget *item = task_item_new (window);
@@ -175,10 +176,10 @@ static void
 task_list_init (TaskList *list)
 {
   TaskListPrivate *priv;
- 	
+
   priv = list->priv = TASK_LIST_GET_PRIVATE (list);
 
-  priv->screen = matewnck_screen_get_default ();
+  priv->screen = wnck_screen_get_default ();
 
   priv->win_table = g_hash_table_new (NULL, NULL);
 
@@ -224,14 +225,14 @@ task_list_get_desktop_visible (TaskList *list)
 
   g_return_val_if_fail (TASK_IS_LIST (list), TRUE);
 
-  windows = matewnck_screen_get_windows (list->priv->screen);
+  windows = wnck_screen_get_windows (list->priv->screen);
   for (w = windows; w; w = w->next)
   {
-    MatewnckWindow *window;
+    WnckWindow *window;
     
     window = w->data;
 
-    if (MATEWNCK_IS_WINDOW (window) && !matewnck_window_is_minimized (window))
+    if (WNCK_IS_WINDOW (window) && !wnck_window_is_minimized (window))
       all_minimised = FALSE;
   }
 
