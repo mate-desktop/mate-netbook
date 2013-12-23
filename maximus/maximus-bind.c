@@ -146,7 +146,7 @@ real_fullscreen (MaximusBind *bind)
   display = gdk_display_get_default ();
   active = matewnck_screen_get_active_window (priv->screen);
 
-  if (!MATEWNCK_IS_WINDOW (active) 
+  if (!MATEWNCK_IS_WINDOW (active)
         || matewnck_window_get_window_type (active) != MATEWNCK_WINDOW_NORMAL)
     return FALSE;
 
@@ -220,7 +220,7 @@ real_unfullscreen (MaximusBind *bind)
   display = gdk_display_get_default ();
   active = matewnck_screen_get_active_window (priv->screen);
 
-  if (!MATEWNCK_IS_WINDOW (active) 
+  if (!MATEWNCK_IS_WINDOW (active)
         || matewnck_window_get_window_type (active) != MATEWNCK_WINDOW_NORMAL)
     return FALSE;  
 

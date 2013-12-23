@@ -65,7 +65,7 @@ on_task_item_closed (TaskItem *item,
 }
 
 static void
-on_window_opened (MatewnckScreen *screen, 
+on_window_opened (MatewnckScreen *screen,
                   MatewnckWindow *window,
                   TaskList   *list)
 {
@@ -175,7 +175,7 @@ static void
 task_list_init (TaskList *list)
 {
   TaskListPrivate *priv;
- 	
+
   priv = list->priv = TASK_LIST_GET_PRIVATE (list);
 
   priv->screen = matewnck_screen_get_default ();

@@ -306,7 +306,7 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
   /* Make sure the window supports maximising */
   actions = matewnck_window_get_actions (window);
   if (actions & MATEWNCK_WINDOW_ACTION_RESIZE
-      && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY 
+      && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
       && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
       && actions & MATEWNCK_WINDOW_ACTION_MAXIMIZE)
     ; /* Is good to maximise */
@@ -349,7 +349,7 @@ is_excluded (MaximusApp *app, MatewnckWindow *window)
 extern gboolean no_maximize;
 
 static void
-on_window_opened (MatewnckScreen  *screen, 
+on_window_opened (MatewnckScreen  *screen,
                   MatewnckWindow  *window,
                   MaximusApp *app)
 { 
