@@ -42,7 +42,7 @@ service_in_files = org.mate.panel.applet.MateWindowPickerFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
 org.mate.panel.applet.MateWindowPickerFactory.service: $(service_in_files)
-	$(AM_V_GEN)sed \
+	$(AM_V_GEN) $(SED) \
 	-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 	$< > $@
 
@@ -58,15 +58,20 @@ gsettings_SCHEMAS_in_in = $(gsettings_SCHEMAS:.xml=.xml.in.in)
 xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
 
-EXTRA_DIST =                                            \
+EXTRA_DIST = \
 	org.mate.panel.MateWindowPicker.mate-panel-applet.in.in \
-	$(service_in_files)                             \
-	$(ui_DATA)                                      \
-	$(convert_DATA)					\
-	$(gsettings_SCHEMAS_in_in)                      \
+	$(service_in_files) \
+	$(ui_DATA) \
+	$(convert_DATA) \
+	$(gsettings_SCHEMAS_in_in) \
 	$(xmlui_DATA)
 
-CLEANFILES = $(applet_DATA) $(applet_DATA).in $(service_DATA) $(gsettings_SCHEMAS_in) $(gsettings_SCHEMAS)
+CLEANFILES = \
+	$(applet_DATA) \
+	$(applet_DATA).in \
+	$(gsettings_SCHEMAS_in) \
+	$(gsettings_SCHEMAS) \
+	$(service_DATA)
 
 clean:
-	rm -f $(desktop_DATA) $(desktop_DATA).in $(server_DATA) $(server_DATA).in
+	rm -f $(desktop_DATA) $(desktop_DATA).in
