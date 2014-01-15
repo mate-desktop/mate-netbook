@@ -43,7 +43,11 @@ _wnck_error_trap_push (void)
 int
 _wnck_error_trap_pop (void)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+  XSync (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), False);
+#else
   XSync (gdk_display, False);
+#endif
   return gdk_error_trap_pop ();
 }
 
@@ -78,7 +82,12 @@ _wnck_get_wmclass (Window xwindow,
   ch.res_name = NULL;
   ch.res_class = NULL;
 
-  XGetClassHint (gdk_display, xwindow,
+#if GTK_CHECK_VERSION (3, 0, 0)
+  XGetClassHint (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+#else
+  XGetClassHint (gdk_display,
+#endif
+                 xwindow,
                  &ch);
 
   _wnck_error_trap_pop ();

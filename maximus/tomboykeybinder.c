@@ -86,7 +86,7 @@ grab_ungrab_with_ignorable_modifiers (GdkWindow *rootwin,
 			XGrabKey (GDK_WINDOW_XDISPLAY (rootwin), 
 				  binding->keycode, 
 				  binding->modifiers | mod_masks [i], 
-				  GDK_WINDOW_XWINDOW (rootwin), 
+				  GDK_WINDOW_XID (rootwin), 
 				  False, 
 				  GrabModeAsync,
 				  GrabModeAsync);
@@ -94,7 +94,7 @@ grab_ungrab_with_ignorable_modifiers (GdkWindow *rootwin,
 			XUngrabKey (GDK_WINDOW_XDISPLAY (rootwin),
 				    binding->keycode,
 				    binding->modifiers | mod_masks [i], 
-				    GDK_WINDOW_XWINDOW (rootwin));
+				    GDK_WINDOW_XID (rootwin));
 		}
 	}
 }
@@ -309,7 +309,11 @@ tomboy_keybinder_is_modifier (guint keycode)
 	XModifierKeymap *mod_keymap;
 	gboolean retval = FALSE;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	mod_keymap = XGetModifierMapping (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()));
+#else
 	mod_keymap = XGetModifierMapping (gdk_display);
+#endif
 
 	map_size = 8 * mod_keymap->max_keypermod;
 
