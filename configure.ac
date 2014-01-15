@@ -32,23 +32,44 @@ AM_GLIB_GNU_GETTEXT
 AC_SUBST(GCC_FLAGS)
 
 
+AC_MSG_CHECKING([which gtk+ version to compile against])
+AC_ARG_WITH([gtk],
+  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
+  [case "$with_gtk" in
+     2.0|3.0) ;;
+     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+   esac],
+  [with_gtk=2.0])
+AC_MSG_RESULT([$with_gtk])
+
+case "$with_gtk" in
+  2.0) GTK_API_VERSION=2.0
+       LIBWNCK_API_VERSION=1.0
+       LIBUNIQUE_API_VERSION=1.0
+       ;;
+  3.0) GTK_API_VERSION=3.0
+       LIBWNCK_API_VERSION=3.0
+       LIBUNIQUE_API_VERSION=3.0
+       ;;
+esac
+
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
-                  gtk+-2.0
+                  gtk+-$GTK_API_VERSION
                   gio-2.0 
-                  libwnck-1.0
+                  libwnck-$LIBWNCK_API_VERSION
                   xtst
                   libfakekey
-                  unique-1.0
+                  unique-$LIBUNIQUE_API_VERSION
                   )
 AC_SUBST(MAXIMUS_DEPS_CFLAGS)
 AC_SUBST(MAXIMUS_DEPS_LIBS)
 
 PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS, 
                   libmatepanelapplet-4.0
-                  gtk+-2.0
+                  gtk+-$GTK_API_VERSION
                   glib-2.0
                   gio-2.0 
-                  libwnck-1.0
+                  libwnck-$LIBWNCK_API_VERSION
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
@@ -61,3 +82,7 @@ maximus/Makefile
 mate-window-picker-applet/Makefile
 po/Makefile.in
 ])
+
+echo "
+    GTK+ API version:           ${GTK_API_VERSION}
+"
