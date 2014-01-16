@@ -66,7 +66,9 @@ update_hints (TaskItem *item)
 {
   GtkWidget *parent;
   GtkWidget *widget;
+  GtkAllocation *allocation;
   WnckWindow *window;
+  GdkWindow *gdkwindow;
   gint x, y, x1, y1;
 
   widget = GTK_WIDGET (item);
@@ -76,32 +78,37 @@ update_hints (TaskItem *item)
   if (!GTK_IS_WIDGET (widget)) return;
 
   /* Skip invisible windows */
-  if (!GTK_WIDGET_VISIBLE (widget)) return;
+  if (!gtk_widget_get_visible (widget)) return;
 
   x = y = 0;
 
   /* Recursively compute the button's coordinates */
-  for (parent = widget; parent; parent = parent->parent)
+  for (parent = widget; parent; parent = gtk_widget_get_parent (parent))
   {
-    if (parent->parent)
+    if (gtk_widget_get_parent (parent))
     {
-      x += parent->allocation.x;
-      y += parent->allocation.y;
+      gtk_widget_get_allocation (parent, allocation);
+      x += allocation->x;
+      y += allocation->y;
     }
     else
     {
       x1 = y1 = 0;
-      if (GDK_IS_WINDOW (parent->window))
-        gdk_window_get_origin (parent->window, &x1, &y1);
+      gdkwindow = gtk_widget_get_window (parent);
+#if !GTK_CHECK_VERSION (3, 0, 0)
+      if (GDK_IS_WINDOW (gdkwindow))
+#endif
+        gdk_window_get_origin (gdkwindow, &x1, &y1);
       x += x1; y += y1;
       break;
     }
   }
     
   /* Set the minimize hint for the window */
+  gtk_widget_get_allocation (widget, allocation);
   wnck_window_set_icon_geometry (window, x, y,
-                                 widget->allocation.width,
-                                 widget->allocation.height);
+                                 allocation->width,
+                                 allocation->height);
 }
 
 static gboolean 
@@ -191,6 +198,26 @@ task_item_set_visibility (TaskItem *item)
   }
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+
+static void
+task_item_get_preferred_width (GtkWidget *widget,
+                               gint      *minimal_width,
+                               gint      *natural_width)
+{
+  *minimal_width = *natural_width = DEFAULT_TASK_ITEM_WIDTH;
+}
+
+static void
+task_item_get_preferred_height (GtkWidget *widget,
+                                gint      *minimal_height,
+                                gint      *natural_height)
+{
+  *minimal_height = *natural_height = DEFAULT_TASK_ITEM_HEIGHT;
+}
+
+#else
+
 static void 
 task_item_size_request (GtkWidget      *widget,
 		       GtkRequisition *requisition)
@@ -199,6 +226,8 @@ task_item_size_request (GtkWidget      *widget,
   requisition->width  = DEFAULT_TASK_ITEM_WIDTH;
   requisition->height = DEFAULT_TASK_ITEM_HEIGHT;
 }
+
+#endif
 
 static GdkPixbuf *
 task_item_sized_pixbuf_for_window (TaskItem   *item,
@@ -247,10 +276,17 @@ task_item_sized_pixbuf_for_window (TaskItem   *item,
   return pbuf;
 }
 static gboolean
+#if GTK_CHECK_VERSION (3, 0, 0)
+task_item_draw (GtkWidget      *widget,
+		        cairo_t *cr)
+#else
 task_item_expose_event (GtkWidget      *widget,
 		        GdkEventExpose *event)
+#endif
 {
+#if !GTK_CHECK_VERSION (3, 0, 0)
   cairo_t *cr;
+#endif
   TaskItem *item;
   GdkRectangle area;
   TaskItemPrivate *priv;
@@ -259,7 +295,9 @@ task_item_expose_event (GtkWidget      *widget,
   
   g_return_val_if_fail (widget != NULL, FALSE);
   g_return_val_if_fail (TASK_IS_ITEM (widget), FALSE);
+#if !GTK_CHECK_VERSION (3, 0, 0)
   g_return_val_if_fail (event != NULL, FALSE);
+#endif
   
   item = TASK_ITEM (widget);
   priv = item->priv;
@@ -267,7 +305,9 @@ task_item_expose_event (GtkWidget      *widget,
   g_return_val_if_fail (WNCK_IS_WINDOW (priv->window), FALSE);
   
   area = priv->area;
+#if !GTK_CHECK_VERSION (3, 0, 0)
   cr = gdk_cairo_create (event->window);
+#endif
   
   pbuf = priv->pixbuf;
   desat = NULL;
@@ -354,7 +394,9 @@ task_item_expose_event (GtkWidget      *widget,
   if (GDK_IS_PIXBUF (desat))
     g_object_unref (desat);
  
+#if !GTK_CHECK_VERSION (3, 0, 0)
   cairo_destroy (cr);
+#endif
   
   return FALSE;
 }
@@ -679,8 +721,14 @@ task_item_class_init (TaskItemClass *klass)
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
   obj_class->finalize = task_item_finalize;
+#if GTK_CHECK_VERSION (3, 0, 0)
+  widget_class->draw = task_item_draw;
+  widget_class->get_preferred_width = task_item_get_preferred_width;
+  widget_class->get_preferred_height = task_item_get_preferred_height;
+#else
   widget_class->expose_event = task_item_expose_event;
   widget_class->size_request = task_item_size_request;
+#endif
 
   g_type_class_add_private (obj_class, sizeof (TaskItemPrivate));
   

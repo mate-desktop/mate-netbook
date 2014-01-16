@@ -35,6 +35,10 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_rc_style_unref g_object_ref
+#endif
+
 #include "task-list.h"
 #include "task-title.h"
 
@@ -60,7 +64,11 @@ static gpointer parent_class;
 static void cw_panel_background_changed (MatePanelApplet               *applet,
                                          MatePanelAppletBackgroundType  type,
 				         GdkColor                  *colour,
+#if GTK_CHECK_VERSION (3, 0, 0)
+				         cairo_pattern_t           *pattern,
+#else
 				         GdkPixmap                 *pixmap,
+#endif
                                          gpointer                   user_data);
 static void display_about_dialog (GtkAction    *action,
                                   WinPickerApp *applet);
@@ -229,7 +237,11 @@ static void
 cw_panel_background_changed (MatePanelApplet               *applet,
                              MatePanelAppletBackgroundType  type,
                              GdkColor                  *colour,
+#if GTK_CHECK_VERSION (3, 0, 0)
+                             cairo_pattern_t           *pattern,
+#else
                              GdkPixmap                 *pixmap,
+#endif
                              gpointer                   user_data)
 {
   GtkRcStyle *rc_style;
@@ -256,12 +268,16 @@ cw_panel_background_changed (MatePanelApplet               *applet,
       break;
     
     case PANEL_PIXMAP_BACKGROUND:
+#if GTK_CHECK_VERSION (3, 0, 0)
+      /* FIXME */
+#else
       style = gtk_style_copy (GTK_WIDGET (applet)->style);
       if (style->bg_pixmap[GTK_STATE_NORMAL])
         g_object_unref (style->bg_pixmap[GTK_STATE_NORMAL]);
       style->bg_pixmap[GTK_STATE_NORMAL] = g_object_ref (pixmap);
       gtk_widget_set_style (GTK_WIDGET (applet), style);
       g_object_unref (style);
+#endif
 
       /*style = gtk_style_copy (mainapp->title->style);
       if (style->bg_pixmap[GTK_STATE_NORMAL])
