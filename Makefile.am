@@ -2,7 +2,7 @@ SUBDIRS = po maximus mate-window-picker-applet
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-EXTRA_DIST = intltool-merge.in intltool-extract.in intltool-update.in
+EXTRA_DIST = autogen.sh intltool-merge.in intltool-extract.in intltool-update.in
 DISTCLEANFILES = intltool-merge intltool-update intltool-extract
 
 MAINTAINERCLEANFILES = aclocal.m4 compile config.guess config.sub configure depcomp install-sh ltmain.sh Makefile.in missing
