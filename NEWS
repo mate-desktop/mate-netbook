@@ -1,5 +1,5 @@
-1.7.0
-=====
+1.7.90
+======
 
  * Add GTK3 support
  * Use libwnck instead of libmatewnck
