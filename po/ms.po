@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Puretech <terjemah.puretech@gmail.com>, 2012.
+# abuyop <abuyop@gmail.com>, 2013
+# Puretech <terjemah.puretech@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-26 11:51+0200\n"
-"PO-Revision-Date: 2012-11-02 12:02+0000\n"
-"Last-Translator: Puretech <terjemah.puretech@gmail.com>\n"
+"PO-Revision-Date: 2013-08-11 02:29+0000\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/MATE/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +38,7 @@ msgstr "Keutamaan"
 
 #: ../mate-window-picker-applet/applet.c:317
 msgid "Show windows from all workspaces"
-msgstr "Papar tetingkap dari semua ruangkerja"
+msgstr "Papar tetingkap dari semua ruang kerja"
 
 #: ../mate-window-picker-applet/task-title.c:251
 #: ../mate-window-picker-applet/task-title.c:258
