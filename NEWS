@@ -1,3 +1,10 @@
+1.7.0
+=====
+
+ * Add GTK3 support
+ * Use libwnck instead of libmatewnck
+ * Fix long delay with different window managers than marco
+
 1.5.0
 =====
 
