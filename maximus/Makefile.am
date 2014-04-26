@@ -45,8 +45,10 @@ convert_DATA = mate-maximus.convert
 desktopdir=$(sysconfdir)/xdg/autostart
 dist_desktop_DATA=mate-maximus-autostart.desktop
 
+man_MANS = mate-maximus.1
+
 CLEANFILES = $(gsettings_SCHEMAS) \
 	$(gsettings_SCHEMAS_in)
 
 
-EXTRA_DIST =  $(gsettings_SCHEMAS_in_in) $(convert_DATA)
+EXTRA_DIST =  $(gsettings_SCHEMAS_in_in) $(convert_DATA) $(man_MANS)
