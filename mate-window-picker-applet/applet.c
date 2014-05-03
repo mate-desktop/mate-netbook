@@ -31,6 +31,8 @@
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
 
+#include <libmate-desktop/mate-aboutdialog.h>
+
 #include <gio/gio.h>
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
@@ -296,7 +298,7 @@ display_about_dialog (GtkAction       *action,
 {
   GtkWidget *panel_about_dialog;
 	
-  panel_about_dialog = gtk_about_dialog_new ();
+  panel_about_dialog = mate_about_dialog_new ();
 
   g_object_set (panel_about_dialog,
                 "name", _("Window Picker"),
@@ -305,14 +307,13 @@ display_about_dialog (GtkAction       *action,
                 "authors", close_window_authors,
                 "logo-icon-name", "preferences-system-windows",
                 "copyright", "Copyright \xc2\xa9 2008 Canonical Ltd\n"
-                             "Copyright \xc2\xa9 2013 Stefano Karapetsas",
+                             "Copyright \xc2\xa9 2013-2014 Stefano Karapetsas",
                 NULL);
 
   gtk_widget_show (panel_about_dialog);
 
   g_signal_connect (panel_about_dialog, "response",
                     G_CALLBACK (gtk_widget_destroy), NULL);
-	
 
   gtk_window_present (GTK_WINDOW (panel_about_dialog));
 }
