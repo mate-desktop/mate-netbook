@@ -106,9 +106,11 @@ update_hints (TaskItem *item)
     
   /* Set the minimize hint for the window */
   gtk_widget_get_allocation (widget, allocation);
-  wnck_window_set_icon_geometry (window, x, y,
+  if (allocation) {	
+  	wnck_window_set_icon_geometry (window, x, y,
                                  allocation->width,
                                  allocation->height);
+  }
 }
 
 static gboolean 

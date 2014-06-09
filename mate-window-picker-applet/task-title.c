@@ -407,7 +407,7 @@ on_expose (GtkWidget *eb, GdkEventExpose *event)
   style = gtk_widget_get_style (eb);
   state = gtk_widget_get_state (eb);
 
-  if (state == GTK_STATE_ACTIVE)
+  if (state == GTK_STATE_ACTIVE && allocation)
     gtk_paint_box (style,
 #if GTK_CHECK_VERSION (3, 0, 0)
                  cr,
