@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009.
-# Xuacu Saturio <xuacusk8@gmail.com>, 2013.
+# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
+# Ḷḷumex03 <l.lumex03.tornes@gmail.com>, 2014
+# Xuacu Saturio <xuacusk8@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-26 11:51+0200\n"
-"PO-Revision-Date: 2013-01-21 23:39+0000\n"
-"Last-Translator: Xuacu Saturio <xuacusk8@gmail.com>\n"
+"PO-Revision-Date: 2014-06-13 09:59+0000\n"
+"Last-Translator: Ḷḷumex03 <l.lumex03.tornes@gmail.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/MATE/language/ast/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,7 +31,7 @@ msgstr "Tocante _a"
 #: ../mate-window-picker-applet/applet.c:266
 #: ../mate-window-picker-applet/applet.c:267
 msgid "Window Picker"
-msgstr "Esbillador de ventanes"
+msgstr "Seleutor de ventanes"
 
 #: ../mate-window-picker-applet/applet.c:301
 msgid "Preferences"
@@ -38,7 +39,7 @@ msgstr "Preferencies"
 
 #: ../mate-window-picker-applet/applet.c:317
 msgid "Show windows from all workspaces"
-msgstr "Amosar les ventanes de tolos espacios de trabayu"
+msgstr "Amosar les ventanes de toles estayes de trabayu"
 
 #: ../mate-window-picker-applet/task-title.c:251
 #: ../mate-window-picker-applet/task-title.c:258
@@ -53,11 +54,11 @@ msgstr "Home"
 #: ../mate-window-picker-applet/task-title.c:305
 #: ../mate-window-picker-applet/task-title.c:497
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Acabar la sesión, camudar d'usuariu, bloquear la pantalla o apagar l'equipu"
+msgstr "Zarrar sesión, camudar d'usuariu, bloquiar la pantalla o apagar l'equipu"
 
 #: ../mate-window-picker-applet/task-title.c:277
 msgid "Close window"
-msgstr "Pesllar ventana"
+msgstr "Zarrar ventana"
 
 #: ../mate-window-picker-applet/task-title.c:460
 msgid "Close"
@@ -65,7 +66,7 @@ msgstr "Zarrar"
 
 #: ../mate-window-picker-applet/task-title.c:461
 msgid "Close current window."
-msgstr "Zarrar la ventana actual"
+msgstr "Zarrar la ventana actual."
 
 #: ../mate-window-picker-applet/task-item.c:650
 msgid "Window Task Button"
