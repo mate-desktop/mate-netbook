@@ -1,3 +1,9 @@
+1.8.1
+=====
+
+ * Fix segfault on applet load
+ * Add manpage
+
 1.8.0
 =====
 
