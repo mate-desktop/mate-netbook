@@ -365,6 +365,7 @@ create_rule (MaximusBind *bind, const gchar *filename)
   {
     g_warning ("Unable to load %s: %s\n", filename, error->message);
     g_error_free (error);
+    g_key_file_free (file);
     return;
   }
 
