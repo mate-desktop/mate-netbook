@@ -380,7 +380,7 @@ on_window_opened (WnckScreen  *screen,
 
   if (no_maximize || priv->no_maximize)
   {
-    if (wnck_window_is_maximized(window))
+    if (wnck_window_is_maximized(window) && priv->undecorate)
     {
       _window_set_decorations (window, 0);
       gdk_flush ();
