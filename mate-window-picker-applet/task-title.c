@@ -23,11 +23,9 @@
 #include <libwnck/libwnck.h>
 #include <mate-panel-applet.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include <math.h>
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
-#endif
 
 #include "task-list.h"
 
@@ -76,12 +74,8 @@ on_close_clicked (GtkButton *button,
   if (!WNCK_IS_WINDOW (window)
         || wnck_window_get_window_type (window) == WNCK_WINDOW_DESKTOP)
   {
-#if GTK_CHECK_VERSION (3, 0, 0)
     mate_gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-#else
-    gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-#endif
-                                      LOGOUT, NULL);
+                                           LOGOUT, NULL);
   }
   else
   {
