@@ -64,12 +64,6 @@ gint main (gint argc, gchar *argv[])
   MaximusApp UNUSED_VARIABLE *app;
   GOptionContext  *context;
 
-#if GLIB_CHECK_VERSION (2, 32, 0)
-  /* g_thread_init (NULL); */
-#else
-  g_thread_init (NULL);
-#endif
-
   g_set_application_name ("Maximus");
   
   gtk_init (&argc, &argv);
