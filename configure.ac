@@ -31,6 +31,7 @@ AM_GLIB_GNU_GETTEXT
 
 AC_SUBST(GCC_FLAGS)
 
+GLIB_REQUIRED=2.36.0
 
 AC_MSG_CHECKING([which gtk+ version to compile against])
 AC_ARG_WITH([gtk],
@@ -55,6 +56,7 @@ esac
 
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
                   gtk+-$GTK_API_VERSION
+                  glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
                   libwnck-$LIBWNCK_API_VERSION
                   xtst
@@ -67,7 +69,7 @@ AC_SUBST(MAXIMUS_DEPS_LIBS)
 PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS, 
                   libmatepanelapplet-4.0
                   gtk+-$GTK_API_VERSION
-                  glib-2.0
+                  glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
                   libwnck-$LIBWNCK_API_VERSION
                   mate-desktop-2.0 >= 1.9.0
