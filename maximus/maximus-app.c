@@ -514,23 +514,21 @@ maximus_app_init (MaximusApp *app)
 
   priv->settings = g_settings_new (APP_SCHEMA);
 
-  priv->exclude_class_list= g_settings_get_strv (priv->settings, APP_EXCLUDE_CLASS); 
   g_signal_connect (priv->settings, "changed::" APP_EXCLUDE_CLASS,
                     G_CALLBACK (on_exclude_class_changed), app);
-
-  priv->undecorate = g_settings_get_boolean (priv->settings, APP_UNDECORATE);
   g_signal_connect (priv->settings, "changed::" APP_UNDECORATE,
                     G_CALLBACK (on_app_undecorate_changed), app);
+  g_signal_connect (priv->settings, "changed::" APP_NO_MAXIMIZE,
+                    G_CALLBACK (on_app_no_maximize_changed), app);
 
+  priv->exclude_class_list = g_settings_get_strv (priv->settings, APP_EXCLUDE_CLASS); 
+  priv->undecorate = g_settings_get_boolean (priv->settings, APP_UNDECORATE);
+  priv->no_maximize = g_settings_get_boolean (priv->settings, APP_NO_MAXIMIZE);
+  g_print ("no maximize: %s\n", priv->no_maximize ? "true" : "false");
  
   priv->screen = screen = wnck_screen_get_default ();
   g_signal_connect (screen, "window-opened",
                     G_CALLBACK (on_window_opened), app);
-
-  priv->no_maximize = g_settings_get_boolean (priv->settings, APP_NO_MAXIMIZE);
-  g_print ("no maximize: %s\n", priv->no_maximize ? "true" : "false");
-  g_signal_connect (priv->settings, "changed::" APP_NO_MAXIMIZE,
-                    G_CALLBACK (on_app_no_maximize_changed), app);
 }
 
 MaximusApp *

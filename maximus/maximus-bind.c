@@ -475,9 +475,10 @@ maximus_bind_init (MaximusBind *bind)
 
   tomboy_keybinder_init ();
 
-  priv->binding = g_settings_get_string (priv->settings, BIND_EXCLUDE_CLASS);
   g_signal_connect (priv->settings, "changed::" BIND_EXCLUDE_CLASS,
                     G_CALLBACK (on_binding_changed), bind);
+
+  priv->binding = g_settings_get_string (priv->settings, BIND_EXCLUDE_CLASS);
 
   if (binding_is_valid (priv->binding))
     tomboy_keybinder_bind (priv->binding,
