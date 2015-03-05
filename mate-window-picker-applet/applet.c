@@ -79,18 +79,18 @@ static void display_prefs_dialog (GtkAction    *action,
                                   WinPickerApp *applet);
 
 static const GtkActionEntry window_picker_menu_actions [] = {
-	{ "MenuPrefs", GTK_STOCK_PREFERENCES, N_("_Preferences"),
+  { "MenuPrefs", GTK_STOCK_PREFERENCES, N_("_Preferences"),
       NULL, NULL,
       G_CALLBACK (display_prefs_dialog) },
-	{ "MenuAbout", GTK_STOCK_ABOUT, N_("_About"),
+  { "MenuAbout", GTK_STOCK_ABOUT, N_("_About"),
       NULL, NULL,
       G_CALLBACK (display_about_dialog) }
 };
 
 static const gchar *close_window_authors [] = {
-	"Neil J. Patel <neil.patel@canonical.com>",
-    "Stefano Karapetsas <stefano@karapetsas.com>",
-	NULL
+  "Neil J. Patel <neil.patel@canonical.com>",
+  "Stefano Karapetsas <stefano@karapetsas.com>",
+  NULL
 };
 
 static void
@@ -157,7 +157,7 @@ cw_applet_fill (MatePanelApplet *applet,
   GObjectClass *object_class;
   
   if (strcmp (iid, "MateWindowPicker") != 0)
-		return FALSE;
+    return FALSE;
   	
   bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -191,7 +191,7 @@ cw_applet_fill (MatePanelApplet *applet,
   gtk_container_set_border_width (GTK_CONTAINER (applet), 0);
 
   eb = gtk_hbox_new (FALSE, 6);
-	gtk_container_add (GTK_CONTAINER (applet), eb);
+  gtk_container_add (GTK_CONTAINER (applet), eb);
   gtk_container_set_border_width (GTK_CONTAINER (eb), 0);
 
   tasks = app->tasks = task_list_get_default ();
@@ -205,35 +205,34 @@ cw_applet_fill (MatePanelApplet *applet,
   on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
 		
   /* Signals */
-	g_signal_connect (applet, "change-background",
-			             G_CALLBACK (cw_panel_background_changed), NULL);
+  g_signal_connect (applet, "change-background",
+                    G_CALLBACK (cw_panel_background_changed), NULL);
 	
+  action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
+  gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+  gtk_action_group_add_actions (action_group,
+                                window_picker_menu_actions,
+                                G_N_ELEMENTS (window_picker_menu_actions),
+                                app);
+  ui_path = g_build_filename (MATEWINDOWPICKER_MENU_UI_DIR, "mate-window-picker-applet-menu.xml", NULL);
+  mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (app->applet),
+                                          ui_path, action_group);
+  g_free (ui_path);
+  g_object_unref (action_group);
 
-    action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
-    gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-    gtk_action_group_add_actions (action_group,
-                                  window_picker_menu_actions,
-                                  G_N_ELEMENTS (window_picker_menu_actions),
-                                  app);
-    ui_path = g_build_filename (MATEWINDOWPICKER_MENU_UI_DIR, "mate-window-picker-applet-menu.xml", NULL);
-    mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (app->applet),
-                                       ui_path, action_group);
-    g_free (ui_path);
-    g_object_unref (action_group);
-
-    mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), 
-                          MATE_PANEL_APPLET_EXPAND_MAJOR
-                            | MATE_PANEL_APPLET_EXPAND_MINOR
-                            | MATE_PANEL_APPLET_HAS_HANDLE);
+  mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), 
+                               MATE_PANEL_APPLET_EXPAND_MAJOR
+                               | MATE_PANEL_APPLET_EXPAND_MINOR
+                               | MATE_PANEL_APPLET_HAS_HANDLE);
 	
-	return TRUE;
+  return TRUE;
 }
 
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("MateWindowPickerFactory",
-                             PANEL_TYPE_APPLET,
-                             "MateWindowPicker",
-                             cw_applet_fill,
-                             NULL);
+                                       PANEL_TYPE_APPLET,
+                                       "MateWindowPicker",
+                                       cw_applet_fill,
+                                       NULL);
 
 static void 
 cw_panel_background_changed (MatePanelApplet               *applet,
@@ -380,7 +379,7 @@ display_prefs_dialog (GtkAction       *action,
   g_signal_connect (window, "destroy",
                     G_CALLBACK (gtk_widget_destroy), window);
   g_signal_connect_swapped (button, "clicked",
-                    G_CALLBACK (gtk_widget_destroy), window);
+                            G_CALLBACK (gtk_widget_destroy), window);
 	
   gtk_window_present (GTK_WINDOW (window));
 }
