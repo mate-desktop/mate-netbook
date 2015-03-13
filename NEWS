@@ -2,6 +2,7 @@
 =====
 
  * Add support for glib >= 2.43
+ * Bugfixes
 
 1.8.1
 =====
