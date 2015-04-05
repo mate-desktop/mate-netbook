@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Ivar Smolin <okul@linux.ee>, 2014
+# Ivar Smolin <okul@linux.ee>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-26 11:51+0200\n"
-"PO-Revision-Date: 2014-09-13 07:24+0000\n"
+"PO-Revision-Date: 2015-01-17 09:43+0000\n"
 "Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "_Programmist lahemalt"
 #: ../mate-window-picker-applet/applet.c:266
 #: ../mate-window-picker-applet/applet.c:267
 msgid "Window Picker"
-msgstr ""
+msgstr "Aknanoppija"
 
 #: ../mate-window-picker-applet/applet.c:301
 msgid "Preferences"
@@ -37,7 +37,7 @@ msgstr "Eelistused"
 
 #: ../mate-window-picker-applet/applet.c:317
 msgid "Show windows from all workspaces"
-msgstr ""
+msgstr "Näita kõikide tööalade aknaid"
 
 #: ../mate-window-picker-applet/task-title.c:251
 #: ../mate-window-picker-applet/task-title.c:258
@@ -46,25 +46,25 @@ msgstr ""
 #: ../mate-window-picker-applet/task-title.c:440
 #: ../mate-window-picker-applet/task-title.c:499
 msgid "Home"
-msgstr ""
+msgstr "Kodu"
 
 #: ../mate-window-picker-applet/task-title.c:255
 #: ../mate-window-picker-applet/task-title.c:305
 #: ../mate-window-picker-applet/task-title.c:497
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr ""
+msgstr "Väljalogimine, kasutajate vahel lülitumine või arvuti väljajülitamine"
 
 #: ../mate-window-picker-applet/task-title.c:277
 msgid "Close window"
-msgstr ""
+msgstr "Akna sulgemine"
 
 #: ../mate-window-picker-applet/task-title.c:460
 msgid "Close"
-msgstr ""
+msgstr "Sulgemine"
 
 #: ../mate-window-picker-applet/task-title.c:461
 msgid "Close current window."
-msgstr ""
+msgstr "Käesoleva akna sulgemine."
 
 #: ../mate-window-picker-applet/task-item.c:650
 msgid "Window Task Button"
