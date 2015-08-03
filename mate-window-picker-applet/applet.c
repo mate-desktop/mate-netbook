@@ -37,10 +37,6 @@
 #include <mate-panel-applet.h>
 #include <mate-panel-applet-gsettings.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_rc_style_unref g_object_ref
-#endif
-
 #include "task-list.h"
 #include "task-title.h"
 
@@ -59,15 +55,6 @@ typedef struct
 static WinPickerApp *mainapp;
 static gpointer parent_class;
 
-static void cw_panel_background_changed (MatePanelApplet               *applet,
-                                         MatePanelAppletBackgroundType  type,
-				         GdkColor                  *colour,
-#if GTK_CHECK_VERSION (3, 0, 0)
-				         cairo_pattern_t           *pattern,
-#else
-				         GdkPixmap                 *pixmap,
-#endif
-                                         gpointer                   user_data);
 static void display_about_dialog (GtkAction    *action,
                                   WinPickerApp *applet);
 
@@ -152,6 +139,9 @@ cw_applet_fill (MatePanelApplet *applet,
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
+  /* Have our background automatically painted. */
+  mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (applet), GTK_WIDGET (applet));
+
   wnck_set_client_type (WNCK_CLIENT_TYPE_PAGER);
   
   app = g_slice_new0 (WinPickerApp);
@@ -185,10 +175,6 @@ cw_applet_fill (MatePanelApplet *applet,
 	
   on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
 		
-  /* Signals */
-  g_signal_connect (applet, "change-background",
-                    G_CALLBACK (cw_panel_background_changed), NULL);
-	
   action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
   gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
   gtk_action_group_add_actions (action_group,
@@ -214,63 +200,6 @@ MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("MateWindowPickerFactory",
                                        "MateWindowPicker",
                                        cw_applet_fill,
                                        NULL);
-
-static void 
-cw_panel_background_changed (MatePanelApplet               *applet,
-                             MatePanelAppletBackgroundType  type,
-                             GdkColor                  *colour,
-#if GTK_CHECK_VERSION (3, 0, 0)
-                             cairo_pattern_t           *pattern,
-#else
-                             GdkPixmap                 *pixmap,
-#endif
-                             gpointer                   user_data)
-{
-  GtkRcStyle *rc_style;
-  GtkStyle *style;
-
-  /* reset style */
-  gtk_widget_set_style (GTK_WIDGET (applet), NULL);
-  rc_style = gtk_rc_style_new ();
-  gtk_widget_modify_style (GTK_WIDGET (applet), rc_style);
-  gtk_rc_style_unref (rc_style);
-
-  gtk_widget_set_style (mainapp->title, NULL);
-  rc_style = gtk_rc_style_new ();
-  gtk_widget_modify_style (mainapp->title, rc_style);
-  gtk_rc_style_unref (rc_style);
-
-  switch (type) 
-  {
-    case PANEL_NO_BACKGROUND:
-      break;
-    case PANEL_COLOR_BACKGROUND:
-      gtk_widget_modify_bg (GTK_WIDGET (applet), GTK_STATE_NORMAL, colour);
-      gtk_widget_modify_bg (mainapp->title, GTK_STATE_NORMAL, colour); 
-      break;
-    
-    case PANEL_PIXMAP_BACKGROUND:
-#if GTK_CHECK_VERSION (3, 0, 0)
-      /* FIXME */
-#else
-      style = gtk_style_copy (GTK_WIDGET (applet)->style);
-      if (style->bg_pixmap[GTK_STATE_NORMAL])
-        g_object_unref (style->bg_pixmap[GTK_STATE_NORMAL]);
-      style->bg_pixmap[GTK_STATE_NORMAL] = g_object_ref (pixmap);
-      gtk_widget_set_style (GTK_WIDGET (applet), style);
-      g_object_unref (style);
-#endif
-
-      /*style = gtk_style_copy (mainapp->title->style);
-      if (style->bg_pixmap[GTK_STATE_NORMAL])
-        g_object_unref (style->bg_pixmap[GTK_STATE_NORMAL]);
-      style->bg_pixmap[GTK_STATE_NORMAL] = g_object_ref (pixmap);
-      gtk_widget_set_style (mainapp->title, style);
-      g_object_unref (style);*/
- 
-      break;
-  }
-}
 
 static void
 display_about_dialog (GtkAction       *action,
