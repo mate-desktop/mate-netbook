@@ -21,7 +21,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define to the Gettext package name])
 
-IT_PROG_INTLTOOL([0.34])
+IT_PROG_INTLTOOL([0.50.1])
 
 AM_GLIB_GNU_GETTEXT
 
@@ -82,7 +82,9 @@ GLIB_GSETTINGS
 AC_OUTPUT([
 Makefile
 maximus/Makefile
+maximus/org.mate.maximus.gschema.xml
 mate-window-picker-applet/Makefile
+mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 po/Makefile.in
 ])
 

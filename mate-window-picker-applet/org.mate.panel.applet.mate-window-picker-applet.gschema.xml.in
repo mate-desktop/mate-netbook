@@ -2,8 +2,8 @@
   <schema id="org.mate.panel.applet.mate-window-picker-applet">
     <key name="show-all-windows" type="b">
       <default>true</default>
-      <_summary>Show windows from all workspaces.</_summary>
-      <_description>Show windows from all workspaces.</_description>
+      <summary>Show windows from all workspaces.</summary>
+      <description>Show windows from all workspaces.</description>
     </key>
   </schema>
 </schemalist>

@@ -31,13 +31,10 @@ mate_maximus_SOURCES = \
 	xutils.h 
 
 @INTLTOOL_XML_NOMERGE_RULE@
-gsettings_SCHEMAS = org.mate.maximus.gschema.xml
+gsettingsschema_in_files = org.mate.maximus.gschema.xml.in
 
-gsettings_SCHEMAS_in_in = $(gsettings_SCHEMAS:.xml=.xml.in.in)
+gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
-
-%.gschema.xml.in: %.gschema.xml.in.in Makefile
-	$(AM_V_GEN) $(SED) -e 's^\@GETTEXT_PACKAGE\@^$(GETTEXT_PACKAGE)^g' < $< > $@
 
 convertdir = $(datadir)/MateConf/gsettings
 convert_DATA = mate-maximus.convert
@@ -47,8 +44,6 @@ dist_desktop_DATA=mate-maximus-autostart.desktop
 
 man_MANS = mate-maximus.1
 
-CLEANFILES = $(gsettings_SCHEMAS) \
-	$(gsettings_SCHEMAS_in)
+CLEANFILES = $(gsettings_SCHEMAS) *.gschema.valid
 
-
-EXTRA_DIST =  $(gsettings_SCHEMAS_in_in) $(convert_DATA) $(man_MANS)
+EXTRA_DIST =  $(gsettingsschema_in_files) $(convert_DATA) $(man_MANS)

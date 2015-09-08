@@ -1,6 +1,6 @@
-mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.in
+mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in
 mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in
 mate-window-picker-applet/applet.c
 mate-window-picker-applet/task-title.c
 mate-window-picker-applet/task-item.c
-maximus/org.mate.maximus.gschema.xml.in.in
+maximus/org.mate.maximus.gschema.xml.in
