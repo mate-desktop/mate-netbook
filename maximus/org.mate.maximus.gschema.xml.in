@@ -18,7 +18,7 @@
     <key name="no-maximize" type="b">
       <default>true</default>
       <summary>Do not automatically maximize newly opened windows</summary>
-      <description>Do not automatically maximize newly opened windows. If undecorate is set, will still undecorate maximised windows.</description>
+      <description>Do not automatically maximize newly opened windows. If undecorate is set, will still undecorate maximized windows.</description>
     </key>
   </schema>
 </schemalist>
