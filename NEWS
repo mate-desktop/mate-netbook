@@ -1,6 +1,10 @@
 1.11.0
 ======
 
+ * Window Picker Applet: have background automatically painted
+ * Retrieve strings directly from gschema (requires intltool 0.50.1)
+ * Several small fixes and cleanups
+
 1.10.0
 ======
 
