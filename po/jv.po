@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ngalim Siregar <ngalim.siregar@gmail.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-09 10:52+0200\n"
+"PO-Revision-Date: 2015-10-08 00:33+0000\n"
+"Last-Translator: Ngalim Siregar <ngalim.siregar@gmail.com>\n"
+"Language-Team: Javanese (http://www.transifex.com/mate/MATE/language/jv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: jv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+msgid "Show windows from all workspaces."
+msgstr "Nuduhake jendhela saka kabeh ruang kerja."
+
+#: ../mate-window-picker-applet/applet.c:65
+msgid "_Preferences"
+msgstr "_Paling disenengi"
+
+#: ../mate-window-picker-applet/applet.c:68
+msgid "_About"
+msgstr "_Watara"
+
+#: ../mate-window-picker-applet/applet.c:213
+#: ../mate-window-picker-applet/applet.c:214
+msgid "Window Picker"
+msgstr "Pengangkat Jendhela"
+
+#: ../mate-window-picker-applet/applet.c:247
+msgid "Preferences"
+msgstr "Paling disenengi"
+
+#: ../mate-window-picker-applet/applet.c:263
+msgid "Show windows from all workspaces"
+msgstr "Nuduhake jendhela saka kabeh ruang kerja."
+
+#: ../mate-window-picker-applet/task-title.c:279
+#: ../mate-window-picker-applet/task-title.c:286
+#: ../mate-window-picker-applet/task-title.c:329
+#: ../mate-window-picker-applet/task-title.c:336
+#: ../mate-window-picker-applet/task-title.c:495
+#: ../mate-window-picker-applet/task-title.c:559
+msgid "Home"
+msgstr "Dalem"
+
+#: ../mate-window-picker-applet/task-title.c:283
+#: ../mate-window-picker-applet/task-title.c:333
+#: ../mate-window-picker-applet/task-title.c:557
+msgid "Log off, switch user, lock screen or power down the computer"
+msgstr "Metu saka komputer, ngalih pamaké, ngunci layar utawi mateni daya komputer"
+
+#: ../mate-window-picker-applet/task-title.c:305
+msgid "Close window"
+msgstr "Nutup jendhela"
+
+#: ../mate-window-picker-applet/task-title.c:515
+msgid "Close"
+msgstr "Nutup"
+
+#: ../mate-window-picker-applet/task-title.c:516
+msgid "Close current window."
+msgstr "Nutup jendhela ili"
+
+#: ../mate-window-picker-applet/task-item.c:694
+msgid "Window Task Button"
+msgstr "Tombol Tugas Jendhela"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+msgid "A list of exclusion strings which apply to the window class."
+msgstr "Dhaftar panjarwa teks khusus kang aplikasi aken kanggo kelas jendhela."
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+msgid "A list of exclusion strings which apply to the window class"
+msgstr "Dhaftar panjarwa teks khusus kang aplikasi aken kanggo kelas jendhela."
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+msgid "A binding"
+msgstr "Pengiket"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+msgid "Undecorate windows when maximized"
+msgstr "Jendhela boten dihias nalika kawontenan maksimal"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+msgid "Do not automatically maximize newly opened windows"
+msgstr "Boten otomatis nggedhekake jendhela sing mentas dibukak"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+msgid ""
+"Do not automatically maximize newly opened windows. If undecorate is set, "
+"will still undecorate maximized windows."
+msgstr "Boten otomatis nggedhekake jendhela sing mentas dibukak. Yen boten disetel kalih dekorasi, bakal isih boten didekorasi nalika jendhela kawontenan maksimal."
