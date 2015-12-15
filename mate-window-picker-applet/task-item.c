@@ -291,7 +291,6 @@ task_item_expose_event (GtkWidget      *widget,
   TaskItem *item;
   GdkRectangle area;
   TaskItemPrivate *priv;
-  GdkPixbuf *desat;
   GdkPixbuf *pbuf;
   
   g_return_val_if_fail (widget != NULL, FALSE);
@@ -311,7 +310,6 @@ task_item_expose_event (GtkWidget      *widget,
 #endif
   
   pbuf = priv->pixbuf;
-  desat = NULL;
   
   gint size = MIN (area.height, area.width);
   gboolean active = wnck_window_is_active (priv->window);
@@ -350,7 +348,7 @@ task_item_expose_event (GtkWidget      *widget,
   }
   else
   {
-    desat = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
+    GdkPixbuf *desat = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
                             TRUE,
                             gdk_pixbuf_get_bits_per_sample (pbuf),
                             gdk_pixbuf_get_width (pbuf),
@@ -365,12 +363,13 @@ task_item_expose_event (GtkWidget      *widget,
     }
     else /* just paint the colored version as a fallback */
     {
-      desat = pbuf;
+      desat = g_object_ref (pbuf);
     }
     gdk_cairo_set_source_pixbuf (cr, 
                                  desat, 
                                  (area.x + (area.width - gdk_pixbuf_get_width (desat)) / 2), 
                                  (area.y + (area.height - gdk_pixbuf_get_height (desat)) / 2));
+    g_object_unref (desat);
   }
   if (!priv->mouse_over && attention) /* urgent */
   {
@@ -391,10 +390,7 @@ task_item_expose_event (GtkWidget      *widget,
   {
     cairo_paint_with_alpha (cr, .65);
   }
-  
-  if (GDK_IS_PIXBUF (desat))
-    g_object_unref (desat);
- 
+
 #if !GTK_CHECK_VERSION (3, 0, 0)
   cairo_destroy (cr);
 #endif
