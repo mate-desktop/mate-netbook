@@ -66,7 +66,8 @@ update_hints (TaskItem *item)
 {
   GtkWidget *parent;
   GtkWidget *widget;
-  GtkAllocation *allocation;
+  GtkAllocation allocation_parent;
+  GtkAllocation allocation_widget;
   WnckWindow *window;
   GdkWindow *gdkwindow;
   gint x, y, x1, y1;
@@ -87,9 +88,9 @@ update_hints (TaskItem *item)
   {
     if (gtk_widget_get_parent (parent))
     {
-      gtk_widget_get_allocation (parent, allocation);
-      x += allocation->x;
-      y += allocation->y;
+      gtk_widget_get_allocation (parent, &allocation_parent);
+      x += allocation_parent.x;
+      y += allocation_parent.y;
     }
     else
     {
@@ -103,14 +104,12 @@ update_hints (TaskItem *item)
       break;
     }
   }
-    
+
   /* Set the minimize hint for the window */
-  gtk_widget_get_allocation (widget, allocation);
-  if (allocation) {	
-  	wnck_window_set_icon_geometry (window, x, y,
-                                 allocation->width,
-                                 allocation->height);
-  }
+  gtk_widget_get_allocation (widget, &allocation_widget);
+  wnck_window_set_icon_geometry (window, x, y,
+                                 allocation_widget.width,
+                                 allocation_widget.height);
 }
 
 static gboolean 
