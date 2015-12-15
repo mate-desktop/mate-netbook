@@ -388,43 +388,38 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
 
 static gboolean
 #if GTK_CHECK_VERSION (3, 0, 0)
-on_draw (GtkWidget *eb, cairo_t *cr)
+on_draw (GtkWidget *w, cairo_t *cr)
 #else
-on_expose (GtkWidget *eb, GdkEventExpose *event)
+on_expose (GtkWidget *w, GdkEventExpose *event)
 #endif
 {
-  GtkAllocation *allocation;
-  GtkStyle *style;
-  GtkStateType state;
-
-  gtk_widget_get_allocation (eb, allocation);
-  style = gtk_widget_get_style (eb);
-  state = gtk_widget_get_state (eb);
-
-  if (state == GTK_STATE_ACTIVE && allocation)
-    gtk_paint_box (style,
 #if GTK_CHECK_VERSION (3, 0, 0)
-                 cr,
+  if (gtk_widget_get_state_flags (w) == GTK_STATE_FLAG_ACTIVE) {
+    GtkStyleContext *context = gtk_widget_get_style_context (w);
+    gtk_render_frame (context,
+                      cr,
+                      0, 0,
+                      gtk_widget_get_allocated_width (w),
+                      gtk_widget_get_allocated_height (w));
+  }
 #else
-                 eb->window,
+  if (w->state == GTK_STATE_ACTIVE) {
+    gtk_paint_box (w->style, w->window,
+                   w->state, GTK_SHADOW_NONE,
+                   NULL, w, "button",
+                   w->allocation.x, w->allocation.y,
+                   w->allocation.width, w->allocation.height);
+  }
 #endif
-                 state, GTK_SHADOW_NONE,
-#if !GTK_CHECK_VERSION (3, 0, 0)
-                 NULL,
-#endif
-                 eb, "button",
-                 allocation->x, allocation->y, 
-                 allocation->width, allocation->height);
-  
   
 #if GTK_CHECK_VERSION (3, 0, 0)
-  gtk_container_propagate_draw (GTK_CONTAINER (eb),
-                                gtk_bin_get_child (GTK_BIN (eb)),
+  gtk_container_propagate_draw (GTK_CONTAINER (w),
+                                gtk_bin_get_child (GTK_BIN (w)),
                                 cr);
 
 #else
-  gtk_container_propagate_expose (GTK_CONTAINER (eb), 
-                                  gtk_bin_get_child (GTK_BIN (eb)),
+  gtk_container_propagate_expose (GTK_CONTAINER (w),
+                                  gtk_bin_get_child (GTK_BIN (w)),
                                   event);
 #endif
   return TRUE;
