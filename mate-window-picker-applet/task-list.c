@@ -32,9 +32,6 @@ G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_HBOX);
 struct _TaskListPrivate
 {
   WnckScreen *screen;
-  GHashTable *win_table;
-  guint timer;
-  guint counter;
 
   gboolean show_all_windows;
 };
@@ -70,11 +67,9 @@ on_window_opened (WnckScreen *screen,
                   WnckWindow *window,
                   TaskList   *list)
 {
-  TaskListPrivate *priv;
   WnckWindowType type;
 
   g_return_if_fail (TASK_IS_LIST (list));
-  priv = list->priv;
 
   type = wnck_window_get_window_type (window);
 
@@ -101,9 +96,6 @@ task_list_finalize (GObject *object)
   TaskListPrivate *priv;
 
   priv = TASK_LIST_GET_PRIVATE (object);
-
-  /* Remove the blink timer */
-  if (priv->timer) g_source_remove (priv->timer);
 
   G_OBJECT_CLASS (task_list_parent_class)->finalize (object);
 }
@@ -137,10 +129,8 @@ task_list_set_property (GObject      *object,
                         GParamSpec   *pspec)
 {
   TaskList *list = TASK_LIST (object);
-  TaskListPrivate *priv;
 
   g_return_if_fail (TASK_IS_LIST (list));
-  priv = list->priv;
 
   switch (prop_id)
   {
@@ -180,11 +170,6 @@ task_list_init (TaskList *list)
   priv = list->priv = TASK_LIST_GET_PRIVATE (list);
 
   priv->screen = wnck_screen_get_default ();
-
-  priv->win_table = g_hash_table_new (NULL, NULL);
-
-  /* No blink timer */
-  priv->timer = 0;
 
   gtk_container_set_border_width (GTK_CONTAINER (list), 0);
 
