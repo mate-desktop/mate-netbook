@@ -416,7 +416,6 @@ on_expose (GtkWidget *w, GdkEventExpose *event)
   gtk_container_propagate_draw (GTK_CONTAINER (w),
                                 gtk_bin_get_child (GTK_BIN (w)),
                                 cr);
-
 #else
   gtk_container_propagate_expose (GTK_CONTAINER (w),
                                   gtk_bin_get_child (GTK_BIN (w)),
@@ -525,24 +524,13 @@ task_title_init (TaskTitle *title)
                     G_CALLBACK (on_button_expose), title);
 #endif
 
-  /* Load the quit icon.  We have to do this in such a god-forsaken way
-     because of http://bugzilla.gnome.org/show_bug.cgi?id=581359 and the
-     fact that we support as far back as GTK+ 2.12 (which never passes
-     FORCE_SIZE in GtkImage).  The only way to guarantee icon size is to
-     load and scale it ourselves.  We don't do this for all the other icons
-     in the source just because we know that this icon doesn't come in the
-     size we want. */
   gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
   theme = gtk_icon_theme_get_for_screen (gdkscreen);
   settings = gtk_settings_get_for_screen (gdkscreen);
-  if (!gtk_icon_size_lookup_for_settings (settings, GTK_ICON_SIZE_MENU,
-&width, &height))
-      width = height = 16;
-  width = MIN(width, height);
-  pixbuf = gtk_icon_theme_load_icon (theme, "mate-logout", width, 0, NULL);
-  priv->quit_icon = gdk_pixbuf_scale_simple (pixbuf, width, width,
-                                             GDK_INTERP_BILINEAR);
-  g_object_unref (G_OBJECT (pixbuf));
+  gtk_icon_size_lookup_for_settings (settings, GTK_ICON_SIZE_MENU,
+                                     &width, &height);
+
+  priv->quit_icon = gtk_icon_theme_load_icon (theme, "mate-logout", width, 0, NULL);
 
   priv->button_image = gtk_image_new_from_pixbuf (priv->quit_icon);
   gtk_container_add (GTK_CONTAINER (priv->button), priv->button_image);
