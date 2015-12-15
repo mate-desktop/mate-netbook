@@ -137,7 +137,7 @@ on_task_item_button_released (GtkWidget      *widget,
   
     if (WNCK_IS_WORKSPACE (workspace) && workspace != wnck_screen_get_active_workspace (screen))
     {
-      wnck_workspace_activate (workspace, GDK_CURRENT_TIME);
+      wnck_workspace_activate (workspace, event->time);
     }
     if (wnck_window_is_active (window))
     {
@@ -145,7 +145,7 @@ on_task_item_button_released (GtkWidget      *widget,
     }
     else
     {
-      wnck_window_activate (window, GDK_CURRENT_TIME);
+      wnck_window_activate (window, event->time);
     }
   }
   return TRUE;
