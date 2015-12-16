@@ -325,13 +325,35 @@ task_item_expose_event (GtkWidget      *widget,
   
   if (active)
   {
-    cairo_rectangle (cr, area.x + .5, area.y - 4, area.width - 1, area.height + 8);
+    cairo_rectangle (cr, area.x + 1, area.y - 1, area.width - 2, area.height - 2);
     cairo_set_source_rgba (cr, .8, .8, .8, .2);
     cairo_fill_preserve (cr);
-    
-    cairo_set_line_width (cr, 1);
-    cairo_set_source_rgba (cr, .8, .8, .8, .4);
-    cairo_stroke (cr);
+    if (priv->mouse_over)
+    {
+      cairo_set_source_rgba (cr, .9, .9, 1, 0.45);
+      cairo_stroke (cr);
+    }
+    else
+    {
+      cairo_set_line_width (cr, 1);
+      cairo_set_source_rgba (cr, .8, .8, .8, .4);
+      cairo_stroke (cr);
+    }
+  }
+  else if (priv->mouse_over)
+  {
+    int glow_x, glow_y;
+    cairo_pattern_t *glow_pattern;
+    glow_x = area.width / 2;
+    glow_y = area.height / 2;
+    glow_pattern = cairo_pattern_create_radial (
+        area.x + glow_x, area.y + glow_y, glow_x * 0.3,
+        area.x + glow_x, area.y + glow_y, glow_x * 1.4
+    );
+    cairo_pattern_add_color_stop_rgba (glow_pattern, 0, 1, 1, 1, 1);
+    cairo_pattern_add_color_stop_rgba (glow_pattern, 0.6, 1, 1, 1, 0);
+    cairo_set_source (cr, glow_pattern);
+    cairo_paint (cr);
   }
   
   if (!pbuf)
@@ -359,7 +381,7 @@ task_item_expose_event (GtkWidget      *widget,
       gdk_pixbuf_saturate_and_pixelate (pbuf,
                                         desat,
                                         0,
-                                       FALSE);
+                                        FALSE);
     }
     else /* just paint the colored version as a fallback */
     {
