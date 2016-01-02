@@ -36,9 +36,6 @@ gsettingsschema_in_files = org.mate.maximus.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 @GSETTINGS_RULES@
 
-convertdir = $(datadir)/MateConf/gsettings
-convert_DATA = mate-maximus.convert
-
 desktopdir=$(sysconfdir)/xdg/autostart
 dist_desktop_DATA=mate-maximus-autostart.desktop
 
@@ -46,4 +43,4 @@ man_MANS = mate-maximus.1
 
 CLEANFILES = $(gsettings_SCHEMAS) *.gschema.valid
 
-EXTRA_DIST =  $(gsettingsschema_in_files) $(convert_DATA) $(man_MANS)
+EXTRA_DIST =  $(gsettingsschema_in_files) $(man_MANS)

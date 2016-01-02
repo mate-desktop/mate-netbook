@@ -1,5 +1,0 @@
-[org.mate.maximus]
-exclude-class = /apps/maximus/exclude_class
-binding = /apps/maximus/binding
-undecorate = /apps/maximus/undecorate
-no-maximize = /apps/maximus/no_maximize
