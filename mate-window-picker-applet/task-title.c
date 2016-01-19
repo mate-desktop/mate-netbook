@@ -290,8 +290,8 @@ on_active_window_changed (WnckScreen *screen,
   {
     gtk_label_set_text (GTK_LABEL (priv->label), 
                         wnck_window_get_name (act_window));
-    gtk_image_set_from_stock (GTK_IMAGE (priv->button_image), 
-                              GTK_STOCK_CLOSE, GTK_ICON_SIZE_MENU);
+    gtk_image_set_from_icon_name (GTK_IMAGE (priv->button_image),
+                                  "window-close", GTK_ICON_SIZE_MENU);
 
     gtk_widget_set_tooltip_text (GTK_WIDGET (title),
                                  wnck_window_get_name (act_window));
