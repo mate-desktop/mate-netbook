@@ -453,7 +453,6 @@ task_title_init (TaskTitle *title)
   TaskTitlePrivate *priv;
   GdkScreen *gdkscreen;
   GtkIconTheme *theme;
-  GtkSettings *settings;
   GdkPixbuf *pixbuf;
   AtkObject *atk;
   int width, height;
@@ -528,9 +527,8 @@ task_title_init (TaskTitle *title)
 
   gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
   theme = gtk_icon_theme_get_for_screen (gdkscreen);
-  settings = gtk_settings_get_for_screen (gdkscreen);
-  gtk_icon_size_lookup_for_settings (settings, GTK_ICON_SIZE_MENU,
-                                     &width, &height);
+  gtk_icon_size_lookup (GTK_ICON_SIZE_MENU,
+                        &width, &height);
 
   priv->quit_icon = gtk_icon_theme_load_icon (theme, "mate-logout", width, 0, NULL);
 
