@@ -161,7 +161,11 @@ cw_applet_fill (MatePanelApplet *applet,
   force_no_focus_padding (GTK_WIDGET (applet));
   gtk_container_set_border_width (GTK_CONTAINER (applet), 0);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  eb = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+#else
   eb = gtk_hbox_new (FALSE, 6);
+#endif
   gtk_container_add (GTK_CONTAINER (applet), eb);
   gtk_container_set_border_width (GTK_CONTAINER (eb), 0);
 
@@ -249,14 +253,22 @@ display_prefs_dialog (GtkAction       *action,
                             GDK_WINDOW_TYPE_HINT_DIALOG);
   gtk_container_set_border_width (GTK_CONTAINER (window), 12);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
+#else
   box = gtk_vbox_new (FALSE, 8);
+#endif
   gtk_container_add (GTK_CONTAINER (window), box);
 
   nb = gtk_notebook_new ();
   g_object_set (nb, "show-tabs", FALSE, "show-border", TRUE, NULL);
   gtk_box_pack_start (GTK_BOX (box), nb, TRUE, TRUE, 0);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 8);
+#else
   vbox = gtk_vbox_new (FALSE, 8);
+#endif
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 8);
   gtk_notebook_append_page (GTK_NOTEBOOK (nb), vbox, NULL);
 
@@ -272,7 +284,11 @@ display_prefs_dialog (GtkAction       *action,
 
   gtk_widget_set_size_request (nb, -1, 100);
   
+#if GTK_CHECK_VERSION (3, 0, 0)
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
+#else
   hbox = gtk_hbox_new (FALSE, 0);
+#endif
   gtk_box_pack_start (GTK_BOX (box), hbox, TRUE, TRUE, 0);
   
   label = gtk_label_new (" ");

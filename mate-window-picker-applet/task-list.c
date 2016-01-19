@@ -23,7 +23,7 @@
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
 
-G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_HBOX);
+G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_BOX);
 
 #define TASK_LIST_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
   TASK_TYPE_LIST, \

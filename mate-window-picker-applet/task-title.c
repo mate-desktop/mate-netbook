@@ -474,14 +474,23 @@ task_title_init (TaskTitle *title)
                              0, 0, 6, 6);
   gtk_container_add (GTK_CONTAINER (title), priv->align);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+  priv->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
+#else
   priv->box = gtk_hbox_new (FALSE, 2);
+#endif
   gtk_container_add (GTK_CONTAINER (priv->align), priv->box);
   gtk_widget_set_no_show_all (priv->box, TRUE);
   gtk_widget_show (priv->box);
 
   priv->label = gtk_label_new (_("Home"));
   gtk_label_set_ellipsize (GTK_LABEL (priv->label), PANGO_ELLIPSIZE_END);
+#if GTK_CHECK_VERSION (3, 0, 0)
+  gtk_widget_set_halign (priv->label, GTK_ALIGN_START);
+  gtk_widget_set_valign (priv->label, GTK_ALIGN_CENTER);
+#else
   gtk_misc_set_alignment (GTK_MISC (priv->label), 0.0, 0.5);
+#endif
   
   PangoAttrList *attr_list = pango_attr_list_new ();
   PangoAttribute *attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
