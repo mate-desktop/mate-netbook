@@ -379,14 +379,10 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
 }
 
 
+#if GTK_CHECK_VERSION (3, 0, 0)
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 on_draw (GtkWidget *w, cairo_t *cr)
-#else
-on_expose (GtkWidget *w, GdkEventExpose *event)
-#endif
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
   if (gtk_widget_get_state_flags (w) == GTK_STATE_FLAG_ACTIVE) {
     GtkStyleContext *context = gtk_widget_get_style_context (w);
     gtk_render_frame (context,
@@ -395,7 +391,16 @@ on_expose (GtkWidget *w, GdkEventExpose *event)
                       gtk_widget_get_allocated_width (w),
                       gtk_widget_get_allocated_height (w));
   }
+
+  gtk_container_propagate_draw (GTK_CONTAINER (w),
+                                gtk_bin_get_child (GTK_BIN (w)),
+                                cr);
+  return TRUE;
+}
 #else
+static gboolean
+on_expose (GtkWidget *w, GdkEventExpose *event)
+{
   if (w->state == GTK_STATE_ACTIVE) {
     gtk_paint_box (w->style, w->window,
                    w->state, GTK_SHADOW_NONE,
@@ -403,19 +408,13 @@ on_expose (GtkWidget *w, GdkEventExpose *event)
                    w->allocation.x, w->allocation.y,
                    w->allocation.width, w->allocation.height);
   }
-#endif
-  
-#if GTK_CHECK_VERSION (3, 0, 0)
-  gtk_container_propagate_draw (GTK_CONTAINER (w),
-                                gtk_bin_get_child (GTK_BIN (w)),
-                                cr);
-#else
+
   gtk_container_propagate_expose (GTK_CONTAINER (w),
                                   gtk_bin_get_child (GTK_BIN (w)),
                                   event);
-#endif
   return TRUE;
 }
+#endif
 
 /* GObject stuff */
 static void
