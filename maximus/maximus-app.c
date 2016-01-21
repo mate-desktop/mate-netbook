@@ -481,7 +481,11 @@ on_app_undecorate_changed (GSettings          *settings,
       wnck_window_unmaximize (window);
       wnck_window_maximize (window);
       gdk_flush ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+      gdk_error_trap_pop_ignored ();
+#else
       gdk_error_trap_pop ();
+#endif
 
       sleep (1);
     }
