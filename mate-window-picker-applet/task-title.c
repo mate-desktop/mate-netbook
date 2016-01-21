@@ -107,15 +107,11 @@ on_leave_notify (GtkWidget *widget,
   return FALSE;
 }
 
-static gboolean
 #if GTK_CHECK_VERSION (3, 0, 0)
+static gboolean
 on_button_draw (GtkWidget *widget, 
                 cairo_t *cr,
-#else
-on_button_expose (GtkWidget *widget, 
-                  GdkEventExpose *event,
-#endif
-                  TaskTitle *title)
+                TaskTitle *title)
 {
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
 
@@ -125,7 +121,6 @@ on_button_expose (GtkWidget *widget,
   if (priv->mouse_in_close_button)
   {
     GtkStyle *style = gtk_widget_get_style (widget);
-#if GTK_CHECK_VERSION (3, 0, 0)
     GdkRectangle area;
     gdouble x1, y1, x2, y2;
     cairo_clip_extents (cr, &x1, &y1, &x2, &y2);
@@ -133,34 +128,50 @@ on_button_expose (GtkWidget *widget,
     area.y = floor (y1);
     area.width = ceil (x2) - area.x;
     area.height = ceil (y2) - area.y;
-#endif
+
     gtk_paint_box (style,
-#if GTK_CHECK_VERSION (3, 0, 0)
                    cr,
-#else
-                   event->window,
-#endif
                    GTK_STATE_PRELIGHT,
                    GTK_SHADOW_NONE,
-#if !GTK_CHECK_VERSION (3, 0, 0)
-                   NULL,
-#endif
                    NULL,
                    NULL,
-#if GTK_CHECK_VERSION (3, 0, 0)
                    area.x,
                    area.y + 2,
                    area.width,
                    area.height - 4);
+  }
+  return FALSE;
+}
 #else
+static gboolean
+on_button_expose (GtkWidget *widget,
+                  GdkEventExpose *event,
+                  TaskTitle *title)
+{
+  g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
+
+  TaskTitlePrivate *priv;
+  priv = title->priv;
+
+  if (priv->mouse_in_close_button)
+  {
+    GtkStyle *style = gtk_widget_get_style (widget);
+
+    gtk_paint_box (style,
+                   event->window,
+                   GTK_STATE_PRELIGHT,
+                   GTK_SHADOW_NONE,
+                   NULL,
+                   NULL,
+                   NULL,
                    event->area.x,
                    event->area.y + 2,
                    event->area.width,
                    event->area.height - 4);
-#endif
   }
   return FALSE;
 }
+#endif
 
 static void
 on_name_changed (WnckWindow *window, TaskTitle *title)
