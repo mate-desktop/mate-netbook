@@ -1,56 +1,109 @@
-# Chinese translations for window-picker-applet package.
-# Copyright (C) 2009 THE window-picker-applet'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the window-picker-applet package.
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Christopher Meng <i@cicku.me>, 2012
+# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
+# Mingye Wang <arthur200126@gmail.com>, 2016
+# 白铭骢 <jeffbai@aosc.xyz>, 2015
 msgid ""
 msgstr ""
-"Project-Id-Version: window-picker-applet\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-09 12:54-0400\n"
-"PO-Revision-Date: 2009-09-09 15:10-0400\n"
-"Last-Translator: Ubuntu Translators\n"
-"Language-Team: Chinese (simplified)\n"
+"POT-Creation-Date: 2015-12-10 13:14+0300\n"
+"PO-Revision-Date: 2016-01-08 21:18+0000\n"
+"Last-Translator: Mingye Wang <arthur200126@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/mate/MATE/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/MATE_WindowPicker.server.in.in.h:1 ../src/applet.c:268
-#: ../src/applet.c:269
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+msgid "Show windows from all workspaces."
+msgstr "显示所有工作区中的窗口"
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
+msgid "Window Picker Applet Factory"
+msgstr "窗口拾取小程序工厂"
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
+#: ../mate-window-picker-applet/applet.c:213
+#: ../mate-window-picker-applet/applet.c:214
 msgid "Window Picker"
 msgstr "窗口选择程序"
 
-#: ../src/applet.c:304
+#: ../mate-window-picker-applet/applet.c:65
+msgid "_Preferences"
+msgstr "_首选项"
+
+#: ../mate-window-picker-applet/applet.c:68
+msgid "_About"
+msgstr "_关于"
+
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../src/applet.c:320
+#: ../mate-window-picker-applet/applet.c:263
 msgid "Show windows from all workspaces"
 msgstr "显示所有工作区的窗口"
 
-#: ../src/task-title.c:251 ../src/task-title.c:258 ../src/task-title.c:301
-#: ../src/task-title.c:308 ../src/task-title.c:440 ../src/task-title.c:499
+#: ../mate-window-picker-applet/task-title.c:279
+#: ../mate-window-picker-applet/task-title.c:286
+#: ../mate-window-picker-applet/task-title.c:329
+#: ../mate-window-picker-applet/task-title.c:336
+#: ../mate-window-picker-applet/task-title.c:495
+#: ../mate-window-picker-applet/task-title.c:559
 msgid "Home"
 msgstr "主页"
 
-#: ../src/task-title.c:255 ../src/task-title.c:305 ../src/task-title.c:497
+#: ../mate-window-picker-applet/task-title.c:283
+#: ../mate-window-picker-applet/task-title.c:333
+#: ../mate-window-picker-applet/task-title.c:557
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "注销、切换用户、锁定屏幕或关闭计算机"
 
-#: ../src/task-title.c:277
+#: ../mate-window-picker-applet/task-title.c:305
 msgid "Close window"
 msgstr "关闭窗口"
 
-#: ../src/task-title.c:460
+#: ../mate-window-picker-applet/task-title.c:515
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
-#: ../src/task-title.c:461
-#, fuzzy
+#: ../mate-window-picker-applet/task-title.c:516
 msgid "Close current window."
-msgstr "关闭窗口"
+msgstr "关闭当前窗口。"
 
-#: ../src/task-item.c:631
+#: ../mate-window-picker-applet/task-item.c:694
 msgid "Window Task Button"
-msgstr ""
+msgstr "窗口任务按钮"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+msgid "A list of exclusion strings which apply to the window class."
+msgstr "应用于窗口类的排除字串列表"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+msgid "A list of exclusion strings which apply to the window class"
+msgstr "应用于窗口类的排除字串列表"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+msgid "A binding"
+msgstr "绑定"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+msgid "Undecorate windows when maximized"
+msgstr "隐藏最大化窗口的装饰"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+msgid "Do not automatically maximize newly opened windows"
+msgstr "禁用新窗口自动最大化"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+msgid ""
+"Do not automatically maximize newly opened windows. If undecorate is set, "
+"will still undecorate maximized windows."
+msgstr "不要自动最大化新打开的窗口。如设定隐藏最大化窗口的装饰，这将依然隐藏最大化窗口的装饰。"

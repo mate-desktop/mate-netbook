@@ -1,57 +1,109 @@
-# Italian translations for window-picker-applet package.
-# Copyright (C) 2009 THE window-picker-applet'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the window-picker-applet package.
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009.
-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Giuseppe Pignataro <rogepix@gmail.com>, 2015
+# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
+# Marco Bartolucci <nap.84@live.it>, 2016
+# Stefano Karapetsas <stefano@karapetsas.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: window-picker-applet\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-09 12:54-0400\n"
-"PO-Revision-Date: 2009-09-09 15:10-0400\n"
-"Last-Translator: Ubuntu Translators\n"
-"Language-Team: Italian\n"
+"POT-Creation-Date: 2015-12-10 13:14+0300\n"
+"PO-Revision-Date: 2016-01-24 18:31+0000\n"
+"Last-Translator: Marco Bartolucci <nap.84@live.it>\n"
+"Language-Team: Italian (http://www.transifex.com/mate/MATE/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/MATE_WindowPicker.server.in.in.h:1 ../src/applet.c:268
-#: ../src/applet.c:269
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+msgid "Show windows from all workspaces."
+msgstr "Mostrare le finestre di tutti gli spazi di lavoro"
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
+msgid "Window Picker Applet Factory"
+msgstr "Fabbrica del Selettore Finestra"
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
+#: ../mate-window-picker-applet/applet.c:213
+#: ../mate-window-picker-applet/applet.c:214
 msgid "Window Picker"
 msgstr "Selettore finestra"
 
-#: ../src/applet.c:304
+#: ../mate-window-picker-applet/applet.c:65
+msgid "_Preferences"
+msgstr "_Preferenze"
+
+#: ../mate-window-picker-applet/applet.c:68
+msgid "_About"
+msgstr "Inform_azioni"
+
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: ../src/applet.c:320
+#: ../mate-window-picker-applet/applet.c:263
 msgid "Show windows from all workspaces"
 msgstr "Mostrare le finestre di tutti gli spazi di lavoro"
 
-#: ../src/task-title.c:251 ../src/task-title.c:258 ../src/task-title.c:301
-#: ../src/task-title.c:308 ../src/task-title.c:440 ../src/task-title.c:499
+#: ../mate-window-picker-applet/task-title.c:279
+#: ../mate-window-picker-applet/task-title.c:286
+#: ../mate-window-picker-applet/task-title.c:329
+#: ../mate-window-picker-applet/task-title.c:336
+#: ../mate-window-picker-applet/task-title.c:495
+#: ../mate-window-picker-applet/task-title.c:559
 msgid "Home"
 msgstr "Home"
 
-#: ../src/task-title.c:255 ../src/task-title.c:305 ../src/task-title.c:497
+#: ../mate-window-picker-applet/task-title.c:283
+#: ../mate-window-picker-applet/task-title.c:333
+#: ../mate-window-picker-applet/task-title.c:557
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr ""
-"Chiude la sessione, cambia utente, blocca lo schermo o spegne il computer"
+msgstr "Chiude la sessione, cambia utente, blocca lo schermo o spegne il computer"
 
-#: ../src/task-title.c:277
+#: ../mate-window-picker-applet/task-title.c:305
 msgid "Close window"
 msgstr "Chiude la finestra"
 
-#: ../src/task-title.c:460
+#: ../mate-window-picker-applet/task-title.c:515
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"
 
-#: ../src/task-title.c:461
-#, fuzzy
+#: ../mate-window-picker-applet/task-title.c:516
 msgid "Close current window."
-msgstr "Chiude la finestra"
+msgstr "Chiudi finestra corrente"
 
-#: ../src/task-item.c:631
+#: ../mate-window-picker-applet/task-item.c:694
 msgid "Window Task Button"
-msgstr ""
+msgstr "Window Task Button"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+msgid "A list of exclusion strings which apply to the window class."
+msgstr "Un elenco di stringhe di esclusione che si applicano alla classe finestra."
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+msgid "A list of exclusion strings which apply to the window class"
+msgstr "Un elenco di stringhe di esclusione che si applicano alla classe finestra"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+msgid "A binding"
+msgstr "Un'associazione"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+msgid "Undecorate windows when maximized"
+msgstr "Non decorare le finestre quando massimizzate"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+msgid "Do not automatically maximize newly opened windows"
+msgstr "Non massimizzare automaticamente le nuove finestre aperte "
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+msgid ""
+"Do not automatically maximize newly opened windows. If undecorate is set, "
+"will still undecorate maximized windows."
+msgstr "Non massimizzare automaticamente le nuove finestre aperte. Se è impostata la non-decorazione, continuerà a non decorare le finestre massimizzate."
