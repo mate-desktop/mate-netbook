@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-02-15 19:44+0000\n"
+"PO-Revision-Date: 2016-04-07 15:23+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -95,14 +95,14 @@ msgstr "Susiejimas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Panaikinti dekoravimą, išdidinus langus"
+msgstr "Panaikinti dekoravimą, išskleidus langus"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Automatiškai neišdidinti naujai atvertų langų"
+msgstr "Automatiškai neišskleisti naujai atvertų langų"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Automatiškai neišdidinti naujai atvertų langų. Jei yra nustatytas dekoravimo panaikinimas, vis tiek bus panaikinamas išdidintų langų dekoravimas."
+msgstr "Automatiškai neišskleisti naujai atvertų langų. Jei yra nustatytas dekoravimo panaikinimas, vis tiek bus panaikinamas išskleistų langų dekoravimas."

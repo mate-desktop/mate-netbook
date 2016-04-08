@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Allan Nordhøy <epost@anotheragency.no>, 2016
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-02-10 19:57+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-04-07 15:23+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
-msgstr ""
+msgstr "Vis vinduer fra alle arbeidsområder"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
-msgstr ""
+msgstr "Panelprogramsfabrikk for vindusvelger"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
 #: ../mate-window-picker-applet/applet.c:213
@@ -34,11 +35,11 @@ msgstr "Vindusvelger"
 
 #: ../mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
-msgstr ""
+msgstr "Innstillinger"
 
 #: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
-msgstr ""
+msgstr "Om"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -69,38 +70,38 @@ msgstr "Lukk vindu"
 
 #: ../mate-window-picker-applet/task-title.c:515
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #: ../mate-window-picker-applet/task-title.c:516
 msgid "Close current window."
-msgstr ""
+msgstr "Lukk gjeldende vindu."
 
 #: ../mate-window-picker-applet/task-item.c:694
 msgid "Window Task Button"
-msgstr ""
+msgstr "Knapp for vindusoppgave"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr ""
+msgstr "En liste over utelatte strenger som gjelder for vindusklassen."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr ""
+msgstr "En liste over utelatte strenger som gjelder for vindusklassen."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
-msgstr ""
+msgstr "Ei binding"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr ""
+msgstr "Fjern dekorasjon fra maksimerte vinduer"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr ""
+msgstr "Ingen automatisk maksimering av nyåpnede vinduer"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr ""
+msgstr "Ingen automatisk maksimering av nyåpnede vinduer. Hvis undecorate er angitt, vil dekorasjonen fremdeles fjernes på maksimerte vinduer."

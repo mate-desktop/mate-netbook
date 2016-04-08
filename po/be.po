@@ -8,64 +8,99 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-26 11:51+0200\n"
-"PO-Revision-Date: 2015-03-19 13:09+0000\n"
+"POT-Creation-Date: 2015-12-10 13:14+0300\n"
+"PO-Revision-Date: 2016-04-07 15:23+0000\n"
 "Last-Translator: Mihail Varantsou <meequz@gmail.com>\n"
-"Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
+"Language-Team: Belarusian (http://www.transifex.com/mate/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: be\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: ../mate-window-picker-applet/applet.c:64
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+msgid "Show windows from all workspaces."
+msgstr "Паказваць вокны з усіх працоўных прастораў."
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
+msgid "Window Picker Applet Factory"
+msgstr "Фабрыка аплета выбару вокнаў"
+
+#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
+#: ../mate-window-picker-applet/applet.c:213
+#: ../mate-window-picker-applet/applet.c:214
+msgid "Window Picker"
+msgstr "Выбраць акно"
+
+#: ../mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
 msgstr "_Настáўленні"
 
-#: ../mate-window-picker-applet/applet.c:67
+#: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
 msgstr "_Пра"
 
-#: ../mate-window-picker-applet/applet.c:266
-#: ../mate-window-picker-applet/applet.c:267
-msgid "Window Picker"
-msgstr "Абраць акно"
-
-#: ../mate-window-picker-applet/applet.c:301
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Настáўленні"
 
-#: ../mate-window-picker-applet/applet.c:317
+#: ../mate-window-picker-applet/applet.c:263
 msgid "Show windows from all workspaces"
 msgstr "Паказаць вокны з усіх працоўных прастораў"
 
-#: ../mate-window-picker-applet/task-title.c:251
-#: ../mate-window-picker-applet/task-title.c:258
-#: ../mate-window-picker-applet/task-title.c:301
-#: ../mate-window-picker-applet/task-title.c:308
-#: ../mate-window-picker-applet/task-title.c:440
-#: ../mate-window-picker-applet/task-title.c:499
+#: ../mate-window-picker-applet/task-title.c:279
+#: ../mate-window-picker-applet/task-title.c:286
+#: ../mate-window-picker-applet/task-title.c:329
+#: ../mate-window-picker-applet/task-title.c:336
+#: ../mate-window-picker-applet/task-title.c:495
+#: ../mate-window-picker-applet/task-title.c:559
 msgid "Home"
 msgstr "Дадому"
 
-#: ../mate-window-picker-applet/task-title.c:255
-#: ../mate-window-picker-applet/task-title.c:305
-#: ../mate-window-picker-applet/task-title.c:497
+#: ../mate-window-picker-applet/task-title.c:283
+#: ../mate-window-picker-applet/task-title.c:333
+#: ../mate-window-picker-applet/task-title.c:557
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Выйсці, пераключыць карыстальніка, замкнуць экран ці адключыць камп'ютар"
 
-#: ../mate-window-picker-applet/task-title.c:277
+#: ../mate-window-picker-applet/task-title.c:305
 msgid "Close window"
 msgstr "Закрыць акно"
 
-#: ../mate-window-picker-applet/task-title.c:460
+#: ../mate-window-picker-applet/task-title.c:515
 msgid "Close"
 msgstr "Закрыць"
 
-#: ../mate-window-picker-applet/task-title.c:461
+#: ../mate-window-picker-applet/task-title.c:516
 msgid "Close current window."
 msgstr "Закрыць дзейнае акно"
 
-#: ../mate-window-picker-applet/task-item.c:650
+#: ../mate-window-picker-applet/task-item.c:694
 msgid "Window Task Button"
-msgstr ""
+msgstr "Кнопка задач акна"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+msgid "A list of exclusion strings which apply to the window class."
+msgstr "Спіс выключэнняў, што ўжываецца да класу вокнаў."
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+msgid "A list of exclusion strings which apply to the window class"
+msgstr "Спіс выключэнняў, што ўжываецца да класу вокнаў"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+msgid "A binding"
+msgstr "Прывязка"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+msgid "Undecorate windows when maximized"
+msgstr "Прынімаць мяжу акна пры найбольшванні"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+msgid "Do not automatically maximize newly opened windows"
+msgstr "Не разгортваць на ўвесь экран новыя вокны"
+
+#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+msgid ""
+"Do not automatically maximize newly opened windows. If undecorate is set, "
+"will still undecorate maximized windows."
+msgstr "Не разгортваць на ўвесь экран новыя вокны. Калі мяжа акна пры найбольшванні адключана, найбольшаныя вокны па-ранейшаму не будуць мець мяжы."
