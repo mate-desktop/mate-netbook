@@ -10,6 +10,7 @@ bs
 ca
 cmn
 cs
+cy
 da
 de
 el
@@ -19,11 +20,14 @@ en_GB
 eo
 es
 es_CL
+es_CO
+es_MX
 et
 eu
 fi
 fr
 fr_CA
+frp
 gl
 he
 hi
@@ -31,10 +35,12 @@ hr
 hu
 hy
 id
+is
 it
 ja
 jv
 kk
+kn
 ko
 ky
 lt
@@ -42,7 +48,9 @@ lv
 mr
 ms
 nb
+ne
 nl
+oc
 pl
 pt_BR
 pt
@@ -57,6 +65,7 @@ te
 th
 tr
 uk
+uz
 vi
 zh_CN
 zh_HK
