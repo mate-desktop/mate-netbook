@@ -5,13 +5,14 @@
 # Translators:
 # Daniel <danny34ever@yahoo.com>, 2015-2016
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
+# Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-07 15:23+0000\n"
-"Last-Translator: Daniel <danny34ever@yahoo.com>\n"
+"PO-Revision-Date: 2016-05-29 10:47+0000\n"
+"Last-Translator: Polihron Alexandru (APoliTech) <ppolihron@gmail.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,11 +83,11 @@ msgstr "Buton opțiuni fereastră"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr ""
+msgstr "O listă de șiruri de excludere care se aplică la clasa ferestrei."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr ""
+msgstr "O listă de șiruri de excludere care se aplică la clasa ferestrei"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
