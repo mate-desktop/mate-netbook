@@ -77,7 +77,6 @@ PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS,
                   glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
                   libwnck-$LIBWNCK_API_VERSION
-                  mate-desktop-2.0 >= 1.9.0
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
