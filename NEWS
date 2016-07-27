@@ -1,3 +1,8 @@
+1.15.1
+======
+
+ * Get rid of dependency on libmate-desktop
+
 1.15.0
 ======
 
