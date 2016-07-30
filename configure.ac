@@ -51,11 +51,9 @@ AC_MSG_RESULT([$with_gtk])
 case "$with_gtk" in
   2.0) GTK_API_VERSION=2.0
        LIBWNCK_API_VERSION=1.0
-       LIBUNIQUE_API_VERSION=1.0
        ;;
   3.0) GTK_API_VERSION=3.0
        LIBWNCK_API_VERSION=3.0
-       LIBUNIQUE_API_VERSION=3.0
        ;;
 esac
 
@@ -66,7 +64,6 @@ PKG_CHECK_MODULES(MAXIMUS_DEPS,
                   libwnck-$LIBWNCK_API_VERSION
                   xtst
                   libfakekey
-                  unique-$LIBUNIQUE_API_VERSION
                   )
 AC_SUBST(MAXIMUS_DEPS_CFLAGS)
 AC_SUBST(MAXIMUS_DEPS_LIBS)
