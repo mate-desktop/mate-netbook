@@ -26,7 +26,7 @@
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
-#include <unique/unique.h>
+#include <gio/gio.h>
 
 #include "maximus-app.h"
 
@@ -60,17 +60,25 @@ GOptionEntry entries[] =
 
 gint main (gint argc, gchar *argv[])
 {
-  UniqueApp *unique;
+  GApplication *application;
   MaximusApp UNUSED_VARIABLE *app;
   GOptionContext  *context;
+  GError *error = NULL;
 
   g_set_application_name ("Maximus");
   
   gtk_init (&argc, &argv);
   
-  unique = unique_app_new ("com.canonical.Maximus", NULL);
+  application = g_application_new ("com.canonical.Maximus", G_APPLICATION_FLAGS_NONE);
+
+  if (!g_application_register (application, NULL, &error))
+  {
+    g_warning ("%s", error->message);
+    g_error_free (error);
+    return 1;
+  }
   
-  if (unique_app_is_running (unique))
+  if (g_application_get_is_remote(application))
   {
     return 0;
   }
