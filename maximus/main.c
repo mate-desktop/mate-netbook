@@ -71,7 +71,7 @@ gint main (gint argc, gchar *argv[])
   
   application = g_application_new ("com.canonical.Maximus", G_APPLICATION_FLAGS_NONE);
 
-  if (!g_application_register (application, g_cancellable_new(), &error))
+  if (!g_application_register (application, NULL, &error))
   {
     g_warning ("%s", error->message);
     g_error_free (error);
