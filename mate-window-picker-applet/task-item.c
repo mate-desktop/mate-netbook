@@ -623,12 +623,13 @@ on_screen_window_closed (WnckScreen  *screen,
 
   if (priv->window == window)
   {
-    g_signal_handlers_disconnect_by_func (screen, G_CALLBACK (on_screen_window_closed), item);
+    g_signal_handlers_disconnect_by_func (screen, G_CALLBACK (on_screen_active_viewport_changed), item);
     g_signal_handlers_disconnect_by_func (screen, G_CALLBACK (on_screen_active_window_changed), item);
     g_signal_handlers_disconnect_by_func (screen, G_CALLBACK (on_screen_active_workspace_changed), item);
     g_signal_handlers_disconnect_by_func (screen, G_CALLBACK (on_screen_window_closed), item);
     g_signal_handlers_disconnect_by_func (window, G_CALLBACK (on_window_workspace_changed), item);
     g_signal_handlers_disconnect_by_func (window, G_CALLBACK (on_window_state_changed), item);
+    g_signal_handlers_disconnect_by_func (window, G_CALLBACK (on_window_icon_changed), item);
   
     g_signal_emit (G_OBJECT (item), task_item_signals[TASK_ITEM_CLOSED_SIGNAL], 0);
   }
