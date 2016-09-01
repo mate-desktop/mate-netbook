@@ -550,7 +550,8 @@ on_window_workspace_changed (WnckWindow *window, TaskItem *item)
   task_item_set_visibility (item);
 }
 
-static void on_window_icon_changed (WnckWindow *window, TaskItem *item)
+static void
+on_window_icon_changed (WnckWindow *window, TaskItem *item)
 {
   TaskItemPrivate *priv;
   
