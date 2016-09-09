@@ -1,3 +1,9 @@
+1.15.2
+======
+
+ * Ported from libunqiue to GApplication.
+ * Disconnect some missing signal handlers.
+
 1.15.1
 ======
 
