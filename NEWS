@@ -1,18 +1,11 @@
-1.15.2
+1.16.0
 ======
 
- * Ported from libunqiue to GApplication.
- * Disconnect some missing signal handlers.
-
-1.15.1
-======
-
- * Get rid of dependency on libmate-desktop
-
-1.15.0
-======
-
- * Update translations
+ * Window Picker Applet: use GtkAboutDialog instead of MateAboutDialog
+ * Window Picker Applet: prevent possible crash
+ * mate-maximus: port from libunique to GApplication
+ * Drop dependencies on libmate-desktop and libunique
+ * Translations update
 
 1.14.0
 ======
