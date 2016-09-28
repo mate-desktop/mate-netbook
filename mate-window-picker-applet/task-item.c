@@ -279,15 +279,13 @@ task_item_sized_pixbuf_for_window (TaskItem   *item,
 static gboolean
 #if GTK_CHECK_VERSION (3, 0, 0)
 task_item_draw (GtkWidget      *widget,
-		        cairo_t *cr)
+		        cairo_t *unused)
 #else
 task_item_expose_event (GtkWidget      *widget,
 		        GdkEventExpose *event)
 #endif
 {
-#if !GTK_CHECK_VERSION (3, 0, 0)
   cairo_t *cr;
-#endif
   TaskItem *item;
   GdkRectangle area;
   TaskItemPrivate *priv;
@@ -305,7 +303,9 @@ task_item_expose_event (GtkWidget      *widget,
   g_return_val_if_fail (WNCK_IS_WINDOW (priv->window), FALSE);
   
   area = priv->area;
-#if !GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 0, 0)
+  cr = gdk_cairo_create (gtk_widget_get_window (widget));
+#else
   cr = gdk_cairo_create (event->window);
 #endif
   
@@ -413,9 +413,7 @@ task_item_expose_event (GtkWidget      *widget,
     cairo_paint_with_alpha (cr, .65);
   }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
   cairo_destroy (cr);
-#endif
   
   return FALSE;
 }
