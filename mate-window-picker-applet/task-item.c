@@ -178,13 +178,16 @@ task_item_set_visibility (TaskItem *item)
   
   if (!wnck_window_is_skip_tasklist (window))
   {
-    if (wnck_workspace_is_virtual (workspace))
+    if (workspace != NULL)
     {
-      show_window = wnck_window_is_in_viewport (window, workspace);
-    }
-    else
-    {
-      show_window = wnck_window_is_on_workspace (window, workspace);
+      if (wnck_workspace_is_virtual (workspace))
+      {
+        show_window = wnck_window_is_in_viewport (window, workspace);
+      }
+      else
+      {
+        show_window = wnck_window_is_on_workspace (window, workspace);
+      }
     }
     show_window = show_window || show_all;
   }
