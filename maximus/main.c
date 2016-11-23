@@ -91,11 +91,7 @@ gint main (gint argc, gchar *argv[])
 
   gdk_error_trap_push ();
   app = maximus_app_get_default ();
-#if GTK_CHECK_VERSION (3, 0, 0)
   gdk_error_trap_pop_ignored ();
-#else
-  gdk_error_trap_pop ();
-#endif
 
   gtk_main ();
 

@@ -107,7 +107,6 @@ on_leave_notify (GtkWidget *widget,
   return FALSE;
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static gboolean
 on_button_draw (GtkWidget *widget, 
                 cairo_t *cr,
@@ -142,36 +141,6 @@ on_button_draw (GtkWidget *widget,
   }
   return FALSE;
 }
-#else
-static gboolean
-on_button_expose (GtkWidget *widget,
-                  GdkEventExpose *event,
-                  TaskTitle *title)
-{
-  g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
-
-  TaskTitlePrivate *priv;
-  priv = title->priv;
-
-  if (priv->mouse_in_close_button)
-  {
-    GtkStyle *style = gtk_widget_get_style (widget);
-
-    gtk_paint_box (style,
-                   event->window,
-                   GTK_STATE_PRELIGHT,
-                   GTK_SHADOW_NONE,
-                   NULL,
-                   NULL,
-                   NULL,
-                   event->area.x,
-                   event->area.y + 2,
-                   event->area.width,
-                   event->area.height - 4);
-  }
-  return FALSE;
-}
-#endif
 
 static void
 on_name_changed (WnckWindow *window, TaskTitle *title)
@@ -389,8 +358,6 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
   return FALSE;
 }
 
-
-#if GTK_CHECK_VERSION (3, 0, 0)
 static gboolean
 on_draw (GtkWidget *w, cairo_t *cr)
 {
@@ -408,24 +375,6 @@ on_draw (GtkWidget *w, cairo_t *cr)
                                 cr);
   return TRUE;
 }
-#else
-static gboolean
-on_expose (GtkWidget *w, GdkEventExpose *event)
-{
-  if (w->state == GTK_STATE_ACTIVE) {
-    gtk_paint_box (w->style, w->window,
-                   w->state, GTK_SHADOW_NONE,
-                   NULL, w, "button",
-                   w->allocation.x, w->allocation.y,
-                   w->allocation.width, w->allocation.height);
-  }
-
-  gtk_container_propagate_expose (GTK_CONTAINER (w),
-                                  gtk_bin_get_child (GTK_BIN (w)),
-                                  event);
-  return TRUE;
-}
-#endif
 
 /* GObject stuff */
 static void
@@ -448,11 +397,7 @@ task_title_class_init (TaskTitleClass *klass)
   GtkWidgetClass      *wid_class = GTK_WIDGET_CLASS (klass);
 
   obj_class->finalize = task_title_finalize;
-#if GTK_CHECK_VERSION (3, 0, 0)
   wid_class->draw = on_draw;
-#else
-  wid_class->expose_event = on_expose;
-#endif
 
   g_type_class_add_private (obj_class, sizeof (TaskTitlePrivate));
 }
@@ -483,23 +428,15 @@ task_title_init (TaskTitle *title)
                              0, 0, 6, 6);
   gtk_container_add (GTK_CONTAINER (title), priv->align);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
   priv->box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 2);
-#else
-  priv->box = gtk_hbox_new (FALSE, 2);
-#endif
   gtk_container_add (GTK_CONTAINER (priv->align), priv->box);
   gtk_widget_set_no_show_all (priv->box, TRUE);
   gtk_widget_show (priv->box);
 
   priv->label = gtk_label_new (_("Home"));
   gtk_label_set_ellipsize (GTK_LABEL (priv->label), PANGO_ELLIPSIZE_END);
-#if GTK_CHECK_VERSION (3, 0, 0)
   gtk_widget_set_halign (priv->label, GTK_ALIGN_START);
   gtk_widget_set_valign (priv->label, GTK_ALIGN_CENTER);
-#else
-  gtk_misc_set_alignment (GTK_MISC (priv->label), 0.0, 0.5);
-#endif
   
   PangoAttrList *attr_list = pango_attr_list_new ();
   PangoAttribute *attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
@@ -527,13 +464,8 @@ task_title_init (TaskTitle *title)
                     G_CALLBACK (on_enter_notify), title);
   g_signal_connect (priv->button, "leave-notify-event",
                     G_CALLBACK (on_leave_notify), title);
-#if GTK_CHECK_VERSION (3, 0, 0)
   g_signal_connect (priv->button, "draw",
                     G_CALLBACK (on_button_draw), title);
-#else
-  g_signal_connect (priv->button, "expose-event",
-                    G_CALLBACK (on_button_expose), title);
-#endif
 
   gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
   theme = gtk_icon_theme_get_for_screen (gdkscreen);

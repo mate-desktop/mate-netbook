@@ -96,10 +96,7 @@ update_hints (TaskItem *item)
     {
       x1 = y1 = 0;
       gdkwindow = gtk_widget_get_window (parent);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-      if (GDK_IS_WINDOW (gdkwindow))
-#endif
-        gdk_window_get_origin (gdkwindow, &x1, &y1);
+      gdk_window_get_origin (gdkwindow, &x1, &y1);
       x += x1; y += y1;
       break;
     }
@@ -202,8 +199,6 @@ task_item_set_visibility (TaskItem *item)
   }
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-
 static void
 task_item_get_preferred_width (GtkWidget *widget,
                                gint      *minimal_width,
@@ -219,19 +214,6 @@ task_item_get_preferred_height (GtkWidget *widget,
 {
   *minimal_height = *natural_height = DEFAULT_TASK_ITEM_HEIGHT;
 }
-
-#else
-
-static void 
-task_item_size_request (GtkWidget      *widget,
-		       GtkRequisition *requisition)
-{
-  /* Candidate for terrible hack of the year award */
-  requisition->width  = DEFAULT_TASK_ITEM_WIDTH;
-  requisition->height = DEFAULT_TASK_ITEM_HEIGHT;
-}
-
-#endif
 
 static GdkPixbuf *
 task_item_sized_pixbuf_for_window (TaskItem   *item,
@@ -280,13 +262,8 @@ task_item_sized_pixbuf_for_window (TaskItem   *item,
   return pbuf;
 }
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 task_item_draw (GtkWidget      *widget,
 		        cairo_t *unused)
-#else
-task_item_expose_event (GtkWidget      *widget,
-		        GdkEventExpose *event)
-#endif
 {
   cairo_t *cr;
   TaskItem *item;
@@ -296,9 +273,6 @@ task_item_expose_event (GtkWidget      *widget,
   
   g_return_val_if_fail (widget != NULL, FALSE);
   g_return_val_if_fail (TASK_IS_ITEM (widget), FALSE);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-  g_return_val_if_fail (event != NULL, FALSE);
-#endif
   
   item = TASK_ITEM (widget);
   priv = item->priv;
@@ -306,11 +280,7 @@ task_item_expose_event (GtkWidget      *widget,
   g_return_val_if_fail (WNCK_IS_WINDOW (priv->window), FALSE);
   
   area = priv->area;
-#if GTK_CHECK_VERSION (3, 0, 0)
   cr = gdk_cairo_create (gtk_widget_get_window (widget));
-#else
-  cr = gdk_cairo_create (event->window);
-#endif
   
   pbuf = priv->pixbuf;
   
@@ -743,14 +713,9 @@ task_item_class_init (TaskItemClass *klass)
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
   obj_class->finalize = task_item_finalize;
-#if GTK_CHECK_VERSION (3, 0, 0)
   widget_class->draw = task_item_draw;
   widget_class->get_preferred_width = task_item_get_preferred_width;
   widget_class->get_preferred_height = task_item_get_preferred_height;
-#else
-  widget_class->expose_event = task_item_expose_event;
-  widget_class->size_request = task_item_size_request;
-#endif
 
   g_type_class_add_private (obj_class, sizeof (TaskItemPrivate));
   

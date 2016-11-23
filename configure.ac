@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(mate-netbook, 1.16.1, [])
+AC_INIT(mate-netbook, 1.17.0, [])
 AM_INIT_AUTOMAKE([1.9 foreign tar-ustar no-dist-gzip dist-xz check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(maximus/main.c)
@@ -38,30 +38,11 @@ AC_SUBST(GCC_FLAGS)
 
 GLIB_REQUIRED=2.36.0
 
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=2.0])
-AC_MSG_RESULT([$with_gtk])
-
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       LIBWNCK_API_VERSION=1.0
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       LIBWNCK_API_VERSION=3.0
-       ;;
-esac
-
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
-                  gtk+-$GTK_API_VERSION
+                  gtk+-3.0
                   glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
-                  libwnck-$LIBWNCK_API_VERSION
+                  libwnck-3.0
                   xtst
                   libfakekey
                   )
@@ -69,11 +50,11 @@ AC_SUBST(MAXIMUS_DEPS_CFLAGS)
 AC_SUBST(MAXIMUS_DEPS_LIBS)
 
 PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS, 
-                  libmatepanelapplet-4.0
-                  gtk+-$GTK_API_VERSION
+                  libmatepanelapplet-4.0 >= 1.17.0
+                  gtk+-3.0
                   glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
-                  libwnck-$LIBWNCK_API_VERSION
+                  libwnck-3.0
                   )
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
@@ -88,7 +69,3 @@ mate-window-picker-applet/Makefile
 mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 po/Makefile.in
 ])
-
-echo "
-    GTK+ API version:           ${GTK_API_VERSION}
-"
