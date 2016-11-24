@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Karim Oulad Chalha <herr.linux88@gmail.com>, 2012
+# ‫كريم أولاد الشلحة‬‎ <herr.linux88@gmail.com>, 2012
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 # Mosaab Alzoubi <moceap@hotmail.com>, 2013
 # مهدي السطيفي <chinoune.mehdi@gmail.com>, 2015

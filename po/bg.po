@@ -6,13 +6,14 @@
 # Georgi Georgiev <georgiev_1994@abv.bg>, 2014
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 # sahwar <ve4ernik@gmail.com>, 2012
+# Любомир Василев, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-07 15:23+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-11-07 12:38+0000\n"
+"Last-Translator: Любомир Василев\n"
 "Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,11 +23,11 @@ msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
-msgstr ""
+msgstr "Показване на прозорците от всички работни плотове."
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
-msgstr ""
+msgstr "Фабрика на аплета за избиране на прозорци"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
 #: ../mate-window-picker-applet/applet.c:213
@@ -40,7 +41,7 @@ msgstr "_Предпочитания"
 
 #: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
-msgstr "_За..."
+msgstr "_Относно…"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -83,26 +84,26 @@ msgstr "Бутон за задачи в прозореца"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr ""
+msgstr "Списък от низове за изключване, които се прилагат към класа на прозореца."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr ""
+msgstr "Списък от низове за изключване, които се прилагат към класа на прозореца"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
-msgstr ""
+msgstr "Клавишна комбинация"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr ""
+msgstr "Премахване на украсата на максимизираните прозорци"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr ""
+msgstr "Новите прозорци  да не се максимизират автоматично"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr ""
+msgstr "Новите прозорци  да не се максимизират автоматично Ако премахването на украсата е зададено, максимизираните прозорци все пак ще бъдат с премахната украса."

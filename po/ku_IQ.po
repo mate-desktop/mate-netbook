@@ -3,54 +3,50 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Lucas Mezêncio <lucas.mezencio@gmail.com>, 2015
-# Victor Gonçalves <hotcyv@gmail.com>, 2015
-# vitorgatti <vitorgatti@yahoo.com.br>, 2012
-# Wilson Flávio Rodrigues <wfr@cin.ufpe.br>, 2015
+# Rasti K5 <rasti.khdhr@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-07 15:23+0000\n"
-"Last-Translator: Lucas Mezêncio <lucas.mezencio@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/mate/MATE/language/pt_BR/)\n"
+"PO-Revision-Date: 2016-09-11 21:17+0000\n"
+"Last-Translator: Rasti K5 <rasti.khdhr@gmail.com>\n"
+"Language-Team: Kurdish (Iraq) (http://www.transifex.com/mate/MATE/language/ku_IQ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ku_IQ\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
-msgstr "Mostrar janelas em todas as áreas de trabalho."
+msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
-msgstr "Applet de Escolha de Janela"
+msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
 #: ../mate-window-picker-applet/applet.c:213
 #: ../mate-window-picker-applet/applet.c:214
 msgid "Window Picker"
-msgstr "Selecionador de janelas"
+msgstr ""
 
 #: ../mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
-msgstr "_Preferências"
+msgstr "_هەڵبژاردەکان"
 
 #: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
-msgstr "_Sobre"
+msgstr "_دەربارە"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr "Preferências"
+msgstr "هەڵبژاردەکان"
 
 #: ../mate-window-picker-applet/applet.c:263
 msgid "Show windows from all workspaces"
-msgstr "Exibir janelas de todas as áreas de trabalho"
+msgstr ""
 
 #: ../mate-window-picker-applet/task-title.c:279
 #: ../mate-window-picker-applet/task-title.c:286
@@ -59,52 +55,52 @@ msgstr "Exibir janelas de todas as áreas de trabalho"
 #: ../mate-window-picker-applet/task-title.c:495
 #: ../mate-window-picker-applet/task-title.c:559
 msgid "Home"
-msgstr "Início"
+msgstr "ماڵەوە"
 
 #: ../mate-window-picker-applet/task-title.c:283
 #: ../mate-window-picker-applet/task-title.c:333
 #: ../mate-window-picker-applet/task-title.c:557
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Fazer logoff, trocar usuário, bloquear tela ou desligar o computador"
+msgstr ""
 
 #: ../mate-window-picker-applet/task-title.c:305
 msgid "Close window"
-msgstr "Fechar janela"
+msgstr "داخستنی پەنجەرە"
 
 #: ../mate-window-picker-applet/task-title.c:515
 msgid "Close"
-msgstr "Fechar"
+msgstr "داخستن"
 
 #: ../mate-window-picker-applet/task-title.c:516
 msgid "Close current window."
-msgstr "Fechar janela atual."
+msgstr ""
 
 #: ../mate-window-picker-applet/task-item.c:694
 msgid "Window Task Button"
-msgstr "Botão da Janela de Tarefa"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
-msgstr "Uma conexão"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Não decorar as janelas quando maximizadas"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Não maximiza automaticamente as janelas recentemente abertas"
+msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Não maximizar automaticamente janelas recentemente abertas. Se for definido não decorar, janelas maximizadas continuarão não sendo decoradas."
+msgstr ""

@@ -7,7 +7,7 @@
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2012
 # AlexL <loginov.alex.valer@gmail.com>, 2015
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Vyalkov Matvey <cybertailor@gmail.com>, 2015
+# Cyber Tailor <cybertailor@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
