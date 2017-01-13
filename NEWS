@@ -1,62 +1,53 @@
-1.17.0
-======
+### mate-netbook 1.17.0
 
- * Translations update
- * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
+  * Translations update
+  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
 
-1.16.1
-======
+### mate-netbook 1.16.1
 
- * Window Picker Applet: fix invisible icons in GTK+3 build
- * Window Picker Applet: fix occasional runtime warning about
+  * Window Picker Applet: fix invisible icons in GTK+3 build
+  * Window Picker Applet: fix occasional runtime warning about
    workspace being NULL
- * Translations update
+  * Translations update
 
-1.16.0
-======
+### mate-netbook 1.16.0
 
- * Window Picker Applet: use GtkAboutDialog instead of MateAboutDialog
- * Window Picker Applet: prevent possible crash
- * mate-maximus: port from libunique to GApplication
- * Drop dependencies on libmate-desktop and libunique
- * Translations update
+  * Window Picker Applet: use GtkAboutDialog instead of MateAboutDialog
+  * Window Picker Applet: prevent possible crash
+  * mate-maximus: port from libunique to GApplication
+  * Drop dependencies on libmate-desktop and libunique
+  * Translations update
 
-1.14.0
-======
+### mate-netbook 1.14.0
 
- * Drop MateConf migration script
- * GTK+3: fix some deprecations
- * Several fixes and cleanups
- * Translations update
- * Fix Changelog generation
+  * Drop MateConf migration script
+  * GTK+3: fix some deprecations
+  * Several fixes and cleanups
+  * Translations update
+  * Fix Changelog generation
 
-1.12.0
-======
+### mate-netbook 1.12.0
 
- * Window Picker Applet: have background automatically painted
- * Retrieve strings directly from gschema (requires intltool 0.50.1)
- * Several small fixes and cleanups
+  * Window Picker Applet: have background automatically painted
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
+  * Several small fixes and cleanups
 
-1.10.0
-======
+### mate-netbook 1.10.0
 
- * translation update
+  * translation update
 
-1.9.91
-======
+### mate-netbook 1.9.91
 
- * Use MateAboutDialog
+  * Use MateAboutDialog
 
-1.8.0
-=====
+### mate-netbook 1.8.0
 
- * Add GTK3 support
- * Use libwnck instead of libmatewnck
- * Fix long delay with different window managers than marco
+  * Add GTK3 support
+  * Use libwnck instead of libmatewnck
+  * Fix long delay with different window managers than marco
 
-1.5.0
-=====
+### mate-netbook 1.5.0
 
- * Migrate to GSettings and drop mateconf
- * Drop libmateui
- * Update to new libmatepanelapplet-4.0
+  * Migrate to GSettings and drop mateconf
+  * Drop libmateui
+  * Update to new libmatepanelapplet-4.0
