@@ -1,13 +1,17 @@
-### mate-netbook 1.17.0
+### mate-netbook 1.18.0
 
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
+  * Build: require mate-panel >= 1.17
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
+    --with-gtk build option
   * Translations update
-  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
 
 ### mate-netbook 1.16.1
 
   * Window Picker Applet: fix invisible icons in GTK+3 build
   * Window Picker Applet: fix occasional runtime warning about
-   workspace being NULL
+    workspace being NULL
   * Translations update
 
 ### mate-netbook 1.16.0
