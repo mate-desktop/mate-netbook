@@ -66,6 +66,7 @@ Makefile
 maximus/Makefile
 maximus/org.mate.maximus.gschema.xml
 mate-window-picker-applet/Makefile
+mate-window-picker-applet/pixmaps/Makefile
 mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 po/Makefile.in
 ])

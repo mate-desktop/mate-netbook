@@ -1,3 +1,5 @@
+SUBDIRS = pixmaps
+
 libexec_PROGRAMS=mate-window-picker-applet
 
 PKGDATADIR = $(datadir)/mate-window-picker-applet
@@ -9,6 +11,7 @@ AM_CFLAGS=\
 	-D_GNU_SOURCE 				\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\" \
 	-DPKGDATADIR=\"$(PKGDATADIR)\" \
+	-DMATENETBOOK_PIX_DIR=\""$(datadir)/mate-netbook/pixmaps/"\" \
 	-DMATEWINDOWPICKER_MENU_UI_DIR=\""$(xmluidir)"\"
 
 mate_window_picker_applet_LDADD = \
