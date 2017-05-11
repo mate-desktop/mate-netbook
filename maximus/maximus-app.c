@@ -149,11 +149,14 @@ gdk_window_set_mwm_hints (WnckWindow *window,
   hints_atom = gdk_x11_get_xatom_by_name_for_display (display, 
                                                       _XA_MOTIF_WM_HINTS);
 
+  gdk_error_trap_push ();
   XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), 
                       wnck_window_get_xid (window),
 		                  hints_atom, 0, sizeof (MotifWmHints)/sizeof (long),
 		                  False, AnyPropertyType, &type, &format, &nitems,
 		                  &bytes_after, &data);
+  if (gdk_error_trap_pop ())
+    return;
   
   if (type != hints_atom || !data)
     hints = new_hints;
@@ -366,7 +369,11 @@ on_window_opened (WnckScreen  *screen,
     return;
 
   /* Ignore undecorated windows */
+  gdk_error_trap_push ();
   exclude = wnck_window_is_decorated (window) ? 0 : 1;
+  if (gdk_error_trap_pop ())
+    return;
+
   if (wnck_window_is_maximized (window))
     exclude = 0;
   g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (exclude));
