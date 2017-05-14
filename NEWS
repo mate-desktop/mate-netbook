@@ -1,3 +1,8 @@
+### mate-netbook 1.18.1
+
+  * Maximus: don't crash on invalid window ID
+  * Translations update
+
 ### mate-netbook 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting
