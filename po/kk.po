@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-07 15:23+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"PO-Revision-Date: 2017-03-21 14:08+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/mate/MATE/language/kk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,62 +20,62 @@ msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
-msgstr ""
+msgstr "Барлық жұмыс орындар терезелерін көрсету."
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
 msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:213
-#: ../mate-window-picker-applet/applet.c:214
+#: ../mate-window-picker-applet/applet.c:211
+#: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
-msgstr ""
+msgstr "Терезелер таңдаушысы"
 
-#: ../mate-window-picker-applet/applet.c:65
+#: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
 msgstr "Қалаулар"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
 msgstr "О_сы туралы"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:245
 msgid "Preferences"
 msgstr "Баптаулар"
 
-#: ../mate-window-picker-applet/applet.c:263
+#: ../mate-window-picker-applet/applet.c:261
 msgid "Show windows from all workspaces"
-msgstr ""
+msgstr "Барлық жұмыс орындар терезелерін көрсету"
 
-#: ../mate-window-picker-applet/task-title.c:279
-#: ../mate-window-picker-applet/task-title.c:286
-#: ../mate-window-picker-applet/task-title.c:329
-#: ../mate-window-picker-applet/task-title.c:336
-#: ../mate-window-picker-applet/task-title.c:495
-#: ../mate-window-picker-applet/task-title.c:559
+#: ../mate-window-picker-applet/task-title.c:252
+#: ../mate-window-picker-applet/task-title.c:259
+#: ../mate-window-picker-applet/task-title.c:302
+#: ../mate-window-picker-applet/task-title.c:309
+#: ../mate-window-picker-applet/task-title.c:436
+#: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
 msgstr "Үй"
 
-#: ../mate-window-picker-applet/task-title.c:283
-#: ../mate-window-picker-applet/task-title.c:333
-#: ../mate-window-picker-applet/task-title.c:557
+#: ../mate-window-picker-applet/task-title.c:256
+#: ../mate-window-picker-applet/task-title.c:306
+#: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 
-#: ../mate-window-picker-applet/task-title.c:305
+#: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
 msgstr "Терезені жабу"
 
-#: ../mate-window-picker-applet/task-title.c:515
+#: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
 msgstr "Жабу"
 
-#: ../mate-window-picker-applet/task-title.c:516
+#: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
-msgstr ""
+msgstr "Ағымдағы терезені жабу."
 
-#: ../mate-window-picker-applet/task-item.c:694
+#: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
 msgstr ""
 

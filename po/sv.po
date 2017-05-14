@@ -4,6 +4,7 @@
 # 
 # Translators:
 # Claes-Göran Nydahl <goldug@gmail.com>, 2016
+# Daniel Gullbransen <daniel@llama.nu>, 2017
 # Erik, 2016
 # Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2016
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-28 01:42+0000\n"
-"Last-Translator: Claes-Göran Nydahl <goldug@gmail.com>\n"
+"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"PO-Revision-Date: 2017-05-03 07:51+0000\n"
+"Last-Translator: Daniel Gullbransen <daniel@llama.nu>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,55 +32,55 @@ msgid "Window Picker Applet Factory"
 msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:213
-#: ../mate-window-picker-applet/applet.c:214
+#: ../mate-window-picker-applet/applet.c:211
+#: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
 msgstr "Fönsterväljare"
 
-#: ../mate-window-picker-applet/applet.c:65
+#: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
 msgstr "_Om"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:245
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: ../mate-window-picker-applet/applet.c:263
+#: ../mate-window-picker-applet/applet.c:261
 msgid "Show windows from all workspaces"
 msgstr "Visa fönster från alla arbetsytor"
 
-#: ../mate-window-picker-applet/task-title.c:279
-#: ../mate-window-picker-applet/task-title.c:286
-#: ../mate-window-picker-applet/task-title.c:329
-#: ../mate-window-picker-applet/task-title.c:336
-#: ../mate-window-picker-applet/task-title.c:495
-#: ../mate-window-picker-applet/task-title.c:559
+#: ../mate-window-picker-applet/task-title.c:252
+#: ../mate-window-picker-applet/task-title.c:259
+#: ../mate-window-picker-applet/task-title.c:302
+#: ../mate-window-picker-applet/task-title.c:309
+#: ../mate-window-picker-applet/task-title.c:436
+#: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
 msgstr "Startsida"
 
-#: ../mate-window-picker-applet/task-title.c:283
-#: ../mate-window-picker-applet/task-title.c:333
-#: ../mate-window-picker-applet/task-title.c:557
+#: ../mate-window-picker-applet/task-title.c:256
+#: ../mate-window-picker-applet/task-title.c:306
+#: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Logga ut, byt användare, lås skärmen eller stäng av datorn"
 
-#: ../mate-window-picker-applet/task-title.c:305
+#: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
 msgstr "Stäng fönster"
 
-#: ../mate-window-picker-applet/task-title.c:515
+#: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
 msgstr "Stäng"
 
-#: ../mate-window-picker-applet/task-title.c:516
+#: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
 msgstr "Stäng aktuellt fönster."
 
-#: ../mate-window-picker-applet/task-item.c:694
+#: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
 msgstr "Knapp för fönstert i aktivitetfältet"
 
@@ -97,7 +98,7 @@ msgstr "Ett bindande"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr ""
+msgstr "Av-dekorera fönster i fullskärm"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
@@ -107,4 +108,4 @@ msgstr "Maximera inte nyöppnade fönster automatiskt"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr ""
+msgstr "Maximera inte nyöppnade fönster automatiskt. Om av-dekorerade fönster är på, blir fönsterna fortfarande av-dekorerade i fullskärm."
