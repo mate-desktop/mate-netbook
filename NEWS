@@ -1,3 +1,8 @@
+1.16.2
+======
+
+ * Maximus: don't crash on invalid window ID
+
 1.16.1
 ======
 
