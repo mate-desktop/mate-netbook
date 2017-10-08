@@ -7,20 +7,20 @@
 # Bogusław B. <penknife1@gmail.com>, 2012
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 # Michal Herman <szalejot@gmail.com>, 2013
-# Piotr Strębski <strebski@o2.pl>, 2015-2016
+# Piotr Strębski <strebski@gmail.com>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-09-26 09:51+0000\n"
-"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
+"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"PO-Revision-Date: 2017-09-19 13:46+0000\n"
+"Last-Translator: Piotr Strębski <strebski@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
@@ -31,55 +31,55 @@ msgid "Window Picker Applet Factory"
 msgstr "Generator apletu wybieracza okien"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:213
-#: ../mate-window-picker-applet/applet.c:214
+#: ../mate-window-picker-applet/applet.c:211
+#: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
 msgstr "Wybieracz okien"
 
-#: ../mate-window-picker-applet/applet.c:65
+#: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
 msgstr "_O programie"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:245
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: ../mate-window-picker-applet/applet.c:263
+#: ../mate-window-picker-applet/applet.c:261
 msgid "Show windows from all workspaces"
 msgstr "Pokaż okna ze wszystkich obszarów roboczych"
 
-#: ../mate-window-picker-applet/task-title.c:279
-#: ../mate-window-picker-applet/task-title.c:286
-#: ../mate-window-picker-applet/task-title.c:329
-#: ../mate-window-picker-applet/task-title.c:336
-#: ../mate-window-picker-applet/task-title.c:495
-#: ../mate-window-picker-applet/task-title.c:559
+#: ../mate-window-picker-applet/task-title.c:252
+#: ../mate-window-picker-applet/task-title.c:259
+#: ../mate-window-picker-applet/task-title.c:302
+#: ../mate-window-picker-applet/task-title.c:309
+#: ../mate-window-picker-applet/task-title.c:436
+#: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
 msgstr "Strona główna"
 
-#: ../mate-window-picker-applet/task-title.c:283
-#: ../mate-window-picker-applet/task-title.c:333
-#: ../mate-window-picker-applet/task-title.c:557
+#: ../mate-window-picker-applet/task-title.c:256
+#: ../mate-window-picker-applet/task-title.c:306
+#: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Wyloguj się, przełącz użytkowników, zablokuj ekran lub wyłącz komputer"
 
-#: ../mate-window-picker-applet/task-title.c:305
+#: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
 msgstr "Zamknij okno"
 
-#: ../mate-window-picker-applet/task-title.c:515
+#: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
 msgstr "Zamknij"
 
-#: ../mate-window-picker-applet/task-title.c:516
+#: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
 msgstr "Zamyka bieżące okno."
 
-#: ../mate-window-picker-applet/task-item.c:694
+#: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
 msgstr "Przycisk okna zadania"
 
