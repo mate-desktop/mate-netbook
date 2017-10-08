@@ -212,6 +212,7 @@ display_about_dialog (GtkAction       *action,
                 "comments", _("Window Picker"),
                 "version", PACKAGE_VERSION,
                 "authors", close_window_authors,
+                "icon-name", "preferences-system-windows",
                 "logo-icon-name", "preferences-system-windows",
                 "copyright", "Copyright \xc2\xa9 2008 Canonical Ltd\n"
                              "Copyright \xc2\xa9 2013-2014 Stefano Karapetsas\n"
