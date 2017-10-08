@@ -4,15 +4,16 @@
 # 
 # Translators:
 # Daniel <danny3@tutanota.com>, 2015-2016
+# Daniel <danny3@tutanota.com>, 2017
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 # Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-05-29 10:47+0000\n"
-"Last-Translator: Polihron Alexandru (APoliTech) <ppolihron@gmail.com>\n"
+"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"PO-Revision-Date: 2017-09-19 13:46+0000\n"
+"Last-Translator: Daniel <danny3@tutanota.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,55 +30,55 @@ msgid "Window Picker Applet Factory"
 msgstr ""
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:213
-#: ../mate-window-picker-applet/applet.c:214
+#: ../mate-window-picker-applet/applet.c:211
+#: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
 msgstr "Selector ferestre"
 
-#: ../mate-window-picker-applet/applet.c:65
+#: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
 msgstr "_Preferințe"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
 msgstr "_Despre"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:245
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: ../mate-window-picker-applet/applet.c:263
+#: ../mate-window-picker-applet/applet.c:261
 msgid "Show windows from all workspaces"
 msgstr "Arată ferestrele din toate spațiile de lucru"
 
-#: ../mate-window-picker-applet/task-title.c:279
-#: ../mate-window-picker-applet/task-title.c:286
-#: ../mate-window-picker-applet/task-title.c:329
-#: ../mate-window-picker-applet/task-title.c:336
-#: ../mate-window-picker-applet/task-title.c:495
-#: ../mate-window-picker-applet/task-title.c:559
+#: ../mate-window-picker-applet/task-title.c:252
+#: ../mate-window-picker-applet/task-title.c:259
+#: ../mate-window-picker-applet/task-title.c:302
+#: ../mate-window-picker-applet/task-title.c:309
+#: ../mate-window-picker-applet/task-title.c:436
+#: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
 msgstr "Acasă"
 
-#: ../mate-window-picker-applet/task-title.c:283
-#: ../mate-window-picker-applet/task-title.c:333
-#: ../mate-window-picker-applet/task-title.c:557
+#: ../mate-window-picker-applet/task-title.c:256
+#: ../mate-window-picker-applet/task-title.c:306
+#: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Ieșire, comutare utilizator, blocare ecran sau oprire calculator"
 
-#: ../mate-window-picker-applet/task-title.c:305
+#: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
 msgstr "Închide fereastra"
 
-#: ../mate-window-picker-applet/task-title.c:515
+#: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
 msgstr "Închide"
 
-#: ../mate-window-picker-applet/task-title.c:516
+#: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
 msgstr "Închide fereastra actuală"
 
-#: ../mate-window-picker-applet/task-item.c:694
+#: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
 msgstr "Buton opțiuni fereastră"
 
@@ -105,4 +106,4 @@ msgstr "Nu maximiza automat ferestrele nou deschise"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr ""
+msgstr "Nu maximiza automat ferestrele nou deschise. dacă eliminarea decorării este stabilită, va elimina decorarea ferestrelor maximizate."

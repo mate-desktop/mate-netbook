@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 13:14+0300\n"
-"PO-Revision-Date: 2016-04-07 15:23+0000\n"
+"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"PO-Revision-Date: 2017-09-19 13:46+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -29,55 +29,55 @@ msgid "Window Picker Applet Factory"
 msgstr "창 선택 애플릿 팩토리"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:213
-#: ../mate-window-picker-applet/applet.c:214
+#: ../mate-window-picker-applet/applet.c:211
+#: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
 msgstr "창 선택기"
 
-#: ../mate-window-picker-applet/applet.c:65
+#: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
 msgstr "정보(_A)"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:245
 msgid "Preferences"
 msgstr "기본 설정"
 
-#: ../mate-window-picker-applet/applet.c:263
+#: ../mate-window-picker-applet/applet.c:261
 msgid "Show windows from all workspaces"
 msgstr "모든 작업 공간에 창 표시"
 
-#: ../mate-window-picker-applet/task-title.c:279
-#: ../mate-window-picker-applet/task-title.c:286
-#: ../mate-window-picker-applet/task-title.c:329
-#: ../mate-window-picker-applet/task-title.c:336
-#: ../mate-window-picker-applet/task-title.c:495
-#: ../mate-window-picker-applet/task-title.c:559
+#: ../mate-window-picker-applet/task-title.c:252
+#: ../mate-window-picker-applet/task-title.c:259
+#: ../mate-window-picker-applet/task-title.c:302
+#: ../mate-window-picker-applet/task-title.c:309
+#: ../mate-window-picker-applet/task-title.c:436
+#: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
 msgstr "홈"
 
-#: ../mate-window-picker-applet/task-title.c:283
-#: ../mate-window-picker-applet/task-title.c:333
-#: ../mate-window-picker-applet/task-title.c:557
+#: ../mate-window-picker-applet/task-title.c:256
+#: ../mate-window-picker-applet/task-title.c:306
+#: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "로그 오프, 사용자 전환, 화면 잠그기 또는 컴퓨터 전원 끄기"
 
-#: ../mate-window-picker-applet/task-title.c:305
+#: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
 msgstr "창 닫기"
 
-#: ../mate-window-picker-applet/task-title.c:515
+#: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
 msgstr "닫기"
 
-#: ../mate-window-picker-applet/task-title.c:516
+#: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
 msgstr "현재 창을 닫습니다."
 
-#: ../mate-window-picker-applet/task-item.c:694
+#: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
 msgstr "창 작업 단추"
 
