@@ -273,7 +273,7 @@ display_prefs_dialog (GtkAction       *action,
   gtk_widget_set_size_request (nb, -1, 100);
   
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-  gtk_box_pack_start (GTK_BOX (box), hbox, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (box), hbox, FALSE, FALSE, 0);
   
   label = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
