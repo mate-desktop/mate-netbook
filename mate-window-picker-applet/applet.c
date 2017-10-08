@@ -245,6 +245,7 @@ display_prefs_dialog (GtkAction       *action,
 
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (window), _("Preferences"));
+  gtk_window_set_icon_name (GTK_WINDOW (window), "preferences-system-windows");
   gtk_window_set_type_hint (GTK_WINDOW (window),
                             GDK_WINDOW_TYPE_HINT_DIALOG);
   gtk_container_set_border_width (GTK_CONTAINER (window), 12);
