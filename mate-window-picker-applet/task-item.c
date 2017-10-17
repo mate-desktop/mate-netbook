@@ -687,6 +687,22 @@ task_item_setup_atk (TaskItem *item)
 }
 
 static void
+task_item_dispose (GObject *object)
+{
+  TaskItem *item = TASK_ITEM (object);
+
+  g_signal_handlers_disconnect_by_func (item->priv->screen, G_CALLBACK (on_screen_active_viewport_changed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->screen, G_CALLBACK (on_screen_active_window_changed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->screen, G_CALLBACK (on_screen_active_workspace_changed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->screen, G_CALLBACK (on_screen_window_closed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->window, G_CALLBACK (on_window_workspace_changed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->window, G_CALLBACK (on_window_state_changed), item);
+  g_signal_handlers_disconnect_by_func (item->priv->window, G_CALLBACK (on_window_icon_changed), item);
+
+  G_OBJECT_CLASS (task_item_parent_class)->dispose (object);
+}
+
+static void
 task_item_finalize (GObject *object)
 {
   TaskItemPrivate *priv;
@@ -712,6 +728,7 @@ task_item_class_init (TaskItemClass *klass)
   GObjectClass *obj_class      = G_OBJECT_CLASS (klass);
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
+  obj_class->dispose = task_item_dispose;
   obj_class->finalize = task_item_finalize;
   widget_class->draw = task_item_draw;
   widget_class->get_preferred_width = task_item_get_preferred_width;
