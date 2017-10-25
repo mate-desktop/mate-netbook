@@ -1,3 +1,11 @@
+### mate-netbook 1.18.2
+
+  * Window Picker Applet: disconnect signal handlers to prevent
+    possible crash
+  * Window Picker Applet: various UI fixes in dialogs
+  * Window Picker Applet: update copyright year
+  * Translations update
+
 ### mate-netbook 1.18.1
 
   * Maximus: don't crash on invalid window ID
