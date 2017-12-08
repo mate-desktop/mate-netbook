@@ -223,8 +223,8 @@ window_is_too_large_for_screen (WnckWindow *window)
   
   /* some wiggle room */
   return (screen && 
-          (w > (gdk_screen_get_width (screen) + 20) ||
-           h > (gdk_screen_get_height (screen)+20)));
+          (w > (WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) + 20) ||
+           h > (HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) + 20)));
 }
 
 static gboolean
