@@ -216,7 +216,7 @@ display_about_dialog (GtkAction       *action,
                 "logo-icon-name", "preferences-system-windows",
                 "copyright", "Copyright \xc2\xa9 2008 Canonical Ltd\n"
                              "Copyright \xc2\xa9 2013-2014 Stefano Karapetsas\n"
-                             "Copyright \xc2\xa9 2015-2017 MATE developers",
+                             "Copyright \xc2\xa9 2015-2018 MATE developers",
                 NULL);
 
   gtk_widget_show (panel_about_dialog);
