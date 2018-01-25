@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
 "PO-Revision-Date: 2017-09-23 18:32+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/mate/MATE/language/nl/)\n"
@@ -44,11 +44,11 @@ msgstr "_Voorkeuren"
 msgid "_About"
 msgstr "_Over"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "Vensters van alle werkbladen tonen"
 

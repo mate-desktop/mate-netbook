@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
 "PO-Revision-Date: 2017-09-22 14:44+0000\n"
 "Last-Translator: Sergio Alejandro Bayona Becerra <sergioalejo@gmail.com>\n"
 "Language-Team: Spanish (Colombia) (http://www.transifex.com/mate/MATE/language/es_CO/)\n"
@@ -40,11 +40,11 @@ msgstr "_Preferencias"
 msgid "_About"
 msgstr "Acerca de"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "Mostrar ventanas de todas las áreas de trabajo"
 

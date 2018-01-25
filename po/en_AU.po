@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
 "PO-Revision-Date: 2017-09-23 18:36+0000\n"
 "Last-Translator: Michael Findlay <translate@cobber-linux.org>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/mate/MATE/language/en_AU/)\n"
@@ -42,11 +42,11 @@ msgstr "_Preferences"
 msgid "_About"
 msgstr "_About"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Preferences"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "Show windows from all workspaces"
 

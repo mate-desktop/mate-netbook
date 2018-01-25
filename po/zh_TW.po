@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
 "PO-Revision-Date: 2017-09-19 13:46+0000\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/mate/MATE/language/zh_TW/)\n"
@@ -42,11 +42,11 @@ msgstr "偏好設定(_P)"
 msgid "_About"
 msgstr "關於(_A)"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "顯示所有工作區的視窗"
 

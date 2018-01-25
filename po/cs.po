@@ -5,15 +5,15 @@
 # Translators:
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2013
-# Martin Kříž <liberte.czech@gmail.com>, 2015
+# LiberteCzech <liberte.czech@gmail.com>, 2015
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
 "PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Martin Kříž <liberte.czech@gmail.com>\n"
+"Last-Translator: LiberteCzech <liberte.czech@gmail.com>\n"
 "Language-Team: Czech (http://www.transifex.com/mate/MATE/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,11 +43,11 @@ msgstr "_Nastavení"
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "Zobrazit okna ze všech pracovních prostorů"
 

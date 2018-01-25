@@ -3,55 +3,50 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme-Barrientos, 2015
-# Adolfo Jayme-Barrientos, 2013
-# Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
-# ebray187 <ebray187@gmail.com>, 2016
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Lluís Tusquellas <lutusq@gmail.com>, 2012
+# Mooglie <mooglietech@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: ebray187 <ebray187@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
+"PO-Revision-Date: 2017-09-22 14:44+0000\n"
+"Last-Translator: Mooglie <mooglietech@gmail.com>\n"
+"Language-Team: Tamil (http://www.transifex.com/mate/MATE/language/ta/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Language: ta\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
-msgstr "Mostrar ventanas de todas las áreas de trabajo."
+msgstr "எல்லா  பணியிடத்திலுள்ள விண்டோவை  காண்பி "
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
-msgstr "Miniaplicación del selector de ventanas de fábrica"
+msgstr "விண்டோ தேர்ந்தெடுப்பான்  - ஆப்லெட் "
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
 #: ../mate-window-picker-applet/applet.c:211
 #: ../mate-window-picker-applet/applet.c:212
 msgid "Window Picker"
-msgstr "Selector de ventanas"
+msgstr "விண்டோவை தேர்ந்தெடுக்க "
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Preferencias"
+msgstr "விருப்ப தேர்வுகள் "
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_Acerca de"
+msgstr "பற்றி "
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr "Preferencias"
+msgstr "விருப்ப தேர்வுகள் "
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr "Mostrar las ventanas de todas las áreas de trabajo"
+msgstr "எல்லா  பணியிடத்திலுள்ள விண்டோவை  காண்பி "
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -60,52 +55,52 @@ msgstr "Mostrar las ventanas de todas las áreas de trabajo"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Inicio"
+msgstr "தொடக்கம்"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Terminar la sesión, cambiar de usuario, bloquear la pantalla o apagar el equipo"
+msgstr ""
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
-msgstr "Cerrar la ventana"
+msgstr "விண்டோவை  மூடுக "
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr "Cerrar"
+msgstr "மூடுக "
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
-msgstr "Cerrar las ventanas abiertas"
+msgstr "தற்போதைய  விண்டோவை  மூடுக "
 
 #: ../mate-window-picker-applet/task-item.c:684
 msgid "Window Task Button"
-msgstr "Botón de tareas de ventana"
+msgstr "விண்டோ பணி பொத்தான் "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Una lista de cadenas de exclusión que se aplican a la clase de la ventana."
+msgstr "விண்டோ பயன்பாட்டிற்கு  விலக்கபட்டுள்ள வார்த்தைகள் "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Una lista de cadenas de exclusión que se aplican a la clase de la ventana"
+msgstr "விண்டோ பயன்பாட்டிற்கு  விலக்கபட்டுள்ள வார்த்தைகள் "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
-msgstr "Un vínculo"
+msgstr "பிணைப்பு "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Quitar barra de título de las ventanas al maximizarlas"
+msgstr "விண்டோவை பெரிதாக்கும் போது அலங்காரப்படுத்தாதே"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "No maximizar automáticamente las ventanas nuevas"
+msgstr "புதிதாய் திறக்கப்பட்ட விண்டோவை பெரிதாக்காதே "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "No maximizar automáticamente las ventanas nuevas. Si se establece remover decoracion,  esta aun maximizara ventanas sin decoracion. "
+msgstr "புதிதாய் திறக்கப்பட்ட விண்டோவை பெரிதாக்காதே . அலங்காரப்படுத்த வேண்டாம் என்று இருப்பின் - புதிய விண்டோவும் அலங்காரப்படுத்த முடியாது "

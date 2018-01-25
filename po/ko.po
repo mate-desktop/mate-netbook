@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
+"PO-Revision-Date: 2017-11-14 11:52+0000\n"
 "Last-Translator: 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/mate/MATE/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -42,11 +42,11 @@ msgstr "기본 설정(_P)"
 msgid "_About"
 msgstr "정보(_A)"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "기본 설정"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "모든 작업 공간에 창 표시"
 

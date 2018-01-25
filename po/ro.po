@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# corneliu.e <corneliueva@yahoo.com>, 2017
 # Daniel <danny3@tutanota.com>, 2015-2016
 # Daniel <danny3@tutanota.com>, 2017
 # Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
@@ -11,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:48+0300\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Daniel <danny3@tutanota.com>\n"
+"POT-Creation-Date: 2017-11-28 13:14+0100\n"
+"PO-Revision-Date: 2017-11-29 11:39+0000\n"
+"Last-Translator: corneliu.e <corneliueva@yahoo.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +28,7 @@ msgstr "Arată ferestrele din toate spațiile de lucru."
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
-msgstr ""
+msgstr "Generator de applet-uri pentru selector ferestre"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
 #: ../mate-window-picker-applet/applet.c:211
@@ -43,11 +44,11 @@ msgstr "_Preferințe"
 msgid "_About"
 msgstr "_Despre"
 
-#: ../mate-window-picker-applet/applet.c:245
+#: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
 msgstr "Preferințe"
 
-#: ../mate-window-picker-applet/applet.c:261
+#: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
 msgstr "Arată ferestrele din toate spațiile de lucru"
 
