@@ -1,5 +1,13 @@
 ### mate-netbook 1.19.0
 
+  * WidthOfScreen and HeightOfScreen implementation
+  * window picker: disconnect signal handlers in dispose function
+  * window picker: add icon to prefs dialog
+  * window picker: disable vertical expand of button in prefs dialog
+  * window picker: add icon for taskbar to About dialog
+  * maximus: don't crash on invalid window ID
+  * Translations update
+
 ### mate-netbook 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting
