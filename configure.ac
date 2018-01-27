@@ -11,12 +11,6 @@ AC_PROG_CC
 AC_STDC_HEADERS
 AC_PROG_LIBTOOL
 
-# GLib min/max required versions
-AC_DEFINE([GLIB_VERSION_MAX_ALLOWED], [GLIB_VERSION_2_36],
-	[Warn on use of APIs added after GLib 2.36])
-AC_DEFINE([GLIB_VERSION_MIN_REQUIRED], [GLIB_VERSION_2_36],
-	[Warn on use of APIs deprecated before GLib 2.36])
-
 dnl ==========================================================================
 dnl i18n
 dnl ==========================================================================
@@ -36,10 +30,11 @@ AM_GLIB_GNU_GETTEXT
 
 AC_SUBST(GCC_FLAGS)
 
-GLIB_REQUIRED=2.36.0
+GLIB_REQUIRED=2.50.0
+GTK_REQUIRED=3.22.0
 
 PKG_CHECK_MODULES(MAXIMUS_DEPS, 
-                  gtk+-3.0
+                  gtk+-3.0 >= $GTK_REQUIRED
                   glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
                   libwnck-3.0
@@ -51,7 +46,7 @@ AC_SUBST(MAXIMUS_DEPS_LIBS)
 
 PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS, 
                   libmatepanelapplet-4.0 >= 1.17.0
-                  gtk+-3.0
+                  gtk+-3.0 >= $GTK_REQUIRED
                   glib-2.0 >= $GLIB_REQUIRED
                   gio-2.0 
                   libwnck-3.0
