@@ -1,9 +1,9 @@
 [main]
 host = https://www.transifex.com
  
-[MATE.mate-netbook]
+[MATE.master--mate-netbook]
 file_filter = po/<lang>.po
 source_file = po/mate-netbook.pot
 source_lang = en
 type = PO
-minimum_perc = 1
+minimum_perc = 2
