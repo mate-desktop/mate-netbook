@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Alexander Sokolov <sisokolov@gmail.com>, 2012
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2012
-# AlexL <loginov.alex.valer@gmail.com>, 2015
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Vlad Orlov <monsta@inbox.ru>, 2017
-# Cyber Tailor <cybertailor@gmail.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-10-08 13:20+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/mate/MATE/language/ru/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Dmitriy Kulikov <kulikov@dima.perm.ru>, 2018\n"
+"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +34,7 @@ msgstr "Указатель окон"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Настройки"
+msgstr "Н_астройка"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
@@ -60,13 +55,15 @@ msgstr "Показывать окна со всех рабочих мест"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Домой"
+msgstr "Домашняя папка"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Завершить сеанс, сменить пользователя, заблокировать экран или выключить компьютер"
+msgstr ""
+"Завершить сеанс, сменить пользователя, заблокировать экран или выключить "
+"компьютер"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -98,14 +95,16 @@ msgstr "Привязка"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Не декорировать окна, когда они максимизированы."
+msgstr "Убрать декорации с окон, когда они развернуты на весь экран"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Не разворачивать на весь экран новые окна"
+msgstr "Автоматически не разворачивать на весь экран новые открытые окна"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Не разворачивать на весь экран новые окна. Если декорирование окон отключено, максимизированные окна по-прежнему не будут декорированы."
+msgstr ""
+"Не разворачивать на весь экран новые окна. Если декорирование окон "
+"отключено, максимизированные окна по-прежнему не будут декорированы."

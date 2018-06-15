@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# 趙惟倫 <bluebat@member.fsf.org>, 2012-2013
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 17:25+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Chinese (Mandarin) (http://www.transifex.com/mate/MATE/language/cmn/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: 趙惟倫 <bluebat@member.fsf.org>, 2018\n"
+"Language-Team: Chinese (Mandarin) (https://www.transifex.com/mate/teams/13566/cmn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +46,7 @@ msgstr "偏好設定"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr "顯示所有工作區的視窗"
+msgstr "顯示所有工作區中的視窗"
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -56,7 +55,7 @@ msgstr "顯示所有工作區的視窗"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "首頁"
+msgstr "個人資料夾"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306

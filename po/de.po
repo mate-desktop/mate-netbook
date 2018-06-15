@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ettore Atalan <atalanttore@googlemail.com>, 2015
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# crazyd <lebendig2002@yahoo.de>, 2012
-# Tobias Bannert <tobannert@gmail.com>, 2014-2015
-# valsu <valsu@hylia.de>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
-"Language-Team: German (http://www.transifex.com/mate/MATE/language/de/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,7 +46,7 @@ msgstr "Einstellungen"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr "Fenster von allen Arbeitsflächen anzeigen"
+msgstr "Fenster aller Arbeitsflächen anzeigen"
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -59,13 +55,15 @@ msgstr "Fenster von allen Arbeitsflächen anzeigen"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Start"
+msgstr "Persönlicher Ordner"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Abmelden, Benutzer wechseln, Bildschirm sperren oder den Rechner herunterfahren"
+msgstr ""
+"Abmelden, Benutzer wechseln, Bildschirm sperren oder den Rechner "
+"herunterfahren"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -85,11 +83,13 @@ msgstr "Fensteraufgabenknopf"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Eine Liste von Ausschlusszeichenketten, die die Fensterklasse betreffen."
+msgstr ""
+"Eine Liste von Ausschlusszeichenketten, die die Fensterklasse betreffen."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Eine Liste von Ausschlusszeichenketten, die die Fensterklasse betreffen."
+msgstr ""
+"Eine Liste von Ausschlusszeichenketten, die die Fensterklasse betreffen."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -101,10 +101,12 @@ msgstr "Maximierte Fenster nicht dekorieren"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Neu geöffnete Fenster nicht automatisch maximieren"
+msgstr "Nicht automatisch neu geöffnete Fenster maximieren"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Neu geöffnete Fenster nicht automatisch maximieren. Wenn nicht dekorieren eingestellt ist, werden maximierte Fenster nicht dekoriert."
+msgstr ""
+"Neu geöffnete Fenster nicht automatisch maximieren. Wenn nicht dekorieren "
+"eingestellt ist, werden maximierte Fenster nicht dekoriert."

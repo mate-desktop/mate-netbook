@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Falu.Me, 2015
-# Falu <info@falu.me>, 2015
-# KAMI KAMI <kami911@gmail.com>, 2014
-# KAMI KAMI <kami911@gmail.com>, 2014-2015
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Rezső Páder <rezso@rezso.net>, 2013,2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
-"Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Balázs Meskó <meskobalazs@gmail.com>, 2018\n"
+"Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,13 +55,15 @@ msgstr "Ablakok megjelenítése minden munkaterületről"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Kezdőlap"
+msgstr "Saját mappa"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Kijelentkezés, felhasználóváltás, képernyő zárolása vagy a számítógép kikapcsolása"
+msgstr ""
+"Kijelentkezés, felhasználóváltás, képernyő zárolása vagy a számítógép "
+"kikapcsolása"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -102,10 +99,13 @@ msgstr "Maximalizált ablak dekoráció nélkül"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Újonnan megnyitott ablakok maximalizálása"
+msgstr "Ne maximalizálja automatikusan az újonnan megnyitott ablakokat"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Ne maximalizálja automatikusan az újonnan megnyitott ablakokat. Ha a dekoráció nélküli megjelenítés be van kapcsolva, akkor dekoráció nélkül jelenik meg az ablak."
+msgstr ""
+"Ne maximalizálja automatikusan az újonnan megnyitott ablakokat. Ha a "
+"dekoráció nélküli megjelenítés be van kapcsolva, akkor dekoráció nélkül "
+"jelenik meg az ablak."

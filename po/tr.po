@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Butterfly <gokhanlnx@gmail.com>, 2015
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# mauron, 2015
-# mauron, 2012
-# Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: mauron\n"
-"Language-Team: Turkish (http://www.transifex.com/mate/MATE/language/tr/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2018\n"
+"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +55,7 @@ msgstr "Tüm çalışma yerlerinden pencereleri göster"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Ana"
+msgstr "Ev Dizini"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
@@ -97,14 +93,16 @@ msgstr "Bir bağlama"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Pencere ekranı kapladığında süsle"
+msgstr "Pencere ekranı kapladığında süslemeyi kaldır"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Yeni açılmış pencere, ekranı kendiliğinden kaplamasın."
+msgstr "Yeni açılmış pencere, ekranı kendiliğinden kaplamasın"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Yeni açılan pencere ekranı kendiliğinden kaplamasın. Eğer dokorasyonsuz seçilirse, tam ekran pencereler dekorasyonsuz olur."
+msgstr ""
+"Yeni açılan pencere ekranı kendiliğinden kaplamasın. Eğer dokorasyonsuz "
+"seçilirse, tam ekran pencereler dekorasyonsuz olur."

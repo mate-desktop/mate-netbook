@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ivar Smolin <okul@linux.ee>, 2014-2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
-"Language-Team: Estonian (http://www.transifex.com/mate/MATE/language/et/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rivo Zängov <eraser@eraser.ee>, 2018\n"
+"Language-Team: Estonian (https://www.transifex.com/mate/teams/13566/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgstr "_Eelistused"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_Programmist lahemalt"
+msgstr "_Lähemalt"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -69,7 +69,7 @@ msgstr "Akna sulgemine"
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr "Sulgemine"
+msgstr "Suletud"
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
@@ -89,18 +89,21 @@ msgstr ""
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
-msgstr ""
+msgstr "Köitmine"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Maksimeeritud aknalt dekoratsioonide eemaldamine"
+msgstr "Akende maksimeerimisel nendelt dekoratsioonide eemaldamine"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Uusi avatud aknaid vaikimisi ei maksimeerita"
+msgstr "Uute akende loomisel neid automaatselt ei maksimeerita"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Uusi avatud aknaid vaikimisi ei maksimeerita. Kui dekoratsioonide eemaldamine on määratud, siis eemaldatakse maksimeeritavatelt siiski ka dekoratsioonid."
+msgstr ""
+"Uusi avatud aknaid vaikimisi ei maksimeerita. Kui dekoratsioonide "
+"eemaldamine on määratud, siis eemaldatakse maksimeeritavatelt siiski ka "
+"dekoratsioonid."

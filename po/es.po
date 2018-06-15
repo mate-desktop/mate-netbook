@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Adolfo Jayme-Barrientos, 2015
-# Adolfo Jayme-Barrientos, 2013
-# Benjamin Perez Carrillo <benperezc@gmail.com>, 2015
-# ebray187 <ebray187@gmail.com>, 2016
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Lluís Tusquellas <lutusq@gmail.com>, 2012
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: ebray187 <ebray187@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/mate/MATE/language/es/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Joel Barrios <darkshram@gmail.com>, 2018\n"
+"Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -39,7 +34,7 @@ msgstr "Selector de ventanas"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Preferencias"
+msgstr "Preferencias"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
@@ -60,13 +55,15 @@ msgstr "Mostrar las ventanas de todas las áreas de trabajo"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Inicio"
+msgstr "Carpeta personal"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Terminar la sesión, cambiar de usuario, bloquear la pantalla o apagar el equipo"
+msgstr ""
+"Terminar la sesión, cambiar de usuario, bloquear la pantalla o apagar el "
+"equipo"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -86,11 +83,13 @@ msgstr "Botón de tareas de ventana"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Una lista de cadenas de exclusión que se aplican a la clase de la ventana."
+msgstr ""
+"Una lista de cadenas de exclusión que se aplican a la clase de la ventana."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Una lista de cadenas de exclusión que se aplican a la clase de la ventana"
+msgstr ""
+"Una lista de cadenas de exclusión que se aplican a la clase de la ventana"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -98,14 +97,16 @@ msgstr "Un vínculo"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Quitar barra de título de las ventanas al maximizarlas"
+msgstr "Ventanas sin decoración cuando son maximizadas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "No maximizar automáticamente las ventanas nuevas"
+msgstr "No maximizar automáticamente nuevas ventanas abiertas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "No maximizar automáticamente las ventanas nuevas. Si se establece remover decoracion,  esta aun maximizara ventanas sin decoracion. "
+msgstr ""
+"No maximizar automáticamente las ventanas nuevas. Si se establece remover "
+"decoracion,  esta aun maximizara ventanas sin decoracion. "

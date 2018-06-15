@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Christopher Meng <i@cicku.me>, 2012
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Mingye Wang <arthur200126@gmail.com>, 2016
-# Mingcong Bai <jeffbai@aosc.xyz>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Mingye Wang <arthur200126@gmail.com>\n"
-"Language-Team: Chinese (China) (http://www.transifex.com/mate/MATE/language/zh_CN/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Mingye Wang <arthur200126@gmail.com>, 2018\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,11 +34,11 @@ msgstr "窗口选择程序"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_首选项"
+msgstr "属性(_P)"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_关于"
+msgstr "关于(_A)"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -58,7 +55,7 @@ msgstr "显示所有工作区的窗口"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "主页"
+msgstr "主目录"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
@@ -96,7 +93,7 @@ msgstr "绑定"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "隐藏最大化窗口的装饰"
+msgstr "最大化时隐藏窗口装饰"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"

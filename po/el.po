@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Angelos Chraniotis <chraniotis@gmail.com>, 2016
-# geost <george.stefanakis@gmail.com>, 2012
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Γιώργος Μηντζιλώνης, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-23 18:32+0000\n"
-"Last-Translator: Αλέξανδρος Καπετάνιος <alexandros@gnugr.org>\n"
-"Language-Team: Greek (http://www.transifex.com/mate/MATE/language/el/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Γιώργος Μηντζιλώνης <gi_orgos1986@hotmail.com>, 2018\n"
+"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,11 +34,11 @@ msgstr "Επιλογέας παραθύρου"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Προ_τιμήσεις"
+msgstr "_Προτιμήσεις"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_Περί"
+msgstr "Πε_ρί"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -58,13 +55,16 @@ msgstr "Να εμφανίζονται τα παράθυρα από όλους τ
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Αρχική"
+msgstr "Προσωπικός φάκελος"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Αποσύνδεση, αλλαγή χρήστη, κλείδωμα οθόνης ή τερματισμός λειτουργίας υπολογιστήΑποσύνδεση, αλλαγή χρήστη, κλείδωμα οθόνης ή τερματισμός λειτουργίας υπολογιστή"
+msgstr ""
+"Αποσύνδεση, αλλαγή χρήστη, κλείδωμα οθόνης ή τερματισμός λειτουργίας "
+"υπολογιστήΑποσύνδεση, αλλαγή χρήστη, κλείδωμα οθόνης ή τερματισμός "
+"λειτουργίας υπολογιστή"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -84,11 +84,15 @@ msgstr "Κουμπί εργασιών παραθύρου"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Μια λίστα από αποκλεισμένους χαρακτήρες οι οποίοι εφαρμόζουν στην κλάση του παραθύρου. "
+msgstr ""
+"Μια λίστα από αποκλεισμένους χαρακτήρες οι οποίοι εφαρμόζουν στην κλάση του "
+"παραθύρου. "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Μια λίστα αποκλεισμένων χαρακτήρων οι οποίοι εφαρμόζουν στην κλάση του παραθύρου. "
+msgstr ""
+"Μια λίστα αποκλεισμένων χαρακτήρων οι οποίοι εφαρμόζουν στην κλάση του "
+"παραθύρου. "
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -96,14 +100,16 @@ msgstr "Μια σύνδεση δεδομένων"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Ακόσμηση παραθύρων όταν είναι μεγιστοποιημένα"
+msgstr "Αναδιαμορφώστε τα παράθυρα όταν μεγιστοποιηθούν"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Να μην γίνεται αυτόματη μεγιστοποίηση πρόσφατα ανοιχτών παραθύρων"
+msgstr "Μη μεγιστοποιείται αυτόματα τα καινούρια αναδυόμενα παράθυρα"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Να μην γίνεται αυτόματη μεγιστοποίηση πρόσφατα ανοιχτών παραθύρων. Εάν η ακόσμηση είναι ρυθμισμένη, θα ακοσμήση τα ανοιχτά παράθυρα."
+msgstr ""
+"Να μην γίνεται αυτόματη μεγιστοποίηση πρόσφατα ανοιχτών παραθύρων. Εάν η "
+"ακόσμηση είναι ρυθμισμένη, θα ακοσμήση τα ανοιχτά παράθυρα."

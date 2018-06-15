@@ -1,24 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2014,2017
-# brennus <jonas.ska@gmail.com>, 2014
-# Moo, 2015-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>\n"
-"Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Moo, 2018\n"
+"Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: lt\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
@@ -48,7 +46,7 @@ msgstr "Nustatymai"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr "Rodyti visų darbo sričių langus"
+msgstr "Rodyti langus iš visų darbo sričių"
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -63,7 +61,8 @@ msgstr "Namai"
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Atsijungti, perjungti naudotoją, užrakinti ekraną ar išjungti kompiuterį"
+msgstr ""
+"Atsijungti, perjungti naudotoją, užrakinti ekraną ar išjungti kompiuterį"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -105,4 +104,7 @@ msgstr "Automatiškai neišskleisti naujai atvertų langų"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Automatiškai neišskleisti naujai atvertų langų. Jei yra nustatytas dekoravimo panaikinimas, vis tiek bus panaikinamas išskleistų langų dekoravimas."
+msgstr ""
+"Automatiškai neišskleisti naujai atvertų langų. Jei yra nustatytas "
+"dekoravimo panaikinimas, vis tiek bus panaikinamas išskleistų langų "
+"dekoravimas."

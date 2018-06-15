@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# corneliu.e <corneliueva@yahoo.com>, 2017
-# Daniel <danny3@tutanota.com>, 2015-2016
-# Daniel <danny3@tutanota.com>, 2017
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-11-29 11:39+0000\n"
-"Last-Translator: corneliu.e <corneliueva@yahoo.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/mate/MATE/language/ro/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2018\n"
+"Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,4 +103,6 @@ msgstr "Nu maximiza automat ferestrele nou deschise"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Nu maximiza automat ferestrele nou deschise. dacă eliminarea decorării este stabilită, va elimina decorarea ferestrelor maximizate."
+msgstr ""
+"Nu maximiza automat ferestrele nou deschise. dacă eliminarea decorării este "
+"stabilită, va elimina decorarea ferestrelor maximizate."

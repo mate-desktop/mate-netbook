@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Georgi Georgiev <georgiev_1994@abv.bg>, 2014
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# sahwar <ve4ernik@gmail.com>, 2012
-# Любомир Василев, 2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Любомир Василев\n"
-"Language-Team: Bulgarian (http://www.transifex.com/mate/MATE/language/bg/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Замфир Йончев <zamfir.yonchev@gmail.com>, 2018\n"
+"Language-Team: Bulgarian (https://www.transifex.com/mate/teams/13566/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +34,7 @@ msgstr "Избиране на прозорци"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Предпочитания"
+msgstr "_Настройки"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
@@ -58,13 +55,15 @@ msgstr "Показване на прозорците от всички рабо�
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Начална страница"
+msgstr "Домашна папка"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Излизане, превключване на потребител, заключване на екрана или изключване на компютъра"
+msgstr ""
+"Излизане, превключване на потребител, заключване на екрана или изключване на"
+" компютъра"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -84,11 +83,13 @@ msgstr "Бутон за задачи в прозореца"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Списък от низове за изключване, които се прилагат към класа на прозореца."
+msgstr ""
+"Списък от низове за изключване, които се прилагат към класа на прозореца."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Списък от низове за изключване, които се прилагат към класа на прозореца"
+msgstr ""
+"Списък от низове за изключване, които се прилагат към класа на прозореца"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -96,7 +97,7 @@ msgstr "Клавишна комбинация"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Премахване на украсата на максимизираните прозорци"
+msgstr "Премахване на декорацията на максимизираните прозорци"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
@@ -106,4 +107,7 @@ msgstr "Новите прозорци  да не се максимизират �
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Новите прозорци  да не се максимизират автоматично Ако премахването на украсата е зададено, максимизираните прозорци все пак ще бъдат с премахната украса."
+msgstr ""
+"Новите прозорци  да не се максимизират автоматично Ако премахването на "
+"украсата е зададено, максимизираните прозорци все пак ще бъдат с премахната "
+"украса."

@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# , 2014-2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-20 01:05+0000\n"
-"Last-Translator: Mihail Varantsou <meequz@gmail.com>\n"
-"Language-Team: Belarusian (http://www.transifex.com/mate/MATE/language/be/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Mihail Varantsou <meequz@gmail.com>, 2018\n"
+"Language-Team: Belarusian (https://www.transifex.com/mate/teams/13566/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +38,7 @@ msgstr "_Настáўленні"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_Пра"
+msgstr "_Пра аплет"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -61,7 +61,8 @@ msgstr "Дадому"
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Выйсці, пераключыць карыстальніка, замкнуць экран ці адключыць камп'ютар"
+msgstr ""
+"Выйсці, пераключыць карыстальніка, замкнуць экран ці адключыць камп'ютар"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -103,4 +104,6 @@ msgstr "Не разгортваць на ўвесь экран новыя вок
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Не разгортваць на ўвесь экран новыя вокны. Калі мяжа акна пры найбольшванні адключана, найбольшаныя вокны па-ранейшаму не будуць мець мяжы."
+msgstr ""
+"Не разгортваць на ўвесь экран новыя вокны. Калі мяжа акна пры найбольшванні "
+"адключана, найбольшаныя вокны па-ранейшаму не будуць мець мяжы."

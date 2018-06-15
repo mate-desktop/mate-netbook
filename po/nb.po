@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Allan Nordhøy <epost@anotheragency.no>, 2016
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
+"POT-Creation-Date: 2018-03-17 10:08+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kenneth Jenssen <kennethjenssen@yahoo.com>, 2018\n"
+"Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,4 +103,6 @@ msgstr "Ingen automatisk maksimering av nyåpnede vinduer"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Ingen automatisk maksimering av nyåpnede vinduer. Hvis undecorate er angitt, vil dekorasjonen fremdeles fjernes på maksimerte vinduer."
+msgstr ""
+"Ingen automatisk maksimering av nyåpnede vinduer. Hvis undecorate er angitt,"
+" vil dekorasjonen fremdeles fjernes på maksimerte vinduer."
