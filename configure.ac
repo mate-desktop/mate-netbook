@@ -1,5 +1,5 @@
 AC_PREREQ(2.53)
-AC_INIT(mate-netbook, 1.20.0, [])
+AC_INIT(mate-netbook, 1.20.1, [])
 AM_INIT_AUTOMAKE([1.9 foreign tar-ustar no-dist-gzip dist-xz check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_SRCDIR(maximus/main.c)
