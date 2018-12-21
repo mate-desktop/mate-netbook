@@ -2,6 +2,9 @@ SUBDIRS = po maximus mate-window-picker-applet
 
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
+DISTCHECK_CONFIGURE_FLAGS = \
+	CFLAGS='-Wno-deprecated-declarations'
+
 EXTRA_DIST = autogen.sh intltool-merge.in intltool-extract.in intltool-update.in
 DISTCLEANFILES = intltool-merge intltool-update intltool-extract
 
