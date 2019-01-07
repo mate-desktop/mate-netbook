@@ -37,14 +37,15 @@
 void
 _wnck_error_trap_push (void)
 {
-  gdk_error_trap_push ();
+  gdk_x11_display_error_trap_push (gdk_display_get_default ());
 }
 
 int
 _wnck_error_trap_pop (void)
 {
-  XSync (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), False);
-  return gdk_error_trap_pop ();
+  GdkDisplay *gdk_display = gdk_display_get_default ();
+  XSync (GDK_DISPLAY_XDISPLAY (gdk_display), False);
+  return gdk_x11_display_error_trap_pop (gdk_display);
 }
 
 static char*
