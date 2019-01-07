@@ -149,13 +149,13 @@ gdk_window_set_mwm_hints (WnckWindow *window,
   hints_atom = gdk_x11_get_xatom_by_name_for_display (display, 
                                                       _XA_MOTIF_WM_HINTS);
 
-  gdk_error_trap_push ();
+  gdk_x11_display_error_trap_push (display);
   XGetWindowProperty (GDK_DISPLAY_XDISPLAY (display), 
                       wnck_window_get_xid (window),
 		                  hints_atom, 0, sizeof (MotifWmHints)/sizeof (long),
 		                  False, AnyPropertyType, &type, &format, &nitems,
 		                  &bytes_after, &data);
-  if (gdk_error_trap_pop ())
+  if (gdk_x11_display_error_trap_pop (display))
     return;
   
   if (type != hints_atom || !data)
@@ -181,7 +181,7 @@ gdk_window_set_mwm_hints (WnckWindow *window,
                    wnck_window_get_xid (window),
                    hints_atom, hints_atom, 32, PropModeReplace,
                    (guchar *)hints, sizeof (MotifWmHints)/sizeof (long));
-  gdk_flush ();
+  gdk_display_flush (display);
   _wnck_error_trap_pop ();
   
   if (data)
@@ -359,6 +359,7 @@ on_window_opened (WnckScreen  *screen,
   MaximusAppPrivate *priv;
   WnckWindowType type;
   gint exclude = 0;
+  GdkDisplay *gdk_display = gdk_display_get_default ();
   
   g_return_if_fail (MAXIMUS_IS_APP (app));
   g_return_if_fail (WNCK_IS_WINDOW (window));
@@ -369,9 +370,9 @@ on_window_opened (WnckScreen  *screen,
     return;
 
   /* Ignore undecorated windows */
-  gdk_error_trap_push ();
+  gdk_x11_display_error_trap_push (gdk_display);
   exclude = wnck_window_is_decorated (window) ? 0 : 1;
-  if (gdk_error_trap_pop ())
+  if (gdk_x11_display_error_trap_pop (gdk_display))
     return;
 
   if (wnck_window_is_maximized (window))
@@ -390,7 +391,7 @@ on_window_opened (WnckScreen  *screen,
     if (wnck_window_is_maximized(window) && priv->undecorate)
     {
       _window_set_decorations (window, 0);
-      gdk_flush ();
+      gdk_display_flush (gdk_display);
     }
     g_signal_connect (window, "state-changed",
                       G_CALLBACK (on_window_state_changed), app);
@@ -403,7 +404,7 @@ on_window_opened (WnckScreen  *screen,
     if (!window_is_too_large_for_screen (window))
     {
       _window_set_decorations (window, 0);
-      gdk_flush ();
+      gdk_display_flush (gdk_display);
     }
   }
 
@@ -483,12 +484,14 @@ on_app_undecorate_changed (GSettings          *settings,
 
     if (!is_excluded (app, window))
     {
-      gdk_error_trap_push ();
+      GdkDisplay *gdk_display = gdk_display_get_default ();
+
+      gdk_x11_display_error_trap_push (gdk_display);
       _window_set_decorations (window, priv->undecorate ? 0 : 1);
       wnck_window_unmaximize (window);
       wnck_window_maximize (window);
-      gdk_flush ();
-      gdk_error_trap_pop_ignored ();
+      gdk_display_flush (gdk_display);
+      gdk_x11_display_error_trap_pop_ignored (gdk_display);
 
       sleep (1);
     }
