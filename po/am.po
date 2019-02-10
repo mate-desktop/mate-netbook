@@ -1,17 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# samson <sambelet@yahoo.com>, 2013,2017
+# samson <sambelet@yahoo.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 15:12+0000\n"
-"Last-Translator: samson <sambelet@yahoo.com>\n"
-"Language-Team: Amharic (http://www.transifex.com/mate/MATE/language/am/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: Martin Wimpress <code@flexion.org>, 2018\n"
+"Language-Team: Amharic (https://www.transifex.com/mate/teams/13566/am/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,15 +42,15 @@ msgstr "_ምርጫዎች "
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "_ስለ "
+msgstr "_ስለ"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr "ምርጫዎች "
+msgstr "ምርጫዎች"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr "የሁሉንም የስራ ቦታዎች መስኮቶች ማሳያ "
+msgstr "ሁሉንም የ ስራ ቦታዎች መስኮቶች ማሳያ "
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -55,7 +59,7 @@ msgstr "የሁሉንም የስራ ቦታዎች መስኮቶች ማሳያ "
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "ቤት "
+msgstr "ቤት"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
@@ -65,11 +69,11 @@ msgstr "መውጫ ፡ ተጠቃሚ መቀየሪያ ፡ መመልከቻውን መ
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
-msgstr "መስኮት መዝጊያ "
+msgstr "መስኮቱን መዝጊያ"
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr "መዝጊያ "
+msgstr "መዝጊያ"
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."

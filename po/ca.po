@@ -1,19 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Pere O. <gotrunks@gmail.com>, 2012
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Pere O. <gotrunks@gmail.com>, 2018
+# Francesc Famadas <kiski97@gmail.com>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
-"Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: Francesc Famadas <kiski97@gmail.com>, 2018\n"
+"Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -57,13 +61,15 @@ msgstr "Mostra les finestres de tots els espais de treball"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Inici"
+msgstr "Carpeta de l'usuari"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Finalitzeu la sessió, canvieu d'usuari, bloqueu la pantalla o apagueu l'ordinador."
+msgstr ""
+"Finalitzeu la sessió, canvieu d'usuari, bloqueu la pantalla o apagueu "
+"l'ordinador."
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -83,11 +89,15 @@ msgstr "Botó de la finestra de tasques"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la finestra."
+msgstr ""
+"Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la "
+"finestra."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la finestra"
+msgstr ""
+"Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la "
+"finestra"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -105,4 +115,6 @@ msgstr "No maximitzis automàticament les noves finestres obertes"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "No maximitzis automàticament les noves finestres obertes. Si s'estableix la no decoració, no es decoraran les finestres maximitzades."
+msgstr ""
+"No maximitzis automàticament les noves finestres obertes. Si s'estableix la "
+"no decoració, no es decoraran les finestres maximitzades."

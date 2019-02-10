@@ -1,18 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Duy Truong Nguyen <truongap.ars@gmail.com>, 2014
-# Horazone Detex <thmmt2017d@gmail.com>, 2017
+# Duy Truong Nguyen <truongap.ars@gmail.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# Brian P. Dung <brianp.dung@gmail.com>, 2018
+# Horazone Detex <thmmt2017d@gmail.com>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-20 00:19+0000\n"
-"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/mate/MATE/language/vi/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>, 2018\n"
+"Language-Team: Vietnamese (https://www.transifex.com/mate/teams/13566/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +48,7 @@ msgstr "_Giới thiệu"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr "Tùy thích"
+msgstr "Tùy chỉnh"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
@@ -70,7 +75,7 @@ msgstr "Đóng cửa sổ"
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr "Đóng"
+msgstr "Đóng tập tin "
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
@@ -104,4 +109,6 @@ msgstr "Đừng tự di phóng to hết cỡ khi mở các cửa sổ mới"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Đừng tự di phóng to hết cỡ khi mở các cửa sổ mới. Nếu \"không vẽ lên cửa sổ\" được chọn, vẫn sẽ không vẽ lên các cửa sổ đã phóng to."
+msgstr ""
+"Đừng tự di phóng to hết cỡ khi mở các cửa sổ mới. Nếu \"không vẽ lên cửa "
+"sổ\" được chọn, vẫn sẽ không vẽ lên các cửa sổ đã phóng to."

@@ -1,20 +1,24 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giuseppe Pignataro (Fasbyte01) <rogepix@gmail.com>, 2015
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Marco Bartolucci <nap.84@live.it>, 2016
-# Stefano Karapetsas <stefano@karapetsas.com>, 2012
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# Giuseppe Pignataro (Fastbyte01) <rogepix@gmail.com>, 2018
+# Marco Bartolucci <nap.84@live.it>, 2018
+# Marco Z. <minaz666@gmail.com>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Marco Bartolucci <nap.84@live.it>\n"
-"Language-Team: Italian (http://www.transifex.com/mate/MATE/language/it/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: Marco Z. <minaz666@gmail.com>, 2018\n"
+"Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,7 +45,7 @@ msgstr "_Preferenze"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr "Inform_azioni"
+msgstr "_Informazioni"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -64,7 +68,8 @@ msgstr "Home"
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Chiude la sessione, cambia utente, blocca lo schermo o spegne il computer"
+msgstr ""
+"Chiude la sessione, cambia utente, blocca lo schermo o spegne il computer"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -84,11 +89,13 @@ msgstr "Window Task Button"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Un elenco di stringhe di esclusione che si applicano alla classe finestra."
+msgstr ""
+"Un elenco di stringhe di esclusione che si applicano alla classe finestra."
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Un elenco di stringhe di esclusione che si applicano alla classe finestra"
+msgstr ""
+"Un elenco di stringhe di esclusione che si applicano alla classe finestra"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -96,14 +103,16 @@ msgstr "Un'associazione"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Non decorare le finestre quando massimizzate"
+msgstr "Non decora le finestre quando massimizzate"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Non massimizzare automaticamente le nuove finestre aperte "
+msgstr "Non massimizzare automaticamente le nuove finestre"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Non massimizzare automaticamente le nuove finestre aperte. Se è impostata la non-decorazione, continuerà a non decorare le finestre massimizzate."
+msgstr ""
+"Non massimizzare automaticamente le nuove finestre aperte. Se è impostata la"
+" non-decorazione, continuerà a non decorare le finestre massimizzate."

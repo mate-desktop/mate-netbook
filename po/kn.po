@@ -1,21 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Yogesh K S <yogesh@karnatakaeducation.org.in>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# karthik holla <karthikholla87@gmail.com>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 14:32+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Kannada (http://www.transifex.com/mate/MATE/language/kn/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: karthik holla <karthikholla87@gmail.com>, 2018\n"
+"Language-Team: Kannada (https://www.transifex.com/mate/teams/13566/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kn\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
 msgid "Show windows from all workspaces."
@@ -33,11 +40,11 @@ msgstr ""
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr ""
+msgstr "ಆದ್ಯತೆಗಳು(_P)"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
-msgstr ""
+msgstr "ಇದರ ಬಗ್ಗೆ(_A)"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
@@ -45,7 +52,7 @@ msgstr "ಆದ್ಯತೆಗಳು"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
-msgstr ""
+msgstr "ಎಲ್ಲಾ ಕಾರ್ಯಕ್ಷೇತ್ರಗಳಲ್ಲಿನ ವಿಂಡೋಗಳನ್ನು ತೋರಿಸು"
 
 #: ../mate-window-picker-applet/task-title.c:252
 #: ../mate-window-picker-applet/task-title.c:259
@@ -54,7 +61,7 @@ msgstr ""
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr ""
+msgstr "ನೆಲೆ"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
@@ -64,11 +71,11 @@ msgstr ""
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
-msgstr ""
+msgstr "ವಿಂಡೋ ಅನ್ನು ಮುಚ್ಚು"
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr ""
+msgstr "ಮುಚ್ಚು"
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."

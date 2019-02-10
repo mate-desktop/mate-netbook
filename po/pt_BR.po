@@ -1,21 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Lucas Mezêncio <lucas.mezencio@gmail.com>, 2015
-# Victor Gonçalves <hotcyv@gmail.com>, 2015
-# vitorgatti <vitorgatti@yahoo.com.br>, 2012
-# Wilson Flávio Rodrigues <wfr@cin.ufpe.br>, 2015
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# vitorgatti <vitorgatti@yahoo.com.br>, 2018
+# Marcus Vinícius Marques, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# Victor Gonçalves <hotcyv@gmail.com>, 2018
+# Lucas Mezêncio <lucas.mezencio@gmail.com>, 2018
+# Wilson Flávio Rodrigues <wfr@cin.ufpe.br>, 2018
+# 710a500dd1d5560bb05c8b24814b8c26, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Lucas Mezêncio <lucas.mezencio@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) (http://www.transifex.com/mate/MATE/language/pt_BR/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: 710a500dd1d5560bb05c8b24814b8c26, 2018\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,7 +65,7 @@ msgstr "Exibir janelas de todas as áreas de trabalho"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Início"
+msgstr "Pasta Pessoal"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
@@ -85,11 +91,13 @@ msgstr "Botão da Janela de Tarefa"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:1
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
+msgstr ""
+"Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:2
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
+msgstr ""
+"Uma lista de exclusão de caracteres que se aplicam à classe de janelas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:3
 msgid "A binding"
@@ -97,14 +105,16 @@ msgstr "Uma conexão"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Não decorar as janelas quando maximizadas"
+msgstr "Não decorar janelas quando maximizadas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
-msgstr "Não maximiza automaticamente as janelas recentemente abertas"
+msgstr "Não maximizar automaticamente janelas recentemente abertas"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:6
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Não maximizar automaticamente janelas recentemente abertas. Se for definido não decorar, janelas maximizadas continuarão não sendo decoradas."
+msgstr ""
+"Não maximizar automaticamente janelas recentemente abertas. Se for definido "
+"não decorar, janelas maximizadas continuarão não sendo decoradas."

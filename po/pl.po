@@ -1,21 +1,27 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Beniamin Pawlus <kupwzywcu@o2.pl>, 2015
-# Bogusław B. <penknife1@gmail.com>, 2012
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Michal Herman <szalejot@gmail.com>, 2013
-# Piotr Strębski <strebski@gmail.com>, 2015-2016
+# Piotr Drąg <piotrdrag@gmail.com>, 2018
+# Piotr Strębski <strebski@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Michal Herman <szalejot@gmail.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# levi <levi@unseen.is>, 2018
+# Beniamin Pawlus <kupwzywcu@o2.pl>, 2018
+# Marcin Mikołajczak <me@m4sk.in>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-19 13:46+0000\n"
-"Last-Translator: Piotr Strębski <strebski@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/mate/MATE/language/pl/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: Marcin Mikołajczak <me@m4sk.in>, 2018\n"
+"Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +44,7 @@ msgstr "Wybieracz okien"
 
 #: ../mate-window-picker-applet/applet.c:63
 msgid "_Preferences"
-msgstr "_Preferencje"
+msgstr "P_referencje"
 
 #: ../mate-window-picker-applet/applet.c:66
 msgid "_About"
@@ -59,13 +65,14 @@ msgstr "Pokaż okna ze wszystkich obszarów roboczych"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "Strona główna"
+msgstr "Katalog domowy"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "Wyloguj się, przełącz użytkowników, zablokuj ekran lub wyłącz komputer"
+msgstr ""
+"Wyloguj się, przełącz użytkowników, zablokuj ekran lub wyłącz komputer"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -97,7 +104,7 @@ msgstr "Dowiązanie"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:4
 msgid "Undecorate windows when maximized"
-msgstr "Nie dekoruj okien w postaci zmaksymalizowanej."
+msgstr "Nie wyświetlaj dekoracji zmaksymalizowanych okien"
 
 #: ../maximus/org.mate.maximus.gschema.xml.in.h:5
 msgid "Do not automatically maximize newly opened windows"
@@ -107,4 +114,6 @@ msgstr "Nie maksymalizuj automatycznie nowo otwieranych okien."
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "Nie maksymalizuj automatycznie nowo otwieranych okien. Jeśli niedekorowanie jest ustawione, okna maksymalizowane nadal będę niedekorowane."
+msgstr ""
+"Nie maksymalizuj automatycznie nowo otwieranych okien. Jeśli niedekorowanie "
+"jest ustawione, okna maksymalizowane nadal będę niedekorowane."

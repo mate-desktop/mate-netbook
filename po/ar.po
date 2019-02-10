@@ -1,20 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# كريم أولاد الشلحة <herr.linux88@gmail.com>, 2012
-# Kyle Nitzsche <kyle.nitzsche@canonical.com>, 2009
-# Mosaab Alzoubi <moceap@hotmail.com>, 2013
-# مهدي السطيفي <chinoune.mehdi@gmail.com>, 2015
+# كريم أولاد الشلحة <herr.linux88@gmail.com>, 2018
+# Mosaab Alzoubi <moceap@hotmail.com>, 2018
+# Martin Wimpress <code@flexion.org>, 2018
+# مهدي السطيفي <chinoune.mehdi@gmail.com>, 2018
+# 
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 13:14+0100\n"
-"PO-Revision-Date: 2017-09-23 18:32+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Arabic (http://www.transifex.com/mate/MATE/language/ar/)\n"
+"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"PO-Revision-Date: 2018-03-11 19:20+0000\n"
+"Last-Translator: مهدي السطيفي <chinoune.mehdi@gmail.com>, 2018\n"
+"Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -45,7 +48,7 @@ msgstr "_عنْ"
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr "التّفضيلات"
+msgstr "تفضيلات"
 
 #: ../mate-window-picker-applet/applet.c:264
 msgid "Show windows from all workspaces"
@@ -58,13 +61,14 @@ msgstr "إظهار النّوافذ من كافة أماكن العمل"
 #: ../mate-window-picker-applet/task-title.c:436
 #: ../mate-window-picker-applet/task-title.c:484
 msgid "Home"
-msgstr "الصّفحة الرّئيسية"
+msgstr "المنزل"
 
 #: ../mate-window-picker-applet/task-title.c:256
 #: ../mate-window-picker-applet/task-title.c:306
 #: ../mate-window-picker-applet/task-title.c:482
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "قُم بتسجيل الخروج أو تحويل المستخدم أو قفل الشّاشة أو إيقاف تشغيل الحاسوب"
+msgstr ""
+"قُم بتسجيل الخروج أو تحويل المستخدم أو قفل الشّاشة أو إيقاف تشغيل الحاسوب"
 
 #: ../mate-window-picker-applet/task-title.c:278
 msgid "Close window"
@@ -72,7 +76,7 @@ msgstr "أغلِق النافذة"
 
 #: ../mate-window-picker-applet/task-title.c:457
 msgid "Close"
-msgstr "أغلِق"
+msgstr "إغلاق"
 
 #: ../mate-window-picker-applet/task-title.c:458
 msgid "Close current window."
@@ -106,4 +110,6 @@ msgstr "لا تكبّر تلقائيا النوافذ الجديدة"
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
-msgstr "لا تكبّر تلقائيا النوافذ الجديدة. في حال اختيار عدم الزخرفة، لن تُزخرف النوافذ المكبّرة."
+msgstr ""
+"لا تكبّر تلقائيا النوافذ الجديدة. في حال اختيار عدم الزخرفة، لن تُزخرف "
+"النوافذ المكبّرة."
