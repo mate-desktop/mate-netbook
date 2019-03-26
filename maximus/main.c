@@ -64,7 +64,7 @@ gint main (gint argc, gchar *argv[])
   MaximusApp UNUSED_VARIABLE *app;
   GOptionContext  *context;
   GError *error = NULL;
-  GdkDisplay *gdk_display = gdk_display_get_default ();
+  GdkDisplay *gdk_display;
 
   g_set_application_name ("Maximus");
   
@@ -90,6 +90,7 @@ gint main (gint argc, gchar *argv[])
   g_option_context_parse (context, &argc, &argv, NULL);
   g_option_context_free(context);  
 
+  gdk_display = gdk_display_get_default ();
   gdk_x11_display_error_trap_push (gdk_display);
   app = maximus_app_get_default ();
   gdk_x11_display_error_trap_pop_ignored (gdk_display);
