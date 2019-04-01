@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -54,8 +54,8 @@ struct _TaskTitlePrivate
 static void disconnect_window (TaskTitle *title);
 
 static gboolean
-on_close_clicked (GtkButton *button, 
-                  GdkEventButton *event, 
+on_close_clicked (GtkButton *button,
+                  GdkEventButton *event,
                   TaskTitle *title)
 {
   TaskTitlePrivate *priv;
@@ -87,10 +87,10 @@ on_enter_notify (GtkWidget *widget,
                  TaskTitle *title)
 {
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
-  
+
   title->priv->mouse_in_close_button = TRUE;
   gtk_widget_queue_draw (widget);
-  
+
   return FALSE;
 }
 
@@ -100,7 +100,7 @@ on_leave_notify (GtkWidget *widget,
                  TaskTitle *title)
 {
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
-  
+
   title->priv->mouse_in_close_button = FALSE;
   gtk_widget_queue_draw (widget);
 
@@ -108,7 +108,7 @@ on_leave_notify (GtkWidget *widget,
 }
 
 static gboolean
-on_button_draw (GtkWidget *widget, 
+on_button_draw (GtkWidget *widget,
                 cairo_t *cr,
                 TaskTitle *title)
 {
@@ -116,7 +116,7 @@ on_button_draw (GtkWidget *widget,
 
   TaskTitlePrivate *priv;
   priv = title->priv;
-  
+
   if (priv->mouse_in_close_button)
   {
     GtkStyle *style = gtk_widget_get_style (widget);
@@ -201,7 +201,7 @@ on_state_changed (WnckWindow *window,
   {
     gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
     gtk_widget_hide (priv->box);
-  }  
+  }
 }
 
 static void
@@ -224,7 +224,7 @@ on_active_window_changed (WnckScreen *screen,
   TaskTitlePrivate *priv;
   WnckWindow *act_window;
   WnckWindowType type = WNCK_WINDOW_NORMAL;
-  
+
   g_return_if_fail (TASK_IS_TITLE (title));
   priv = title->priv;
 
@@ -241,16 +241,16 @@ on_active_window_changed (WnckScreen *screen,
       || type == WNCK_WINDOW_SPLASHSCREEN
       || type == WNCK_WINDOW_MENU)
     return;
- 
+
   disconnect_window (title);
 
   if (!WNCK_IS_WINDOW (act_window)
         || wnck_window_get_window_type (act_window) == WNCK_WINDOW_DESKTOP)
-  { 
+  {
     if (priv->show_home_title)
     {
       gtk_label_set_text (GTK_LABEL (priv->label), _("Home"));
-      gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image), 
+      gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image),
                                  priv->quit_icon);
       gtk_widget_set_tooltip_text (priv->button,
                                 _("Log off, switch user, lock screen or power "
@@ -268,7 +268,7 @@ on_active_window_changed (WnckScreen *screen,
   }
   else
   {
-    gtk_label_set_text (GTK_LABEL (priv->label), 
+    gtk_label_set_text (GTK_LABEL (priv->label),
                         wnck_window_get_name (act_window));
     gtk_image_set_from_icon_name (GTK_IMAGE (priv->button_image),
                                   "window-close", GTK_ICON_SIZE_MENU);
@@ -283,7 +283,7 @@ on_active_window_changed (WnckScreen *screen,
                       G_CALLBACK (on_icon_changed), title);
     g_signal_connect_after (act_window, "state-changed",
                             G_CALLBACK (on_state_changed), title);
-    gtk_widget_show (priv->box);  
+    gtk_widget_show (priv->box);
     priv->window = act_window;
   }
 
@@ -300,17 +300,17 @@ on_active_window_changed (WnckScreen *screen,
         && priv->show_home_title)
     {
       gtk_label_set_text (GTK_LABEL (priv->label), _("Home"));
-      gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image), 
+      gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image),
                                  priv->quit_icon);
       gtk_widget_set_tooltip_text (priv->button,
                                 _("Log off, switch user, lock screen or power "
                                      "down the computer"));
       gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                                   _("Home"));      
+                                   _("Home"));
       gtk_widget_show (priv->box);
      }
     else
-    {  
+    {
       gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
       gtk_widget_set_tooltip_text (priv->button, NULL);
       gtk_widget_set_tooltip_text (GTK_WIDGET (title), NULL);
@@ -342,7 +342,7 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
     if (wnck_window_get_window_type (window) != WNCK_WINDOW_DESKTOP)
     {
       menu = wnck_action_menu_new (window);
-      gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL, 
+      gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
                       event->button, event->time);
       return TRUE;
     }
@@ -354,7 +354,7 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
       wnck_window_unmaximize (window);
     }
   }
-  
+
   return FALSE;
 }
 
@@ -411,7 +411,7 @@ task_title_init (TaskTitle *title)
   GdkPixbuf *pixbuf;
   AtkObject *atk;
   int width, height;
-    	
+
   priv = title->priv = TASK_TITLE_GET_PRIVATE (title);
 
   priv->screen = wnck_screen_get_default ();
@@ -424,7 +424,7 @@ task_title_init (TaskTitle *title)
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
 
   priv->align = gtk_alignment_new (0.0, 0.5, 1.0, 1.0);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (priv->align), 
+  gtk_alignment_set_padding (GTK_ALIGNMENT (priv->align),
                              0, 0, 6, 6);
   gtk_container_add (GTK_CONTAINER (title), priv->align);
 
@@ -446,19 +446,19 @@ task_title_init (TaskTitle *title)
   gtk_box_pack_start (GTK_BOX (priv->box), priv->label, TRUE, TRUE, 0);
   gtk_widget_show (priv->label);
 
-  priv->button = g_object_new (GTK_TYPE_EVENT_BOX, 
+  priv->button = g_object_new (GTK_TYPE_EVENT_BOX,
                                "visible-window", FALSE,
                                "above-child", TRUE,
                                NULL);
   gtk_box_pack_start (GTK_BOX (priv->box), priv->button, FALSE, FALSE, 0);
   gtk_widget_show (priv->button);
-  
+
   atk = gtk_widget_get_accessible (priv->button);
   atk_object_set_name (atk, _("Close"));
   atk_object_set_description (atk, _("Close current window."));
   atk_object_set_role (atk, ATK_ROLE_PUSH_BUTTON);
-  
-  g_signal_connect (priv->button, "button-release-event", 
+
+  g_signal_connect (priv->button, "button-release-event",
                     G_CALLBACK (on_close_clicked), title);
   g_signal_connect (priv->button, "enter-notify-event",
                     G_CALLBACK (on_enter_notify), title);
@@ -481,16 +481,16 @@ task_title_init (TaskTitle *title)
   gtk_widget_set_tooltip_text (priv->button,
                                _("Log off, switch user, lock screen or power "
                                  "down the computer"));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (title), _("Home"));  
+  gtk_widget_set_tooltip_text (GTK_WIDGET (title), _("Home"));
 
   if (priv->show_home_title)
     gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
   else
     gtk_widget_hide (priv->box);
- 
+
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
- 
+
   g_signal_connect (priv->screen, "active-window-changed",
                     G_CALLBACK (on_active_window_changed), title);
   g_signal_connect (title, "button-press-event",
@@ -503,10 +503,10 @@ task_title_new (void)
 {
   GtkWidget *title = NULL;
 
-  title = g_object_new (TASK_TYPE_TITLE, 
-                        "border-width", 0, 
+  title = g_object_new (TASK_TYPE_TITLE,
+                        "border-width", 0,
                         "name", "tasklist-button",
-                        "visible-window", FALSE, 
+                        "visible-window", FALSE,
                         NULL);
 
   return title;
