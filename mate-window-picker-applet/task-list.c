@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -39,7 +39,7 @@ struct _TaskListPrivate
 enum
 {
   PROP_0,
-  
+
   PROP_SHOW_ALL_WINDOWS
 };
 
@@ -78,9 +78,9 @@ on_window_opened (WnckScreen *screen,
       || type == WNCK_WINDOW_SPLASHSCREEN
       || type == WNCK_WINDOW_MENU)
     return;
-    
+
   GtkWidget *item = task_item_new (window);
-  
+
   if (item)
   {
     gtk_box_pack_start (GTK_BOX (list), item, FALSE, FALSE, 0);
@@ -183,11 +183,11 @@ task_list_new (void)
 {
   GtkWidget *list = NULL;
 
-  list = g_object_new (TASK_TYPE_LIST, 
-                       "homogeneous", FALSE, 
-                       "spacing", 0, 
+  list = g_object_new (TASK_TYPE_LIST,
+                       "homogeneous", FALSE,
+                       "spacing", 0,
                        NULL);
-  
+
   return list;
 }
 
@@ -202,7 +202,7 @@ task_list_get_default (void)
   return list;
 }
 
-gboolean    
+gboolean
 task_list_get_desktop_visible (TaskList *list)
 {
   GList *windows, *w;
@@ -214,7 +214,7 @@ task_list_get_desktop_visible (TaskList *list)
   for (w = windows; w; w = w->next)
   {
     WnckWindow *window;
-    
+
     window = w->data;
 
     if (WNCK_IS_WINDOW (window) && !wnck_window_is_minimized (window))
@@ -229,4 +229,3 @@ task_list_get_show_all_windows (TaskList *list)
 {
   return list->priv->show_all_windows;
 }
-
