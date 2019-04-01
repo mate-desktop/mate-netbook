@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -39,13 +39,13 @@
 static gboolean version    = FALSE;
 gboolean no_maximize = FALSE;
 
-GOptionEntry entries[] = 
+GOptionEntry entries[] =
 {
  {
-   "version", 'v', 
-   0, G_OPTION_ARG_NONE, 
-   &version, 
-   "Prints the version number", NULL 
+   "version", 'v',
+   0, G_OPTION_ARG_NONE,
+   &version,
+   "Prints the version number", NULL
  },
  {
    "no-maximize", 'm',
@@ -53,8 +53,8 @@ GOptionEntry entries[] =
    &no_maximize,
    "Do not automatically maximize every window", NULL
  },
- { 
-   NULL 
+ {
+   NULL
  }
 };
 
@@ -67,9 +67,9 @@ gint main (gint argc, gchar *argv[])
   GdkDisplay *gdk_display;
 
   g_set_application_name ("Maximus");
-  
+
   gtk_init (&argc, &argv);
-  
+
   application = g_application_new ("com.canonical.Maximus", G_APPLICATION_FLAGS_NONE);
 
   if (!g_application_register (application, NULL, &error))
@@ -78,7 +78,7 @@ gint main (gint argc, gchar *argv[])
     g_error_free (error);
     return 1;
   }
-  
+
   if (g_application_get_is_remote(application))
   {
     return 0;
@@ -88,7 +88,7 @@ gint main (gint argc, gchar *argv[])
   g_option_context_add_main_entries (context, entries, "maximus");
   g_option_context_add_group (context, gtk_get_option_group (TRUE));
   g_option_context_parse (context, &argc, &argv, NULL);
-  g_option_context_free(context);  
+  g_option_context_free(context);
 
   gdk_display = gdk_display_get_default ();
   gdk_x11_display_error_trap_push (gdk_display);

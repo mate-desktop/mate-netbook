@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -41,13 +41,13 @@
 #define APPLET_SCHEMA "org.mate.panel.applet.mate-window-picker-applet"
 #define SHOW_WIN_KEY "show-all-windows"
 
-typedef struct 
+typedef struct
 {
   GtkWidget    *tasks;
   GtkWidget    *applet;
   GtkWidget    *title;
   GSettings    *settings;
-  
+
 } WinPickerApp;
 
 static WinPickerApp *mainapp;
@@ -119,8 +119,8 @@ cw_applet_finalize (GObject *object)
 }
 
 static gboolean
-cw_applet_fill (MatePanelApplet *applet, 
-                const gchar *iid, 
+cw_applet_fill (MatePanelApplet *applet,
+                const gchar *iid,
                 gpointer     data)
 {
   WnckScreen *screen;
@@ -129,10 +129,10 @@ cw_applet_fill (MatePanelApplet *applet,
   gchar *ui_path;
   GtkActionGroup *action_group;
   GObjectClass *object_class;
-  
+
   if (strcmp (iid, "MateWindowPicker") != 0)
     return FALSE;
-  	
+
   bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
@@ -141,7 +141,7 @@ cw_applet_fill (MatePanelApplet *applet,
   mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (applet), GTK_WIDGET (applet));
 
   wnck_set_client_type (WNCK_CLIENT_TYPE_PAGER);
-  
+
   app = g_slice_new0 (WinPickerApp);
   mainapp = app;
   screen = wnck_screen_get_default ();
@@ -170,7 +170,7 @@ cw_applet_fill (MatePanelApplet *applet,
   gtk_box_pack_start (GTK_BOX (eb), title, TRUE, TRUE, 0);
 
   gtk_widget_show_all (GTK_WIDGET (applet));
-	
+
   on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
 		
   action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
@@ -185,11 +185,11 @@ cw_applet_fill (MatePanelApplet *applet,
   g_free (ui_path);
   g_object_unref (action_group);
 
-  mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), 
+  mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
                                MATE_PANEL_APPLET_EXPAND_MAJOR
                                | MATE_PANEL_APPLET_EXPAND_MINOR
                                | MATE_PANEL_APPLET_HAS_HANDLE);
-	
+
   return TRUE;
 }
 
@@ -204,7 +204,7 @@ display_about_dialog (GtkAction       *action,
                       WinPickerApp *applet)
 {
   GtkWidget *panel_about_dialog;
-	
+
   panel_about_dialog = gtk_about_dialog_new ();
 
   g_object_set (panel_about_dialog,
@@ -231,7 +231,7 @@ static void
 on_checkbox_toggled (GtkToggleButton *check, gpointer null)
 {
   gboolean is_active;
-    
+
   is_active = gtk_toggle_button_get_active (check);
 
   g_settings_set_boolean (mainapp->settings, SHOW_WIN_KEY, is_active);
@@ -272,16 +272,16 @@ display_prefs_dialog (GtkAction       *action,
   gtk_box_pack_start (GTK_BOX (vbox), check, TRUE, TRUE, 0);
 
   gtk_widget_set_size_request (nb, -1, 100);
-  
+
   hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
   gtk_box_pack_start (GTK_BOX (box), hbox, FALSE, FALSE, 0);
-  
+
   label = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
 
   button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
   gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
-	
+
   gtk_widget_show_all (window);
 
   g_signal_connect (window, "delete-event",
@@ -291,6 +291,6 @@ display_prefs_dialog (GtkAction       *action,
                     G_CALLBACK (gtk_widget_destroy), window);
   g_signal_connect_swapped (button, "clicked",
                             G_CALLBACK (gtk_widget_destroy), window);
-	
+
   gtk_window_present (GTK_WINDOW (window));
 }

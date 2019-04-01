@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -76,7 +76,7 @@ struct _MaximusBindPrivate
   GList *rules;
 };
 
-typedef struct 
+typedef struct
 {
   gchar *wm_class;
   gchar *fullscreen;
@@ -94,7 +94,7 @@ get_fullscreen_keystroke (GList *rules, WnckWindow *window)
   class_name = wnck_class_group_get_name (group);
 
   g_debug ("Searching rules for %s:\n", wnck_window_get_name (window));
-  
+
   for (r = rules; r; r = r->next)
   {
     MaximusRule *rule = r->data;
@@ -152,7 +152,7 @@ real_fullscreen (MaximusBind *bind)
     return FALSE;
 
   keystroke = get_fullscreen_keystroke (priv->rules, active);
-  
+
   if (keystroke)
   {
     guint keysym = 0;
@@ -171,7 +171,7 @@ real_fullscreen (MaximusBind *bind)
       if (modifiers & EGG_VIRTUAL_META_MASK)
         mods |= FAKEKEYMOD_META;
 
-      g_debug ("Sending fullscreen special event: %s = %d %d", 
+      g_debug ("Sending fullscreen special event: %s = %d %d",
                keystroke, keysym, mods);
       fakekey_press_keysym (priv->fk, keysym, mods);
       fakekey_release (priv->fk);
@@ -223,7 +223,7 @@ real_unfullscreen (MaximusBind *bind)
 
   if (!WNCK_IS_WINDOW (active)
         || wnck_window_get_window_type (active) != WNCK_WINDOW_NORMAL)
-    return FALSE;  
+    return FALSE;
 
   keystroke = get_unfullscreen_keystroke (priv->rules, active);
 
@@ -245,14 +245,14 @@ real_unfullscreen (MaximusBind *bind)
       if (modifiers & EGG_VIRTUAL_META_MASK)
         mods |= FAKEKEYMOD_META;
 
-      g_debug ("Sending fullscreen special event: %s = %d %d", 
+      g_debug ("Sending fullscreen special event: %s = %d %d",
                keystroke, keysym, mods);
       fakekey_press_keysym (priv->fk, keysym, mods);
       fakekey_release (priv->fk);
 
       return FALSE;
      }
-  }  
+  }
   if (wnck_window_is_fullscreen (active))
   {
     g_debug ("Sending un-fullscreen F11 event");
@@ -267,7 +267,7 @@ real_unfullscreen (MaximusBind *bind)
     g_debug ("Forcing un-fullscreen wnck event");
     wnck_window_set_fullscreen (active, FALSE);
   }
-  
+
   return FALSE;
 }
 
@@ -287,7 +287,7 @@ on_binding_activated (gchar *keystring, MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
   WnckWindow *active;
-  
+
   g_return_if_fail (MAXIMUS_IS_BIND (bind));
   priv = bind->priv;
 
@@ -324,19 +324,19 @@ on_binding_changed (GSettings      *settings,
                     MaximusBind    *bind)
 {
   MaximusBindPrivate *priv;
-  
+
   g_return_if_fail (MAXIMUS_IS_BIND (bind));
   priv = bind->priv;
 
   if (binding_is_valid (priv->binding))
-    tomboy_keybinder_unbind (priv->binding, 
+    tomboy_keybinder_unbind (priv->binding,
                              (TomboyBindkeyHandler)on_binding_changed);
   g_free (priv->binding);
 
   priv->binding = g_settings_get_string (settings, BIND_EXCLUDE_CLASS);
 
   if (binding_is_valid (priv->binding))
-    tomboy_keybinder_bind (priv->binding, 
+    tomboy_keybinder_bind (priv->binding,
                            (TomboyBindkeyHandler)on_binding_activated,
                            bind);
 
@@ -369,15 +369,15 @@ create_rule (MaximusBind *bind, const gchar *filename)
     return;
   }
 
-  rule = g_slice_new0 (MaximusRule); 
+  rule = g_slice_new0 (MaximusRule);
 
-  rule->wm_class = g_key_file_get_string (file, 
+  rule->wm_class = g_key_file_get_string (file,
                                           RULE_GROUP, RULE_WMCLASS,
                                           NULL);
-  rule->fullscreen = g_key_file_get_string (file, 
+  rule->fullscreen = g_key_file_get_string (file,
                                             RULE_GROUP, RULE_FULLSCREEN,
                                             NULL);
-  rule->unfullscreen = g_key_file_get_string (file, 
+  rule->unfullscreen = g_key_file_get_string (file,
                                               RULE_GROUP, RULE_UNFULLSCREEN,
                                               NULL);
   if (!rule->wm_class || !rule->fullscreen || !rule->unfullscreen)
@@ -412,7 +412,7 @@ load_rules (MaximusBind *bind, const gchar *path)
   while ((name = g_dir_read_name (dir)))
   {
     gchar *filename;
-    
+
     filename= g_build_filename (path, name, NULL);
 
     create_rule (bind, filename);
@@ -465,7 +465,7 @@ maximus_bind_init (MaximusBind *bind)
   MaximusBindPrivate *priv;
   GdkDisplay *display = gdk_display_get_default ();
   WnckScreen *screen;
-	
+
   priv = bind->priv = MAXIMUS_BIND_GET_PRIVATE (bind);
 
   priv->fk = fakekey_init (GDK_DISPLAY_XDISPLAY (display));
@@ -495,7 +495,7 @@ maximus_bind_get_default (void)
   static MaximusBind *bind = NULL;
 
   if (!bind)
-    bind = g_object_new (MAXIMUS_TYPE_BIND, 
+    bind = g_object_new (MAXIMUS_TYPE_BIND,
                        NULL);
 
   return bind;

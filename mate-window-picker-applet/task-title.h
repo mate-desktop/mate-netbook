@@ -2,7 +2,7 @@
  * Copyright (C) 2008 Canonical Ltd
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License version 3 as 
+ * it under the terms of the GNU General Public License version 3 as
  * published by the Free Software Foundation.
  *
  * This program is distributed in the hope that it will be useful,
@@ -44,10 +44,10 @@
 typedef struct _TaskTitle        TaskTitle;
 typedef struct _TaskTitleClass   TaskTitleClass;
 typedef struct _TaskTitlePrivate TaskTitlePrivate;
- 
+
 struct _TaskTitle
 {
-  GtkEventBox        parent;	
+  GtkEventBox        parent;
 
   TaskTitlePrivate *priv;
 };
@@ -63,4 +63,3 @@ GtkWidget * task_title_new (void);
 
 
 #endif /* _TASK_TITLE_H_ */
-
