@@ -40,6 +40,7 @@
 
 #define APPLET_SCHEMA "org.mate.panel.applet.mate-window-picker-applet"
 #define SHOW_WIN_KEY "show-all-windows"
+#define SHOW_HOME_TITLE_KEY "show-home-title"
 
 typedef struct
 {
@@ -87,6 +88,20 @@ on_show_all_windows_changed (GSettings   *settings,
   show_windows = g_settings_get_boolean (settings, SHOW_WIN_KEY);
 
   g_object_set (app->tasks, "show_all_windows", show_windows, NULL);
+}
+
+static void
+on_show_home_title_changed (GSettings   *settings,
+                            gchar       *key,
+                            gpointer     data)
+{
+  WinPickerApp *app;
+  gboolean show_home = FALSE;
+
+  app = (WinPickerApp*)data;
+
+  show_home = g_settings_get_boolean (settings, SHOW_HOME_TITLE_KEY);
+  g_object_set (app->title, "show_home_title", show_home, NULL);
 }
 
 static inline void
@@ -154,6 +169,8 @@ cw_applet_fill (MatePanelApplet *applet,
   app->settings = mate_panel_applet_settings_new (applet, APPLET_SCHEMA);
   g_signal_connect (app->settings, "changed::" SHOW_WIN_KEY,
                     G_CALLBACK (on_show_all_windows_changed), app);
+  g_signal_connect (app->settings, "changed::" SHOW_HOME_TITLE_KEY,
+                    G_CALLBACK (on_show_home_title_changed), app);
 
   app->applet = GTK_WIDGET (applet);
   force_no_focus_padding (GTK_WIDGET (applet));
@@ -172,7 +189,8 @@ cw_applet_fill (MatePanelApplet *applet,
   gtk_widget_show_all (GTK_WIDGET (applet));
 
   on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
-		
+  on_show_home_title_changed (app->settings, SHOW_HOME_TITLE_KEY, app);
+
   action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
   gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
   gtk_action_group_add_actions (action_group,
@@ -238,6 +256,16 @@ on_show_win_key_checkbox_toggled (GtkToggleButton *check, gpointer null)
 }
 
 static void
+on_show_home_title_checkbox_toggled (GtkToggleButton *check, gpointer null)
+{
+  gboolean is_active;
+
+  is_active = gtk_toggle_button_get_active (check);
+
+  g_settings_set_boolean (mainapp->settings, SHOW_HOME_TITLE_KEY, is_active);
+}
+
+static void
 display_prefs_dialog (GtkAction       *action,
                       WinPickerApp *applet)
 {
@@ -269,6 +297,15 @@ display_prefs_dialog (GtkAction       *action,
                                 g_settings_get_boolean (mainapp->settings, SHOW_WIN_KEY));
   g_signal_connect (check, "toggled",
                     G_CALLBACK (on_show_win_key_checkbox_toggled), NULL);
+
+  check = gtk_check_button_new_with_label (_("Show desktop title and logout button"));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (check),
+                               _("Show a title for the desktop when no window is selected, and append a logout button."));
+  gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, TRUE, 0);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check),
+                                g_settings_get_boolean (mainapp->settings, SHOW_HOME_TITLE_KEY));
+  g_signal_connect (check, "toggled",
+                    G_CALLBACK (on_show_home_title_checkbox_toggled), NULL);
 
   check = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (vbox), check, TRUE, TRUE, 0);

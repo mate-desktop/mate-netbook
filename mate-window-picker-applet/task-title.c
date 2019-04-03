@@ -31,8 +31,7 @@ G_DEFINE_TYPE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
   TASK_TYPE_TITLE, \
   TaskTitlePrivate))
 
-#define LOGOUT "mate-session-save --kill --gui"
-#define SHOW_HOME_TITLE_KEY "show-home-title"
+#define LOGOUT "mate-session-save --logout-dialog"
 
 struct _TaskTitlePrivate
 {
@@ -49,7 +48,55 @@ struct _TaskTitlePrivate
   gboolean mouse_in_close_button;
 };
 
+enum
+{
+  PROP_0,
+  PROP_SHOW_HOME_TITLE
+};
+
 static void disconnect_window (TaskTitle *title);
+
+static gboolean
+start_logout_dialog (TaskTitle *title)
+{
+  GError *error = NULL;
+  GAppInfo *app_info;
+  GdkAppLaunchContext *launch_context;
+  GdkDisplay *display;
+  GdkScreen *gdkscreen;
+
+  g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
+
+  gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
+  app_info = g_app_info_create_from_commandline (
+    LOGOUT, _("Log off, switch user, lock screen or power down the computer"),
+    G_APP_INFO_CREATE_NONE, &error);
+
+  if (!error) {
+    display = gdk_screen_get_display (gdkscreen);
+    launch_context = gdk_display_get_app_launch_context (display);
+    gdk_app_launch_context_set_screen (launch_context, gdkscreen);
+    g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
+    g_object_unref (launch_context);
+    return TRUE;
+  }
+
+  GtkWidget *dialog;
+
+  dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+                                   GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+                                   _("There was an error executing '%s': %s"),
+                                   LOGOUT, error->message);
+
+  g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
+
+  gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+  gtk_window_set_screen (GTK_WINDOW (dialog), gdkscreen);
+
+  gtk_widget_show (dialog);
+  g_error_free (error);
+  return FALSE;
+}
 
 static gboolean
 on_close_clicked (GtkButton *button,
@@ -58,6 +105,7 @@ on_close_clicked (GtkButton *button,
 {
   TaskTitlePrivate *priv;
   WnckWindow *window;
+  gboolean ret;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = title->priv;
@@ -78,10 +126,16 @@ on_close_clicked (GtkButton *button,
     gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
     display = gdk_screen_get_display (gdkscreen);
     wnck_window_close (window, gdk_x11_display_get_user_time (display));
+    ret = TRUE;
+  }
+  else if (priv->show_home_title)
+  {
+    // This is a logout click
+    ret = start_logout_dialog (title);
   }
   gtk_widget_queue_draw (GTK_WIDGET (title));
 
-  return TRUE;
+  return ret;
 }
 
 static gboolean
@@ -254,7 +308,7 @@ on_active_window_changed (WnckScreen *screen,
   {
     if (priv->show_home_title)
     {
-      gtk_label_set_text (GTK_LABEL (priv->label), _("Home"));
+      gtk_label_set_text (GTK_LABEL (priv->label), _("Desktop"));
       gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image),
                                  priv->quit_icon);
 
@@ -365,6 +419,60 @@ on_draw (GtkWidget *w, cairo_t *cr)
 
 /* GObject stuff */
 static void
+task_title_set_show_home_title (TaskTitle *title, gboolean show_home_title)
+{
+  TaskTitlePrivate *priv = title->priv;
+
+  priv->show_home_title = show_home_title;
+
+  g_debug ("Show home title: %s", show_home_title ? "true" : "false");
+
+  on_active_window_changed(priv->screen, priv->window, title);
+}
+
+static void
+task_title_get_property (GObject    *object,
+                         guint       prop_id,
+                         GValue     *value,
+                         GParamSpec *pspec)
+{
+  TaskTitle *title = TASK_TITLE (object);
+  TaskTitlePrivate *priv;
+
+  g_return_if_fail (TASK_IS_TITLE (title));
+  priv = title->priv;
+
+  switch (prop_id)
+  {
+    case PROP_SHOW_HOME_TITLE:
+      g_value_set_boolean (value, priv->show_home_title);
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+  }
+}
+
+static void
+task_title_set_property (GObject      *object,
+                         guint         prop_id,
+                         const GValue *value,
+                         GParamSpec   *pspec)
+{
+  TaskTitle *title = TASK_TITLE (object);
+
+  g_return_if_fail (TASK_IS_TITLE (title));
+
+  switch (prop_id)
+  {
+    case PROP_SHOW_HOME_TITLE:
+      task_title_set_show_home_title (title, g_value_get_boolean (value));
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+  }
+}
+
+static void
 task_title_finalize (GObject *object)
 {
   TaskTitlePrivate *priv;
@@ -384,6 +492,17 @@ task_title_class_init (TaskTitleClass *klass)
   GtkWidgetClass      *wid_class = GTK_WIDGET_CLASS (klass);
 
   obj_class->finalize = task_title_finalize;
+  obj_class->set_property = task_title_set_property;
+  obj_class->get_property = task_title_get_property;
+
+  g_object_class_install_property (obj_class,
+    PROP_SHOW_HOME_TITLE,
+    g_param_spec_boolean ("show_home_title",
+                          "Show Home Title",
+                          "Show Home Title",
+                          FALSE,
+                          G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
   wid_class->draw = on_draw;
 
   g_type_class_add_private (obj_class, sizeof (TaskTitlePrivate));
@@ -404,8 +523,7 @@ task_title_init (TaskTitle *title)
   priv->screen = wnck_screen_get_default ();
   priv->window = NULL;
 
-  /* FIXME we can add an option for this in future */
-  /* now it's disabled with gsettings migration */
+  // Default values
   priv->show_home_title = FALSE;
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
@@ -420,7 +538,7 @@ task_title_init (TaskTitle *title)
   gtk_widget_set_no_show_all (priv->box, TRUE);
   gtk_widget_show (priv->box);
 
-  priv->label = gtk_label_new (_("Home"));
+  priv->label = gtk_label_new (_("Desktop"));
   gtk_label_set_ellipsize (GTK_LABEL (priv->label), PANGO_ELLIPSIZE_END);
   gtk_widget_set_halign (priv->label, GTK_ALIGN_START);
   gtk_widget_set_valign (priv->label, GTK_ALIGN_CENTER);
@@ -454,27 +572,17 @@ task_title_init (TaskTitle *title)
   g_signal_connect (priv->button, "draw",
                     G_CALLBACK (on_button_draw), title);
 
+  // Initialize button_image to allow easy setting by icon name after that.
   gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
   theme = gtk_icon_theme_get_for_screen (gdkscreen);
-  gtk_icon_size_lookup (GTK_ICON_SIZE_MENU,
-                        &width, &height);
-
-  priv->quit_icon = gtk_icon_theme_load_icon (theme, "mate-logout", width, 0, NULL);
-
+  gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &width, &height);
+  priv->quit_icon = gtk_icon_theme_load_icon (theme, "system-log-out", width, 0, NULL);
   priv->button_image = gtk_image_new_from_pixbuf (priv->quit_icon);
+
   gtk_container_add (GTK_CONTAINER (priv->button), priv->button_image);
   gtk_widget_show (priv->button_image);
 
-  gtk_widget_set_tooltip_text (priv->button,
-                               _("Log off, switch user, lock screen or power "
-                                 "down the computer"));
-  gtk_widget_set_tooltip_text (GTK_WIDGET (title), _("Home"));
-
-  if (priv->show_home_title)
-    gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
-  else
-    gtk_widget_hide (priv->box);
-
+  gtk_widget_hide (priv->box);
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
 
