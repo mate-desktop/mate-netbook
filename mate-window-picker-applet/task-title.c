@@ -197,12 +197,14 @@ on_state_changed (WnckWindow *window,
 
   if (wnck_window_is_maximized (window))
   {
-    gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
+    gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_ACTIVE,
+                                TRUE);
     gtk_widget_show (priv->box);
   }
   else
   {
-    gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
+    gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_NORMAL,
+                               TRUE);
     gtk_widget_hide (priv->box);
   }
 }
@@ -261,14 +263,16 @@ on_active_window_changed (WnckScreen *screen,
                                    _("Log off, switch user, lock screen or "
                                      "power down the computer"));
 
-      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
+      gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_ACTIVE,
+                                  TRUE);
       gtk_widget_show (priv->box);
     }
     else
     {
       gtk_widget_set_tooltip_text (priv->button, NULL);
       gtk_widget_set_tooltip_text (GTK_WIDGET (title), NULL);
-      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
+      gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_NORMAL,
+                                  TRUE);
       gtk_widget_hide (priv->box);
     }
   }
@@ -292,12 +296,14 @@ on_active_window_changed (WnckScreen *screen,
     priv->window = act_window;
     if (wnck_window_is_maximized (act_window))
     {
-      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
+      gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_ACTIVE,
+                                  TRUE);
       gtk_widget_show (priv->box);
     }
     else
     {
-      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
+      gtk_widget_set_state_flags (GTK_WIDGET (title), GTK_STATE_FLAG_NORMAL,
+                                  TRUE);
       gtk_widget_hide (priv->box);
     }
   }
