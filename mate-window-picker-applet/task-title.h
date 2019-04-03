@@ -23,6 +23,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
+#include <gdk/gdkx.h>
 
 #define TASK_TYPE_TITLE (task_title_get_type ())
 

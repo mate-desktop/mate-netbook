@@ -74,7 +74,12 @@ on_close_clicked (GtkButton *button,
   {
     if (priv->window == window)
       disconnect_window (title);
-    wnck_window_close (window, event->time);
+    // event->time is buggy, thus we have to workaroud this
+    GdkScreen *gdkscreen;
+    GdkDisplay *display;
+    gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
+    display = gdk_screen_get_display (gdkscreen);
+    wnck_window_close (window, gdk_x11_display_get_user_time (display));
   }
   gtk_widget_queue_draw (GTK_WIDGET (title));
 
@@ -342,8 +347,7 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
     if (wnck_window_get_window_type (window) != WNCK_WINDOW_DESKTOP)
     {
       menu = wnck_action_menu_new (window);
-      gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL,
-                      event->button, event->time);
+      gtk_menu_popup_at_pointer (GTK_MENU (menu), (GdkEvent*)event);
       return TRUE;
     }
   }
