@@ -5,5 +5,10 @@
       <summary>Show all windows</summary>
       <description>Show windows from all workspaces.</description>
     </key>
+    <key name="show-home-title" type="b">
+      <default>false</default>
+      <summary>Show desktop title and logout button</summary>
+      <description>Show a title for the desktop when no window is selected, and append a logout button.</description>
+    </key>
   </schema>
 </schemalist>
