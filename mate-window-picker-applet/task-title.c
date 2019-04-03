@@ -25,8 +25,6 @@
 
 #include <math.h>
 
-#include "task-list.h"
-
 G_DEFINE_TYPE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
 
 #define TASK_TITLE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
@@ -257,17 +255,20 @@ on_active_window_changed (WnckScreen *screen,
       gtk_label_set_text (GTK_LABEL (priv->label), _("Home"));
       gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image),
                                  priv->quit_icon);
+
+      gtk_widget_set_tooltip_text (GTK_WIDGET (title), NULL);
       gtk_widget_set_tooltip_text (priv->button,
-                                _("Log off, switch user, lock screen or power "
-                                     "down the computer"));
-      gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                                   _("Home"));      gtk_widget_show (priv->box);
+                                   _("Log off, switch user, lock screen or "
+                                     "power down the computer"));
+
+      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
+      gtk_widget_show (priv->box);
     }
     else
     {
-      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
       gtk_widget_set_tooltip_text (priv->button, NULL);
       gtk_widget_set_tooltip_text (GTK_WIDGET (title), NULL);
+      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
       gtk_widget_hide (priv->box);
     }
   }
@@ -288,42 +289,18 @@ on_active_window_changed (WnckScreen *screen,
                       G_CALLBACK (on_icon_changed), title);
     g_signal_connect_after (act_window, "state-changed",
                             G_CALLBACK (on_state_changed), title);
-    gtk_widget_show (priv->box);
     priv->window = act_window;
-  }
-
-  if (WNCK_IS_WINDOW (act_window)
-      && !wnck_window_is_maximized (act_window)
-      && (priv->show_home_title ? type != WNCK_WINDOW_DESKTOP : 1))
-  {
-    gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
-    gtk_widget_hide (priv->box);
-  }
-  else if (!WNCK_IS_WINDOW (act_window))
-  {
-    if (task_list_get_desktop_visible (TASK_LIST (task_list_get_default ()))
-        && priv->show_home_title)
+    if (wnck_window_is_maximized (act_window))
     {
-      gtk_label_set_text (GTK_LABEL (priv->label), _("Home"));
-      gtk_image_set_from_pixbuf (GTK_IMAGE (priv->button_image),
-                                 priv->quit_icon);
-      gtk_widget_set_tooltip_text (priv->button,
-                                _("Log off, switch user, lock screen or power "
-                                     "down the computer"));
-      gtk_widget_set_tooltip_text (GTK_WIDGET (title),
-                                   _("Home"));
+      gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
       gtk_widget_show (priv->box);
-     }
+    }
     else
     {
       gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_NORMAL);
-      gtk_widget_set_tooltip_text (priv->button, NULL);
-      gtk_widget_set_tooltip_text (GTK_WIDGET (title), NULL);
       gtk_widget_hide (priv->box);
     }
   }
-  else
-    gtk_widget_set_state (GTK_WIDGET (title), GTK_STATE_ACTIVE);
 
   gtk_widget_queue_draw (GTK_WIDGET (title));
 }
