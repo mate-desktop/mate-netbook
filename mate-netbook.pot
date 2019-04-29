@@ -18,6 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+#: ../mate-window-picker-applet/applet.c:320
+msgid "Show all windows"
+msgstr ""
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:2
+#: ../mate-window-picker-applet/applet.c:322
 msgid "Show windows from all workspaces."
 msgstr ""
 
@@ -41,10 +47,6 @@ msgstr ""
 
 #: ../mate-window-picker-applet/applet.c:247
 msgid "Preferences"
-msgstr ""
-
-#: ../mate-window-picker-applet/applet.c:264
-msgid "Show windows from all workspaces"
 msgstr ""
 
 #: ../mate-window-picker-applet/task-title.c:252
