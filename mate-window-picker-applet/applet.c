@@ -153,7 +153,6 @@ cw_applet_fill (MatePanelApplet *applet,
                 const gchar *iid,
                 gpointer     data)
 {
-  WnckScreen *screen;
   WinPickerApp *app;
   GtkWidget *eb, *tasks, *title;
   gchar *ui_path;
@@ -174,7 +173,6 @@ cw_applet_fill (MatePanelApplet *applet,
 
   app = g_slice_new0 (WinPickerApp);
   mainapp = app;
-  screen = wnck_screen_get_default ();
 
   object_class = G_OBJECT_GET_CLASS (G_OBJECT(applet));
   object_class->finalize = cw_applet_finalize;
