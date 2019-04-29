@@ -93,10 +93,6 @@ on_window_opened (WnckScreen *screen,
 static void
 task_list_finalize (GObject *object)
 {
-  TaskListPrivate *priv;
-
-  priv = TASK_LIST_GET_PRIVATE (object);
-
   G_OBJECT_CLASS (task_list_parent_class)->finalize (object);
 }
 
