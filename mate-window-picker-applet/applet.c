@@ -228,7 +228,7 @@ display_about_dialog (GtkAction       *action,
 }
 
 static void
-on_checkbox_toggled (GtkToggleButton *check, gpointer null)
+on_show_win_key_checkbox_toggled (GtkToggleButton *check, gpointer null)
 {
   gboolean is_active;
 
@@ -261,12 +261,14 @@ display_prefs_dialog (GtkAction       *action,
   gtk_container_set_border_width (GTK_CONTAINER (vbox), 8);
   gtk_notebook_append_page (GTK_NOTEBOOK (nb), vbox, NULL);
 
-  check = gtk_check_button_new_with_label (_("Show windows from all workspaces"));
+  check = gtk_check_button_new_with_label (_("Show all windows"));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (check),
+                               _("Show windows from all workspaces."));
   gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, TRUE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check),
                                 g_settings_get_boolean (mainapp->settings, SHOW_WIN_KEY));
   g_signal_connect (check, "toggled",
-                    G_CALLBACK (on_checkbox_toggled), NULL);
+                    G_CALLBACK (on_show_win_key_checkbox_toggled), NULL);
 
   check = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (vbox), check, TRUE, TRUE, 0);
