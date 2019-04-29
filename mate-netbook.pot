@@ -39,6 +39,16 @@ msgid ""
 "button."
 msgstr ""
 
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:5
+#: ../mate-window-picker-applet/applet.c:338
+msgid "Bold windows title"
+msgstr ""
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:6
+#: ../mate-window-picker-applet/applet.c:340
+msgid "Show windows title with a bold face."
+msgstr ""
+
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
 msgstr ""

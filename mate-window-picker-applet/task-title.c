@@ -45,13 +45,15 @@ struct _TaskTitlePrivate
   GdkPixbuf *quit_icon;
 
   gboolean show_home_title;
+  gboolean bold_window_title;
   gboolean mouse_in_close_button;
 };
 
 enum
 {
   PROP_0,
-  PROP_SHOW_HOME_TITLE
+  PROP_SHOW_HOME_TITLE,
+  PROP_BOLD_WINDOW_TITLE
 };
 
 static void disconnect_window (TaskTitle *title);
@@ -431,6 +433,29 @@ task_title_set_show_home_title (TaskTitle *title, gboolean show_home_title)
 }
 
 static void
+task_title_set_bold_window_title (TaskTitle *title, gboolean bold_window_title)
+{
+  TaskTitlePrivate *priv = title->priv;
+
+  priv->bold_window_title = bold_window_title;
+
+  g_debug ("Bold window title: %s", bold_window_title ? "true" : "false");
+
+  PangoAttribute *attr;
+  PangoAttrList *attr_list = pango_attr_list_new ();
+  if (priv->bold_window_title)
+  {
+    attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
+  }
+  else
+  {
+    attr = pango_attr_weight_new (PANGO_WEIGHT_NORMAL);
+  }
+  pango_attr_list_insert (attr_list, attr);
+  gtk_label_set_attributes (GTK_LABEL (priv->label), attr_list);
+}
+
+static void
 task_title_get_property (GObject    *object,
                          guint       prop_id,
                          GValue     *value,
@@ -446,6 +471,9 @@ task_title_get_property (GObject    *object,
   {
     case PROP_SHOW_HOME_TITLE:
       g_value_set_boolean (value, priv->show_home_title);
+      break;
+    case PROP_BOLD_WINDOW_TITLE:
+      g_value_set_boolean (value, priv->bold_window_title);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -466,6 +494,9 @@ task_title_set_property (GObject      *object,
   {
     case PROP_SHOW_HOME_TITLE:
       task_title_set_show_home_title (title, g_value_get_boolean (value));
+      break;
+    case PROP_BOLD_WINDOW_TITLE:
+      task_title_set_bold_window_title (title, g_value_get_boolean (value));
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -503,6 +534,14 @@ task_title_class_init (TaskTitleClass *klass)
                           FALSE,
                           G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
+  g_object_class_install_property (obj_class,
+    PROP_BOLD_WINDOW_TITLE,
+    g_param_spec_boolean ("bold_window_title",
+                          "Bold Window Title",
+                          "Show windows title with a bold face",
+                          TRUE,
+                          G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
+
   wid_class->draw = on_draw;
 
   g_type_class_add_private (obj_class, sizeof (TaskTitlePrivate));
@@ -525,6 +564,7 @@ task_title_init (TaskTitle *title)
 
   // Default values
   priv->show_home_title = FALSE;
+  priv->bold_window_title = TRUE;
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
 
@@ -542,12 +582,15 @@ task_title_init (TaskTitle *title)
   gtk_label_set_ellipsize (GTK_LABEL (priv->label), PANGO_ELLIPSIZE_END);
   gtk_widget_set_halign (priv->label, GTK_ALIGN_START);
   gtk_widget_set_valign (priv->label, GTK_ALIGN_CENTER);
-  
-  PangoAttrList *attr_list = pango_attr_list_new ();
-  PangoAttribute *attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
-  pango_attr_list_insert (attr_list, attr);
-  gtk_label_set_attributes (GTK_LABEL (priv->label), attr_list);
-  
+
+  if (priv->bold_window_title)
+  {
+    PangoAttrList *attr_list = pango_attr_list_new ();
+    PangoAttribute *attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
+    pango_attr_list_insert (attr_list, attr);
+    gtk_label_set_attributes (GTK_LABEL (priv->label), attr_list);
+  }
+
   gtk_box_pack_start (GTK_BOX (priv->box), priv->label, TRUE, TRUE, 0);
   gtk_widget_show (priv->label);
 
