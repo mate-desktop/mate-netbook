@@ -41,6 +41,7 @@
 #define APPLET_SCHEMA "org.mate.panel.applet.mate-window-picker-applet"
 #define SHOW_WIN_KEY "show-all-windows"
 #define SHOW_HOME_TITLE_KEY "show-home-title"
+#define BOLD_WINDOW_TITLE_KEY "bold-window-title"
 
 typedef struct
 {
@@ -102,6 +103,20 @@ on_show_home_title_changed (GSettings   *settings,
 
   show_home = g_settings_get_boolean (settings, SHOW_HOME_TITLE_KEY);
   g_object_set (app->title, "show_home_title", show_home, NULL);
+}
+
+static void
+on_bold_window_title_changed (GSettings   *settings,
+                              gchar       *key,
+                              gpointer     data)
+{
+  WinPickerApp *app;
+  gboolean bold_win = TRUE;
+
+  app = (WinPickerApp*)data;
+
+  bold_win = g_settings_get_boolean (settings, BOLD_WINDOW_TITLE_KEY);
+  g_object_set (app->title, "bold_window_title", bold_win, NULL);
 }
 
 static inline void
@@ -171,6 +186,8 @@ cw_applet_fill (MatePanelApplet *applet,
                     G_CALLBACK (on_show_all_windows_changed), app);
   g_signal_connect (app->settings, "changed::" SHOW_HOME_TITLE_KEY,
                     G_CALLBACK (on_show_home_title_changed), app);
+  g_signal_connect (app->settings, "changed::" BOLD_WINDOW_TITLE_KEY,
+                    G_CALLBACK (on_bold_window_title_changed), app);
 
   app->applet = GTK_WIDGET (applet);
   force_no_focus_padding (GTK_WIDGET (applet));
@@ -190,6 +207,7 @@ cw_applet_fill (MatePanelApplet *applet,
 
   on_show_all_windows_changed (app->settings, SHOW_WIN_KEY, app);
   on_show_home_title_changed (app->settings, SHOW_HOME_TITLE_KEY, app);
+  on_bold_window_title_changed (app->settings, BOLD_WINDOW_TITLE_KEY, app);
 
   action_group = gtk_action_group_new ("MateWindowPicker Applet Actions");
   gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
@@ -266,6 +284,16 @@ on_show_home_title_checkbox_toggled (GtkToggleButton *check, gpointer null)
 }
 
 static void
+on_bold_window_title_checkbox_toggled (GtkToggleButton *check, gpointer null)
+{
+  gboolean is_active;
+
+  is_active = gtk_toggle_button_get_active (check);
+
+  g_settings_set_boolean (mainapp->settings, BOLD_WINDOW_TITLE_KEY, is_active);
+}
+
+static void
 display_prefs_dialog (GtkAction       *action,
                       WinPickerApp *applet)
 {
@@ -306,6 +334,15 @@ display_prefs_dialog (GtkAction       *action,
                                 g_settings_get_boolean (mainapp->settings, SHOW_HOME_TITLE_KEY));
   g_signal_connect (check, "toggled",
                     G_CALLBACK (on_show_home_title_checkbox_toggled), NULL);
+
+  check = gtk_check_button_new_with_label (_("Bold windows title"));
+  gtk_widget_set_tooltip_text (GTK_WIDGET (check),
+                               _("Show windows title with a bold face."));
+  gtk_box_pack_start (GTK_BOX (vbox), check, FALSE, TRUE, 0);
+  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check),
+                                g_settings_get_boolean (mainapp->settings, BOLD_WINDOW_TITLE_KEY));
+  g_signal_connect (check, "toggled",
+                    G_CALLBACK (on_bold_window_title_checkbox_toggled), NULL);
 
   check = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (vbox), check, TRUE, TRUE, 0);
