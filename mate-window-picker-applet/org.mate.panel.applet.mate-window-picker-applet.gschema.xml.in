@@ -10,5 +10,10 @@
       <summary>Show desktop title and logout button</summary>
       <description>Show a title for the desktop when no window is selected, and append a logout button.</description>
     </key>
+    <key name="bold-window-title" type="b">
+      <default>true</default>
+      <summary>Bold windows title</summary>
+      <description>Show windows title with a bold face.</description>
+    </key>
   </schema>
 </schemalist>
