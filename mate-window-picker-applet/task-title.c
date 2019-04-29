@@ -111,9 +111,10 @@ on_close_clicked (GtkButton *button,
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = title->priv;
+  ret = FALSE;
 
   if (event->button != 1 || !priv->mouse_in_close_button)
-    return FALSE;
+    return ret;
 
   window = wnck_screen_get_active_window (priv->screen);
 
