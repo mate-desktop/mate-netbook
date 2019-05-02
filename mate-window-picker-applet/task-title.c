@@ -63,8 +63,6 @@ start_logout_dialog (TaskTitle *title)
 {
   GError *error = NULL;
   GAppInfo *app_info;
-  GdkAppLaunchContext *launch_context;
-  GdkDisplay *display;
   GdkScreen *gdkscreen;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
@@ -75,6 +73,8 @@ start_logout_dialog (TaskTitle *title)
     G_APP_INFO_CREATE_NONE, &error);
 
   if (!error) {
+    GdkDisplay *display;
+    GdkAppLaunchContext *launch_context;
     display = gdk_screen_get_display (gdkscreen);
     launch_context = gdk_display_get_app_launch_context (display);
     gdk_app_launch_context_set_screen (launch_context, gdkscreen);
@@ -84,7 +84,6 @@ start_logout_dialog (TaskTitle *title)
   }
 
   GtkWidget *dialog;
-
   dialog = gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
                                    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
                                    _("There was an error executing '%s': %s"),
@@ -373,7 +372,6 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
 {
   TaskTitlePrivate *priv;
   WnckWindow *window;
-  GtkWidget *menu;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = TASK_TITLE_GET_PRIVATE (title);
@@ -386,6 +384,7 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
   {
     if (wnck_window_get_window_type (window) != WNCK_WINDOW_DESKTOP)
     {
+      GtkWidget *menu;
       menu = wnck_action_menu_new (window);
       gtk_menu_popup_at_pointer (GTK_MENU (menu), (GdkEvent*)event);
       return TRUE;
@@ -554,7 +553,6 @@ task_title_init (TaskTitle *title)
   TaskTitlePrivate *priv;
   GdkScreen *gdkscreen;
   GtkIconTheme *theme;
-  GdkPixbuf *pixbuf;
   AtkObject *atk;
   int width, height;
 
