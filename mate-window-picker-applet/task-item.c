@@ -134,7 +134,10 @@ on_task_item_button_released (GtkWidget      *widget,
     }
     if (wnck_window_is_active (window))
     {
-      wnck_window_minimize (window);
+      if (!wnck_window_is_minimized (window))
+      {
+        wnck_window_minimize (window);
+      }
     }
     else
     {
