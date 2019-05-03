@@ -54,12 +54,6 @@
 
 #define SYSRULESDIR SYSCONFDIR"/maximus"
 
-#ifdef __GNUC__
-#define UNUSED_VARIABLE __attribute__ ((unused))
-#else
-#define UNUSED_VARIABLE
-#endif
-
 struct _MaximusBindPrivate
 {
   FakeKey *fk;
@@ -135,13 +129,11 @@ static gboolean
 real_fullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  GdkDisplay UNUSED_VARIABLE *display;
   WnckWindow *active;
   const gchar *keystroke;
 
   priv = bind->priv;
 
-  display = gdk_display_get_default ();
   active = wnck_screen_get_active_window (priv->screen);
 
   if (!WNCK_IS_WINDOW (active)
@@ -198,10 +190,6 @@ real_fullscreen (MaximusBind *bind)
 static void
 fullscreen (MaximusBind *bind, WnckWindow *window)
 {
-  MaximusBindPrivate UNUSED_VARIABLE *priv;
-  
-  priv = bind->priv;
-
   g_timeout_add (KEY_RELEASE_TIMEOUT, (GSourceFunc)real_fullscreen, bind);
 }
 
@@ -209,13 +197,11 @@ static gboolean
 real_unfullscreen (MaximusBind *bind)
 {
   MaximusBindPrivate *priv;
-  GdkDisplay UNUSED_VARIABLE *display;
   WnckWindow *active;
   const gchar *keystroke;
 
   priv = bind->priv;
 
-  display = gdk_display_get_default ();
   active = wnck_screen_get_active_window (priv->screen);
 
   if (!WNCK_IS_WINDOW (active)
@@ -271,10 +257,6 @@ real_unfullscreen (MaximusBind *bind)
 static void
 unfullscreen (MaximusBind *bind, WnckWindow *window)
 {
-  MaximusBindPrivate UNUSED_VARIABLE *priv;
-  
-  priv = bind->priv;
-
   g_timeout_add (KEY_RELEASE_TIMEOUT, (GSourceFunc)real_unfullscreen, bind);
 }
 
@@ -395,11 +377,8 @@ create_rule (MaximusBind *bind, const gchar *filename)
 static void
 load_rules (MaximusBind *bind, const gchar *path)
 {
-  MaximusBindPrivate UNUSED_VARIABLE *priv;
   GDir *dir;
   const gchar *name;
-
-  priv = bind->priv;
 
   dir = g_dir_open (path, 0, NULL);
 
