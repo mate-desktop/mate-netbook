@@ -106,14 +106,14 @@ on_close_clicked (GtkButton *button,
 {
   TaskTitlePrivate *priv;
   WnckWindow *window;
-  gboolean ret;
+  gboolean retval;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
   priv = title->priv;
-  ret = FALSE;
+  retval = FALSE;
 
   if (event->button != 1 || !priv->mouse_in_close_button)
-    return ret;
+    return retval;
 
   window = wnck_screen_get_active_window (priv->screen);
 
@@ -128,16 +128,16 @@ on_close_clicked (GtkButton *button,
     gdkscreen = gtk_widget_get_screen (GTK_WIDGET (title));
     display = gdk_screen_get_display (gdkscreen);
     wnck_window_close (window, gdk_x11_display_get_user_time (display));
-    ret = TRUE;
+    retval = TRUE;
   }
   else if (priv->show_home_title)
   {
     // This is a logout click
-    ret = start_logout_dialog (title);
+    retval = start_logout_dialog (title);
   }
   gtk_widget_queue_draw (GTK_WIDGET (title));
 
-  return ret;
+  return retval;
 }
 
 static gboolean
