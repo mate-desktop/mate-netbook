@@ -1,3 +1,17 @@
+### mate-netbook 1.22.2
+
+    tx: sync with transifex
+    Use the same variable name for return value than elsewhere
+    Remove cppcheck warnings with better variables scope
+    Remove unused variable declaration in applet.c and task-list.c
+    Add an option to disable the bold face of the window title in applet
+    Make the 'show-home-title' feature work again
+    Fix several compilation warnings
+    Refactor the on_active_window_changed function
+    Remove a runtime error due to event->time sending buggy values
+    Change preference label for the window picker applet, and add a tooltip
+    Cleanup whitespaces
+
 ### mate-netbook 1.22.1
 
     tx: sync with transifex
