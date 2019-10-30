@@ -24,12 +24,6 @@
 #include <glib/gi18n.h>
 #include <cairo/cairo.h>
 
-G_DEFINE_TYPE (TaskItem, task_item, GTK_TYPE_EVENT_BOX);
-
-#define TASK_ITEM_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
-  TASK_TYPE_ITEM, \
-  TaskItemPrivate))
-
 #define DEFAULT_TASK_ITEM_HEIGHT 24;  
 #define DEFAULT_TASK_ITEM_WIDTH 28
 
@@ -49,6 +43,8 @@ enum {
   TASK_ITEM_CLOSED_SIGNAL,
   LAST_SIGNAL
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (TaskItem, task_item, GTK_TYPE_EVENT_BOX);
 
 /* D&D stuff */
 static const GtkTargetEntry drop_types[] =
@@ -706,7 +702,7 @@ static void
 task_item_finalize (GObject *object)
 {
   TaskItemPrivate *priv;
-  priv = TASK_ITEM_GET_PRIVATE (object);
+  priv = TASK_ITEM (object)->priv;
 
   /* remove timer */
   if (priv->timer)
@@ -734,8 +730,6 @@ task_item_class_init (TaskItemClass *klass)
   widget_class->get_preferred_width = task_item_get_preferred_width;
   widget_class->get_preferred_height = task_item_get_preferred_height;
 
-  g_type_class_add_private (obj_class, sizeof (TaskItemPrivate));
-  
   task_item_signals [TASK_ITEM_CLOSED_SIGNAL] =
     g_signal_new ("task-item-closed",
                   G_TYPE_FROM_CLASS (klass),
@@ -749,7 +743,7 @@ static void
 task_item_init (TaskItem *item)
 {
   TaskItemPrivate *priv;
-  priv = item->priv = TASK_ITEM_GET_PRIVATE (item);
+  priv = item->priv = task_item_get_instance_private (item);
 
   priv->timer = 0;
 }
