@@ -29,12 +29,6 @@
 #include "maximus-bind.h"
 #include "xutils.h"
 
-G_DEFINE_TYPE (MaximusApp, maximus_app, G_TYPE_OBJECT);
-
-#define MAXIMUS_APP_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
-  MAXIMUS_TYPE_APP, \
-  MaximusAppPrivate))
-
 /* GSettings schemas and keys */
 #define APP_SCHEMA        "org.mate.maximus"
 #define APP_EXCLUDE_CLASS "exclude-class"
@@ -93,6 +87,8 @@ typedef struct {
 #define MWM_HINTS_FUNCTIONS     (1L << 0)
 #define MWM_HINTS_DECORATIONS   (1L << 1)
 #define _XA_MOTIF_WM_HINTS		"_MOTIF_WM_HINTS"
+
+G_DEFINE_TYPE_WITH_PRIVATE (MaximusApp, maximus_app, G_TYPE_OBJECT);
 
 static gboolean
 wnck_window_is_decorated (WnckWindow *window)
@@ -505,9 +501,6 @@ on_app_undecorate_changed (GSettings          *settings,
 static void
 maximus_app_class_init (MaximusAppClass *klass)
 {
-  GObjectClass        *obj_class = G_OBJECT_CLASS (klass);
-
-  g_type_class_add_private (obj_class, sizeof (MaximusAppPrivate));
 }
 
 static void
@@ -516,7 +509,7 @@ maximus_app_init (MaximusApp *app)
   MaximusAppPrivate *priv;
   WnckScreen *screen;
 	
-  priv = app->priv = MAXIMUS_APP_GET_PRIVATE (app);
+  priv = app->priv = maximus_app_get_instance_private (app);
 
   priv->bind = maximus_bind_get_default ();
 
