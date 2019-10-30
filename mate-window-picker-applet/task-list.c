@@ -23,12 +23,6 @@
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
 #include <libwnck/libwnck.h>
 
-G_DEFINE_TYPE (TaskList, task_list, GTK_TYPE_BOX);
-
-#define TASK_LIST_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
-  TASK_TYPE_LIST, \
-  TaskListPrivate))
-
 struct _TaskListPrivate
 {
   WnckScreen *screen;
@@ -42,6 +36,8 @@ enum
 
   PROP_SHOW_ALL_WINDOWS
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (TaskList, task_list, GTK_TYPE_BOX);
 
 static void
 task_list_set_show_all_windows (TaskList *list, gboolean show_all_windows)
@@ -154,8 +150,6 @@ task_list_class_init (TaskListClass *klass)
                           "Show windows from all workspaces",
                           TRUE,
                           G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-
-  g_type_class_add_private (obj_class, sizeof (TaskListPrivate));
 }
 
 static void
@@ -163,7 +157,7 @@ task_list_init (TaskList *list)
 {
   TaskListPrivate *priv;
 
-  priv = list->priv = TASK_LIST_GET_PRIVATE (list);
+  priv = list->priv = task_list_get_instance_private (list);
 
   priv->screen = wnck_screen_get_default ();
 
