@@ -25,12 +25,6 @@
 
 #include <math.h>
 
-G_DEFINE_TYPE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
-
-#define TASK_TITLE_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
-  TASK_TYPE_TITLE, \
-  TaskTitlePrivate))
-
 #define LOGOUT "mate-session-save --logout-dialog"
 
 struct _TaskTitlePrivate
@@ -57,6 +51,8 @@ enum
 };
 
 static void disconnect_window (TaskTitle *title);
+
+G_DEFINE_TYPE_WITH_PRIVATE (TaskTitle, task_title, GTK_TYPE_EVENT_BOX);
 
 static gboolean
 start_logout_dialog (TaskTitle *title)
@@ -374,7 +370,7 @@ on_button_release (GtkWidget *title, GdkEventButton *event)
   WnckWindow *window;
 
   g_return_val_if_fail (TASK_IS_TITLE (title), FALSE);
-  priv = TASK_TITLE_GET_PRIVATE (title);
+  priv = TASK_TITLE (title)->priv;
 
   window = wnck_screen_get_active_window (priv->screen);
 
@@ -508,7 +504,7 @@ task_title_finalize (GObject *object)
 {
   TaskTitlePrivate *priv;
 
-  priv = TASK_TITLE_GET_PRIVATE (object);
+  priv = TASK_TITLE (object)->priv;
   disconnect_window (TASK_TITLE (object));
 
   g_object_unref (G_OBJECT (priv->quit_icon));
@@ -543,8 +539,6 @@ task_title_class_init (TaskTitleClass *klass)
                           G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
 
   wid_class->draw = on_draw;
-
-  g_type_class_add_private (obj_class, sizeof (TaskTitlePrivate));
 }
 
 static void
@@ -556,7 +550,7 @@ task_title_init (TaskTitle *title)
   AtkObject *atk;
   int width, height;
 
-  priv = title->priv = TASK_TITLE_GET_PRIVATE (title);
+  priv = title->priv = task_title_get_instance_private (title);
 
   priv->screen = wnck_screen_get_default ();
   priv->window = NULL;
