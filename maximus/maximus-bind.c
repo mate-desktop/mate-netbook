@@ -44,12 +44,6 @@
 #include "tomboykeybinder.h"
 #include "eggaccelerators.h"
 
-G_DEFINE_TYPE (MaximusBind, maximus_bind, G_TYPE_OBJECT);
-
-#define MAXIMUS_BIND_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj),\
-  MAXIMUS_TYPE_BIND, \
-  MaximusBindPrivate))
-
 #define KEY_RELEASE_TIMEOUT 300
 #define STATE_CHANGED_SLEEP 0.5
 
@@ -82,6 +76,8 @@ typedef struct
   gchar *fullscreen;
   gchar *unfullscreen;
 } MaximusRule;
+
+G_DEFINE_TYPE_WITH_PRIVATE (MaximusBind, maximus_bind, G_TYPE_OBJECT);
 
 static const gchar *
 get_fullscreen_keystroke (GList *rules, WnckWindow *window)
@@ -455,8 +451,6 @@ maximus_bind_class_init (MaximusBindClass *klass)
   GObjectClass        *obj_class = G_OBJECT_CLASS (klass);
 
   obj_class->finalize = maximus_bind_finalize;
-
-  g_type_class_add_private (obj_class, sizeof (MaximusBindPrivate));
 }
 
 static void
@@ -466,7 +460,7 @@ maximus_bind_init (MaximusBind *bind)
   GdkDisplay *display = gdk_display_get_default ();
   WnckScreen *screen;
 
-  priv = bind->priv = MAXIMUS_BIND_GET_PRIVATE (bind);
+  priv = bind->priv = maximus_bind_get_instance_private (bind);
 
   priv->fk = fakekey_init (GDK_DISPLAY_XDISPLAY (display));
   priv->screen = screen = wnck_screen_get_default ();
