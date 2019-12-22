@@ -1,5 +1,24 @@
 ### mate-netbook 1.23.0
 
+  * Translations update
+  * task-item: avoid 'g_type_class_add_private'
+  * task-list: avoid 'g_type_class_add_private'
+  * task-title: avoid 'g_type_class_add_private'
+  * maximus-app: avoid 'g_type_class_add_private'
+  * maximus-bind: avoid 'g_type_class_add_private'
+  * Use the same variable name for return value than elsewhere
+  * Remove cppcheck warnings with better variables scope
+  * Remove unused variable declaration in applet.c and task-list.c
+  * Fix an unseen compilation warning
+  * Add an option to disable the bold face of the window title in applet
+  * Make the 'show-home-title' feature work again
+  * Remove a bunch of compilation warning
+  * Refactor the on_active_window_changed function
+  * Remove a runtime error due to event->time sending buggy values
+  * Change preference label for the window picker applet, and add a tooltip
+  * Cleanup whitespaces
+  * maximus: Fix 'Segmentation fault'
+
 ### mate-netbook 1.22.0
 
   * Initialize Travis CI support
