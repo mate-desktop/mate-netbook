@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
-# ToMáš Marný, 2018
-# Martin Wimpress <code@flexion.org>, 2018
 # LiberteCzech <liberte.czech@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Lucas Lommer <drom@kdyne.net>, 2019
+# ToMáš Marný, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"POT-Creation-Date: 2019-04-03 19:47+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: LiberteCzech <liberte.czech@gmail.com>, 2018\n"
+"Last-Translator: ToMáš Marný, 2019\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,59 +27,85 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+#: ../mate-window-picker-applet/applet.c:320
+msgid "Show all windows"
+msgstr "Zobrazit všechna okna"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:2
+#: ../mate-window-picker-applet/applet.c:322
 msgid "Show windows from all workspaces."
 msgstr "Zobrazit okna ze všech pracovních prostorů."
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:3
+#: ../mate-window-picker-applet/applet.c:329
+msgid "Show desktop title and logout button"
+msgstr "Zobrazit název plochy a tlačítko odhlášení"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:4
+#: ../mate-window-picker-applet/applet.c:331
+msgid ""
+"Show a title for the desktop when no window is selected, and append a logout"
+" button."
+msgstr ""
+"Zobrazí název pracovní plochy, pokud není vybráno žádné okno, a připojí "
+"tlačítko pro odhlášení."
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:5
+#: ../mate-window-picker-applet/applet.c:338
+msgid "Bold windows title"
+msgstr "Název okna tučně"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:6
+#: ../mate-window-picker-applet/applet.c:340
+msgid "Show windows title with a bold face."
+msgstr "Zobrazí název okna s tučným písmem."
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
 msgstr "Generátor okenního appletu Picker"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:211
-#: ../mate-window-picker-applet/applet.c:212
+#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:248
 msgid "Window Picker"
 msgstr "Volič oken"
 
-#: ../mate-window-picker-applet/applet.c:63
+#: ../mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
 msgstr "Nastavení"
 
-#: ../mate-window-picker-applet/applet.c:66
+#: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:303
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../mate-window-picker-applet/applet.c:264
-msgid "Show windows from all workspaces"
-msgstr "Zobrazit okna ze všech pracovních prostorů"
-
-#: ../mate-window-picker-applet/task-title.c:252
-#: ../mate-window-picker-applet/task-title.c:259
-#: ../mate-window-picker-applet/task-title.c:302
-#: ../mate-window-picker-applet/task-title.c:309
-#: ../mate-window-picker-applet/task-title.c:436
-#: ../mate-window-picker-applet/task-title.c:484
-msgid "Home"
-msgstr "Domovská složka"
-
-#: ../mate-window-picker-applet/task-title.c:256
-#: ../mate-window-picker-applet/task-title.c:306
-#: ../mate-window-picker-applet/task-title.c:482
+#: ../mate-window-picker-applet/task-title.c:77
+#: ../mate-window-picker-applet/task-title.c:322
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Odhlásit, přepnout uživatele, zamknout obrazovku nebo vypnout počítač"
 
-#: ../mate-window-picker-applet/task-title.c:278
+#: ../mate-window-picker-applet/task-title.c:93
+#, c-format
+msgid "There was an error executing '%s': %s"
+msgstr "Při spouštění \"%s\" došlo k chybě: %s"
+
+#: ../mate-window-picker-applet/task-title.c:316
+#: ../mate-window-picker-applet/task-title.c:584
+msgid "Desktop"
+msgstr "Pracovní plocha"
+
+#: ../mate-window-picker-applet/task-title.c:347
 msgid "Close window"
 msgstr "Zavřít okno"
 
-#: ../mate-window-picker-applet/task-title.c:457
+#: ../mate-window-picker-applet/task-title.c:608
 msgid "Close"
 msgstr "Zavřené"
 
-#: ../mate-window-picker-applet/task-title.c:458
+#: ../mate-window-picker-applet/task-title.c:609
 msgid "Close current window."
 msgstr "Zavřít aktuální okno"
 

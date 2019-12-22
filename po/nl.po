@@ -4,21 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Michael Steenbeek <m.o.steenbeek@gmail.com>, 2018
-# Pjotr <pjotrvertaalt@gmail.com>, 2018
-# Nathan Follens, 2018
 # René Devers <rene.devers@gmail.com>, 2018
 # Stef Pletinck <stef.plet@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Pjotr <pjotrvertaalt@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-21 15:55+0100\n"
+"POT-Creation-Date: 2019-04-03 19:47+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Stef Pletinck <stef.plet@gmail.com>, 2018\n"
+"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2019\n"
 "Language-Team: Dutch (https://www.transifex.com/mate/teams/13566/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,60 +26,86 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
+#: ../mate-window-picker-applet/applet.c:320
+msgid "Show all windows"
+msgstr "Alle vensters tonen"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:2
+#: ../mate-window-picker-applet/applet.c:322
 msgid "Show windows from all workspaces."
 msgstr "Toon vensters van alle werkbladen."
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:3
+#: ../mate-window-picker-applet/applet.c:329
+msgid "Show desktop title and logout button"
+msgstr "Bureaubladtitel en afmeldknop tonen"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:4
+#: ../mate-window-picker-applet/applet.c:331
+msgid ""
+"Show a title for the desktop when no window is selected, and append a logout"
+" button."
+msgstr ""
+"Toon een titel voor het bureaublad wanneer er geen venster is gekozen, en "
+"voeg daar een afmeldknop aan toe."
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:5
+#: ../mate-window-picker-applet/applet.c:338
+msgid "Bold windows title"
+msgstr "Vetgedrukte venstertitel"
+
+#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:6
+#: ../mate-window-picker-applet/applet.c:340
+msgid "Show windows title with a bold face."
+msgstr "Toon venstertitel vetgedrukt."
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
 msgid "Window Picker Applet Factory"
 msgstr "Fabriek voor Vensterkiezer-programmaatje"
 
 #: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:211
-#: ../mate-window-picker-applet/applet.c:212
+#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:248
 msgid "Window Picker"
 msgstr "Vensterkiezer"
 
-#: ../mate-window-picker-applet/applet.c:63
+#: ../mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
 msgstr "Voorkeuren"
 
-#: ../mate-window-picker-applet/applet.c:66
+#: ../mate-window-picker-applet/applet.c:68
 msgid "_About"
 msgstr "_Info"
 
-#: ../mate-window-picker-applet/applet.c:247
+#: ../mate-window-picker-applet/applet.c:303
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: ../mate-window-picker-applet/applet.c:264
-msgid "Show windows from all workspaces"
-msgstr "Vensters van alle werkbladen tonen"
-
-#: ../mate-window-picker-applet/task-title.c:252
-#: ../mate-window-picker-applet/task-title.c:259
-#: ../mate-window-picker-applet/task-title.c:302
-#: ../mate-window-picker-applet/task-title.c:309
-#: ../mate-window-picker-applet/task-title.c:436
-#: ../mate-window-picker-applet/task-title.c:484
-msgid "Home"
-msgstr "Persoonlijke map"
-
-#: ../mate-window-picker-applet/task-title.c:256
-#: ../mate-window-picker-applet/task-title.c:306
-#: ../mate-window-picker-applet/task-title.c:482
+#: ../mate-window-picker-applet/task-title.c:77
+#: ../mate-window-picker-applet/task-title.c:322
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Afmelden, gebruiker wisselen, scherm vergrendelen of de computer uitzetten"
 
-#: ../mate-window-picker-applet/task-title.c:278
+#: ../mate-window-picker-applet/task-title.c:93
+#, c-format
+msgid "There was an error executing '%s': %s"
+msgstr "Er is een fout opgetreden bij het uitvoeren van '%s' : %s"
+
+#: ../mate-window-picker-applet/task-title.c:316
+#: ../mate-window-picker-applet/task-title.c:584
+msgid "Desktop"
+msgstr "Bureaublad"
+
+#: ../mate-window-picker-applet/task-title.c:347
 msgid "Close window"
 msgstr "Venster sluiten"
 
-#: ../mate-window-picker-applet/task-title.c:457
+#: ../mate-window-picker-applet/task-title.c:608
 msgid "Close"
 msgstr "Sluiten"
 
-#: ../mate-window-picker-applet/task-title.c:458
+#: ../mate-window-picker-applet/task-title.c:609
 msgid "Close current window."
 msgstr "Huidig venster sluiten."
 
