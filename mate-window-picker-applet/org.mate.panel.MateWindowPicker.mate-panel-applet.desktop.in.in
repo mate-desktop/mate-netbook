@@ -1,0 +1,12 @@
+[Applet Factory]
+Id=MateWindowPickerFactory
+Location=@LOCATION@
+Name=Window Picker Applet Factory
+Description=Window Picker
+
+[MateWindowPicker]
+Name=Window Picker
+Description=Window Picker
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=preferences-system-windows
+BonoboId=OAFIID:MATE_WindowPicker
