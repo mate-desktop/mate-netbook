@@ -63,7 +63,7 @@ env:
 ##########################################################
 requires:
   archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-backgrounds
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-netbook
     - clang
     - gcc
     - git
@@ -77,7 +77,8 @@ requires:
 
   debian:
     # Useful URL: https://github.com/mate-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-backgrounds
+    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-netbook
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
@@ -93,7 +94,7 @@ requires:
     - yelp-tools
 
   fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-backgrounds.git
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-netbook.git
     - clang
     - clang-analyzer
     - cppcheck-htmlreport
@@ -109,6 +110,7 @@ requires:
     - redhat-rpm-config
 
   ubuntu:
+    - autopoint
     - clang
     - clang-tools
     - git
