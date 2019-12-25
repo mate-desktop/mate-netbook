@@ -25,15 +25,16 @@ mate_window_picker_applet_SOURCES = \
 	task-title.h 
 
 appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.panel.MateWindowPicker.mate-panel-applet.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.in=.mate-panel-applet)
+applet_in_files = org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in Makefile
 	$(AM_V_GEN)sed \
 	-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 	$< > $@
 
-org.mate.panel.MateWindowPicker.mate-panel-applet: org.mate.panel.MateWindowPicker.mate-panel-applet.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; $(INTLTOOL_MERGE) $(top_srcdir)/po $< $@ -d -u -c $(top_builddir)/po/.intltool-merge-cache
+$(applet_DATA): $(applet_in_files) Makefile
+	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
 APPLET_LOCATION=$(libexecdir)/mate-window-picker-applet
 
@@ -46,7 +47,6 @@ org.mate.panel.applet.MateWindowPickerFactory.service: $(service_in_files)
 	-e "s|\@LOCATION\@|$(APPLET_LOCATION)|" \
 	$< > $@
 
-@INTLTOOL_XML_NOMERGE_RULE@
 gsettingsschema_in_files = org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in
 
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
@@ -56,7 +56,7 @@ xmluidir = $(datadir)/mate-panel/ui
 xmlui_DATA = mate-window-picker-applet-menu.xml
 
 EXTRA_DIST = \
-	org.mate.panel.MateWindowPicker.mate-panel-applet.in.in \
+	$(applet_in_files).in \
 	$(service_in_files) \
 	$(ui_DATA) \
 	$(convert_DATA) \
@@ -65,7 +65,7 @@ EXTRA_DIST = \
 
 CLEANFILES = \
 	$(applet_DATA) \
-	$(applet_DATA).in \
+	$(applet_in_files) \
 	$(gsettings_SCHEMAS) \
 	*.gschema.valid \
 	$(service_DATA)

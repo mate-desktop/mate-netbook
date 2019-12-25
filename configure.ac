@@ -14,15 +14,13 @@ AC_PROG_LIBTOOL
 dnl ==========================================================================
 dnl i18n
 dnl ==========================================================================
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=mate-netbook
 AC_SUBST(GETTEXT_PACKAGE)
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Define to the Gettext package name])
-
-IT_PROG_INTLTOOL([0.50.1])
-
-AM_GLIB_GNU_GETTEXT
 
 #if test "x$GCC" = "xyes"; then
 #        GCC_FLAGS="-g -Wall -Werror"

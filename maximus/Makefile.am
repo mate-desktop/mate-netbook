@@ -30,7 +30,6 @@ mate_maximus_SOURCES = \
 	xutils.c \
 	xutils.h 
 
-@INTLTOOL_XML_NOMERGE_RULE@
 gsettingsschema_in_files = org.mate.maximus.gschema.xml.in
 
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)

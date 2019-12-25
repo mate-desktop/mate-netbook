@@ -5,8 +5,8 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 DISTCHECK_CONFIGURE_FLAGS = \
 	CFLAGS='-Wno-deprecated-declarations'
 
-EXTRA_DIST = autogen.sh intltool-merge.in intltool-extract.in intltool-update.in
-DISTCLEANFILES = intltool-merge intltool-update intltool-extract
+EXTRA_DIST = autogen.sh
+DISTCLEANFILES =
 
 MAINTAINERCLEANFILES = aclocal.m4 compile config.guess config.sub configure depcomp install-sh ltmain.sh Makefile.in missing
 
