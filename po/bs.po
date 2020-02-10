@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-netbook package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Sky Lion <xskylionx@gmail.com>, 2019
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 19:47+0200\n"
+"Project-Id-Version: mate-netbook 1.23.0\n"
+"Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
+"POT-Creation-Date: 2020-01-05 15:19+0100\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
 "Last-Translator: Sky Lion <xskylionx@gmail.com>, 2019\n"
 "Language-Team: Bosnian (https://www.transifex.com/mate/teams/13566/bs/)\n"
@@ -22,113 +21,121 @@ msgstr ""
 "Language: bs\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
-#: ../mate-window-picker-applet/applet.c:320
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
+#: mate-window-picker-applet/applet.c:318
 msgid "Show all windows"
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:2
-#: ../mate-window-picker-applet/applet.c:322
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
+#: mate-window-picker-applet/applet.c:320
 msgid "Show windows from all workspaces."
 msgstr "Prikaži prozore sa svih radnih površina."
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:3
-#: ../mate-window-picker-applet/applet.c:329
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
+#: mate-window-picker-applet/applet.c:327
 msgid "Show desktop title and logout button"
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:4
-#: ../mate-window-picker-applet/applet.c:331
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
+#: mate-window-picker-applet/applet.c:329
 msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:5
-#: ../mate-window-picker-applet/applet.c:338
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
+#: mate-window-picker-applet/applet.c:336
 msgid "Bold windows title"
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:6
-#: ../mate-window-picker-applet/applet.c:340
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
+#: mate-window-picker-applet/applet.c:338
 msgid "Show windows title with a bold face."
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
 msgstr ""
 
-#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:247
-#: ../mate-window-picker-applet/applet.c:248
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
+#: mate-window-picker-applet/applet.c:245
+#: mate-window-picker-applet/applet.c:246
 msgid "Window Picker"
 msgstr "Birač prozora"
 
-#: ../mate-window-picker-applet/applet.c:65
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:12
+msgid "preferences-system-windows"
+msgstr ""
+
+#: mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
 msgstr "_Postavke"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: mate-window-picker-applet/applet.c:68
 msgid "_About"
 msgstr "_O"
 
-#: ../mate-window-picker-applet/applet.c:303
+#: mate-window-picker-applet/applet.c:301
 msgid "Preferences"
 msgstr "Postavke"
 
-#: ../mate-window-picker-applet/task-title.c:77
-#: ../mate-window-picker-applet/task-title.c:322
+#: mate-window-picker-applet/task-title.c:68
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Odjava, promjena korisnika, zaključavanje ekrana ili gašenje kompjutera"
 
-#: ../mate-window-picker-applet/task-title.c:93
+#: mate-window-picker-applet/task-title.c:85
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Dogodila se greška pri izvršavanju '%s': %s"
 
-#: ../mate-window-picker-applet/task-title.c:316
-#: ../mate-window-picker-applet/task-title.c:584
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Radna površina"
 
-#: ../mate-window-picker-applet/task-title.c:347
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Zatvori prozor"
 
-#: ../mate-window-picker-applet/task-title.c:608
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Zatvori"
 
-#: ../mate-window-picker-applet/task-title.c:609
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Zatvori trenutni prozor."
 
-#: ../mate-window-picker-applet/task-item.c:684
+#: mate-window-picker-applet/task-item.c:680
 msgid "Window Task Button"
 msgstr ""
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+#: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
 msgstr ""
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+#: maximus/org.mate.maximus.gschema.xml.in:6
 msgid "A list of exclusion strings which apply to the window class"
 msgstr ""
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+#: maximus/org.mate.maximus.gschema.xml.in:10
+#: maximus/org.mate.maximus.gschema.xml.in:11
 msgid "A binding"
 msgstr ""
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+#: maximus/org.mate.maximus.gschema.xml.in:15
+#: maximus/org.mate.maximus.gschema.xml.in:16
 msgid "Undecorate windows when maximized"
 msgstr ""
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+#: maximus/org.mate.maximus.gschema.xml.in:20
 msgid "Do not automatically maximize newly opened windows"
 msgstr "Ne automatski maksimizirati nove prozore"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+#: maximus/org.mate.maximus.gschema.xml.in:21
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."

@@ -1,22 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-netbook package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Pere O. <gotrunks@gmail.com>, 2018
 # Francesc Famadas <kiski97@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-03 19:47+0200\n"
+"Project-Id-Version: mate-netbook 1.23.0\n"
+"Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
+"POT-Creation-Date: 2020-01-05 15:19+0100\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2019\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020\n"
 "Language-Team: Catalan (https://www.transifex.com/mate/teams/13566/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,23 +23,23 @@ msgstr ""
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:1
-#: ../mate-window-picker-applet/applet.c:320
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
+#: mate-window-picker-applet/applet.c:318
 msgid "Show all windows"
 msgstr "Mostra totes les finestres"
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:2
-#: ../mate-window-picker-applet/applet.c:322
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
+#: mate-window-picker-applet/applet.c:320
 msgid "Show windows from all workspaces."
 msgstr "Mostra les finestres de tots els espais de treball."
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:3
-#: ../mate-window-picker-applet/applet.c:329
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
+#: mate-window-picker-applet/applet.c:327
 msgid "Show desktop title and logout button"
 msgstr "Mostra el títol de l'escriptori i el botó de tancar la sessió"
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:4
-#: ../mate-window-picker-applet/applet.c:331
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
+#: mate-window-picker-applet/applet.c:329
 msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
@@ -48,96 +47,104 @@ msgstr ""
 "Mostra un títol per a l’escriptori quan no s’hagi seleccionat cap finestra i"
 " afegeix un botó de tancar la sessió."
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:5
-#: ../mate-window-picker-applet/applet.c:338
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
+#: mate-window-picker-applet/applet.c:336
 msgid "Bold windows title"
 msgstr "Lletra en negreta per al títol de les finestres"
 
-#: ../mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in.h:6
-#: ../mate-window-picker-applet/applet.c:340
+#: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
+#: mate-window-picker-applet/applet.c:338
 msgid "Show windows title with a bold face."
 msgstr "Mostra el títol de les finestres amb un lletra en negreta."
 
-#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:1
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
 msgstr "Fàbrica de la miniaplicació del selector de finestres"
 
-#: ../mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.in.in.h:2
-#: ../mate-window-picker-applet/applet.c:247
-#: ../mate-window-picker-applet/applet.c:248
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
+#: mate-window-picker-applet/applet.c:245
+#: mate-window-picker-applet/applet.c:246
 msgid "Window Picker"
 msgstr "Selector de finestres"
 
-#: ../mate-window-picker-applet/applet.c:65
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:12
+msgid "preferences-system-windows"
+msgstr "preferences-system-windows"
+
+#: mate-window-picker-applet/applet.c:65
 msgid "_Preferences"
 msgstr "_Preferències"
 
-#: ../mate-window-picker-applet/applet.c:68
+#: mate-window-picker-applet/applet.c:68
 msgid "_About"
 msgstr "_Quant a"
 
-#: ../mate-window-picker-applet/applet.c:303
+#: mate-window-picker-applet/applet.c:301
 msgid "Preferences"
 msgstr "Preferències"
 
-#: ../mate-window-picker-applet/task-title.c:77
-#: ../mate-window-picker-applet/task-title.c:322
+#: mate-window-picker-applet/task-title.c:68
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Finalitzeu la sessió, canvieu d'usuari, bloqueu la pantalla o apagueu "
 "l'ordinador."
 
-#: ../mate-window-picker-applet/task-title.c:93
+#: mate-window-picker-applet/task-title.c:85
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "S'ha produït un error en executar «%s»: %s"
 
-#: ../mate-window-picker-applet/task-title.c:316
-#: ../mate-window-picker-applet/task-title.c:584
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Escriptori"
 
-#: ../mate-window-picker-applet/task-title.c:347
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Tanca la finestra"
 
-#: ../mate-window-picker-applet/task-title.c:608
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Tanca"
 
-#: ../mate-window-picker-applet/task-title.c:609
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Tanca la finestra actual."
 
-#: ../mate-window-picker-applet/task-item.c:684
+#: mate-window-picker-applet/task-item.c:680
 msgid "Window Task Button"
 msgstr "Botó de la finestra de tasques"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:1
+#: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
 msgstr ""
 "Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la "
 "finestra."
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:2
+#: maximus/org.mate.maximus.gschema.xml.in:6
 msgid "A list of exclusion strings which apply to the window class"
 msgstr ""
 "Una llista de cadenes de text d'exclusió que s'apliquen a la classe de la "
 "finestra"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:3
+#: maximus/org.mate.maximus.gschema.xml.in:10
+#: maximus/org.mate.maximus.gschema.xml.in:11
 msgid "A binding"
 msgstr "Una vinculació"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:4
+#: maximus/org.mate.maximus.gschema.xml.in:15
+#: maximus/org.mate.maximus.gschema.xml.in:16
 msgid "Undecorate windows when maximized"
 msgstr "No decoris les finestres quan es maximitzin"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:5
+#: maximus/org.mate.maximus.gschema.xml.in:20
 msgid "Do not automatically maximize newly opened windows"
 msgstr "No maximitzis automàticament les noves finestres obertes"
 
-#: ../maximus/org.mate.maximus.gschema.xml.in.h:6
+#: maximus/org.mate.maximus.gschema.xml.in:21
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
