@@ -5,8 +5,8 @@ Name=Window Picker Applet Factory
 Description=Window Picker
 
 [MateWindowPicker]
-Name=Window Picker
-Description=Window Picker
+Name=Netbook Window Picker
+Description=Switch between open windows using their icons for small screens
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=preferences-system-windows
 BonoboId=OAFIID:MATE_WindowPicker
