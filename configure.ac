@@ -7,6 +7,8 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
+MATE_COMPILE_WARNINGS
+
 AC_PROG_CC
 AC_STDC_HEADERS
 AC_PROG_LIBTOOL
@@ -62,3 +64,17 @@ mate-window-picker-applet/Makefile
 mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 po/Makefile.in
 ])
+
+dnl ---------------------------------------------------------------------------
+dnl - Show summary
+dnl ---------------------------------------------------------------------------
+
+echo "
+       mate-netbook $VERSION
+       `echo mate-netbook $VERSION | sed "s/./=/g"`
+
+       prefix:                        ${prefix}
+       compiler:                      ${CC}
+       cflags:                        ${CFLAGS}
+       warning flags:                 ${WARN_CFLAGS}
+"
