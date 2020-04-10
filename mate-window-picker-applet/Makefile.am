@@ -2,14 +2,15 @@ libexec_PROGRAMS=mate-window-picker-applet
 
 PKGDATADIR = $(datadir)/mate-window-picker-applet
 AM_CFLAGS=\
-	$(MATEWINDOWPICKER_DEPS_CFLAGS) 		\
-	$(GCC_FLAGS) 				\
-	-I$(top_builddir)			\
-	-I$(top_srcdir)				\
-	-D_GNU_SOURCE 				\
+	$(MATEWINDOWPICKER_DEPS_CFLAGS) \
+	$(GCC_FLAGS) \
+	-I$(top_builddir) \
+	-I$(top_srcdir) \
+	-D_GNU_SOURCE \
 	-DMATELOCALEDIR=\""$(datadir)/locale"\" \
 	-DPKGDATADIR=\"$(PKGDATADIR)\" \
-	-DMATEWINDOWPICKER_MENU_UI_DIR=\""$(xmluidir)"\"
+	-DMATEWINDOWPICKER_MENU_UI_DIR=\""$(xmluidir)"\" \
+	$(WARN_CFLAGS)
 
 mate_window_picker_applet_LDADD = \
 	$(MATEWINDOWPICKER_DEPS_LIBS) \

@@ -4,15 +4,16 @@ PKGDATADIR = $(datadir)/mate-maximus
 DATADIR = $(datadir)
 SYSCONFDIR = $(sysconfdir)
 AM_CFLAGS = \
-	$(MAXIMUS_DEPS_CFLAGS) 				\
-	$(GCC_FLAGS) 				\
-	-I$(top_builddir)			\
-	-I$(top_srcdir)				\
+	$(MAXIMUS_DEPS_CFLAGS) \
+	$(GCC_FLAGS) \
+	-I$(top_builddir) \
+	-I$(top_srcdir) \
 	-I$(top_srcdir)/tidy \
-	-D_GNU_SOURCE 				\
+	-D_GNU_SOURCE \
 	-DPKGDATADIR=\"$(PKGDATADIR)\" \
 	-DDATADIR=\"$(DATADIR)\" \
-	-DSYSCONFDIR=\"$(SYSCONFDIR)\"
+	-DSYSCONFDIR=\"$(SYSCONFDIR)\" \
+	$(WARN_CFLAGS)
 
 mate_maximus_LDADD  = \
 	$(MAXIMUS_DEPS_LIBS)
