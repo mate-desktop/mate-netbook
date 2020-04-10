@@ -71,5 +71,3 @@ CLEANFILES = \
 	*.gschema.valid \
 	$(service_DATA)
 
-clean:
-	rm -f $(desktop_DATA) $(desktop_DATA).in
