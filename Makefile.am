@@ -3,6 +3,7 @@ SUBDIRS = po maximus mate-window-picker-applet
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 DISTCHECK_CONFIGURE_FLAGS = \
+	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 
 EXTRA_DIST = autogen.sh
