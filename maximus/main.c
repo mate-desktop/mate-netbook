@@ -30,12 +30,6 @@
 
 #include "maximus-app.h"
 
-#ifdef __GNUC__
-#define UNUSED_VARIABLE __attribute__ ((unused))
-#else
-#define UNUSED_VARIABLE
-#endif
-
 static gboolean version    = FALSE;
 gboolean no_maximize = FALSE;
 
@@ -61,7 +55,6 @@ GOptionEntry entries[] =
 gint main (gint argc, gchar *argv[])
 {
   GApplication *application;
-  MaximusApp UNUSED_VARIABLE *app;
   GOptionContext  *context;
   GError *error = NULL;
   GdkDisplay *gdk_display;
@@ -92,7 +85,8 @@ gint main (gint argc, gchar *argv[])
 
   gdk_display = gdk_display_get_default ();
   gdk_x11_display_error_trap_push (gdk_display);
-  app = maximus_app_get_default ();
+  // Initialize app, but don't reference return value
+  maximus_app_get_default ();
   gdk_x11_display_error_trap_pop_ignored (gdk_display);
 
   gtk_main ();
