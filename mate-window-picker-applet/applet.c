@@ -62,10 +62,10 @@ static void display_prefs_dialog (GtkAction    *action,
                                   WinPickerApp *applet);
 
 static const GtkActionEntry window_picker_menu_actions [] = {
-  { "MenuPrefs", GTK_STOCK_PREFERENCES, N_("_Preferences"),
+  { "MenuPrefs", "preferences-system", N_("_Preferences"),
       NULL, NULL,
       G_CALLBACK (display_prefs_dialog) },
-  { "MenuAbout", GTK_STOCK_ABOUT, N_("_About"),
+  { "MenuAbout", "help-about", N_("_About"),
       NULL, NULL,
       G_CALLBACK (display_about_dialog) }
 };
@@ -295,7 +295,7 @@ static void
 display_prefs_dialog (GtkAction       *action,
                       WinPickerApp *applet)
 {
-  GtkWidget *window, *box, *vbox, *nb, *hbox, *label, *check, *button;
+  GtkWidget *window, *box, *vbox, *nb, *hbox, *label, *check, *button, *image;
 
   window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
   gtk_window_set_title (GTK_WINDOW (window), _("Preferences"));
@@ -353,7 +353,9 @@ display_prefs_dialog (GtkAction       *action,
   label = gtk_label_new (" ");
   gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
 
-  button = gtk_button_new_from_stock (GTK_STOCK_CLOSE);
+  button = gtk_button_new_with_mnemonic ("_Close");
+  image = gtk_image_new_from_icon_name ("window-close", GTK_ICON_SIZE_BUTTON);
+  gtk_button_set_image (GTK_BUTTON (button), image);
   gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
 
   gtk_widget_show_all (window);
