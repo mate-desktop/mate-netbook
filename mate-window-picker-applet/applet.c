@@ -155,7 +155,6 @@ cw_applet_fill (MatePanelApplet *applet,
 {
   WinPickerApp *app;
   GtkWidget *eb, *tasks, *title;
-  gchar *ui_path;
   GtkActionGroup *action_group;
   GObjectClass *object_class;
 
@@ -213,10 +212,9 @@ cw_applet_fill (MatePanelApplet *applet,
                                 window_picker_menu_actions,
                                 G_N_ELEMENTS (window_picker_menu_actions),
                                 app);
-  ui_path = g_build_filename (MATEWINDOWPICKER_MENU_UI_DIR, "mate-window-picker-applet-menu.xml", NULL);
   mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (app->applet),
-                                          ui_path, action_group);
-  g_free (ui_path);
+                                          MATEWINDOWPICKER_MENU_UI_DIR "/mate-window-picker-applet-menu.xml",
+                                          action_group);
   g_object_unref (action_group);
 
   mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet),
