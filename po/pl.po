@@ -12,15 +12,16 @@
 # Marcin Mikołajczak <me@mkljczk.pl>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Przemek P <ppjg@dami.pl>, 2019
-# pietrasagh <pietrasagh@gmail.com>, 2019
+# pietrasagh <kowalik.piotr@pm.me>, 2019
+# No Ne, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.23.0\n"
+"Project-Id-Version: mate-netbook 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-05 15:19+0100\n"
+"POT-Creation-Date: 2021-06-21 23:23+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2019\n"
+"Last-Translator: No Ne, 2021\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,22 +30,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
-#: mate-window-picker-applet/applet.c:318
+#: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
 msgstr "Wyświetl wszystkie okna"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
-#: mate-window-picker-applet/applet.c:320
+#: mate-window-picker-applet/applet.c:319
 msgid "Show windows from all workspaces."
 msgstr "Pokaż okna ze wszystkich ekranów roboczych."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
-#: mate-window-picker-applet/applet.c:327
+#: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
 msgstr "Wyświetl tytuł pulpitu i przycisk wylogowania"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
-#: mate-window-picker-applet/applet.c:329
+#: mate-window-picker-applet/applet.c:328
 msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
@@ -53,12 +54,12 @@ msgstr ""
 "wylogowywania."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
-#: mate-window-picker-applet/applet.c:336
+#: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
 msgstr "Pogrubiony tytuł okien"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
-#: mate-window-picker-applet/applet.c:338
+#: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
 msgstr "Wyświetl tytuł okien z pogrubioną czcionką."
 
@@ -67,58 +68,62 @@ msgid "Window Picker Applet Factory"
 msgstr "Generator apletu wybieracza okien"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
+#: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
-#: mate-window-picker-applet/applet.c:246
 msgid "Window Picker"
 msgstr "Wybieracz okien"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:12
-msgid "preferences-system-windows"
-msgstr ""
-
-#: mate-window-picker-applet/applet.c:65
+#: mate-window-picker-applet/applet.c:66
 msgid "_Preferences"
 msgstr "P_referencje"
 
-#: mate-window-picker-applet/applet.c:68
+#: mate-window-picker-applet/applet.c:69
 msgid "_About"
 msgstr "_O programie"
 
-#: mate-window-picker-applet/applet.c:301
+#: mate-window-picker-applet/applet.c:250
+msgid ""
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE developers"
+msgstr ""
+"Prawa autorskie © 2008 Canonical Ltd\n"
+"Prawa autorskie © 2013-2014 Stefano Karapetsas\n"
+"Prawa autorskie © 2015-2021 programiści MATE"
+
+#: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: mate-window-picker-applet/task-title.c:68
-#: mate-window-picker-applet/task-title.c:315
+#: mate-window-picker-applet/task-title.c:69
+#: mate-window-picker-applet/task-title.c:316
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Wyloguj się, przełącz użytkowników, zablokuj ekran lub wyłącz komputer"
 
-#: mate-window-picker-applet/task-title.c:85
+#: mate-window-picker-applet/task-title.c:86
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr "Podczas wykonywania \"%s\" wystąpił błąd: %s"
 
-#: mate-window-picker-applet/task-title.c:309
-#: mate-window-picker-applet/task-title.c:574
+#: mate-window-picker-applet/task-title.c:310
+#: mate-window-picker-applet/task-title.c:575
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: mate-window-picker-applet/task-title.c:340
+#: mate-window-picker-applet/task-title.c:341
 msgid "Close window"
 msgstr "Zamknij okno"
 
-#: mate-window-picker-applet/task-title.c:598
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close"
 msgstr "Zamknij"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:600
 msgid "Close current window."
 msgstr "Zamyka bieżące okno."
 
-#: mate-window-picker-applet/task-item.c:680
+#: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"
 msgstr "Przycisk okna zadania"
 

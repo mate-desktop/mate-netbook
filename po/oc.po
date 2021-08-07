@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Cfpo Miègjorn-Pirenèus <inactive+cfpomp@transifex.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2018
 # Cédric Valmary <cvalmary@yahoo.fr>, 2019
+# Quentin PAGÈS, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.23.0\n"
+"Project-Id-Version: mate-netbook 1.24.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2020-01-05 15:19+0100\n"
+"POT-Creation-Date: 2021-06-21 23:23+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Cédric Valmary <cvalmary@yahoo.fr>, 2019\n"
+"Last-Translator: Quentin PAGÈS, 2021\n"
 "Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,97 +23,103 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
-#: mate-window-picker-applet/applet.c:318
+#: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
-msgstr ""
+msgstr "Mostrar totas las fenèstras"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
-#: mate-window-picker-applet/applet.c:320
+#: mate-window-picker-applet/applet.c:319
 msgid "Show windows from all workspaces."
 msgstr "Afichar las fenèstras de totes los espacis de trabalh"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
-#: mate-window-picker-applet/applet.c:327
+#: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
-msgstr ""
+msgstr "Mostrar lo títol del burèu e lo boton de desconnexion"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
-#: mate-window-picker-applet/applet.c:329
+#: mate-window-picker-applet/applet.c:328
 msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
+"Afichar lo títol del burèu quand cap de fenèstra es pas seleccionada e "
+"apondre lo boton de desconnexion."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
-#: mate-window-picker-applet/applet.c:336
+#: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
-msgstr ""
+msgstr "Títol de las fenèstras en gras"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
-#: mate-window-picker-applet/applet.c:338
+#: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr ""
+msgstr "Afichar lo títol de la fenèstra amb una poliça grassa."
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
 msgstr "Fabrica de selector de fenèstra"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
+#: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
-#: mate-window-picker-applet/applet.c:246
 msgid "Window Picker"
 msgstr "Selector de fenèstras"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:12
-msgid "preferences-system-windows"
-msgstr ""
-
-#: mate-window-picker-applet/applet.c:65
+#: mate-window-picker-applet/applet.c:66
 msgid "_Preferences"
 msgstr "_Preferéncias"
 
-#: mate-window-picker-applet/applet.c:68
+#: mate-window-picker-applet/applet.c:69
 msgid "_About"
 msgstr "A _prepaus"
 
-#: mate-window-picker-applet/applet.c:301
+#: mate-window-picker-applet/applet.c:250
+msgid ""
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE developers"
+msgstr ""
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 Los desvolopaires de MATE"
+
+#: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
 msgstr "Preferéncias"
 
-#: mate-window-picker-applet/task-title.c:68
-#: mate-window-picker-applet/task-title.c:315
+#: mate-window-picker-applet/task-title.c:69
+#: mate-window-picker-applet/task-title.c:316
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Tampar la session, cambiar d'utilizaire, verrolhar l'ecran o atudar "
 "l'ordenador"
 
-#: mate-window-picker-applet/task-title.c:85
+#: mate-window-picker-applet/task-title.c:86
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr "I a aguda una error al moment d'aviar '%s' : %s"
+msgstr "I a aguda una error al moment d’aviar « %s » : %s"
 
-#: mate-window-picker-applet/task-title.c:309
-#: mate-window-picker-applet/task-title.c:574
+#: mate-window-picker-applet/task-title.c:310
+#: mate-window-picker-applet/task-title.c:575
 msgid "Desktop"
 msgstr "Burèu"
 
-#: mate-window-picker-applet/task-title.c:340
+#: mate-window-picker-applet/task-title.c:341
 msgid "Close window"
 msgstr "Tampar la fenèstra"
 
-#: mate-window-picker-applet/task-title.c:598
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close"
 msgstr "Tampar"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:600
 msgid "Close current window."
 msgstr "Tampar la fenèstra actuala."
 
-#: mate-window-picker-applet/task-item.c:680
+#: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"
-msgstr "Boton dels prètzfaits de la fenèstra"
+msgstr "Boton dels prètzfaches de la fenèstra"
 
 #: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
