@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
  
-[MATE.master--mate-netbook]
+[MATE.1-26--mate-netbook]
 file_filter = po/<lang>.po
 source_file = po/mate-netbook.pot
 source_lang = en
