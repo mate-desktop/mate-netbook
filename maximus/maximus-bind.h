@@ -61,6 +61,5 @@ GType maximus_bind_get_type (void) G_GNUC_CONST;
 
 MaximusBind * maximus_bind_get_default (void);
 
-
 #endif /* _MAXIMUS_BIND_H_ */
 
