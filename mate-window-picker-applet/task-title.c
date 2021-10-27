@@ -217,7 +217,6 @@ on_name_changed (WnckWindow *window, TaskTitle *title)
   gtk_widget_queue_draw (GTK_WIDGET (title));
 }
 
-
 static void
 on_icon_changed (WnckWindow *window, TaskTitle *title)
 {

@@ -278,7 +278,6 @@ unfullscreen (MaximusBind *bind, WnckWindow *window)
   g_timeout_add (KEY_RELEASE_TIMEOUT, (GSourceFunc)real_unfullscreen, bind);
 }
 
-
 static void
 on_binding_activated (gchar *keystring, MaximusBind *bind)
 {
@@ -339,7 +338,6 @@ on_binding_changed (GSettings      *settings,
 
   g_print ("Binding changed: %s\n", priv->binding);
 }
-
 
 /* GObject stuff */
 static void
@@ -416,7 +414,6 @@ load_rules (MaximusBind *bind, const gchar *path)
 
     g_free (filename);
   }
-
 
   g_dir_close (dir);
 }

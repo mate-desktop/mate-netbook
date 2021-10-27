@@ -83,5 +83,4 @@ gchar* egg_virtual_accelerator_name (guint                  accelerator_key,
 
 G_END_DECLS
 
-
 #endif /* __EGG_ACCELERATORS_H__ */

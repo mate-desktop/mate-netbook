@@ -63,5 +63,4 @@ GType task_title_get_type (void) G_GNUC_CONST;
 
 GtkWidget * task_title_new (void);
 
-
 #endif /* _TASK_TITLE_H_ */

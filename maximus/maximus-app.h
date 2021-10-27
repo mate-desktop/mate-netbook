@@ -63,6 +63,5 @@ GType maximus_app_get_type (void) G_GNUC_CONST;
 
 MaximusApp * maximus_app_get_default (void);
 
-
 #endif /* _MAXIMUS_APP_H_ */
 

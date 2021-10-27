@@ -497,7 +497,6 @@ on_app_undecorate_changed (GSettings          *settings,
   g_timeout_add_seconds (1, (GSourceFunc)show_desktop, priv->screen);
 }
 
-
 /* GObject stuff */
 static void
 maximus_app_class_init (MaximusAppClass *klass)

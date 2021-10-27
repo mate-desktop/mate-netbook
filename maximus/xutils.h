@@ -44,7 +44,6 @@ _wnck_get_wmclass (Window xwindow,
                    char **res_class,
                    char **res_name);
 
-
 G_END_DECLS
 
 #endif /* WNCK_XUTILS_H */

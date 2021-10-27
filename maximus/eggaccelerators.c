@@ -331,7 +331,6 @@ egg_accelerator_parse_virtual (const gchar            *accelerator,
   return !bad_keyval;
 }
 
-
 /**
  * egg_virtual_accelerator_name:
  * @accelerator_key:  accelerator keyval
