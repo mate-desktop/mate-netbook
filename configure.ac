@@ -56,7 +56,7 @@ AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
 
 GLIB_GSETTINGS
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 maximus/Makefile
 maximus/org.mate.maximus.gschema.xml
@@ -64,6 +64,7 @@ mate-window-picker-applet/Makefile
 mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
 po/Makefile.in
 ])
+AC_OUTPUT
 
 dnl ---------------------------------------------------------------------------
 dnl - Show summary
