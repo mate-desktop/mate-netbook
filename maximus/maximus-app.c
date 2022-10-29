@@ -305,8 +305,7 @@ is_excluded (MaximusApp *app, WnckWindow *window)
   
   /* Make sure the window supports maximising */
   actions = wnck_window_get_actions (window);
-  if (actions & WNCK_WINDOW_ACTION_RESIZE
-      && actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
+  if (actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
       && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
       && actions & WNCK_WINDOW_ACTION_MAXIMIZE)
     ; /* Is good to maximise */
