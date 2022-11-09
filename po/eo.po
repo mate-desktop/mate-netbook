@@ -5,18 +5,19 @@
 # 
 # Translators:
 # Michael Moroni <michaelmoroni@disroot.org>, 2018
-# Robin van der Vliet <info@robinvandervliet.nl>, 2018
+# Robin van der Vliet <info@robinvandervliet.com>, 2018
 # Cora Loftis, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Martin Wimpress <code@flexion.org>, 2019
+# Alexander Richards, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>, 2019\n"
+"Last-Translator: Alexander Richards, 2022\n"
 "Language-Team: Esperanto (https://www.transifex.com/mate/teams/13566/eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +28,7 @@ msgstr ""
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
-msgstr ""
+msgstr "Montru ĉiujn fenestrojn"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
@@ -86,7 +87,7 @@ msgid "Preferences"
 msgstr "Agordoj"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Elsaluti, ŝanĝi uzanton, ŝlosi ekranon aŭ elŝalti la komputilon"
 
@@ -95,20 +96,20 @@ msgstr "Elsaluti, ŝanĝi uzanton, ŝlosi ekranon aŭ elŝalti la komputilon"
 msgid "There was an error executing '%s': %s"
 msgstr "Estis eraro dum rulado de '%s': %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Labortablo"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Fermi fenestron"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Fermi"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Fermi aktualan fenestron"
 

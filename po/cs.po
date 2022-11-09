@@ -6,7 +6,7 @@
 # Translators:
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
-# LiberteCzech <liberte.czech@gmail.com>, 2018
+# LiberteCzech <martin.kriz.czech@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Lukáš Lommer <drom@kdyne.net>, 2019
 # ToMáš Marný, 2019
@@ -14,9 +14,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
 "Last-Translator: Roman Horník <roman.hornik@debian-linux.cz>, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
@@ -93,7 +93,7 @@ msgid "Preferences"
 msgstr "Předvolby"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Odhlásit, přepnout uživatele, zamknout obrazovku nebo vypnout počítač"
 
@@ -102,20 +102,20 @@ msgstr "Odhlásit, přepnout uživatele, zamknout obrazovku nebo vypnout počít
 msgid "There was an error executing '%s': %s"
 msgstr "Při spouštění \"%s\" došlo k chybě: %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Pracovní plocha"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Zavřít okno"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Zavřené"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Zavřít aktuální okno"
 

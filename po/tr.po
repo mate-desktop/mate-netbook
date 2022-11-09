@@ -8,14 +8,15 @@
 # Umut Barış GÖKMEN <umtbrsgkmn@gmail.com>, 2018
 # mauron, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Sabri Ünal <libreajans@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr ""
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
-msgstr ""
+msgstr "Tüm pencereleri göster"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
@@ -36,7 +37,7 @@ msgstr "Tüm çalışma sayfalarında penceleri göster"
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
 #: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
-msgstr ""
+msgstr "Masaüstü başlığını ve oturumu kapat düğmesini göster"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
 #: mate-window-picker-applet/applet.c:328
@@ -44,16 +45,18 @@ msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
+"Hiçbir pencere seçilmediğinde masaüstü için başlık göster ve oturumu kapat "
+"düğmesi ekle."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
-msgstr ""
+msgstr "Kalın pencere başlığı"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
 #: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr ""
+msgstr "Pencere başlığını kalın yazı yüzüyle göster"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
@@ -79,13 +82,16 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
+"Telif Hakkı © 2008 Canonical Ltd\n"
+"Telif Hakkı © 2013-2014 Stefano Karapetsas\n"
+"Telif Hakkı © 2015-2021 MATE geliştiricileri"
 
 #: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
 msgstr "Tercihler"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Çık, kullanıcı değiştir, ekranı kilitle veya bilgisayarı kapat"
 
@@ -94,22 +100,22 @@ msgstr "Çık, kullanıcı değiştir, ekranı kilitle veya bilgisayarı kapat"
 msgid "There was an error executing '%s': %s"
 msgstr "'%s' çalıştırılırken hata oluştu: %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Masaüstü"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Pencereyi kapat"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Kapat"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
-msgstr "Güncel pencereyi kapat."
+msgstr "Mevcut pencereyi kapat."
 
 #: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"

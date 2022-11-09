@@ -11,16 +11,16 @@
 # Claes-Göran Nydahl <goldug@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Tobias Lekare <lekare@linux.com>, 2019
-# Kristoffer Grundström <lovaren@gmail.com>, 2020
 # Luna Jernberg <bittin@cafe8bitar.se>, 2021
+# Kristoffer Grundström <lovaren@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2021\n"
+"Last-Translator: Kristoffer Grundström <lovaren@gmail.com>, 2022\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,16 +49,18 @@ msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
+"Visa en titel för skrivbordet när inget fönster är valt och bifoga en "
+"utloggningsknapp."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
-msgstr ""
+msgstr "Fet fönster-titel"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
 #: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr ""
+msgstr "Visa fönster-titel med ett djärvt ansikte."
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
@@ -93,7 +95,7 @@ msgid "Preferences"
 msgstr "Inställningar"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Logga ut, byt användare, lås skärmen eller stäng av datorn"
 
@@ -102,20 +104,20 @@ msgstr "Logga ut, byt användare, lås skärmen eller stäng av datorn"
 msgid "There was an error executing '%s': %s"
 msgstr "Ett fel inträffade vid körning av \"%s\": %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Skrivbord"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Stäng fönster"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Stäng"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Stäng aktuellt fönster."
 

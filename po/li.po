@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
 "Language-Team: Limburgian (https://www.transifex.com/mate/teams/13566/li/)\n"
@@ -82,7 +82,7 @@ msgid "Preferences"
 msgstr ""
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 
@@ -91,20 +91,20 @@ msgstr ""
 msgid "There was an error executing '%s': %s"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Wirkblaad"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr ""
 

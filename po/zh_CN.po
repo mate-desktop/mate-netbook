@@ -4,21 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Christopher M <i@cicku.me>, 2018
+# ᴄʜʀɪsᴛᴏᴘʜᴇʀ ᴍᴇɴɢ, 2018
 # shuyu liu <liushuyu011@gmail.com>, 2018
-# Mingye Wang <arthur200126@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Mingcong Bai <jeffbai@aosc.xyz>, 2019
 # zhineng404 <zhinengge@gmail.com>, 2019
-# Wenbin Lv <wenbin816@gmail.com>, 2021
+# Wenbin Lv <wenbin816@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2021\n"
+"Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +33,7 @@ msgstr "显示所有窗口"
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
 msgid "Show windows from all workspaces."
-msgstr "显示所有工作区中的窗口"
+msgstr "显示所有工作区中的窗口。"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
 #: mate-window-picker-applet/applet.c:326
@@ -46,7 +45,7 @@ msgstr "显示桌面标题和注销按钮"
 msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
-msgstr "没有选择窗口时显示桌面的标题，并附加注销按钮。"
+msgstr "没有选择窗口时显示桌面的标题，并添加一个注销按钮。"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
@@ -60,13 +59,13 @@ msgstr "用粗体显示窗口标题。"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
-msgstr "窗口拾取小程序工厂"
+msgstr "窗口选择器小程序工厂"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
 #: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
 msgid "Window Picker"
-msgstr "窗口选择程序"
+msgstr "窗口选择器"
 
 #: mate-window-picker-applet/applet.c:66
 msgid "_Preferences"
@@ -82,16 +81,16 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
-"版权所有 © 2008 Canonical Ltd\n"
-"版权所有 © 2013-2014 Stefano Karapetsas\n"
-"版权所有 © 2015-2021 MATE 开发者"
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE 开发者"
 
 #: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
 msgstr "首选项"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "注销、切换用户、锁定屏幕或关闭计算机"
 
@@ -100,20 +99,20 @@ msgstr "注销、切换用户、锁定屏幕或关闭计算机"
 msgid "There was an error executing '%s': %s"
 msgstr "执行“%s”时发生错误：%s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "桌面"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "关闭窗口"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "关闭"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "关闭当前窗口。"
 
@@ -123,11 +122,11 @@ msgstr "窗口任务按钮"
 
 #: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
-msgstr "应用于窗口类的排除字串列表"
+msgstr "应用于窗口类的排除字符串列表。"
 
 #: maximus/org.mate.maximus.gschema.xml.in:6
 msgid "A list of exclusion strings which apply to the window class"
-msgstr "应用于窗口类的排除字串列表"
+msgstr "应用于窗口类的排除字符串列表"
 
 #: maximus/org.mate.maximus.gschema.xml.in:10
 #: maximus/org.mate.maximus.gschema.xml.in:11
@@ -141,7 +140,7 @@ msgstr "最大化时隐藏窗口装饰"
 
 #: maximus/org.mate.maximus.gschema.xml.in:20
 msgid "Do not automatically maximize newly opened windows"
-msgstr "禁用新窗口自动最大化"
+msgstr "不要自动最大化新打开的窗口"
 
 #: maximus/org.mate.maximus.gschema.xml.in:21
 msgid ""

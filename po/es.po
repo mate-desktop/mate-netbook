@@ -6,14 +6,14 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Andres Sanchez <blackatze93@gmail.com>, 2018
-# Adolfo Jayme Barrientos, 2019
+# Adolfo Jayme-Barrientos, 2019
 # Toni Estévez <toni.estevez@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
 "Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
@@ -90,7 +90,7 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Cerrar sesión, cambiar de usuario, bloquear la pantalla o apagar el equipo"
@@ -100,20 +100,20 @@ msgstr ""
 msgid "There was an error executing '%s': %s"
 msgstr "Se ha producido un error al ejecutar «%s» : %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Cerrar la ventana"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Cerrar"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Cerrar la ventana actual"
 

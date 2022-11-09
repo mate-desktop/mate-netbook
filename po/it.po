@@ -4,26 +4,26 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Marco Bartolucci <nap.84@live.it>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Marco Bartolucci, 2018
 # Marco Z. <minaz666@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Giuseppe Pignataro <rogepix@gmail.com>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
@@ -33,12 +33,12 @@ msgstr "Mostra tutte le finestre"
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
 msgid "Show windows from all workspaces."
-msgstr "Mostrare le finestre di tutti gli spazi di lavoro"
+msgstr "Mostrare le finestre da tutti gli spazi di lavoro"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
 #: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
-msgstr "Mostra titolo del desktop e tasto disconnetti"
+msgstr "Mostra il titolo del desktop e il tasto disconnetti"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
 #: mate-window-picker-applet/applet.c:328
@@ -47,7 +47,7 @@ msgid ""
 " button."
 msgstr ""
 "Mostra un titolo per il desktop quando non ci sono finestre selezionate e "
-"aggiungi il tasto disconnetti."
+"aggiunge il tasto disconnetti."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
@@ -57,17 +57,17 @@ msgstr "Titolo delle finestre in grassetto"
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
 #: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr "Mostra titoli delle finestre in grassetto."
+msgstr "Mostra i titoli delle finestre in grassetto."
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
-msgstr "Fabbrica del Selettore Finestra"
+msgstr "Fabbrica del Raccoglitore delle Finestre"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
 #: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
 msgid "Window Picker"
-msgstr "Selettore finestra"
+msgstr "Raccoglitore delle Finestre"
 
 #: mate-window-picker-applet/applet.c:66
 msgid "_Preferences"
@@ -92,7 +92,7 @@ msgid "Preferences"
 msgstr "Preferenze"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Chiude la sessione, cambia utente, blocca lo schermo o spegne il computer"
@@ -100,24 +100,24 @@ msgstr ""
 #: mate-window-picker-applet/task-title.c:86
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr "Si è verificato un errore nell'eseguire «%s»: %s"
+msgstr "Si è verificato un errore nell'eseguire '%s': %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Scrivania"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Chiudi la finestra"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Chiudi"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
-msgstr "Chiudi finestra corrente"
+msgstr "Chiude finestra corrente"
 
 #: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"
@@ -136,7 +136,7 @@ msgstr ""
 #: maximus/org.mate.maximus.gschema.xml.in:10
 #: maximus/org.mate.maximus.gschema.xml.in:11
 msgid "A binding"
-msgstr "Un'associazione"
+msgstr "Una associazione"
 
 #: maximus/org.mate.maximus.gschema.xml.in:15
 #: maximus/org.mate.maximus.gschema.xml.in:16

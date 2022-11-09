@@ -9,19 +9,19 @@
 # Michal Herman <szalejot@gmail.com>, 2018
 # levi <levi@unseen.is>, 2018
 # Beniamin Pawlus <kupwzywcu@o2.pl>, 2018
-# Marcin Mikołajczak <me@mkljczk.pl>, 2018
+# marcin mikołajczak <me@mkljczk.pl>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Przemek P <ppjg@dami.pl>, 2019
 # pietrasagh <kowalik.piotr@pm.me>, 2019
-# No Ne, 2021
+# Marek Adamski, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: No Ne, 2021\n"
+"Last-Translator: Marek Adamski, 2021\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +96,7 @@ msgid "Preferences"
 msgstr "Preferencje"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 "Wyloguj się, przełącz użytkowników, zablokuj ekran lub wyłącz komputer"
@@ -106,20 +106,20 @@ msgstr ""
 msgid "There was an error executing '%s': %s"
 msgstr "Podczas wykonywania \"%s\" wystąpił błąd: %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Pulpit"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Zamknij okno"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Zamknij"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Zamyka bieżące okno."
 

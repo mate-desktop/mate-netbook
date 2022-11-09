@@ -7,15 +7,15 @@
 # Daniel <danny3@tutanota.com>, 2018
 # Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# corneliu.e <corneliueva@yahoo.com>, 2019
+# 3d5ab56b1b83fefceeab671c39a98a6d_999ae54, 2019
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.24.0\n"
+"Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2021-06-21 23:23+0200\n"
+"POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: corneliu.e <corneliueva@yahoo.com>, 2019\n"
+"Last-Translator: 3d5ab56b1b83fefceeab671c39a98a6d_999ae54, 2019\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,7 +85,7 @@ msgid "Preferences"
 msgstr "Preferințe"
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:316
+#: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr "Ieșire, comutare utilizator, blocare ecran sau oprire calculator"
 
@@ -94,20 +94,20 @@ msgstr "Ieșire, comutare utilizator, blocare ecran sau oprire calculator"
 msgid "There was an error executing '%s': %s"
 msgstr "A intervenit o eroare la executarea „%s“: %s"
 
-#: mate-window-picker-applet/task-title.c:310
-#: mate-window-picker-applet/task-title.c:575
+#: mate-window-picker-applet/task-title.c:309
+#: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
 msgstr "Desktop"
 
-#: mate-window-picker-applet/task-title.c:341
+#: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
 msgstr "Închide fereastra"
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:598
 msgid "Close"
 msgstr "Închide"
 
-#: mate-window-picker-applet/task-title.c:600
+#: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
 msgstr "Închide fereastra actuală"
 
