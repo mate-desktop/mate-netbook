@@ -18,9 +18,12 @@ requires=(
 requires+=(
 	autoconf-archive
 	gcc
+	gettext
 	git
+	libfakekey
 	make
 	mate-common
+	mate-panel
 	which
 )
 
