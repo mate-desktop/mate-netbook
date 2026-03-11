@@ -77,6 +77,7 @@ start_logout_dialog (TaskTitle *title)
     gdk_app_launch_context_set_screen (launch_context, gdkscreen);
     g_app_info_launch (app_info, NULL, G_APP_LAUNCH_CONTEXT (launch_context), &error);
     g_object_unref (launch_context);
+    g_object_unref (app_info);
     return TRUE;
   }
 
@@ -93,6 +94,7 @@ start_logout_dialog (TaskTitle *title)
 
   gtk_widget_show (dialog);
   g_error_free (error);
+  g_clear_object (&app_info);
   return FALSE;
 }
 
@@ -449,6 +451,7 @@ task_title_set_bold_window_title (TaskTitle *title, gboolean bold_window_title)
   }
   pango_attr_list_insert (attr_list, attr);
   gtk_label_set_attributes (GTK_LABEL (priv->label), attr_list);
+  pango_attr_list_unref (attr_list);
 }
 
 static void
@@ -582,6 +585,7 @@ task_title_init (TaskTitle *title)
     PangoAttribute *attr = pango_attr_weight_new (PANGO_WEIGHT_BOLD);
     pango_attr_list_insert (attr_list, attr);
     gtk_label_set_attributes (GTK_LABEL (priv->label), attr_list);
+    pango_attr_list_unref (attr_list);
   }
 
   gtk_box_pack_start (GTK_BOX (priv->box), priv->label, TRUE, TRUE, 0);
