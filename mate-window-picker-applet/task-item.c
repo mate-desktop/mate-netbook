@@ -324,6 +324,7 @@ task_item_draw (GtkWidget      *widget,
     cairo_pattern_add_color_stop_rgba (glow_pattern, 0.6, 1, 1, 1, 0);
     cairo_set_source (cr, glow_pattern);
     cairo_paint (cr);
+    cairo_pattern_destroy (glow_pattern);
   }
   
   if (!pbuf)
