@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-netbook 1.26.0\n"
+"Project-Id-Version: mate-netbook 1.27.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
-"POT-Creation-Date: 2022-10-29 15:24+0200\n"
+"POT-Creation-Date: 2026-04-01 20:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,11 +48,11 @@ msgstr ""
 msgid "Show windows title with a bold face."
 msgstr ""
 
-#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:4
 msgid "Window Picker Applet Factory"
 msgstr ""
 
-#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
+#: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:8
 #: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
 msgid "Window Picker"
@@ -78,33 +78,33 @@ msgid "Preferences"
 msgstr ""
 
 #: mate-window-picker-applet/task-title.c:69
-#: mate-window-picker-applet/task-title.c:315
+#: mate-window-picker-applet/task-title.c:317
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:86
+#: mate-window-picker-applet/task-title.c:87
 #, c-format
 msgid "There was an error executing '%s': %s"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:309
-#: mate-window-picker-applet/task-title.c:574
+#: mate-window-picker-applet/task-title.c:311
+#: mate-window-picker-applet/task-title.c:577
 msgid "Desktop"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:340
+#: mate-window-picker-applet/task-title.c:342
 msgid "Close window"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:598
+#: mate-window-picker-applet/task-title.c:602
 msgid "Close"
 msgstr ""
 
-#: mate-window-picker-applet/task-title.c:599
+#: mate-window-picker-applet/task-title.c:603
 msgid "Close current window."
 msgstr ""
 
-#: mate-window-picker-applet/task-item.c:681
+#: mate-window-picker-applet/task-item.c:682
 msgid "Window Task Button"
 msgstr ""
 
