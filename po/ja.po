@@ -12,7 +12,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Rockers <sumorock@hotmail.com>, 2019
 # pivo thusr, 2020
-# Green, 2021
+# green <usergreen@users.osdn.me>, 2024
 # 
 msgid ""
 msgstr ""
@@ -20,8 +20,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Green, 2021\n"
-"Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
+"Last-Translator: green <usergreen@users.osdn.me>, 2024\n"
+"Language-Team: Japanese (https://app.transifex.com/mate/teams/13566/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,7 +95,7 @@ msgstr "設定"
 #: mate-window-picker-applet/task-title.c:69
 #: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
-msgstr "ログオフ、ユーザーの切り替え、画面のロック、またはコンピュータの電源を遮断します。"
+msgstr "ログオフ、ユーザの切り替え、画面のロック、またはコンピュータの電源を遮断します。"
 
 #: mate-window-picker-applet/task-title.c:86
 #, c-format

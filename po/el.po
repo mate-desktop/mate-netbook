@@ -5,11 +5,11 @@
 # 
 # Translators:
 # geost <george.stefanakis@gmail.com>, 2018
-# Angelos Chraniotis, 2018
+# Angel Chraniotis, 2018
 # 437c9d6e19936ed69f57bed9e0fe4716, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Alexandros Kapetanios <alexandros@gnugr.org>, 2019
-# Efstathios Iosifidis <iefstathios@gmail.com>, 2021
+# Efstathios Iosifidis <eiosifidis@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -17,8 +17,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>, 2021\n"
-"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>, 2021\n"
+"Language-Team: Greek (https://app.transifex.com/mate/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
