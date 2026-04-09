@@ -11,7 +11,7 @@
 # Wilson Flávio Rodrigues <wfr@cin.ufpe.br>, 2018
 # 710a500dd1d5560bb05c8b24814b8c26, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
-# Wolfgang Ulbrich <mate@raveit.de>, 2019
+# Wolfgang Ulbrich <raveit65.sun@gmail.com>, 2019
 # gustavo s, 2020
 # Luis Ajuda, 2022
 # 
@@ -22,7 +22,7 @@ msgstr ""
 "POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
 "Last-Translator: Luis Ajuda, 2022\n"
-"Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

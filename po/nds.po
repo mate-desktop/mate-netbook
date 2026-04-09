@@ -5,8 +5,7 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Benedikt Straub <benedikt-straub@web.de>, 2019
-# Martin Wimpress <code@flexion.org>, 2019
+# Benedikt Straub <benedikt-straub@web.de>, 2025
 # 
 msgid ""
 msgstr ""
@@ -14,8 +13,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2022-10-29 15:24+0200\n"
 "PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>, 2019\n"
-"Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2025\n"
+"Language-Team: Low German (https://app.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,17 +24,17 @@ msgstr ""
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
-msgstr ""
+msgstr "All Fensters wiesen"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
 msgid "Show windows from all workspaces."
-msgstr ""
+msgstr "Wies Fensters vun all Schrievdisken."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
 #: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
-msgstr ""
+msgstr "Schrievdisk-Titel un Avmell-Knoop wiesen"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
 #: mate-window-picker-applet/applet.c:328
@@ -43,30 +42,32 @@ msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
+"Wies eenen Titel för de Schrievdisk, wenn keen Fenster utköört is, un föög "
+"eenen Avmell-Knoop an."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
-msgstr ""
+msgstr "Fette Fenstertitel"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
 #: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr ""
+msgstr "Fenstertitel mit eener fetten Schriftaard wiesen."
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
-msgstr ""
+msgstr "Fabrik för dat Fenster-Utkörer-Programm"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
 #: mate-window-picker-applet/applet.c:244
 #: mate-window-picker-applet/applet.c:245
 msgid "Window Picker"
-msgstr ""
+msgstr "Fenster-Utkörer"
 
 #: mate-window-picker-applet/applet.c:66
 msgid "_Preferences"
-msgstr "_Eegenschapten"
+msgstr "_Eegenskuppen"
 
 #: mate-window-picker-applet/applet.c:69
 msgid "_About"
@@ -78,6 +79,9 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE-Entwicklers"
 
 #: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
@@ -87,16 +91,17 @@ msgstr "Instellens"
 #: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
+"Avmellen, Bruker wesseln, Billschirm tosluten of de Reekner daalfahren"
 
 #: mate-window-picker-applet/task-title.c:86
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr ""
+msgstr "Fehler bi’m Utföhren vun »%s«: %s"
 
 #: mate-window-picker-applet/task-title.c:309
 #: mate-window-picker-applet/task-title.c:574
 msgid "Desktop"
-msgstr "Schreibtisch"
+msgstr "Schrievdisk"
 
 #: mate-window-picker-applet/task-title.c:340
 msgid "Close window"
@@ -108,24 +113,24 @@ msgstr "Sluten"
 
 #: mate-window-picker-applet/task-title.c:599
 msgid "Close current window."
-msgstr ""
+msgstr "Stedenwies Fenster dichtmaken."
 
 #: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"
-msgstr ""
+msgstr "Fenster-Upgaav-Knoop"
 
 #: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
-msgstr ""
+msgstr "Eene List vun Utslut-Texten, wat up de Fensterklass anwennt worden."
 
 #: maximus/org.mate.maximus.gschema.xml.in:6
 msgid "A list of exclusion strings which apply to the window class"
-msgstr ""
+msgstr "Eene List vun Utslut-Texten, wat up de Fensterklass anwennt worden"
 
 #: maximus/org.mate.maximus.gschema.xml.in:10
 #: maximus/org.mate.maximus.gschema.xml.in:11
 msgid "A binding"
-msgstr ""
+msgstr "Een Anbinnen"
 
 #: maximus/org.mate.maximus.gschema.xml.in:15
 #: maximus/org.mate.maximus.gschema.xml.in:16
@@ -143,3 +148,5 @@ msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
 msgstr ""
+"Neei opmaakt Fensters nich automatisk grot maken. Wenn »nich dekoreren« "
+"utköört is, worden grote Fensters doch nich dekoreert."
