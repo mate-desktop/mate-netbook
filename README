@@ -1,3 +1,5 @@
+[![Translation status](https://translate.fedoraproject.org/widget/mate-desktop/svg-badge.svg)](https://translate.fedoraproject.org/engage/mate-desktop/)
+
 A simple window management tool which:
   * Allows you to set basic rules for a window type, such as maximise|undecorate
   * Allows exceptions to the rules, based on string matching for window name
