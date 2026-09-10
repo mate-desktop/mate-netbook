@@ -1,30 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-netbook package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2019, 2026.
 # Transifex Bot <>, 2026
-# 
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-netbook 1.26.0\n"
 "Report-Msgid-Bugs-To: https://www.transifex.com/mate/MATE/\n"
 "POT-Creation-Date: 2022-10-29 15:24+0200\n"
-"PO-Revision-Date: 2018-03-11 19:20+0000\n"
-"Last-Translator: Transifex Bot <>, 2026\n"
-"Language-Team: Kazakh (https://app.transifex.com/mate/teams/13566/kk/)\n"
+"PO-Revision-Date: 2026-08-30 04:18+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-netbook/kk/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:5
 #: mate-window-picker-applet/applet.c:317
 msgid "Show all windows"
-msgstr ""
+msgstr "Барлық терезелерді көрсету"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:6
 #: mate-window-picker-applet/applet.c:319
@@ -34,7 +35,7 @@ msgstr "Барлық жұмыс орындар терезелерін көрсе
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:10
 #: mate-window-picker-applet/applet.c:326
 msgid "Show desktop title and logout button"
-msgstr ""
+msgstr "Жұмыс үстелі атауын және жүйеден шығу батырмасын көрсету"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:11
 #: mate-window-picker-applet/applet.c:328
@@ -42,20 +43,22 @@ msgid ""
 "Show a title for the desktop when no window is selected, and append a logout"
 " button."
 msgstr ""
+"Ешбір терезе таңдалмаған кезде жұмыс үстелінің атауын көрсету және жүйеден "
+"шығу батырмасын қосу."
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:15
 #: mate-window-picker-applet/applet.c:335
 msgid "Bold windows title"
-msgstr ""
+msgstr "Терезелер атауын жуан қаріппен көрсету"
 
 #: mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml.in:16
 #: mate-window-picker-applet/applet.c:337
 msgid "Show windows title with a bold face."
-msgstr ""
+msgstr "Терезелер атауын жуан қаріппен көрсету."
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:5
 msgid "Window Picker Applet Factory"
-msgstr ""
+msgstr "Терезе таңдағыш апплетінің фабрикасы"
 
 #: mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in.in:9
 #: mate-window-picker-applet/applet.c:244
@@ -77,6 +80,9 @@ msgid ""
 "Copyright © 2013-2014 Stefano Karapetsas\n"
 "Copyright © 2015-2021 MATE developers"
 msgstr ""
+"Copyright © 2008 Canonical Ltd\n"
+"Copyright © 2013-2014 Stefano Karapetsas\n"
+"Copyright © 2015-2021 MATE әзірлеушілері"
 
 #: mate-window-picker-applet/applet.c:300
 msgid "Preferences"
@@ -86,11 +92,13 @@ msgstr "Баптаулар"
 #: mate-window-picker-applet/task-title.c:315
 msgid "Log off, switch user, lock screen or power down the computer"
 msgstr ""
+"Жүйеден шығу, пайдаланушыны ауыстыру, экранды құлыптау немесе компьютерді "
+"сөндіру"
 
 #: mate-window-picker-applet/task-title.c:86
 #, c-format
 msgid "There was an error executing '%s': %s"
-msgstr ""
+msgstr "'%s' орындау кезінде қате орын алды: %s"
 
 #: mate-window-picker-applet/task-title.c:309
 #: mate-window-picker-applet/task-title.c:574
@@ -111,32 +119,35 @@ msgstr "Ағымдағы терезені жабу."
 
 #: mate-window-picker-applet/task-item.c:681
 msgid "Window Task Button"
-msgstr ""
+msgstr "Терезе тапсырмасының батырмасы"
 
 #: maximus/org.mate.maximus.gschema.xml.in:5
 msgid "A list of exclusion strings which apply to the window class."
-msgstr ""
+msgstr "Терезе класына қолданылатын ерекшеліктер жолдарының тізімі."
 
 #: maximus/org.mate.maximus.gschema.xml.in:6
 msgid "A list of exclusion strings which apply to the window class"
-msgstr ""
+msgstr "Терезе класына қолданылатын ерекшеліктер жолдарының тізімі"
 
 #: maximus/org.mate.maximus.gschema.xml.in:10
 #: maximus/org.mate.maximus.gschema.xml.in:11
 msgid "A binding"
-msgstr ""
+msgstr "Байланысу"
 
 #: maximus/org.mate.maximus.gschema.xml.in:15
 #: maximus/org.mate.maximus.gschema.xml.in:16
 msgid "Undecorate windows when maximized"
-msgstr ""
+msgstr "Толық жазылған терезелердің безендіруін алып тастау"
 
 #: maximus/org.mate.maximus.gschema.xml.in:20
 msgid "Do not automatically maximize newly opened windows"
-msgstr ""
+msgstr "Жаңа ашылған терезелерді автоматты түрде жазбау"
 
 #: maximus/org.mate.maximus.gschema.xml.in:21
 msgid ""
 "Do not automatically maximize newly opened windows. If undecorate is set, "
 "will still undecorate maximized windows."
 msgstr ""
+"Жаңа ашылған терезелерді автоматты түрде жазбау. Егер безендіруді алып "
+"тастау орнатылса, толық жазылған терезелердің безендіруі бәрібір алынып "
+"тасталады."
