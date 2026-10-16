@@ -354,7 +354,7 @@ on_window_opened (WnckScreen  *screen,
 { 
   MaximusAppPrivate *priv;
   WnckWindowType type;
-  gint exclude = 0;
+  gboolean decorated = FALSE;
   GdkDisplay *gdk_display = gdk_display_get_default ();
   
   g_return_if_fail (MAXIMUS_IS_APP (app));
@@ -365,46 +365,25 @@ on_window_opened (WnckScreen  *screen,
   if (type != WNCK_WINDOW_NORMAL)
     return;
 
+  if (!is_excluded (app, window) && !no_maximize && !priv->no_maximize)
+    wnck_window_maximize (window);
+
   /* Ignore undecorated windows */
   gdk_x11_display_error_trap_push (gdk_display);
-  exclude = wnck_window_is_decorated (window) ? 0 : 1;
+  decorated = wnck_window_is_decorated (window);
   if (gdk_x11_display_error_trap_pop (gdk_display))
     return;
+  g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (!decorated));
 
-  if (wnck_window_is_maximized (window))
-    exclude = 0;
-  g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (exclude));
-
-  if (is_excluded (app, window))
-  {
-    g_signal_connect (window, "state-changed",
-                      G_CALLBACK (on_window_state_changed), app);
-    return;
-  }
-
-  if (no_maximize || priv->no_maximize)
-  {
-    if (wnck_window_is_maximized(window) && priv->undecorate)
-    {
-      _window_set_decorations (window, 0);
-      gdk_display_flush (gdk_display);
-    }
-    g_signal_connect (window, "state-changed",
-                      G_CALLBACK (on_window_state_changed), app);
-    return;
-  }
-
-  if (priv->undecorate)
+  if (decorated && priv->undecorate)
   {
     /* Only undecorate right now if the window is smaller than the screen */
-    if (!window_is_too_large_for_screen (window))
+    if (wnck_window_is_maximized (window) && !window_is_too_large_for_screen (window))
     {
       _window_set_decorations (window, 0);
       gdk_display_flush (gdk_display);
     }
   }
-
-  wnck_window_maximize (window);
 
   g_signal_connect (window, "state-changed",
                     G_CALLBACK (on_window_state_changed), app);
