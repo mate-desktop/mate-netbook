@@ -305,9 +305,10 @@ is_excluded (MaximusApp *app, WnckWindow *window)
   
   /* Make sure the window supports maximising */
   actions = wnck_window_get_actions (window);
-  if (actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
-      && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
-      && actions & WNCK_WINDOW_ACTION_MAXIMIZE)
+  if (wnck_window_is_maximized (window)
+      || (actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
+          && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
+          && actions & WNCK_WINDOW_ACTION_MAXIMIZE))
     ; /* Is good to maximise */
   else
     return TRUE;
@@ -375,7 +376,7 @@ on_window_opened (WnckScreen  *screen,
     return;
   g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (!decorated));
 
-  if (decorated && priv->undecorate)
+  if (!is_excluded (app, window) && priv->undecorate)
   {
     /* Only undecorate right now if the window is smaller than the screen */
     if (wnck_window_is_maximized (window) && !window_is_too_large_for_screen (window))
