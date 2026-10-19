@@ -305,9 +305,10 @@ is_excluded (MaximusApp *app, WnckWindow *window)
   
   /* Make sure the window supports maximising */
   actions = wnck_window_get_actions (window);
-  if (actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
-      && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
-      && actions & WNCK_WINDOW_ACTION_MAXIMIZE)
+  if (wnck_window_is_maximized (window)
+      || (actions & WNCK_WINDOW_ACTION_MAXIMIZE_HORIZONTALLY
+          && actions & WNCK_WINDOW_ACTION_MAXIMIZE_VERTICALLY
+          && actions & WNCK_WINDOW_ACTION_MAXIMIZE))
     ; /* Is good to maximise */
   else
     return TRUE;
@@ -355,6 +356,7 @@ on_window_opened (WnckScreen  *screen,
   MaximusAppPrivate *priv;
   WnckWindowType type;
   gboolean decorated = FALSE;
+  gboolean excluded = FALSE;
   GdkDisplay *gdk_display = gdk_display_get_default ();
   
   g_return_if_fail (MAXIMUS_IS_APP (app));
@@ -365,7 +367,9 @@ on_window_opened (WnckScreen  *screen,
   if (type != WNCK_WINDOW_NORMAL)
     return;
 
-  if (!is_excluded (app, window) && !no_maximize && !priv->no_maximize)
+  excluded = is_excluded (app, window);
+
+  if (!excluded && !no_maximize && !priv->no_maximize)
     wnck_window_maximize (window);
 
   /* Ignore undecorated windows */
@@ -375,7 +379,7 @@ on_window_opened (WnckScreen  *screen,
     return;
   g_object_set_data (G_OBJECT (window), "exclude", GINT_TO_POINTER (!decorated));
 
-  if (decorated && priv->undecorate)
+  if (!excluded && decorated && priv->undecorate)
   {
     /* Only undecorate right now if the window is smaller than the screen */
     if (wnck_window_is_maximized (window) && !window_is_too_large_for_screen (window))
