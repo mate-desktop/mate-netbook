@@ -22,7 +22,7 @@
 #define _TASK_TITLE_H_
 
 #include <glib.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 

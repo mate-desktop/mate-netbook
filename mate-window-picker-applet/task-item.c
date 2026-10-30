@@ -18,11 +18,15 @@
  *
  */
 
+#if HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "task-item.h"
 #include "task-list.h"
 
 #include <math.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <cairo/cairo.h>
 
 #define DEFAULT_TASK_ITEM_HEIGHT 24;
@@ -32,6 +36,7 @@ struct _TaskItemPrivate
 {
   WnckWindow   *window;
   WnckScreen   *screen;
+  TaskList     *list;
   GdkPixbuf    *pixbuf;
   GdkRectangle area;
 
@@ -169,7 +174,7 @@ task_item_set_visibility (TaskItem *item)
   screen = priv->screen;
   workspace = wnck_screen_get_active_workspace (screen);
 
-  gboolean show_all = task_list_get_show_all_windows (TASK_LIST (task_list_get_default ()));
+  gboolean show_all = task_list_get_show_all_windows (priv->list);
   gboolean show_window = FALSE;
 
   if (!wnck_window_is_skip_tasklist (window))
@@ -753,7 +758,7 @@ task_item_init (TaskItem *item)
 }
 
 GtkWidget *
-task_item_new (WnckWindow *window)
+task_item_new (WnckWindow *window, TaskList *list)
 {
   GtkWidget *item = NULL;
   TaskItem *task;
@@ -774,6 +779,7 @@ task_item_new (WnckWindow *window)
   task = TASK_ITEM (item);
   priv = task->priv;
   priv->window = window;
+  priv->list = list;
 
   screen = wnck_window_get_screen (window);
   priv->screen = screen;

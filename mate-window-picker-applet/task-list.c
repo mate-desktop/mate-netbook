@@ -76,7 +76,7 @@ on_window_opened (WnckScreen *screen,
       || type == WNCK_WINDOW_MENU)
     return;
 
-  GtkWidget *item = task_item_new (window);
+  GtkWidget *item = task_item_new (window, list);
 
   if (item)
   {
@@ -157,6 +157,7 @@ static void
 task_list_init (TaskList *list)
 {
   TaskListPrivate *priv;
+  GList *windows, *l;
 
   priv = list->priv = task_list_get_instance_private (list);
 
@@ -164,8 +165,14 @@ task_list_init (TaskList *list)
 
   gtk_container_set_border_width (GTK_CONTAINER (list), 0);
 
-  g_signal_connect (priv->screen, "window-opened",
-                    G_CALLBACK (on_window_opened), list);
+  wnck_screen_force_update (priv->screen);
+
+  windows = wnck_screen_get_windows (priv->screen);
+  for (l = windows; l != NULL; l = l->next)
+    on_window_opened (priv->screen, WNCK_WINDOW (l->data), list);
+
+  g_signal_connect_object (priv->screen, "window-opened",
+                           G_CALLBACK (on_window_opened), list, 0);
 }
 
 GtkWidget *

@@ -48,6 +48,8 @@ typedef struct _TaskItem        TaskItem;
 typedef struct _TaskItemClass   TaskItemClass;
 typedef struct _TaskItemPrivate TaskItemPrivate;
  
+struct _TaskList;
+
 struct _TaskItem
 {
   GtkEventBox     parent;	
@@ -64,7 +66,7 @@ struct _TaskItemClass
 
 GType task_item_get_type (void) G_GNUC_CONST;
 
-GtkWidget * task_item_new (WnckWindow *window);
+GtkWidget * task_item_new (WnckWindow *window, struct _TaskList *list);
 
 GtkWidget * task_item_get_default (void);
 

@@ -18,6 +18,10 @@
  *
  */
 
+#if HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 #include "task-title.h"
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
@@ -626,8 +630,8 @@ task_title_init (TaskTitle *title)
 
   gtk_widget_add_events (GTK_WIDGET (title), GDK_ALL_EVENTS_MASK);
 
-  g_signal_connect (priv->screen, "active-window-changed",
-                    G_CALLBACK (on_active_window_changed), title);
+  g_signal_connect_object (priv->screen, "active-window-changed",
+                           G_CALLBACK (on_active_window_changed), title, 0);
   g_signal_connect (title, "button-press-event",
                     G_CALLBACK (on_button_release), NULL);
 }

@@ -54,6 +54,37 @@ PKG_CHECK_MODULES(MATEWINDOWPICKER_DEPS,
 AC_SUBST(MATEWINDOWPICKER_DEPS_CFLAGS)
 AC_SUBST(MATEWINDOWPICKER_DEPS_LIBS)
 
+
+AC_ARG_ENABLE([in-process],
+              [AS_HELP_STRING([--enable-in-process],
+                              [Build Window Picker Applet in-process])],
+              [enable_in_process=$enableval],
+              [enable_in_process=no])
+
+# Automake conditional on whether to build in-process
+AM_CONDITIONAL([ENABLE_IN_PROCESS], [test "x$enable_in_process" = "xyes"])
+# Automake value expected to be substitued in .mate-panel-apple.* for the value of "InProcess"
+AS_IF([test "x$enable_in_process" = "xyes"],
+      [AC_SUBST([ENABLE_IN_PROCESS], [true])],
+      [AC_SUBST([ENABLE_IN_PROCESS], [false])])
+# C conditional on whether to build in-process
+AS_IF([test "x$enable_in_process" = "xyes"],
+      [AC_DEFINE([ENABLE_IN_PROCESS], [1], [building in-process])])
+
+# Convenience C define selecting the right applet factory
+AS_IF([test "x$enable_in_process" = "xyes"],
+      [factory=MATE_PANEL_APPLET_IN_PROCESS_FACTORY],
+      [factory=MATE_PANEL_APPLET_OUT_PROCESS_FACTORY])
+AC_DEFINE_UNQUOTED([PANEL_APPLET_FACTORY], [$factory], [Panel applet factory])
+
+# Get the applet location
+AS_IF([test "x$enable_in_process" = "xyes"],
+      [AS_AC_EXPAND(APPLET_LOCATION, $libdir/mate-netbook/libmate-window-picker-applet.so)],
+      [AS_AC_EXPAND(APPLET_LOCATION, $libexecdir/mate-window-picker-applet)])
+
+AS_AC_EXPAND([APPLET_LOCATION], [$APPLET_LOCATION])
+
+
 GLIB_GSETTINGS
 
 AC_OUTPUT([
@@ -62,6 +93,7 @@ maximus/Makefile
 maximus/org.mate.maximus.gschema.xml
 mate-window-picker-applet/Makefile
 mate-window-picker-applet/org.mate.panel.applet.mate-window-picker-applet.gschema.xml
+mate-window-picker-applet/org.mate.panel.MateWindowPicker.mate-panel-applet.desktop.in
 po/Makefile.in
 ])
 
@@ -77,4 +109,5 @@ echo "
        compiler:                      ${CC}
        cflags:                        ${CFLAGS}
        warning flags:                 ${WARN_CFLAGS}
+       applet in-process:             ${enable_in_process}
 "

@@ -26,7 +26,7 @@
 #include <stdlib.h>
 
 #include <glib.h>
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 
 #define WNCK_I_KNOW_THIS_IS_UNSTABLE
@@ -164,7 +164,6 @@ cw_applet_fill (MatePanelApplet *applet,
 
   bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-  textdomain (GETTEXT_PACKAGE);
 
   /* Have our background automatically painted. */
   mate_panel_applet_set_background_widget (MATE_PANEL_APPLET (applet), GTK_WIDGET (applet));
@@ -195,7 +194,7 @@ cw_applet_fill (MatePanelApplet *applet,
   gtk_container_add (GTK_CONTAINER (applet), eb);
   gtk_container_set_border_width (GTK_CONTAINER (eb), 0);
 
-  tasks = app->tasks = task_list_get_default ();
+  tasks = app->tasks = task_list_new ();
   gtk_box_pack_start (GTK_BOX (eb), tasks, FALSE, FALSE, 0);
 
   title = app->title = task_title_new ();
@@ -226,7 +225,7 @@ cw_applet_fill (MatePanelApplet *applet,
   return TRUE;
 }
 
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY ("MateWindowPickerFactory",
+PANEL_APPLET_FACTORY ("MateWindowPickerFactory",
                                        PANEL_TYPE_APPLET,
                                        "MateWindowPicker",
                                        cw_applet_fill,
@@ -241,7 +240,7 @@ display_about_dialog (GtkAction       *action,
   panel_about_dialog = gtk_about_dialog_new ();
 
   g_object_set (panel_about_dialog,
-                "name", _("Window Picker"),
+                "program-name", _("Window Picker"),
                 "comments", _("Window Picker"),
                 "version", PACKAGE_VERSION,
                 "authors", close_window_authors,
